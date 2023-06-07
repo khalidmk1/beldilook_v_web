@@ -46,7 +46,7 @@
        <div class="container ">
         <div class="row mr-0 responsive  align-items-center">
           <div class="col col-lg-2 col-xl-2 col-md-12 col-sm-12 text-center" >
-            <a href="/home"><img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" alt="" class="img_logo_top"></a>
+            <a href="/home"><img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" alt="" class="img_logo_top "></a>
           </div>
   
           <div class="col col-lg-3 col-xl-3 " style="text-align: center;">
@@ -133,7 +133,7 @@
                   <div class="col col-1 col-lg-1 col-xl-1 col-md-12 col-sm-12" style="text-align: center;">
                     <div >
                       <a href="http://127.0.0.1:8000/fr/notifications">
-                        <img src="{{asset('storage/568182.png')}}" class="bell_not" class="bell" alt="bell">
+                        <img src="{{asset('storage/568182.png')}}" class="bell_not " class="bell" alt="bell">
                       </a>
                     
                     </div>
@@ -359,11 +359,11 @@ $user=Session::get('user');
   </div>
 
   <footer>
-		<div class=" container-fluid footer">
+		<div class=" container-fluid footer mt-3">
 			<div class="row justify-content-center mr-0">
 				<div class="footer-col  col-xl-3 col-lg-4 col-md-6 col-12 mb-50">
 					<div>
-            <img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" style="height: 144px;"
+            <img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" class="image_obligatoire" style="height: 144px;"
 							alt="">
             </div>
 					<div class="social-links d-flex">
@@ -402,7 +402,7 @@ $user=Session::get('user');
 							<h4>Nous rejoindre</h4>
 						</li>
 						<li>
-							<p>Intéressé de travailler avec nous?</p>
+							<p> Intéressé de travailler avec nous?</p>
 						</li>
 						<li><a href="#">contact@beldilook.ma</a></li>
 						<li >
@@ -453,9 +453,9 @@ $user=Session::get('user');
 
 
 		</div>
-		<div class="row container-fluid justify-content-center mt-5  ">
+		<div class="row container-fluid justify-content-center mt-5 mb-4 ">
 			<div class="col text-center "><h5>2023 Beldilook. All rights reserved</h5></div>
-			<div class="col d-flex p-0">Sécurité <p class="ml-2 mr-2">|</p> Politique de confidentialité et de cookies <p class="ml-2 mr-2">|</p> Conditions d’utilisation</div>
+			<div class="col d-flex p-0  "><h6>Sécurité</h6> <p class="ml-2 mr-2"><h6>|</h6></p> <h6>Politique de confidentialité et de cookies </h6><p class="ml-2 mr-2">|</p><h6> Conditions d’utilisation</h6></div>
 		</div>
 	</footer>
 
