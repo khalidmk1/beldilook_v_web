@@ -9,13 +9,7 @@
 		  position: relative;
 		}
 
-		img:not(.image_obligatoire) {
-            display: block;
-		  	max-width: 1000% !important;
-        max-height: 600px;
-            max-height: 400px !important;
-            object-fit: contain !important;
-		}
+		
 
 
 		.preview {

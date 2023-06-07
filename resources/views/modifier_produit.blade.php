@@ -3,6 +3,53 @@
 
 
 <style>
+  .image_area {
+		  position: relative;
+		}
+
+
+
+
+		.preview {
+  			overflow: hidden;
+  			width: 160px; 
+  			height: 160px;
+  			margin: 10px;
+  			border: 1px solid red;
+		}
+
+		.modal-lg{
+  			max-width: 1000px !important;
+		}
+
+		.overlay {
+		  position: absolute;
+		  bottom: 10px;
+		  left: 0;
+		  right: 0;
+		  background-color: rgba(255, 255, 255, 0.5);
+		  overflow: hidden;
+		  height: 0;
+		  transition: .5s ease;
+		  width: 100%;
+		}
+
+		.image_area:hover .overlay {
+		  height: 50%;
+		  cursor: pointer;
+		}
+
+		.text {
+		  color: #333;
+		  font-size: 20px;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		  text-align: center;
+		}
   div.scrollmenu {
     overflow: auto;
     white-space: nowrap;
@@ -149,7 +196,7 @@
 
 <div style="text-align: center">
 
-        <img src="{{ asset('storage/gold_color.jpg') }}" height="30px" width="30px" alt="" style="border-radius: 50%;cursor: pointer;" onclick="select_color2('#FFD700')"><p style="margin-left: 5px;display:inline-block;"> Dorée </p>           <img src="{{ asset('storage/silver_color.jpg') }}" height="30px" width="30px" alt="" style="border-radius: 50%;cursor: pointer;" onclick="select_color2('#C0C0C0')"><p style="margin-left: 5px;display:inline-block;"> Argentée </p> <br>
+        <img class="image_obligatoire" src="{{ asset('storage/gold_color.jpg') }}" height="30px" width="30px" alt="" style="border-radius: 50%;cursor: pointer;" onclick="select_color2('#FFD700')"><p style="margin-left: 5px;display:inline-block;"> Dorée </p>           <img class="image_obligatoire" src="{{ asset('storage/silver_color.jpg') }}" height="30px" width="30px" alt="" style="border-radius: 50%;cursor: pointer;" onclick="select_color2('#C0C0C0')"><p style="margin-left: 5px;display:inline-block;"> Argentée </p> <br>
         
         <div class="colors3" style="background-color: #808000" onclick="select_color2('#808000')"></div>
 <div class="colors3" style="background-color: #C0C000" onclick="select_color2('#C0C000')"></div>
