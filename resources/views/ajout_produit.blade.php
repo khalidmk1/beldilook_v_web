@@ -1,8 +1,65 @@
 @extends('navbar')
 @section('content')
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"  />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
 <style>
+
+.image_area {
+		  position: relative;
+		}
+
+		img:not(.image_obligatoire) {
+            display: block;
+		  	max-width: 1000% !important;
+        max-height: 600px;
+            max-height: 400px !important;
+            object-fit: contain !important;
+		}
+
+
+		.preview {
+  			overflow: hidden;
+  			width: 160px; 
+  			height: 160px;
+  			margin: 10px;
+  			border: 1px solid red;
+		}
+
+		.modal-lg{
+  			max-width: 1000px !important;
+		}
+
+		.overlay {
+		  position: absolute;
+		  bottom: 10px;
+		  left: 0;
+		  right: 0;
+		  background-color: rgba(255, 255, 255, 0.5);
+		  overflow: hidden;
+		  height: 0;
+		  transition: .5s ease;
+		  width: 100%;
+		}
+
+		.image_area:hover .overlay {
+		  height: 50%;
+		  cursor: pointer;
+		}
+
+		.text {
+		  color: #333;
+		  font-size: 20px;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		  text-align: center;
+		}
+
+
   div.scrollmenu {
     overflow: auto;
     white-space: nowrap;
@@ -46,6 +103,7 @@
   border:1px solid black;
   cursor: pointer;
  }
+
  .colors3{
   height: 25px;
   width: 25px;
@@ -80,9 +138,40 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
   </style>
 
 {{ csrf_field() }}
+
+
+<div class="modal fade" id="modal_crop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+      
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="margin: 0px">
+              <div class="row d-flex justify-content-center">
+                  <div class="col-md-12 p-0" style="max-width: 80%">
+                      <img src="" id="sample_image" />
+                  </div>
+                  <div class="col-md-0 ">
+                      <div class="preview5 d-flex justify-content-center" style="display: none"></div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="crop" class="btn btn-primary">Crop</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+  </div>
+</div>	
 
 <div class="modal" id="modal_terme" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -174,7 +263,7 @@
 
 <div style="text-align: center">
 
-        <img src="{{ asset('storage/gold_color.jpg') }}" height="30px" width="30px" alt="" style="border-radius: 50%;cursor: pointer;" onclick="select_color2('#FFD700')"><p style="margin-left: 5px;display:inline-block;"> Dorée </p>           <img src="{{ asset('storage/silver_color.jpg') }}" height="30px" width="30px" alt="" style="border-radius: 50%;cursor: pointer;" onclick="select_color2('#C0C0C0')"><p style="margin-left: 5px;display:inline-block;"> Argentée </p> <br>
+        <img class="image_obligatoire" src="{{ asset('storage/gold_color.jpg') }}" height="30px" width="30px" alt="" style="border-radius: 50%;cursor: pointer;" onclick="select_color2('#FFD700')"><p style="margin-left: 5px;display:inline-block;"> Dorée </p>           <img src="{{ asset('storage/silver_color.jpg') }}" class="image_obligatoire" height="30px" width="30px" alt="" style="border-radius: 50%;cursor: pointer;" onclick="select_color2('#C0C0C0')"><p style="margin-left: 5px;display:inline-block;"> Argentée </p> <br>
         
         <div class="colors3" style="background-color: #808000" onclick="select_color2('#808000')"></div>
 <div class="colors3" style="background-color: #C0C000" onclick="select_color2('#C0C000')"></div>
@@ -461,7 +550,7 @@
 <br>
 <br>
 <div style="text-align: center">
-<img src="{{ asset('storage/couleurselectionbl.png') }}" height="40px" width="40px" alt="" style="margin-left: 30px;cursor: pointer;" onclick="open_color()">
+<img class="image_obligatoire" src="{{ asset('storage/couleurselectionbl.png') }}" height="40px" width="40px" alt="" style="margin-left: 30px;cursor: pointer;" onclick="open_color()">
 </div>
 <br>
 <div style="text-align:center"><span style="color:red;" id="span_colors"></span></div>
@@ -524,9 +613,9 @@ var image_delete="{{asset('storage/close.png') }}";
 var taux="{{$taux['taux']}}";
 var index_colors=1;
 var acceptation_terme="{{$terme['message']}}";
-
-
-
+var $modal = $('#modal_crop');
+var image = document.getElementById('sample_image');
+var cropper;
 function validation(){
   
   
@@ -947,17 +1036,11 @@ function readURL(input) {
       }
       
 
-      var content_div=$('#div_images').html();
+     
 
       var im=e.target.result;
 
-
-
-content_div+='<div style="display: inline-block">';
-  content_div+='<img src="'+im+'" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
-  content_div+='</div>';
-
-      $('#div_images').html(content_div);
+     
 
 
       tabimgs = document.getElementsByClassName("images_cl");
@@ -966,9 +1049,12 @@ content_div+='<div style="display: inline-block">';
       //for (i = 0; i < tabimgs.length; i++) {
         //alert(tabimgs[i].src);
       //}
-     
+      image.src = im;
+      
+			$modal.modal('show');
     };
     reader.readAsDataURL(input.files[0]);
+   
   }
 }
 
@@ -1133,7 +1219,46 @@ v.value=num;
 v.setAttribute("value", num);
 }
 
+$modal.on('shown.bs.modal', function() {
+		cropper = new Cropper(image, {
+			aspectRatio: 11/9,
+			viewMode: 2,
+			preview:'.preview'
+		});
+	}).on('hidden.bs.modal', function(){
+		cropper.destroy();
+   		cropper = null;
+	});
 
+	$('#crop').click(function(){
+		canvas = cropper.getCroppedCanvas({
+      width:1000,
+			height:818.18
+		});
+
+		canvas.toBlob(function(blob){
+			url = URL.createObjectURL(blob);
+			var reader = new FileReader();
+			reader.readAsDataURL(blob);
+			reader.onloadend = function(){
+				var base64data = reader.result;
+				//image2.src = base64data;
+                $modal.modal('hide');
+
+
+                var content_div=$('#div_images').html();
+
+
+content_div+='<div style="display: inline-block">';
+  content_div+='<img src="'+base64data+'" alt="" class="images_cl image_obligatoire" height="150px" width="150px"  style="padding-left:10px;object-fit:contain;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" class="image_obligatoire" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
+  content_div+='</div>';
+
+      $('#div_images').html(content_div);
+
+
+			};
+		});
+	});
 </script>
 
 @endsection
