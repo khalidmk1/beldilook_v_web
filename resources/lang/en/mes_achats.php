@@ -1,0 +1,31 @@
+<?php
+return [
+    'montant_total' => 'Total amount',
+    'mode_livraison' => 'Delivery method',
+    'status' => 'Status',
+    'commande' => 'Command  n°',
+    'le' => 'The',
+    'annuler_commande' => 'Are you sure you want to cancel your order ?',
+    'titre' => 'Cancel order',
+    'oui' => 'yes',
+    'non' => 'no',
+    'success_annulation' => 'Order canceled',
+    'success_reclamation' => 'Complaint sent',
+    'en_attente' => 'In waiting',
+    'en_livraison' => 'In delivery',
+    'livre' => 'delivered',
+    'annuler' => 'Canceled',
+    'suivi' => 'Tracking',
+    'annuler_button' => 'Cancel',
+    'reclamation_button' => 'Claim',
+    'sujet' => 'Subject',
+    'description' => 'Description',
+    'envoyer' => 'Send',
+    'aucun_achat' => "You don't have any products purchased",
+    'aucune_commande' => 'You have nothing in Wish list !',
+    'aucun'  =>  'None',
+    'etat' => 'State',
+    'du' => 'From',
+    'au' => 'To'
+]
+?>

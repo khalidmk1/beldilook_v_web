@@ -1,0 +1,30 @@
+<?php
+return [
+    'drop_langue' => 'Language',
+    'Anglais' => 'English',
+    'francais' => 'French',
+    'arabe' => 'Arabic',
+    'connect' => 'Login',
+    'myaccount' => 'My account',
+    'boutique' => 'Shops',
+    'register' => "Sign up",
+    'deconnecter' => 'Sign out',
+    'myfavoris' => 'My favourites',
+    'articles' => 'Products',
+    'boutiques' => 'Shops',
+    'nouveaute' => 'News',
+    'mes_achats' => 'My purchases',
+    'mes_commandes' => 'My orders',
+    'changer_mot_de_passe' => 'Change password',
+    'gerer_ma_boutique' => 'Manage my store',
+    'explorer' => 'Explore',
+    'devenir_boutique' => 'Store',
+    'devenir_particulier' => 'Particular',
+    'decouvrez_formulaire' => 'Discover Our formulas',
+    'devenir_vendeur' => 'Be a seller',
+    'en_cours' => "In progress...",
+    'vendeur_confirme' => 'Seller confirm',
+    'mon_solde' => 'My Balance',
+    'acheter_maintenant' => 'Buy now'
+]
+?>

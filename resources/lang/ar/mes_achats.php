@@ -1,0 +1,31 @@
+<?php
+return [
+    'montant_total' => 'الثمن النهائي',
+    'mode_livraison' => 'طريقة التوصيل',
+    'status' => 'الحالة',
+    'commande' => 'طلب رقم',
+    'le' => 'ال',
+    'annuler_commande' => 'هل أنت متأكد من أنك تريد إلغاء طلبك ؟',
+    'titre' => 'الغاء الطلب',
+    'oui' => 'نعم',
+    'non' => 'لا',
+    'success_annulation' => 'تم إلغاء الطلب',
+    'success_reclamation' => 'تم إرسال الشكوى',
+    'en_attente' => 'قيد الإنتظار',
+    'en_livraison' => 'قيد التسليم',
+    'livre' => 'تسليم',
+    'annuler' => 'ألغيت',
+    'suivi' => 'تتبع',
+    'annuler_button' => 'إلغاء',
+    'reclamation_button' => 'شكوى',
+    'sujet' => 'موضوع',
+    'description' => 'وصف',
+    'envoyer' => 'إرسال',
+    'aucun_achat' => "ليس لديك أي منتجات تم شراؤها",
+    'aucune_commande' => 'ليس لديك أي شيء في قائمة المفضلة !',
+    'aucun'  =>  'لا شيء',
+    'etat' => 'حالة',
+    'du' => 'من',
+    'au' => 'إلى'
+]
+?>

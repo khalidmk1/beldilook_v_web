@@ -1,0 +1,103 @@
+.scrollable-tabs-container {
+    font-family: "Roboto", sans-serif;
+    background: #ffffff;
+    max-width:95%;;
+    margin: 16px auto;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .scrollable-tabs-container svg {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    cursor: pointer;
+    color: #000000;
+    border-radius: 50%;
+    pointer-events: auto;
+  }
+  
+  .scrollable-tabs-container ul {
+    display: flex;
+    gap: 40px;
+    padding: 12px 24px;
+    margin: 0;
+    list-style: none;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+  }
+  
+  .scrollable-tabs-container ul.dragging a {
+    color: #000;
+    pointer-events: none;
+  }
+
+  .bg{
+    padding: 3px;
+    background-color: white;
+    border-radius: 49px;
+  }
+  
+  .scrollable-tabs-container ul.dragging {
+    scroll-behavior: auto;
+  }
+  
+  .scrollable-tabs-container ul::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .font{
+    font-size: 10px;
+  }
+
+  .scrollable-tabs-container a {
+    color: #000;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 4px 4px;
+    display: inline-block;
+    border-radius: 25px;
+    user-select: none;
+    white-space: nowrap;
+    border-radius: 39px;
+  }
+  
+  .scrollable-tabs-container a.active {
+    background-color:#B09636;
+    color: #000;
+  }
+  
+  .scrollable-tabs-container .right-arrow,
+  .scrollable-tabs-container .left-arrow {
+    position: absolute;
+    height: 35%;
+    background-color: #e1e1e1;
+    border-radius: 34px;
+    width: 59px;
+    top: 23px;
+    display: none;
+    align-items: center;
+    padding: 0 10px;
+    pointer-events: none;
+  }
+  
+  .scrollable-tabs-container .right-arrow.active,
+  .scrollable-tabs-container .left-arrow.active {
+    display: flex;
+  }
+  
+  .scrollable-tabs-container .right-arrow {
+    right: 0;
+    justify-content: flex-end;
+  }
+
+  .image_story{
+    height: 66px;
+    width: 66px;
+    border-radius: 50px;
+  }
+  
+  
