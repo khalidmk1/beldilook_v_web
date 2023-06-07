@@ -1,14 +1,21 @@
 @extends('navbar')
 @section('content')
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"  />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
 <style>
   .image_area {
 		  position: relative;
 		}
 
 
-
+    img:not(.image_obligatoire) {
+            display: block;
+		  	max-width: 1000% !important;
+        max-height: 600px;
+            max-height: 400px !important;
+            object-fit: contain !important;
+		}
 
 		.preview {
   			overflow: hidden;
@@ -131,6 +138,35 @@
 
 {{ csrf_field() }}
 <input type="hidden" id="id_product" value="{{$id_produit}}">
+
+<div class="modal fade" id="modal_crop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+      
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="margin: 0px">
+              <div class="row d-flex justify-content-center">
+                  <div class="col-md-12 p-0" style="max-width: 80%">
+                      <img src="" id="sample_image" />
+                  </div>
+                  <div class="col-md-0 ">
+                      <div class="preview5 d-flex justify-content-center" style="display: none"></div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="crop" class="btn btn-primary">Crop</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+  </div>
+</div>	
 
 
 <div class="modal" id="modal_succes" tabindex="-1" role="dialog" data-backdrop="static">
@@ -483,7 +519,7 @@
 <br>
 <br>
 <div style="text-align: center">
-<img src="{{ asset('storage/couleurselectionbl.png') }}" height="40px" width="40px" alt="" style="margin-left: 30px;cursor: pointer;" onclick="open_color()">
+<img class="image_obligatoire" src="{{ asset('storage/couleurselectionbl.png') }}" height="40px" width="40px" alt="" style="margin-left: 30px;cursor: pointer;" onclick="open_color()">
 </div>
 <br>
 <div style="text-align:center"><span style="color:red;" id="span_colors"></span></div>
@@ -548,7 +584,7 @@ foreach ($details_produit['tabTaille_produit'] as $taille) {
 $prix_without =number_format($couleur_XS['rPrix_sans_commission'], 2, '.', '');
     @endphp
 <div >
-    Couleur : <div class="colors colors_XS" style="background-color: {{$couleur_XS['sHtml_couleur']}}" donn="{{$couleur_XS['sHtml_couleur']}}"><img src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+    Couleur : <div class="colors colors_XS" style="background-color: {{$couleur_XS['sHtml_couleur']}}" donn="{{$couleur_XS['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
     Quantité : <input id="qte_{{$index}}" class="qte_XS" type="number"  value="{{$couleur_XS['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
     Prix : <input id="prix_{{$index}}" class="prix_XS" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')" > DH
     <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">Comission : {{$couleur_XS['rComission']}} DH</p>
@@ -569,7 +605,7 @@ $index=$index+1;
 $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endphp
     <div >
-        Couleur : <div class="colors colors_S" style="background-color: {{$couleur_S['sHtml_couleur']}}" donn="{{$couleur_S['sHtml_couleur']}}"><img src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+        Couleur : <div class="colors colors_S" style="background-color: {{$couleur_S['sHtml_couleur']}}" donn="{{$couleur_S['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
         Quantité : <input id="qte_{{$index}}" class="qte_S" type="number"  value="{{$couleur_S['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
         Prix : <input id="prix_{{$index}}" class="prix_S" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">Comission : {{$couleur_S['rComission']}} DH</p>
@@ -590,7 +626,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_M['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-        Couleur : <div class="colors colors_M" style="background-color: {{$couleur_M['sHtml_couleur']}}" donn="{{$couleur_M['sHtml_couleur']}}"><img src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+        Couleur : <div class="colors colors_M" style="background-color: {{$couleur_M['sHtml_couleur']}}" donn="{{$couleur_M['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
         Quantité : <input id="qte_{{$index}}" class="qte_M" type="number"  value="{{$couleur_M['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
         Prix : <input id="prix_{{$index}}" class="prix_M" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">Comission : {{$couleur_M['rComission']}} DH</p>
@@ -610,7 +646,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_L['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-        Couleur : <div class="colors colors_L" style="background-color: {{$couleur_L['sHtml_couleur']}}" donn="{{$couleur_L['sHtml_couleur']}}"><img src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+        Couleur : <div class="colors colors_L" style="background-color: {{$couleur_L['sHtml_couleur']}}" donn="{{$couleur_L['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
         Quantité : <input id="qte_{{$index}}" class="qte_L" type="number"  value="{{$couleur_L['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
         Prix : <input id="prix_{{$index}}" class="prix_L" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">Comission : {{$couleur_L['rComission']}} DH</p>
@@ -632,7 +668,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_XL['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-        Couleur : <div class="colors colors_XL" style="background-color: {{$couleur_XL['sHtml_couleur']}}" donn="{{$couleur_XL['sHtml_couleur']}}"><img src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+        Couleur : <div class="colors colors_XL" style="background-color: {{$couleur_XL['sHtml_couleur']}}" donn="{{$couleur_XL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
         Quantité : <input id="qte_{{$index}}" class="qte_XL" type="number"  value="{{$couleur_XL['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
         Prix : <input id="prix_{{$index}}" class="prix_XL" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">Comission : {{$couleur_XL['rComission']}} DH</p>
@@ -652,7 +688,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_XXL['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-        Couleur : <div class="colors colors_XXL" style="background-color: {{$couleur_XXL['sHtml_couleur']}}" donn="{{$couleur_XXL['sHtml_couleur']}}"><img src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+        Couleur : <div class="colors colors_XXL" style="background-color: {{$couleur_XXL['sHtml_couleur']}}" donn="{{$couleur_XXL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
         Quantité : <input id="qte_{{$index}}" class="qte_XXL" type="number"  value="{{$couleur_XXL['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
         Prix : <input id="prix_{{$index}}" class="prix_XXL" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">Comission : {{$couleur_XXL['rComission']}} DH</p>
@@ -672,7 +708,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_XXXL['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-        Couleur : <div class="colors colors_3XL" style="background-color: {{$couleur_XXXL['sHtml_couleur']}}" donn="{{$couleur_XXXL['sHtml_couleur']}}"><img src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+        Couleur : <div class="colors colors_3XL" style="background-color: {{$couleur_XXXL['sHtml_couleur']}}" donn="{{$couleur_XXXL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
         Quantité : <input id="qte_{{$index}}" class="qte_3XL" type="number"  value="{{$couleur_XXXL['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
         Prix : <input id="prix_{{$index}}" class="prix_3XL" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">Comission : {{$couleur_XXL['rComission']}} DH</p>
@@ -691,27 +727,27 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
 <div style="text-align: center" id="div_images">
 @if($details_produit['sPhoto1']!="")
  <div style="display: inline-block">
-    <img src="{{$details_produit['sPhoto1']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
+    <img class="image_obligatoire" src="{{$details_produit['sPhoto1']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img class="image_obligatoire" src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
    </div>
    @endif
    @if($details_produit['sPhoto2']!="")
  <div style="display: inline-block">
-    <img src="{{$details_produit['sPhoto2']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
+    <img class="image_obligatoire" src="{{$details_produit['sPhoto2']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img class="image_obligatoire" src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
    </div>
    @endif
    @if($details_produit['sPhoto3']!="")
    <div style="display: inline-block">
-      <img src="{{$details_produit['sPhoto3']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
+      <img class="image_obligatoire" src="{{$details_produit['sPhoto3']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img class="image_obligatoire" src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
      </div>
      @endif
      @if($details_produit['sPhoto4']!="")
      <div style="display: inline-block">
-        <img src="{{$details_produit['sPhoto4']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
+        <img class="image_obligatoire" src="{{$details_produit['sPhoto4']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img class="image_obligatoire" src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
        </div>
        @endif
        @if($details_produit['sPhoto5']!="")
        <div style="display: inline-block">
-          <img src="{{$details_produit['sPhoto5']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
+          <img class="image_obligatoire" src="{{$details_produit['sPhoto5']}}" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img class="image_obligatoire" src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
          </div>
          @endif
 </div>
@@ -745,7 +781,9 @@ var taux="{{$taux['taux']}}";
 var index_colors={{$index}};
 
 
-
+var $modal = $('#modal_crop');
+var image = document.getElementById('sample_image');
+var cropper;
 
 function validation(){
   
@@ -1169,15 +1207,17 @@ function readURL(input) {
 
 
 
-content_div+='<div style="display: inline-block">';
-  content_div+='<img src="'+im+'" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
-  content_div+='</div>';
+//content_div+='<div style="display: inline-block">';
+  //content_div+='<img src="'+im+'" alt="" class="images_cl" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
+  //content_div+='</div>';
 
-      $('#div_images').html(content_div);
+      //$('#div_images').html(content_div);
 
 
-      tabimgs = document.getElementsByClassName("images_cl");
-
+      //tabimgs = document.getElementsByClassName("images_cl");
+      image.src = im;
+      
+			$modal.modal('show');
 
       //for (i = 0; i < tabimgs.length; i++) {
         //alert(tabimgs[i].src);
@@ -1320,7 +1360,46 @@ v.value=num;
 v.setAttribute("value", num);
 }
 
+$modal.on('shown.bs.modal', function() {
+		cropper = new Cropper(image, {
+			aspectRatio: 11/9,
+			viewMode: 2,
+			preview:'.preview'
+		});
+	}).on('hidden.bs.modal', function(){
+		cropper.destroy();
+   		cropper = null;
+	});
 
+	$('#crop').click(function(){
+		canvas = cropper.getCroppedCanvas({
+      width:1000,
+			height:818.18
+		});
+
+		canvas.toBlob(function(blob){
+			url = URL.createObjectURL(blob);
+			var reader = new FileReader();
+			reader.readAsDataURL(blob);
+			reader.onloadend = function(){
+				var base64data = reader.result;
+				//image2.src = base64data;
+                $modal.modal('hide');
+
+
+                var content_div=$('#div_images').html();
+
+
+content_div+='<div style="display: inline-block">';
+  content_div+='<img src="'+base64data+'" alt="" class="images_cl image_obligatoire" height="150px" width="150px"  style="padding-left:10px;object-fit:contain;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" class="image_obligatoire" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
+  content_div+='</div>';
+
+      $('#div_images').html(content_div);
+
+
+			};
+		});
+	});
 </script>
 
 @endsection
