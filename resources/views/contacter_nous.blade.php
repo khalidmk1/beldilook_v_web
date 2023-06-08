@@ -5,6 +5,7 @@
     .in_contact{
         display:block;
         margin-left: 5%;
+        margin-right: 5%;
         border-right:0px;
         border-left:0px;
         border-top:0px;
@@ -23,6 +24,7 @@
     .are_contact{
         width: 90%;
         margin-left: 5%;
+        margin-right: 5%;
         border-radius:8px;
         padding:10px;
     }
@@ -41,6 +43,8 @@
         border: 0px solid black;
         border-radius: 16px;
         height: 35px;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .btn_contact:hover{
@@ -50,25 +54,31 @@
         border: 0px solid rgb(65, 54, 54);
         border-radius: 16px;
         height: 35px;
+        margin-left: 5%;
+        margin-right: 5%;
     }
    .titre_contact{
     margin-left: 5%;
+    margin-right: 5%;
     margin-top:30px;
    }
    .lab_contact{
     color:grey;
     display:block;
     margin-left: 5%;
+    margin-right: 5%;
    }
    .errors{
     color: red;
     margin-left: 5%;
+    margin-right: 5%;
    
    }
     @media only screen and (max-width: 600px) {
         .in_contact{
         display:block;
         margin-left: 5%;
+        margin-right: 5%;
         border-right:0px;
         border-left:0px;
         border-top:0px;
@@ -79,6 +89,7 @@
     .are_contact{
         width: 90%;
         margin-left: 5%;
+        margin-right: 5%;
         border-radius:8px;
         padding:10px;
     }
@@ -90,12 +101,14 @@
     }
     .titre_contact{
     margin-left: 5%;
+    margin-right: 5%;
     margin-top:30px;
    }
    .lab_contact{
     color:grey;
     display:block;
     margin-left: 5%;
+    margin-right: 5%;
    }
 }
 </style>
@@ -107,34 +120,37 @@
 
 
 <div>
-    <div class="row" style="border: 1px solid black;margin:50px;border-radius:8px">
+    <div class="row @if(App::getlocale()=="ar") flex-row-reverse @endif" style="border: 1px solid black;margin:50px;border-radius:8px;">
         <div class="col-lg-6 col-md-12 col-sm-12">
-            <h3 class="titre_contact" >Contacter Nous</h3>
+            <h3 class="titre_contact" @if(App::getlocale()=="ar") style="text-align: end" @endif>{{__('contacter_nous.titre')}}</h3>
 
             <br>
             <form action="{{route('contacter_nous_post')}}" method="POST">
                 @csrf
-            <label class="lab_contact" for="nom_prenom" style="">Nom et prénom</label>
-            <input class="in_contact @error('nom_prenom') in_contact_error @enderror"  type="text" name="nom_prenom" value="{{old('nom_prenom')}}" required>
+            <label class="lab_contact" for="nom_prenom" @if(App::getlocale()=="ar") style="text-align: end" @endif>{{__('contacter_nous.nom_prenom')}}</label>
+            <input @if(App::getlocale()=="ar") style="text-align: end" @endif class="in_contact @error('nom_prenom') in_contact_error @enderror"  type="text" name="nom_prenom" value="{{old('nom_prenom')}}" required>
             @error('nom_prenom')
-            <span class="errors">{{$message}}</span>
+            <div @if(App::getlocale()=="ar") style="text-align: end" @endif>            <span class="errors" >{{$message}}</span>
+            </div>
             @enderror
             
 <br>
-            <label class="lab_contact" for="email" >Votre Email</label>
-            <input class="in_contact @error('email') in_contact_error @enderror"  type="text" name="email" value="{{old('email')}}" required>
+            <label @if(App::getlocale()=="ar") style="text-align: end" @endif class="lab_contact" for="email" >{{__('contacter_nous.votre_email')}}</label>
+            <input @if(App::getlocale()=="ar") style="text-align: end" @endif class="in_contact @error('email') in_contact_error @enderror"  type="text" name="email" value="{{old('email')}}" required>
             @error('email')
-            <span class="errors">{{$message}}</span>
+            <div @if(App::getlocale()=="ar") style="text-align: end" @endif>            <span  class="errors">{{$message}}</span>
+            </div>
             @enderror
             <br>
-            <textarea name="message" class="are_contact @error('message') are_contact_error @enderror" placeholder="Message" style="" name="" id="" cols="50" rows="8" required>{{old('message')}}</textarea>
+            <textarea @if(App::getlocale()=="ar") style="text-align: end" @endif name="message" class="are_contact @error('message') are_contact_error @enderror" placeholder="{{__('contacter_nous.message')}}"  name="" id="" cols="50" rows="8" required>{{old('message')}}</textarea>
             @error('message')
-            <span class="errors">{{$message}}</span>
+            <div @if(App::getlocale()=="ar") style="text-align: end" @endif >            <span class="errors">{{$message}}</span>
+            </div>
             @enderror
             <br>
             <br>
-     
-            <input class="btn_contact" type="submit" style="margin-left: 30px" value="Envoyer">
+     <div @if(App::getlocale()=="ar") style="text-align: end" @endif><input class="btn_contact" type="submit" style="margin-left: 30px" value="{{__('contacter_nous.envoyer')}}"></div>
+            
             <br>
             <br>
         </form>
