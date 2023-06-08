@@ -73,6 +73,14 @@
     padding: 14px;
     text-decoration: none;
   }
+
+  .in_contact{
+        display:block;
+        border-right:0px;
+        border-left:0px;
+        border-top:0px;
+        border-bottom: 1px solid grey;
+    }
   
   .btn_tailles{
     border-radius: 50%;
@@ -335,9 +343,9 @@
 
 
 @if(App::getlocale()=="ar")
-<h1  style="padding: 20px;color:#263066;text-align:end">{{__('ajout_produit.ajouter_produit')}}</h1>
+<h1  style="font-size: 28px !important;padding: 20px;color:#263066;text-align:end">{{__('ajout_produit.ajouter_produit')}}</h1>
 @else
-<h1  style="padding: 20px;color:#263066;text-align:start">{{__('ajout_produit.ajouter_produit')}}</h1>
+<h1  style="font-size: 28px !important; padding: 20px;color:#263066;text-align:start">{{__('ajout_produit.ajouter_produit')}}</h1>
 @endif
 
 
@@ -348,7 +356,7 @@
     <label for="name_product">{{__('ajout_produit.nom_produit')}} :</label>
     @endif
     
-    <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control " id="name_product" placeholder="" name="name_product" value="">
+    <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control in_contact " id="name_product" placeholder="" name="name_product" value="">
    
     <div class="invalid-feedback" id="span_name"></div>
     
@@ -357,7 +365,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
     <label for="categorie">{{__('ajout_produit.categorie')}} :</label>
-    <select class="form-select form-control" aria-label="Default select example" id="categorie" name="categorie" required>
+    <select class="form-select form-control in_contact" aria-label="Default select example" id="categorie" name="categorie" required>
       <option selected></option>
     @foreach ($categories as $categorie)
   
@@ -377,7 +385,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
     <label for="genre">{{__('ajout_produit.genre')}} :</label>
-    <select class="form-select form-control" aria-label="Default select example" id="genre" name="genre" required>
+    <select class="form-select form-control in_contact" aria-label="Default select example" id="genre" name="genre" required>
     
    
   
@@ -400,7 +408,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
     <label for="tissue">{{__('ajout_produit.tissue')}} :</label>
-    <select class="form-select form-control" aria-label="Default select example" id="tissue" name="tissue" required>
+    <select class="form-select form-control in_contact" aria-label="Default select example" id="tissue" name="tissue" required>
       <option selected></option>
     @foreach ($tissues as $tissue)
   
@@ -421,7 +429,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
     <label for="etat_tenue">{{__('ajout_produit.etat_tenue')}} :</label>
-    <select class="form-select form-control" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
+    <select class="form-select form-control in_contact" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
       <option selected></option>
     @foreach ($etats as $etat)
   
@@ -439,7 +447,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
   <div @if(App::getlocale()=="ar")  style="text-align: end" @endif><label for="Description">{{__('mes_achats.description')}}</label></div>
-  <textarea required class="form-control" id="description"  name="description" rows="12" id="description"></textarea>
+  <textarea required class="form-control in_contact" id="description"  name="description" rows="3" id="description"></textarea>
   <div class="invalid-feedback" id="span_description"></div>
   </div>
 
@@ -449,7 +457,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
     <label for="etat_tenue">{{__('ajout_produit.tag1')}} :</label>
-    <select class="form-select form-control" aria-label="Default select example" id="tag1" name="tag1" required>
+    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag1" name="tag1" required>
       <option selected></option>
     @foreach ($tags1 as $tag1)
   
@@ -469,7 +477,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
     <label for="etat_tenue">{{__('ajout_produit.tag2')}} :</label>
-    <select class="form-select form-control" aria-label="Default select example" id="tag2" name="tag2" required>
+    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag2" name="tag2" required>
       <option selected></option>
     @foreach ($tags2 as $tag2)
   
@@ -489,7 +497,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
     <label for="etat_tenue">{{__('ajout_produit.tag3')}} :</label>
-    <select class="form-select form-control" aria-label="Default select example" id="tag3" name="tag3" required>
+    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag3" name="tag3" required>
       <option selected></option>
     @foreach ($tags3 as $tag3)
   
@@ -507,7 +515,7 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3">
     <label for="etat_tenue">{{__('ajout_produit.tag4')}} :</label>
-    <select class="form-select form-control" aria-label="Default select example" id="tag4" name="tag4" required>
+    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag4" name="tag4" required>
       <option selected></option>
     @foreach ($tags4 as $tag4)
   

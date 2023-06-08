@@ -136,7 +136,7 @@
                   <div class="col col-1 col-lg-1 col-xl-1 col-md-12 col-sm-12" style="text-align: center;">
                     <div >
                       <a href="{{ route('get_notifications') }}">
-                        <img src="{{asset('storage/568182.png')}}" class="bell_not " class="bell image_obligatoire" alt="bell">
+                        <img src="{{asset('storage/568182.png')}}" class="bell_not bell image_obligatoire"  alt="bell">
                       </a>
                     
                     </div>
@@ -160,7 +160,7 @@
           <div class="col-lg-2 col-xl-2 col-md-12 col-sm-12 ">
             <div class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-dark text-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="{{asset('storage/language.png')}}" alt="language" style="height: 39px;">
+                <img src="{{asset('storage/language.png')}}" class="image_obligatoire" alt="language" style="height: 39px;">
    
               </a>
               <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
@@ -182,7 +182,7 @@
 
  
 <div class="container ">
-  <div class="row p-2 mr-0 contain_link">
+  <div class="row p-2 mr-0 contain_link mt-3">
    
     <div class="col"><a class="nav-link @if(URL()->full() == URL(route('home'))) {{'link_slected'}}  @endif" href={{route('home')}}>{{__('home.home')}}<span class="sr-only">(current)</span></a></div>
     <div class="col"><a class="nav-link @if(URL()->full() == URL(route('boutique'))) {{'link_slected'}}  @endif" href={{route('boutique')}}>{{__('nav.boutique')}}</a></div>
@@ -333,7 +333,7 @@ $user=Session::get('user');
     
 </head>
 <body>
-  <div style="padding-top: 70px">
+  <div style="padding-top: 25px">
 
     @if(Session::has('message'))
     @if(App::getlocale()=="ar")

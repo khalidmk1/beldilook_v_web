@@ -78,6 +78,12 @@
             left: 35%;
         }
 
+        @media (max-width:960px){
+          .title_botique{
+            padding: 0 !important;
+          }
+        }
+
         /* Safari */
         @-webkit-keyframes spin {
             0% {
@@ -162,12 +168,13 @@
 
     <div class=" containe container mt-2 ">
       @if (App::getlocale() == 'ar')
-        <h1 style="padding: 20px;color:#263066;text-align:end ;font-size: 29px;">{{ __('boutique_une.titre') }}</h1>
-    @else
-        <h1 style="padding: 20px;color:#263066;text-align:start ;font-size: 29px;">{{ __('boutique_une.titre') }}</h1>
-    @endif
+      <h1 class=" title_botique"  style="padding-left: 13%; color:#263066;text-align:end ;font-size: 29px;">{{ __('boutique_une.titre') }}</h1>
+  @else
+      <h1 class="title_botique" style="padding-left: 13%; color:#263066;text-align:start ;font-size: 29px;">{{ __('boutique_une.titre') }}</h1>
+  @endif
         {{ csrf_field() }}
         <div class="scrollable-tabs-container container border border-dark " style="max-width: 740px;">
+        
             <div class="left-arrow d-none">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
@@ -219,7 +226,7 @@
 
         @if (count($articles) == 0)
             <div class="container">
-                <p @if (App::getlocale() == 'ar') style="text-align: end" @endif>{{ __('boutique_une.0article') }}</p>
+                <p @if (App::getlocale() == 'ar') style="text-align: end " @else style="padding-left: 13%;"  @endif>{{ __('boutique_une.0article') }}</p>
             </div>
 
             <p class="col-12" style="text-align: center;padding-top: 20px;"><img src="{{ $user['Photo_Logo'] }}"
@@ -287,7 +294,7 @@
                                     <button
                                         onclick="window.location = '{{ route('details_produit', $article['IDArticles']) }}'"
                                         id="btn_suivi"
-                                        class="btn btn-primary  btn_suivi">{{ __('boutique_une.consulter') }}</button>
+                                        class="btn text-light btn_suivi">{{ __('boutique_une.consulter') }}</button>
                                 </div>
                             </div>
                         </div>

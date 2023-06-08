@@ -3,16 +3,16 @@
 
 @if(count($articles)==0)
 <div class="container">
-    <p @if(App::getlocale()=="ar") style="text-align: end" @endif >{{__('boutique_une.0article')}}</p></div>
+    <p @if(App::getlocale()=="ar") style="padding-left: 13%;text-align: end" @endif >{{__('boutique_une.0article')}}</p></div>
 
-<p class="col-12" style="text-align: center;padding-top: 20px;"><img src="{{$user['Photo_Logo']}}" style="border-radius: 50%" alt="" height="200px" width="200px"><br><br><a style="font-size: 26px" href="{{route('boutiqua',$user['IDUtilisateurs'])}}">{{'@'.$user['Nom'].' '.$user['Prenom']}}</a></p>
+<p class="col-12" style="padding-left: 13%;text-align: center;padding-top: 20px;"><img src="{{$user['Photo_Logo']}}" style="border-radius: 50%" alt="" height="200px" width="200px"><br><br><a style="font-size: 26px" href="{{route('boutiqua',$user['IDUtilisateurs'])}}">{{'@'.$user['Nom'].' '.$user['Prenom']}}</a></p>
 
 
 @else
 @if(count($articles)==1)
-<div class="container"><p @if(App::getlocale()=="ar") style="text-align: end" @endif>{{count($articles).' '.__('boutique_une.1article')}}</p></div>
+<div class="container"><p @if(App::getlocale()=="ar") style="padding-left: 13%;text-align: end" @endif>{{count($articles).' '.__('boutique_une.1article')}}</p></div>
 @else
-<div class="container"><p @if(App::getlocale()=="ar") style="text-align: end" @endif >{{count($articles).' '.__('boutique_une.articles_trouve')}}</p></div>
+<div class="container"><p @if(App::getlocale()=="ar") style="padding-left: 13%; text-align: end" @endif >{{count($articles).' '.__('boutique_une.articles_trouve')}}</p></div>
 @endif
 @endif
 
@@ -54,7 +54,7 @@
             </p>
               <p style="font-size: 14px" class="card-text mb-1  @if(App::getlocale()=="ar") text-right @endif"  @if(App::getlocale()=="ar") dir="rtl" @endif>{{__('boutique_une.etat')}} : {{$article['etat_tenu']}}</p>
               <div class="text-center">
-                <button onclick="window.location = '{{route('details_produit',$article['IDArticles'])}}'"  id="btn_suivi" class="btn btn-primary  btn_suivi" >{{__('boutique_une.consulter')}}</button>
+                <button onclick="window.location = '{{route('details_produit',$article['IDArticles'])}}'"  id="btn_suivi" class="btn text-light  btn_suivi" >{{__('boutique_une.consulter')}}</button>
               </div>
             </div>
           </div>
