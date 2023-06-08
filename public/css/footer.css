@@ -54,7 +54,7 @@ ul {
 
 .footer {
 	background-image: linear-gradient(13deg, #272F56 33%, #AA832C 71%);
-  padding: 44px 72px 31px 73px;
+  padding: 55px 82px 49px 73px
 }
 
 .footer-col {
@@ -66,7 +66,7 @@ ul {
 }
 
 .footer-col h4 {
-	font-size: 15px;
+	font-size: 12px;
     font-family: var(--font-secondary);
     color: #ffffff;
     text-transform: capitalize;
@@ -77,6 +77,13 @@ ul {
 
 .footer-col p{
 	color:#ffffff ;
+  font-size: 13px;
+  margin-bottom: 0% !important;
+}
+
+.size{
+  font-size: 14px;
+    font-weight: 500;
 }
 
 .input_email {
@@ -147,7 +154,7 @@ ul {
 }
 
 .footer-col ul li a {
-	font-size: 18px;
+  font-size: 14px;
 	color: #ffffff;
 	text-transform: capitalize;
 	margin-bottom: 35px;

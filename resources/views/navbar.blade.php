@@ -36,7 +36,7 @@
     gap: 11px;
   }
   .nav_top {
-    height: 314px;
+    height: 339px;
 }
 }
    </style>
@@ -46,8 +46,11 @@
        <div class="container ">
         <div class="row mr-0 responsive  align-items-center">
           <div class="col col-lg-2 col-xl-2 col-md-12 col-sm-12 text-center" >
-            <a href="/home"><img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" alt="" class="img_logo_top image_obligatoire"></a>
+            <a href="/home">
+              <img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" alt="" class="img_logo_top image_obligatoire">
+            </a>
           </div>
+
   
           <div class="col col-lg-3 col-xl-3 " style="text-align: center;">
             <div class="search d-flex ">
@@ -65,7 +68,7 @@
             
           </div>
 
-          <div class="col-lg-3 col-xl-3 col-md-12 col-sm-12 m-auto">
+          <div class="col-lg-3 col-xl-3 col-md-12 col-sm-12 ">
 
             <ul class="navbar-nav ml-auto d-flex flex-row justify-content-around align-items-center">
               @if (Session::get('user'))
@@ -142,7 +145,7 @@
                  
       
               @else
-              <li class="nav-item bg-light p-1 border_log mr-auto">
+              <li class="nav-item bg-light p-1 border_log ">
                   <a class="nav-link p-0 text-dark" href={{route('login')}}>{{__('nav.connect')}}</a>
               </li>
               <li class="nav-item bg-light p-1 border_log">
@@ -153,6 +156,20 @@
           </div>
         
          
+          
+          <div class="col-lg-2 col-xl-2 col-md-12 col-sm-12 ">
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-dark text-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{{asset('storage/language.png')}}" alt="language" style="height: 39px;">
+   
+              </a>
+              <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href={{ route('langue', ['lang'=>'en']) }}>{{__('nav.Anglais')}}</a>
+                <a class="dropdown-item" href={{ route('langue', ['lang'=>'fr']) }}>{{__('nav.francais')}}</a>
+                <a class="dropdown-item" href={{ route('langue', ['lang'=>'ar']) }}>{{__('nav.arabe')}}</a>
+              </div>
+            </div>
+          </div>
           
           
         </div>
@@ -359,9 +376,9 @@ $user=Session::get('user');
   </div>
 
   <footer>
-		<div class=" container-fluid footer mt-3">
+		<div class=" container-fluid footer mt-3 ">
 			<div class="row justify-content-center mr-0">
-				<div class="footer-col  col-xl-3 col-lg-4 col-md-6 col-12 mb-50">
+				<div class="footer-col  col-xl-3 col-lg-4 col-md-6 col-12 ">
 					<div>
             <img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" class="image_obligatoire" style="height: 144px;"
 							alt="">
@@ -385,34 +402,34 @@ $user=Session::get('user');
 
 					</div>
 				</div>
-				<div class="footer-col col-xl-3 col-lg-4 col-md-6 col-12 mb-50">
+				<div class="footer-col col-xl-3 col-lg-4 col-md-6 col-12 ">
 					
 					<ul>
-						<li><h4>Casablanca</h4></li>
+						<li><p class="size">Casablanca</p></li>
 						<li>
-							<p style="max-width: 166px;">Beldi Look.
+							<p class="d-flex flex-column" style="max-width: 166px;">
+                <span style="font-weight: 500 ;
+                font-size: 14px;">Beldi Look.</span>
 								3 rue Ibn Jahir -ex Taravo Quartier bourgogne Casablanca - Maroc</p>
 						</li>
 					</ul>
 				</div>
-				<div class="footer-col  col-xl-3 col-lg-4 col-md-6 col-12 mb-50">
+				<div class="footer-col  col-xl-3 col-lg-4 col-md-6 col-12 ">
 
 					<ul>
 						<li>
-							<h4>Nous rejoindre</h4>
+							<p class="size">Demandes de travail</p>
 						</li>
 						<li>
 							<p> Intéressé de travailler avec nous?</p>
 						</li>
 						<li><a href="#">contact@beldilook.ma</a></li>
 						<li >
-							<h4 class="mt-5 mb-0">Carrière</h4>
+							<p class="mt-5 mb-0 size">Carrière</p>
 						</li>
-						<li>
-							<p> Vous cherchez une</p>
-						</li>
-						<li>
-							<p> opportunité d’emploi?</p>
+						
+						<li style="max-width: 192px;">
+							<p> Vous cherchez une opportunité d’emploi?</p>
 						</li>
 						<li><a href="#">Voir les postes ouverts</a></li>
 					</ul>
@@ -436,7 +453,7 @@ $user=Session::get('user');
 							<input type="email" class=" input_email pl-2" placeholder="email" id="exampleInputEmail1" aria-describedby="emailHelp">
 							<button class="form-btn">S'inscrire</button>
 						</li>
-						<li><p class="ml-3">Recevoir notre Newsletter</p></li>
+						<li><p class="ml-3 pb-3 size">Recevoir notre Newsletter</p></li>
 
 					</ul>
 				</div>
