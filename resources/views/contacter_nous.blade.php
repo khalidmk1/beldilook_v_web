@@ -162,5 +162,88 @@
 </div>
 
 
+<div>
+<h1 style="text-align: center">Foire aux questions
+</h1>
+
+</div>
+
+<div style="height: 500px;background-color:#E1E2E7;margin:70px">
+
+    <div class="row" style="padding:100px">
+
+
+
+
+<div class="col-6">  <div class="col-lg-12" style="margin-bottom: 10px">
+    <div style="background-color: #FFFFFF;">
+    <button  style="background-color: #FFFFFF;border:0px solid black;padding:10px;"class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Link with href
+      </button>
+      <div class="collapse" id="collapseExample" >
+        <div class="" style="background-color: #FFFFFF;padding:10px;">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+</div>
+</div>
+
+
+<div class="col-lg-12"  style="margin-bottom: 10px">
+    <div style="background-color: #FFFFFF;">
+    <button  style="background-color: #FFFFFF;border:0px solid black;padding:10px;"class="" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+        Link with href
+      </button>
+      <div class="collapse" id="collapseExample3" >
+        <div class="" style="background-color: #FFFFFF;padding:10px;">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+</div>
+</div>
+
+</div>
+
+
+
+
+<div class="col-6"> <div class="col-lg-12"  style="margin-bottom: 10px">
+    <div style="background-color: #FFFFFF;">
+    <button  style="background-color: #FFFFFF;border:0px solid black;padding:10px;"class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+        Link with href
+      </button>
+      <div class="collapse" id="collapseExample2" >
+        <div class="" style="background-color: #FFFFFF;padding:10px;">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+</div>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+   
+
+
+
+
+
+    </div>
+</div>
+
+
 
 @endsection
