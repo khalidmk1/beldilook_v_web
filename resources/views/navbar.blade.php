@@ -46,7 +46,7 @@
        <div class="container ">
         <div class="row mr-0 responsive  align-items-center">
           <div class="col col-lg-2 col-xl-2 col-md-12 col-sm-12 text-center" >
-            <a href="/home"><img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" alt="" class="img_logo_top "></a>
+            <a href="/home"><img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" alt="" class="img_logo_top image_obligatoire"></a>
           </div>
   
           <div class="col col-lg-3 col-xl-3 " style="text-align: center;">
@@ -79,10 +79,10 @@
                     <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       @if($user['Photo_Logo']!='') 
                    
-                      <img src={{$user['Photo_Logo']}} alt="avatar" class="img_avatar">
+                      <img src={{$user['Photo_Logo']}} alt="avatar" class="img_avatar image_obligatoire">
                     
                       @else
-                      <img src={{ asset('storage/user.png') }} alt="avatar_default" class="img_avatar">
+                      <img src={{ asset('storage/user.png') }} alt="avatar_default" class="img_avatar image_obligatoire">
                       @endif
                       <span class="text-light">
                         {{$user['Nom']." ".$user['Prenom']}}
@@ -132,8 +132,8 @@
 
                   <div class="col col-1 col-lg-1 col-xl-1 col-md-12 col-sm-12" style="text-align: center;">
                     <div >
-                      <a href="http://127.0.0.1:8000/fr/notifications">
-                        <img src="{{asset('storage/568182.png')}}" class="bell_not " class="bell" alt="bell">
+                      <a href="{{ route('get_notifications') }}">
+                        <img src="{{asset('storage/568182.png')}}" class="bell_not " class="bell image_obligatoire" alt="bell">
                       </a>
                     
                     </div>
