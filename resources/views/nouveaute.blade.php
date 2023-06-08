@@ -19,18 +19,20 @@
         {{ csrf_field() }}
           
                 @forelse ($articles as $article)
-              <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center" style="" >
+              <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
                 
                    
                 
                 <div class="card card_content border-0">
+
+                
                   
-                    <img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" >
+                    <a href="{{route('details_produit',$article['idarticles'])}}"><img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" ></a>
 
                     @if ($article['favoris5']==1)
-                    <img id="art{{$article['idarticles']}}" onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
+                   <img id="art{{$article['idarticles']}}" onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
                     @else
-                    <img id="art{{$article['idarticles']}}"  onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likevide_1.png') }} alt="">
+                   <img id="art{{$article['idarticles']}}"  onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likevide_1.png') }} alt="">
                     @endif
                    
 
