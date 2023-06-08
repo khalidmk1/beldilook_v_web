@@ -544,6 +544,7 @@ if ($response->successful()){
         ]);
          if($response->successful()) {
             $reponse2 = $response->json();
+           
          }else{
             return redirect(url()->previous())->with('message', __('favoris.erreur'));
          }
@@ -2891,6 +2892,57 @@ else
             return view('mes_commande_api',[
                 'commandes' => $reponse2
             ]);
+          }
+
+
+          public function welcome()
+          {
+            $this->actualiser_user();
+
+            return view('welcome');
+          }
+
+          public function contacter_nous()
+          {
+            $this->actualiser_user();
+
+            return view('contacter_nous');
+          }
+
+          public function contacter_nous_post(Request $request)
+          {
+            $validated = $request->validate([
+                'nom_prenom' => 'required',
+                'email' => 'required|email',
+              'message' => 'required'
+            ]);
+
+
+            $nom_prenom=$request->input('nom_prenom');
+            $email=$request->input('email');
+            $message=$request->input('message');
+
+            $response = Http::post('http://51.68.36.192/REST_BeldiLook/contacter_nous_web', [
+                'nom_prenom' => $nom_prenom,
+                'email' => $email,
+                'message' => $message
+            ]);
+             if($response->successful()) {
+                $reponse2 = $response->json();
+                //dd($reponse2);
+                if($reponse2['message']=='erreur')
+                {
+                    return redirect(url()->previous())->with('message', __('favoris.erreur'))->withInput();
+                }
+                if($reponse2['message']=='ok')
+                {
+                    return redirect(url()->previous())->with('success', __('contacter_nous.success'));
+                }
+             }else{
+                return redirect(url()->previous())->with('message', __('favoris.erreur'))->withInput();
+             }
+
+            return 'ok';
           }
 
 

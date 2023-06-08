@@ -26,7 +26,7 @@ Route::group(['prefix'=> LaravelLocalization::setLocale(),
 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ],function(){
 
-
+    Route::get('/', 'Controller@welcome')->name('welcome');
      Route::get('/home', 'Controller@get_home')->name('home');
     //Route::get('/home/{page?}', 'Controller@get_home_search')->name('home_sreach');
     Route::get('/myaccount', 'Controller@get_myaccount')->name('myaccount');
@@ -179,6 +179,10 @@ Route::group(['prefix'=> LaravelLocalization::setLocale(),
     Route::get('solde_user','Controller@solde_user')->name('solde_user');
 
     Route::post('mes_commandes_api','Controller@mes_commandes_api')->name('mes_commandes_api');
+
+    Route::get('contacter_nous','Controller@contacter_nous')->name('contacter_nous');
+
+    Route::post('contacter_nous','Controller@contacter_nous_post')->name('contacter_nous_post');
 
 });
    // Route::get('/test', 'Controller@test')->name('test');
