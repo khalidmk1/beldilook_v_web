@@ -2,7 +2,6 @@
 @section('content')
 <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 <link rel="stylesheet" type="text/css" href="{{ url('/css/details_produit.css') }}" />
 <style>
   .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
@@ -20,116 +19,120 @@
 @if($article['smessage']=='non trouvé')
       <div style="text-align: center;padding-top: 15%">Article non trouvé</div> 
       @else 
-<div class="background"></div>
-<div class="product-card">
-    <div class="left-column">
+<div class="container">
+
+  <div class="row align-items-center" style="gap: 9px;">
+    <h1 class="p-2" style="font-size: 30px;">{{$article['sNom_produit']}}</h1>
+    <div class="stars">
+
+      <div>
+        @php
+        $etoile=$rate['moyenne_etoile'];
+        $etoile=intval($etoile);
+        @endphp
+         @if($etoile==0)
+         <i class="star stargrey fas fa-star" data-index="0"></i>
+         <i class="star stargrey fas fa-star" data-index="1"></i>
+         <i class="star stargrey fas fa-star" data-index="2"></i>
+         <i class="star stargrey fas fa-star" data-index="3"></i>
+         <i class="star stargrey fas fa-star" data-index="4"></i>
+         @endif
+        @if($etoile==1)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star stargrey fas fa-star" data-index="1"></i>
+        <i class="star stargrey fas fa-star" data-index="2"></i>
+        <i class="star stargrey fas fa-star" data-index="3"></i>
+        <i class="star stargrey fas fa-star" data-index="4"></i>
+        @endif
+        @if($etoile==2)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star yellow fas fa-star" data-index="1"></i>
+        <i class="star stargrey fas fa-star" data-index="2"></i>
+        <i class="star stargrey fas fa-star" data-index="3"></i>
+        <i class="star stargrey fas fa-star" data-index="4"></i>
+        @endif
+        @if($etoile==3)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star yellow fas fa-star" data-index="1"></i>
+        <i class="star yellow fas fa-star" data-index="2"></i>
+        <i class="star stargrey fas fa-star" data-index="3"></i>
+        <i class="star stargrey fas fa-star" data-index="4"></i>
+        @endif
+        @if($etoile==4)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star yellow fas fa-star" data-index="1"></i>
+        <i class="star yellow fas fa-star" data-index="2"></i>
+        <i class="star yellow fas fa-star" data-index="3"></i>
+        <i class="star stargrey fas fa-star" data-index="4"></i>
+        @endif
+        @if($etoile==5)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star yellow fas fa-star" data-index="1"></i>
+        <i class="star yellow fas fa-star" data-index="2"></i>
+        <i class="star yellow fas fa-star" data-index="3"></i>
+        <i class="star yellow fas fa-star" data-index="4"></i>
+        @endif
+        <span class="star1" style="font-size: 12px ;display:inline"> {{$rate['nb_avis']." ".__('page_details_produit.avis')}}</span>
+       
+      </div>
+     
+    </div>
+  </div>
+
+
+<div class="row ">
+
+ 
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
+     
       @if($article['sPhoto1']!="")
     
-        <img id="image_principal" style="object-fit: contain"  src="{{$article['sPhoto1']}}">
+        <img id="image_principal"  class = "img-responsive image_principal"  src="{{$article['sPhoto1']}}">
   
       @endif
 
       
     </div>
-    <div class="right-column">
-        <div class="product-name">
-            <ul class="row_containe" >
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
 
-              @if($article['sPhoto1']!="")
-              <li class="col_li" >
-                <img style="cursor: pointer" onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto1']}}">
-              </li>
+      <div class="row ">
+        <div class="col   pb-2 pl-2 pr-2 pt-0 text-center">
+          @if($article['sPhoto1']!="")
+                <img  onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto1']}}">
               @endif
-              @if($article['sPhoto2']!="")
-              <li class="col_li" >
-                <img style="cursor: pointer" onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto2']}}">
-              </li>
-              @endif
-              @if($article['sPhoto3']!="")
-              <li class="col_li" >
-                <img style="cursor: pointer" onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto3']}}">
-              </li>
-              @endif
-              @if($article['sPhoto4']!="")
-              <li class="col_li" >
-                <img style="cursor: pointer" onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto4']}}">
-              </li>
-              @endif
-              @if($article['sPhoto5']!="")
-              <li class="col_li" >
-                <img style="cursor: pointer" onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto5']}}">
-              </li>
-              @endif
-
-            </ul>
-            <div class="title" style="margin-top:5px ;">
-                <h1>{{$article['sNom_produit']}}</h1>
-            </div>
         </div>
-        <div class="stars">
-
-          <div>
-            @php
-            $etoile=$rate['moyenne_etoile'];
-            $etoile=intval($etoile);
-            @endphp
-             @if($etoile==0)
-             <i class="star stargrey fas fa-star" data-index="0"></i>
-             <i class="star stargrey fas fa-star" data-index="1"></i>
-             <i class="star stargrey fas fa-star" data-index="2"></i>
-             <i class="star stargrey fas fa-star" data-index="3"></i>
-             <i class="star stargrey fas fa-star" data-index="4"></i>
-             @endif
-            @if($etoile==1)
-            <i class="star yellow fas fa-star" data-index="0"></i>
-            <i class="star stargrey fas fa-star" data-index="1"></i>
-            <i class="star stargrey fas fa-star" data-index="2"></i>
-            <i class="star stargrey fas fa-star" data-index="3"></i>
-            <i class="star stargrey fas fa-star" data-index="4"></i>
-            @endif
-            @if($etoile==2)
-            <i class="star yellow fas fa-star" data-index="0"></i>
-            <i class="star yellow fas fa-star" data-index="1"></i>
-            <i class="star stargrey fas fa-star" data-index="2"></i>
-            <i class="star stargrey fas fa-star" data-index="3"></i>
-            <i class="star stargrey fas fa-star" data-index="4"></i>
-            @endif
-            @if($etoile==3)
-            <i class="star yellow fas fa-star" data-index="0"></i>
-            <i class="star yellow fas fa-star" data-index="1"></i>
-            <i class="star yellow fas fa-star" data-index="2"></i>
-            <i class="star stargrey fas fa-star" data-index="3"></i>
-            <i class="star stargrey fas fa-star" data-index="4"></i>
-            @endif
-            @if($etoile==4)
-            <i class="star yellow fas fa-star" data-index="0"></i>
-            <i class="star yellow fas fa-star" data-index="1"></i>
-            <i class="star yellow fas fa-star" data-index="2"></i>
-            <i class="star yellow fas fa-star" data-index="3"></i>
-            <i class="star stargrey fas fa-star" data-index="4"></i>
-            @endif
-            @if($etoile==5)
-            <i class="star yellow fas fa-star" data-index="0"></i>
-            <i class="star yellow fas fa-star" data-index="1"></i>
-            <i class="star yellow fas fa-star" data-index="2"></i>
-            <i class="star yellow fas fa-star" data-index="3"></i>
-            <i class="star yellow fas fa-star" data-index="4"></i>
-            @endif
-            <span class="star1" style="font-size: 12px ;display:inline"> {{$rate['nb_avis']." ".__('page_details_produit.avis')}}</span>
-           
-          </div>
-
-
-          {{--   <span class="star1"><img src="images/stars.png" class="img_stars"   alt=""></span>
-            <span class="star1"><img src="images/stars.png" class="img_stars"   alt=""></span>
-            <span class="star1"><img src="images/stars.png" class="img_stars"   alt=""></span>
-            <span class="star1"><img src="images/stars.png" class="img_stars"   alt=""></span>
-            <span class="star1"><img src="images/stars.png" class="img_stars"   alt=""></span> --}}
-            
+        <div class="col pb-2 pl-2 pr-2 pt-0 text-center">
+          @if($article['sPhoto2']!="")
+        
+            <img  onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto2']}}">
          
+          @endif
         </div>
+        <div class="col pb-2 pl-2 pr-2 pt-0 text-center">
+          @if($article['sPhoto3']!="")
+           
+                <img onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto3']}}">
+            
+              @endif
+        </div>
+        <div class="col pb-2 pl-2 pr-2 pt-0 text-center">
+          @if($article['sPhoto4']!="")
+         
+            <img onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto4']}}">
+         
+          @endif
+        </div>
+        <div class="col pb-2 pl-2 pr-2 pt-0 text-center">
+          @if($article['sPhoto5']!="")
+          
+            <img  onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto5']}}">
+          
+          @endif
+        </div>
+      </div>
+
         <div class="price" id="prix"></div>
-        <div class="description">
+        <div class="description p-2">
             <p>
               {{$article['sDescription']}}
             </p>
@@ -154,10 +157,11 @@
 
        
         </div>
-        <button class="btn" type="submit">
+        <button class="btn btn_add_cart mt-2 " type="submit">
             <i class="fas fa-shopping-cart"></i> ADD TO CART
         </button>
     </div>
+</div>
 </div>
 </div>
 
@@ -222,7 +226,7 @@ $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
 <div class="col-8"></div>
 <div class="col-3">basé sur {{$rate['nb_avis']." ".__('page_details_produit.avis')}}</div>
     </div>
-  <div class="row" >
+  <div class="row align-items-center" style="flex-wrap: inherit;">
      <span>5</span> 
     <div class="col-1">
     <i  class="star yellow fas fa-star" data-index="3"></i>
@@ -235,7 +239,7 @@ $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
   {{$rate['nb_5t']}}
 </div><br>
 
- <div class="row" style="align-items: center">
+ <div class="row align-items-center" style="flex-wrap: inherit;">
       4
     <div class="col-1">
     <i  class="star yellow fas fa-star" data-index="3"></i>
@@ -246,9 +250,11 @@ $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
 </div>
 </div>
   {{$rate['nb_4t']}}
-</div><br>
+</div>
 
-<div class="row" style="align-items: center">
+<br>
+
+<div class="row align-items-center" style="flex-wrap: inherit;">
   3
 <div class="col-1">
 <i  class="star yellow fas fa-star" data-index="3"></i>
@@ -263,7 +269,7 @@ $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
 
 
 
-<div class="row" style="align-items: center">
+<div class="row align-items-center" style="flex-wrap: inherit;">
   2
 <div class="col-1">
 <i  class="star yellow fas fa-star" data-index="3"></i>
@@ -273,12 +279,12 @@ $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
 <div class="w3-black" style="height:15px;width:{{$poucentage2}}%"></div>
 </div>
 </div>
-{{$rate['nb_2t']}}
+<div>{{$rate['nb_2t']}}</div>
 </div><br>
 
 
 
-<div class="row" style="align-items: center">
+<div class="row align-items-center" style="flex-wrap: inherit;" >
   1
 <div class="col-1">
 <i  class="star yellow fas fa-star" data-index="3"></i>

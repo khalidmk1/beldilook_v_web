@@ -27,7 +27,9 @@
 
                 
                   
-                    <a href="{{route('details_produit',$article['idarticles'])}}"><img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" ></a>
+                    <a href="{{route('details_produit',$article['idarticles'])}}">
+                        <img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" >
+                    </a>
 
                     @if ($article['favoris5']==1)
                    <img id="art{{$article['idarticles']}}" onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
@@ -50,7 +52,7 @@
 
                   <div class="card-body p-2 ">
                     <p class="mb-1"> <a href="{{route('boutiqua',$article['idutilisateurs'])}}">{{$article['nom_vendeur']}}</a></p>
-                    <h5 class="card-title mb-1" >{{$article['libellé']}}</h5>
+                    <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
                     <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article['etat_tenu']}} </p>
                     <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
                   </div>

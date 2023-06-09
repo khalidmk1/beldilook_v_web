@@ -471,7 +471,7 @@ $user=Session::get('user');
 
 		</div>
 		<div class="row container-fluid justify-content-center mt-5 mb-4 m-0 ">
-			<div class="col text-center "><h5>2023 Beldilook. All rights reserved</h5></div>
+			<div class="col text-center "><h5 style="font-size: 18px;">2023 Beldilook. All rights reserved</h5></div>
 			<div class="col d-flex p-0  "><h6>Sécurité</h6> <p class="ml-2 mr-2"><h6>|</h6></p> <h6>Politique de confidentialité et de cookies </h6><p class="ml-2 mr-2">|</p><h6> Conditions d’utilisation</h6></div>
 		</div>
 	</footer>
