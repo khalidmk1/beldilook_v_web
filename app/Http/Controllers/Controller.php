@@ -2898,8 +2898,32 @@ else
           public function welcome()
           {
             $this->actualiser_user();
+          
+            $response = Http::get('http://51.68.36.192/REST_BeldiLook/boutique_a_la_une_web');
+             if($response->successful()) {
+                $reponse2 = $response->json();
+                //dd($reponse2);
+                
 
-            return view('welcome');
+                $tpye_tags = Http::get('http://51.68.36.192/REST_BeldiLook/recuperer_tag_type_tag_web');
+                if($tpye_tags->successful()) {
+                   $tpye_tags2 = $tpye_tags->json();
+                   //dd($reponse2);
+                   
+   
+                }else{
+                    return redirect(url()->previous())->with('message', __('favoris.erreur'));
+                 }
+   
+                    return view('welcome',[
+                        'boutiques' => $reponse2,
+                        'type_tags' => $tpye_tags2
+                    ]);
+               
+    
+             }else{
+                return redirect(url()->previous())->with('message', __('favoris.erreur'));
+             }
           }
 
           public function contacter_nous()
@@ -2942,7 +2966,7 @@ else
                 return redirect(url()->previous())->with('message', __('favoris.erreur'))->withInput();
              }
 
-            return 'ok';
+            
           }
 
 
