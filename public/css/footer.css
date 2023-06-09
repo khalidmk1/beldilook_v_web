@@ -128,7 +128,16 @@ ul {
 	margin-bottom: 10px;
 }
 
+.card-title{
+  max-width: 300px;
+    text-overflow: ellipsis;
+    font-size: 17px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .cockies{
+  font-size: 11px;
 	background-color: rgba(255, 255, 255, .5);
 	text-align: center;
 	border-radius: 5px;
@@ -145,7 +154,7 @@ ul {
     top: 0;
     right: 0;
     z-index: 2;
-    padding: 9.75px 7.25px;
+    padding: 3.75px 7.25px;
     color: inherit;
 }
 
