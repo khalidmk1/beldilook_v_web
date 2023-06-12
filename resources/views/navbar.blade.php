@@ -75,10 +75,12 @@
 
   
           <div class="col col-lg-3 col-xl-3 " style="text-align: center;">
-            <div class="search d-flex ">
+            <div class="search d-flex justify-content-center">
             <form action="{{Route('home')}}"  method="GET">
               <input name="search" type="text" class="form-control m-0" placeholder="Recheche">
-              <button style="background-color: transparent;border:none" type="submit"> <i class="fa fa-search"></i></button>
+              <button style="background-color: transparent; border: none; position: absolute;
+              top: 0; margin-left: 111px;" type="submit"> 
+                <i class="fa fa-search"></i></button>
             </form>
 
              

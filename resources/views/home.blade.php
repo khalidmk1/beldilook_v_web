@@ -502,16 +502,26 @@
  <div class="container">
     <div class="row justify-content-center" style="align-items: center">
 
+      <div class="col-6">
+        <input {{-- style="display: inline;width:50%;margin-left:20px;margin-right:20px" --}} id="search" name="search" class="form-control input-sm" id="inputsm" type="text" value="{{$search}}">
+      </div>
 
- 
+ <div class="col position-absolute" style="right: 0"> 
+  <img onclick="valider_filtre('search')" src="{{asset('storage/searchbl_1.png')}}" style="cursor: pointer;
+  position: absolute;
+  right: 30%;
+  bottom: -15px;
+  background: white;
+  padding: 3px;" alt="" height="30px" width="30px">
+ </div>
         
         
-        <label for="inputsm" style="display: inline;">Search :</label>
+       {{--  <label for="inputsm" style="display: inline;">Search :</label> --}}
     
    
-        <input style="display: inline;width:50%;margin-left:20px;margin-right:20px" id="search" name="search" class="form-control input-sm" id="inputsm" type="text" value="{{$search}}">
+      
      
-<img onclick="valider_filtre('search')" src="{{asset('storage/searchbl_1.png')}}" style="cursor: pointer" alt="" height="30px" width="30px">
+
    
    
     
@@ -529,12 +539,15 @@
 
 
 
-<div style="text-align: center;margin-top:20px;margin-bottom:20px"><button style="margin-right: 10px" class="btn_sort" onclick="open_sort()"> {{__('home.sort')}} </button><button class="btn_ajouter" onclick="open_filter()"> {{__('home.filtre')}} </button></div>
+<div style="text-align: center;margin-top:20px;margin-bottom:20px">
+  <button style="margin-right: 10px" class="btn_sort" onclick="open_sort()"> {{__('home.sort')}} </button>
+  {{-- <button class="btn_ajouter" onclick="open_filter()"> {{__('home.filtre')}} </button> --}}
+</div>
 
 
 <div class="container" >
 
-  <div class="row p-2 ">
+  <div class="row p-2 " style="row-gap: 27px;">
     <div class="col  col-xl-3 col-lg-3 col-md-12 col-sm-12 d-flex flex-column justify-content-around">
 
       <div class="slidecontainer row m-0 p-0 ">
@@ -666,7 +679,7 @@
           <div class="col p-3 "> 
             <button type="button" class="btn  text-black bg-light  " onclick="effacer_filtre()">Effacer</button>
           </div>
-          <div class="col d-flex align-items-center  col-sm-6  ">
+          <div class="col d-flex align-items-center justify-content-center  col-sm-6  ">
             <button type="button" onclick="valider_filtre('filtre')"  class="btn btn-submit">Appliquer</button>
           </div>
 
@@ -683,10 +696,10 @@
           </div>
 
 
-          <div class="col font_side_filtter p-3"  style="font-size: 14px;">
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter p-3"  style="font-size: 14px;">
           Categories  
           </div>
-          <div class="col  p-3">
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 p-3">
             <div class="font_side_filtter" onclick="tout_selectionner_categories(this)" id="select_all">Tout sélectionner</div>
           </div>
           <div class="col">
@@ -695,7 +708,10 @@
               <ul class=" p-0 mt-1 " id="Categories">
 @foreach ($categories as $categorie)
 <li class="col-12  li_align " >
+
   <a class="link_a font_side_filtter" style="cursor: pointer;" donn="{{$categorie['idcategorie']}}">{{$categorie['Libelle']}}</a>
+ 
+
 </li>
 <hr class="m-0">
 @endforeach
@@ -709,8 +725,8 @@
 
           </div>
 
-          <div class="col font_side_filtter  p-3">Etat tenue</div>
-          <div class="col cursor_link font_side_filtter  p-3" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3">Etat tenue</div>
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
         
           <div class="col">
 
