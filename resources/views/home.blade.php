@@ -489,7 +489,7 @@
         <label for="inputsm" style="display: inline;">Search :</label>
     
    
-        <input style="display: inline;width:50%;margin-left:20px;margin-right:20px" id="search" name="search" class="form-control input-sm" id="inputsm" type="text">
+        <input style="display: inline;width:50%;margin-left:20px;margin-right:20px" id="search" name="search" class="form-control input-sm" id="inputsm" type="text" value="{{$search}}">
      
 <img onclick="valider_filtre('search')" src="{{asset('storage/searchbl_1.png')}}" style="cursor: pointer" alt="" height="30px" width="30px">
    

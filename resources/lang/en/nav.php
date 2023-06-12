@@ -25,6 +25,12 @@ return [
     'en_cours' => "In progress...",
     'vendeur_confirme' => 'Seller confirm',
     'mon_solde' => 'My Balance',
-    'acheter_maintenant' => 'Buy now'
+    'acheter_maintenant' => 'Buy now',
+    'titre_success_newsletter' => 'Newsletter',
+    'success_newsletter' => 'Your subscription has been registered',
+    'ok' => 'ok',
+    'email_invalide' => "the email address is invalid",
+    'email_obligatoire' => "Email is required",
+    'accept_recev' => 'You must agree to receive emails'
 ]
 ?>

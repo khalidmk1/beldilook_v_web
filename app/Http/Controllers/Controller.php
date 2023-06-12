@@ -134,7 +134,8 @@ $colors=["#EFEFF4","#E6D0C5","#E2E2E2","#F0E6CC","#DCE6F1","#DAE8E3","#F44336","
             'categories' => $categories2,
             'etats_tenues' => $etat_tenues2,
             'colors' => $colors,
-            'popups' => $popups2
+            'popups' => $popups2,
+            'search' => $search
 
         ]);
     }
@@ -3012,6 +3013,27 @@ else
                 'type_tag' => $id_type,
                 'tag' => $id_tag
             ]);
+          }
+
+          public function register_newsletter(Request $request)
+          {
+
+            $validated = $request->validate([
+                'email' => 'required|email',
+            ]);
+
+$email=$request->input('email');
+
+            $response = Http::post('http://51.68.36.192/REST_BeldiLook/enregistrer_email_news', [
+                'email' => $email,
+            ]);
+             if($response->successful()) {
+                $reponse2 = $response->json();
+                return $reponse2;
+                //dd($reponse2);
+             }else{
+                return 'erreur';
+             }
           }
 
 

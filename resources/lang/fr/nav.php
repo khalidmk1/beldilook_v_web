@@ -25,6 +25,12 @@ return [
     'en_cours' => "En cours d'étude ...",
     'vendeur_confirme' => 'Vendeur confirmé',
     'mon_solde' => 'Mon solde',
-    'acheter_maintenant' => 'Acheter maintenant'
+    'acheter_maintenant' => 'Acheter maintenant',
+    'titre_success_newsletter' => 'Newsletter',
+    'success_newsletter' => 'Votre souscription a été bien enregistrée',
+    'ok' => 'ok',
+    'email_invalide' => "l'adresse email est invalide",
+    'email_obligatoire' => "L'email est obligatoire",
+    'accept_recev' => 'Vous devez accepter de recevoir des mails'
 ]
 ?>
