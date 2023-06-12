@@ -11,6 +11,7 @@ return [
     'valider' => 'Valider',
     'email_required' => "l'adresse mail est obligatoire",
     'email_email' => "Format email invalide",
-    'email_introuvable' => "Email non trouvé"
+    'email_introuvable' => "Email non trouvé",
+    'comission' => 'Comission'
 ]
 ?>

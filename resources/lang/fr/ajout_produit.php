@@ -15,6 +15,23 @@ return [
     'max_cinque_images' => 'Vous pouvez ajouter que 5 images !!',
     'couleur_existe' => 'Couleur existe déjà !',
     'message_succes_modification' => 'Votre modification a été envoyée, on va vous contacter le plutôt possible',
-    'modifier_produit' => 'Modifier produit'
+    'modifier_produit' => 'Modifier produit',
+
+    'comission' => 'Comission',
+    'nouveau_prix' => 'Nouveau prix',
+    'couleur' => 'Couleur',
+    'prix' => 'prix',
+    'quantite' => 'Quantité',
+    'remplir_qte_prix' => 'Veuillez remplir la quantité et le prix de tous les produits',
+    'couleur_obligatoire' => 'Les couleurs sont obligatoire',
+    'photo_obligatoire' => 'Veuillez ajouter une photo',
+    'description_obligatoire' => 'La description est obligatoire',
+    'etat_obligatoire' => "L'état est obligatoire",
+    'tissue_obligatoire' => "Le tissue est obligatoire",
+    'genre_obligatoire' => 'Le genre est obligatoire',
+    'categorie_obligatoire' => 'La catégorie est obligatoire',
+    'nom_obligatoire' => 'Le nom est obligatoire',
+    'continuer' => 'Continuer',
+    'ajouter_image' => 'Ajouter une image'
 ]
 ?>
