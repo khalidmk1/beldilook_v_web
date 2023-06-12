@@ -10,6 +10,7 @@
   align-items: center;
   justify-items: center;
   place-items: center;
+  margin-bottom: 8px;
   position: relative;
   font-weight: 500;
   font-size: max(23px, 0.4rem);
@@ -187,7 +188,8 @@ border-bottom-right-radius: 0;
 
 .scrollable-tabs-container-tailles ul {
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  gap: 10px;
   padding: 12px 24px;
   margin: 0;
   list-style: none;
@@ -229,7 +231,7 @@ border-bottom-right-radius: 0;
 
 .li_align {
   list-style: none;
-  height: 60px;
+  max-height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -242,10 +244,12 @@ border-bottom-right-radius: 0;
 }
 
 .img_link {
+  max-width: 52px;
   right: 2px;
   height: 16px;
-  margin-right: 21px;
+ 
 }
+
 
 .change {
   color: rgb(176 ,150,54) !important;
@@ -300,9 +304,7 @@ border-bottom-right-radius: 0;
   }
 }
 
-.radian{
-  margin: 0;
-}
+
 
 .img_link_color{
   position: relative;

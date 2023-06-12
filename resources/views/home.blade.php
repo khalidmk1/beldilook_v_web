@@ -534,7 +534,7 @@
 
 <div class="container" >
 
-  <div class="row p-2 ">
+  <div class="row p-2 " style="row-gap: 27px;">
     <div class="col  col-xl-3 col-lg-3 col-md-12 col-sm-12 d-flex flex-column justify-content-around">
 
       <div class="slidecontainer row m-0 p-0 ">
@@ -666,7 +666,7 @@
           <div class="col p-3 "> 
             <button type="button" class="btn  text-black bg-light  " onclick="effacer_filtre()">Effacer</button>
           </div>
-          <div class="col d-flex align-items-center  col-sm-6  ">
+          <div class="col d-flex align-items-center justify-content-center  col-sm-6  ">
             <button type="button" onclick="valider_filtre('filtre')"  class="btn btn-submit">Appliquer</button>
           </div>
 
@@ -683,10 +683,10 @@
           </div>
 
 
-          <div class="col font_side_filtter p-3"  style="font-size: 14px;">
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter p-3"  style="font-size: 14px;">
           Categories  
           </div>
-          <div class="col  p-3">
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 p-3">
             <div class="font_side_filtter" onclick="tout_selectionner_categories(this)" id="select_all">Tout sélectionner</div>
           </div>
           <div class="col">
@@ -695,7 +695,10 @@
               <ul class=" p-0 mt-1 " id="Categories">
 @foreach ($categories as $categorie)
 <li class="col-12  li_align " >
+
   <a class="link_a font_side_filtter" style="cursor: pointer;" donn="{{$categorie['idcategorie']}}">{{$categorie['Libelle']}}</a>
+ 
+
 </li>
 <hr class="m-0">
 @endforeach
@@ -709,8 +712,8 @@
 
           </div>
 
-          <div class="col font_side_filtter  p-3">Etat tenue</div>
-          <div class="col cursor_link font_side_filtter  p-3" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3">Etat tenue</div>
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
         
           <div class="col">
 
