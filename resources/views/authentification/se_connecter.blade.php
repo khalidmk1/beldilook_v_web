@@ -42,7 +42,7 @@
         <label for="email">{{__('login.email')}} :</label>
         @endif
         
-        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="{{__('login.entreemail')}}" name="email" value="{{ old('email') }}">
+        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="email" class="form-control border-top-0 border-right-0 border-left-0  @error('email') is-invalid @enderror" id="email" placeholder="{{__('login.entreemail')}}" name="email" value="{{ old('email') }}">
         @error('email')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
@@ -56,7 +56,7 @@
         <label for="pwd">{{__('login.password')}} :</label>
         @endif
 
-        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="password" class="form-control @error('pswd') is-invalid @enderror" id="pwd" placeholder="{{__('login.entrepassword')}}" name="pswd" value="{{ old('pswd') }}">
+        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="password" class="form-control border-top-0 border-right-0 border-left-0 @error('pswd') is-invalid @enderror" id="pwd" placeholder="{{__('login.entrepassword')}}" name="pswd" value="{{ old('pswd') }}">
         @error('pswd')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror

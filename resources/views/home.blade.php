@@ -5,6 +5,22 @@
 <link rel="stylesheet" type="text/css" href="{{ url('/css/filter.css') }}" />
 
 <style>
+
+
+/* #boxThis {
+        padding: 5px;
+        background-color: #ffffff;
+        
+      }
+      #boxThis.box {
+      
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+      } */
+
+
+
     .btn_ajouter{
         background-color: #212951;
         border: #212951;
@@ -168,7 +184,9 @@
 }
 
 
-
+.font_side_filtter{
+  font-size: 14px;
+}
 
 
 
@@ -286,8 +304,10 @@
 </div>
 
 
+
+
   <!-- Modal filtre -->
-  <div class="modal" id="filter_modal" data-backdrop="static"  data-bs-keyboard="false" tabindex="-1"
+ {{--  <div class="modal" id="filter_modal" data-backdrop="static"  data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
@@ -470,7 +490,7 @@
           </div>
       </div>
   </div>
-</div>
+</div> --}}
 
 
 
@@ -505,11 +525,415 @@
 
     </div>
 </div> 
+
+
+
+
 <div style="text-align: center;margin-top:20px;margin-bottom:20px"><button style="margin-right: 10px" class="btn_sort" onclick="open_sort()"> {{__('home.sort')}} </button><button class="btn_ajouter" onclick="open_filter()"> {{__('home.filtre')}} </button></div>
 
 
+<div class="container" >
 
-    <div  class="container items">
+  <div class="row p-2 ">
+    <div class="col  col-xl-3 col-lg-3 col-md-12 col-sm-12 d-flex flex-column justify-content-around">
+
+      <div class="slidecontainer row m-0 p-0 ">
+        <div class="col d-flex flex-column justify-content-center p-0">
+          <p class="RadialProgress radian " > <span style="font-size:15px" id="pix_minimum"></span> </p>
+      
+          <input class="progress_input slider slider_min  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" />
+        </div>
+       
+
+        <div class="col  p-0 d-flex justify-content-center  flex-column">
+          <p class=" RadialProgress radian  "> 
+            <span style="font-size:15px" id="demo"></span> 
+          </p>
+          <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> 
+        </div>
+       
+      </div>
+     
+    
+    <div>
+      
+
+     
+    
+    </div>
+
+                        
+
+    </div>
+    <div class="col  col-xl-4 col-lg-4 col-md-12 col-sm-12  ">
+
+
+      <div class="scrollable-tabs-container-tailles container" id="scrollable-tabs-container-tailles" style="height: 42px;">
+                     
+        <ul class="tailles_responsive" >
+
+            <li  >
+              <a  class="class_tailles" style="padding-left: 16px;
+                  padding-top: 13px;cursor: pointer;" donn="XS" >XS</a>
+            </li>
+    
+            <li>
+              <a  class="class_tailles" style="padding-top: 13px;
+              padding-left: 21px;cursor: pointer;" donn="S" >S</a>
+            </li>
+    
+            <li>
+              <a  class=" class_tailles" style="padding-top: 13px;
+              padding-left: 18px;cursor: pointer;" donn="M" >M</a>
+            </li>
+    
+            <li>
+              <a  class="class_tailles" style="    padding-top: 13px;
+              padding-left: 20px;cursor: pointer;" donn="L" >L</a>
+            </li>
+    
+            <li>
+              <a  class="class_tailles" style="padding-top: 13px;
+              padding-left: 17px;cursor: pointer;" donn="XL" >XL</a>
+            </li>
+    
+            <li>
+              <a  class="class_tailles" style="padding-top: 13px;
+              padding-left: 12px;cursor: pointer;" donn="XXL" >XXL</a>
+            </li>
+    
+            <li>
+              <a  class=" class_tailles" style="padding-top: 15px;
+              padding-left: 13px;cursor: pointer;" donn="3XL" >3XL</a>
+            </li>
+  
+          </ul>
+
+       
+    </div>
+
+
+    </div>
+    <div class="col  col-xl-5 col-lg-5 col-md-12 col-sm-12   ">
+
+      <div class="scrollable-tabs-container container">
+        <div class="left-arrow d-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </div>
+
+        <ul class="mt-1" style="height: 73px;">
+@foreach ($colors as $color)
+<li donn="{{$color}}" class="class_colors">
+<a  style="background-color: {{$color}};cursor: pointer;" class="shadow-sm p-3 mb-5" donn="{{$color}}" ></a>
+</li>
+@endforeach
+          
+    
+            
+    
+          
+  
+          </ul>
+
+        <div class="right-arrow active d-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <div  class="container items" >
+
+
+
+      <div class="row">
+        <div class="col-md-3  " >
+        <div class="row text-center"   >
+
+
+          <div class="col p-3 "> 
+            <button type="button" class="btn  text-black bg-light  " onclick="effacer_filtre()">Effacer</button>
+          </div>
+          <div class="col d-flex align-items-center  col-sm-6  ">
+            <button type="button" onclick="valider_filtre('filtre')"  class="btn btn-submit">Appliquer</button>
+          </div>
+
+          <div class="col-12 p-2 ">
+            <select class="border-0 w-100" name="" id="">
+              <option value="">genre</option>
+            </select>
+          </div>
+         
+          <div class="col-12 p-2">
+            <select class="border-0 w-100" name="" id="">
+              <option value="">Type du Tissu</option>
+            </select>
+          </div>
+
+
+          <div class="col font_side_filtter p-3"  style="font-size: 14px;">
+          Categories  
+          </div>
+          <div class="col  p-3">
+            <div class="font_side_filtter" onclick="tout_selectionner_categories(this)" id="select_all">Tout sélectionner</div>
+          </div>
+          <div class="col">
+
+            <div id="container-categorie" class="container-categorie h-100">
+              <ul class=" p-0 mt-1 " id="Categories">
+@foreach ($categories as $categorie)
+<li class="col-12  li_align " >
+  <a class="link_a font_side_filtter" style="cursor: pointer;" donn="{{$categorie['idcategorie']}}">{{$categorie['Libelle']}}</a>
+</li>
+<hr class="m-0">
+@endforeach
+                
+               
+       
+              </ul>
+            </div>
+
+          
+
+          </div>
+
+          <div class="col font_side_filtter  p-3">Etat tenue</div>
+          <div class="col cursor_link font_side_filtter  p-3" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
+        
+          <div class="col">
+
+            <div id="container-categorie" class="container-categorie h-100">
+              <ul class=" p-0 " id="etat">
+                  @foreach ($etats_tenues as $etats_tenue)
+                <li class="col-12  li_align " >
+                  <a class="link_a font_side_filtter" style="cursor: pointer;" donn="{{$etats_tenue['id']}}">{{$etats_tenue['Libelle']}}</a>
+                 
+                </li>
+  
+                <hr class="m-0">
+                @endforeach
+  
+               
+                  
+       
+              </ul>
+            </div>
+
+          </div>
+
+
+        
+         
+         
+          
+         
+
+
+          
+
+
+
+        </div>
+        </div>
+
+
+        <div class="col-md-9">
+
+
+         
+<div class="row" id="div_articles">
+
+
+
+  {{ csrf_field() }}
+
+
+
+          
+  @forelse ($articles as $article)
+
+<div class="col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
+  
+     
+  
+  <div class="card card_content border-0">
+
+  
+    
+      <a href="{{route('details_produit',$article['idarticles'])}}">
+          <img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" >
+      </a>
+
+      @if ($article['favoris5']==1)
+     <img id="art{{$article['idarticles']}}" onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
+      @else
+     <img id="art{{$article['idarticles']}}"  onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likevide_1.png') }} alt="">
+      @endif
+     
+
+          @if ($article['nouveau']==1)
+          <span class="badge  bottomleft" >{{__('home.nouveau')}}</span>
+          @endif
+
+          @if ($article['rupture_stock']!='no')
+          <span class="badge bg-danger bottomright" >{{__('home.rupture_stock')}}</span>
+
+          @endif
+
+      
+    
+
+    <div class="card-body p-2 ">
+      <p class="mb-1"> <a href="{{route('boutiqua',$article['idutilisateurs'])}}">{{$article['nom_vendeur']}}</a></p>
+      <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
+      <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article['etat_tenu']}} </p>
+      <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+@empty
+<p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
+@endforelse
+
+
+
+</div>
+
+
+
+
+        </div>
+      
+      </div>
+
+
+
+
+
+
+{{-- 
+      <div class="row"  >
+        <div class="col  width_card col-lg-5 col-md-4 col-sm-6 col-6 p-1 d-flex h-100 justify-content-center" style="position: sticky ;top: 115px; position: -webkit-sticky; z-index: 100; background-color: #ffffff ;" >
+          <div class="col text-start" style="font-weight: 500;
+          font-size: max(23px, 0.4rem);">Categories</div>
+          <div onclick="tout_selectionner_categories(this)" class="col cursor_link" style="text-align: end;" id="select_all">Tout sélectionner</div>
+
+          
+          
+          <div class="col  width_card col-lg-5 col-md-4 col-sm-6 col-6 p-1 d-flex h-100 justify-content-center" style="position: sticky ;top: 115px; position: -webkit-sticky; z-index: 100; background-color: #ffffff ;">
+
+            <div id="container-categorie" class="container-categorie h-50">
+              <ul class=" p-0 " id="etat">
+                  @foreach ($etats_tenues as $etats_tenue)
+                <li class="col-12  li_align " >
+                  <a class="link_a" style="cursor: pointer;" donn="{{$etats_tenue['id']}}">{{$etats_tenue['Libelle']}}</a>
+                 
+                </li>
+
+                <hr class="m-0">
+                @endforeach
+
+               
+                  
+       
+              </ul>
+            </div>
+
+          </div>
+      </div>
+      
+     
+
+
+
+      <div class="col">
+
+
+      <div class="row " style="padding-top:30px">
+       
+
+        
+
+
+
+        {{ csrf_field() }}
+
+
+
+          
+                @forelse ($articles as $article)
+              <div class="col  width_card col-lg-6 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+                
+                   
+                
+                <div class="card card_content border-0">
+
+                
+                  
+                    <a href="{{route('details_produit',$article['idarticles'])}}">
+                        <img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" >
+                    </a>
+
+                    @if ($article['favoris5']==1)
+                   <img id="art{{$article['idarticles']}}" onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
+                    @else
+                   <img id="art{{$article['idarticles']}}"  onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likevide_1.png') }} alt="">
+                    @endif
+                   
+
+                        @if ($article['nouveau']==1)
+                        <span class="badge  bottomleft" >{{__('home.nouveau')}}</span>
+                        @endif
+
+                        @if ($article['rupture_stock']!='no')
+                        <span class="badge bg-danger bottomright" >{{__('home.rupture_stock')}}</span>
+
+                        @endif
+
+                    
+                  
+
+                  <div class="card-body p-2 ">
+                    <p class="mb-1"> <a href="{{route('boutiqua',$article['idutilisateurs'])}}">{{$article['nom_vendeur']}}</a></p>
+                    <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
+                    <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article['etat_tenu']}} </p>
+                    <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
+                  </div>
+                </div>
+              </div>
+           
+        
+
+
+
+       @empty
+<p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
+       @endforelse
+
+    </div>
+  </div>
+  </div> --}}
+
+
+
+{{-- 
         <div id="div_articles" class="row">
             {{ csrf_field() }}
             @forelse ($articles as $article)
@@ -546,13 +970,53 @@
     <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
            @endforelse
 
-        </div>
+        </div> --}}
+
         <div onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
-
+        <button
+        type="button"
+        class="btn position-fixed btn-lg  m-2 " style="border-radius:50px ; bottom: 0 ; right: 0; background-color: #B09636"
+        id="btn-back-to-top"
+        >
+        <i class="fas fa-arrow-up"></i>
+        </button>
     </div>
-   
 
+    
+
+   
     <script>
+
+
+
+      //Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+scrollFunction();
+};
+
+function scrollFunction() {
+if (
+document.body.scrollTop > 20 ||
+document.documentElement.scrollTop > 20
+) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}
+
+
+
     var show_popup='{{count($popups)}}';
     if(show_popup!='0')
     {

@@ -42,7 +42,7 @@
         @else
         <label for="pwd">{{__('myaccount.prenom')}} :</label>
         @endif
-        <input type="text" class="form-control @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ old('prenom') }}" required>
+        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ old('prenom') }}" required>
         
         @error('prenom')
         <div class="invalid-feedback">{{$message}}</div>
@@ -56,7 +56,7 @@
         @else
         <label for="pwd">{{__('myaccount.nom')}} :</label>
         @endif
-        <input type="text" class="form-control @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{old('nom')}}" required>
+        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{old('nom')}}" required>
        
         @error('nom')
         <div class="invalid-feedback">{{$message}}</div>
@@ -71,7 +71,7 @@
         <label for="pwd">{{__('login.email')}} :</label>
         @endif
 
-        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"  name="email" value="{{ old('email') }}" required>
+        <input type="email" class="form-control border-top-0 border-right-0 border-left-0 @error('email') is-invalid @enderror" id="email"  name="email" value="{{ old('email') }}" required>
         @error('email')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
@@ -82,7 +82,7 @@
         @else
         <label for="pwd">{{__('login.password')}} :</label>
         @endif
-        <input type="password" class="form-control @error('pswd') is-invalid @enderror" id="pwd"  name="pswd" value="{{ old('pswd') }}" required>
+        <input type="password" class="form-control border-top-0 border-right-0 border-left-0 @error('pswd') is-invalid @enderror" id="pwd"  name="pswd" value="{{ old('pswd') }}" required>
         @error('pswd')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
