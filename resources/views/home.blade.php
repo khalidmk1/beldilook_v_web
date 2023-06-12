@@ -502,16 +502,26 @@
  <div class="container">
     <div class="row justify-content-center" style="align-items: center">
 
+      <div class="col-6">
+        <input {{-- style="display: inline;width:50%;margin-left:20px;margin-right:20px" --}} id="search" name="search" class="form-control input-sm" id="inputsm" type="text" value="{{$search}}">
+      </div>
 
- 
+ <div class="col position-absolute" style="right: 0"> 
+  <img onclick="valider_filtre('search')" src="{{asset('storage/searchbl_1.png')}}" style="cursor: pointer;
+  position: absolute;
+  right: 30%;
+  bottom: -15px;
+  background: white;
+  padding: 3px;" alt="" height="30px" width="30px">
+ </div>
         
         
-        <label for="inputsm" style="display: inline;">Search :</label>
+       {{--  <label for="inputsm" style="display: inline;">Search :</label> --}}
     
    
-        <input style="display: inline;width:50%;margin-left:20px;margin-right:20px" id="search" name="search" class="form-control input-sm" id="inputsm" type="text" value="{{$search}}">
+      
      
-<img onclick="valider_filtre('search')" src="{{asset('storage/searchbl_1.png')}}" style="cursor: pointer" alt="" height="30px" width="30px">
+
    
    
     
@@ -529,7 +539,10 @@
 
 
 
-<div style="text-align: center;margin-top:20px;margin-bottom:20px"><button style="margin-right: 10px" class="btn_sort" onclick="open_sort()"> {{__('home.sort')}} </button><button class="btn_ajouter" onclick="open_filter()"> {{__('home.filtre')}} </button></div>
+<div style="text-align: center;margin-top:20px;margin-bottom:20px">
+  <button style="margin-right: 10px" class="btn_sort" onclick="open_sort()"> {{__('home.sort')}} </button>
+  {{-- <button class="btn_ajouter" onclick="open_filter()"> {{__('home.filtre')}} </button> --}}
+</div>
 
 
 <div class="container" >
