@@ -134,7 +134,8 @@ $colors=["#EFEFF4","#E6D0C5","#E2E2E2","#F0E6CC","#DCE6F1","#DAE8E3","#F44336","
             'categories' => $categories2,
             'etats_tenues' => $etat_tenues2,
             'colors' => $colors,
-            'popups' => $popups2
+            'popups' => $popups2,
+            'search' => $search
 
         ]);
     }
@@ -2967,6 +2968,72 @@ else
              }
 
             
+          }
+
+          public function produit_sous_categorie($id_type,$id_tag,$page=1)
+          {
+
+            $this->actualiser_user();
+
+            $id_user=0;
+            if (Session::get('user')){
+                $user=Session::get('user');
+                $id_user=$user['IDUtilisateurs'];
+               
+            }
+
+            $details_collection = Http::post('http://51.68.36.192/REST_BeldiLook/remplir_details_collection', [
+                'id_utilisateur' => $id_user,
+                'id_categorie' => '',
+                'id_collection' => $id_type,
+                'filtre_couleur' => '',
+                'filtre_taille' => '',
+                'filtre_etat_tenue' => '',
+                'page' => intval($page),
+                'type' => '',
+                'id_sous_categorie' => $id_tag,
+                'prix_min' => 0,
+                'prix_max' => 0
+            ]);
+    
+    
+    
+            if ($details_collection->successful()){
+                $details_collection2 = $details_collection->json();
+                //dd($details_collection2);
+                $articles=$details_collection2['tab_articles'];
+            }else{
+                return redirect()->back()->with('message', __('favoris.erreur'))->withInput();
+            }
+
+
+            return view('page_produit_sous_categorie',[
+                'articles' => $articles,
+                'page' => $page,
+                'type_tag' => $id_type,
+                'tag' => $id_tag
+            ]);
+          }
+
+          public function register_newsletter(Request $request)
+          {
+
+            $validated = $request->validate([
+                'email' => 'required|email',
+            ]);
+
+$email=$request->input('email');
+
+            $response = Http::post('http://51.68.36.192/REST_BeldiLook/enregistrer_email_news', [
+                'email' => $email,
+            ]);
+             if($response->successful()) {
+                $reponse2 = $response->json();
+                return $reponse2;
+                //dd($reponse2);
+             }else{
+                return 'erreur';
+             }
           }
 
 

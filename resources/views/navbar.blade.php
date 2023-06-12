@@ -40,6 +40,28 @@
 }
 }
    </style>
+{{ csrf_field() }}
+
+
+<div id="modal_newsletter" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{__('nav.titre_success_newsletter')}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{__('nav.success_newsletter')}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  data-dismiss="modal">{{__('nav.ok')}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
    <nav class="nav_top " > 
       
@@ -54,9 +76,12 @@
   
           <div class="col col-lg-3 col-xl-3 " style="text-align: center;">
             <div class="search d-flex ">
-            
-              <input type="text" class="form-control m-0" placeholder="Recheche">
-              <i class="fa fa-search"></i>
+            <form action="{{Route('home')}}"  method="GET">
+              <input name="search" type="text" class="form-control m-0" placeholder="Recheche">
+              <button style="background-color: transparent;border:none" type="submit"> <i class="fa fa-search"></i></button>
+            </form>
+
+             
             </div>
           </div>
   
@@ -437,11 +462,11 @@ $user=Session::get('user');
 				<div class="footer-col  col-xl-3 col-lg-4 col-md-6 col-12 mb-50">
 
 					<ul class="d-flex flex-column-reverse ">
-						
+						<span id="span_email" style="color: rgb(218, 16, 16);margin-left:15px"></span>
 						<li class="input_check gap-1">
 						
 							<div class="mb-3">
-								<input type="checkbox" aria-label="Checkbox for following text input">
+								<input id="sub-check" type="checkbox" aria-label="Checkbox for following text input">
 							  </div>
 							<p>
 								Je suis d’accord pour recevoir des e-mails et
@@ -450,11 +475,12 @@ $user=Session::get('user');
 							</p>
 						</li>
 						<li class="mb-3 d-flex justify-content-lg-start ml-3 ">
-							<input type="email" class=" input_email pl-2" placeholder="email" id="exampleInputEmail1" aria-describedby="emailHelp">
-							<button class="form-btn">S'inscrire</button>
+							<input name="email" id="email_inp" type="email" class=" input_email pl-2" placeholder="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+              
+							<button class="form-btn" onclick="enr_news()" style="z-index: 100">S'inscrire</button>
 						</li>
 						<li><p class="ml-3 pb-3 size">Recevoir notre Newsletter</p></li>
-
+            
 					</ul>
 				</div>
 			</div>
@@ -478,4 +504,66 @@ $user=Session::get('user');
 
     
 </body>
+
+
+<script>
+function enr_news()
+{
+  var email_inp=$("#email_inp").val();
+  if(email_inp.replace( / +/g, '')=="")
+  {
+  
+    $('#span_email').html("{{__('nav.email_obligatoire')}}");
+   return ;
+  }
+
+  
+  function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
+
+if(validateEmail(email_inp)==false){
+  $('#span_email').html("{{__('nav.email_invalide')}}");
+  return;
+}
+
+  if ($("#sub-check").prop('checked')== false){
+    $('#span_email').html("{{__('nav.accept_recev')}}");
+      return ;
+     } 
+
+     var _token=$('input[name="_token"]').val();
+  $.ajax({
+
+      url:("{{route('register_newsletter')}}"),
+      method:"POST",
+     data:{
+      email: $("#email_inp").val(),
+      _token:_token
+     },
+
+      success: function (data){
+        console.log(data);
+        
+       
+        
+        if(data == 'Erreur' ){
+          alert("{{__('favoris.erreur')}}");
+        }else{
+          $('#modal_newsletter').modal('show');
+          $("#email_inp").val('');
+          $('#sub-check').prop('checked', false);
+        }
+       
+      },
+
+      error: function (request, status, error) {
+        alert("{{__('favoris.erreur')}}");
+  }
+
+  });
+}
+</script>
 </html>

@@ -281,7 +281,7 @@
         </div>
 
     </div>
-<div style="padding: 60px;">
+<div style="padding: 10px;">
 @foreach ($type_tags as $type_tag)
 
 @php
@@ -291,7 +291,7 @@
 <h1>{{$type_tag['libelle']}}</h1>
 <div class="scrollmenu" style="margin: 20px 20px 20px 20px;">
     @foreach ($tags as $tag)
-    <div class="catgs selected" style="display: inline-block;margin-right:20px;cursor:pointer; min-width: 50px;padding: 10px;">
+    <div onclick="window.location='{{route('produit_sous_categorie',['id_type'=>$type_tag['id_type'], 'id_tag'=>$tag['id_tag']]) }}'" class="catgs selected" style="display: inline-block;margin-right:20px;cursor:pointer; min-width: 50px;padding: 10px;">
         {{$tag['libelle']}}
         </div>
     @endforeach

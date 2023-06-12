@@ -25,6 +25,9 @@ return [
     'en_cours' => "قيد الدراسة...",
     'vendeur_confirme' => 'تأكيد البائع',
     'mon_solde' => 'رصيدي',
-    'acheter_maintenant' => 'اشتري الآن'
+    'acheter_maintenant' => 'اشتري الآن',
+    'titre_success_newsletter' => 'رسالة إخبارية',
+    'success_newsletter' => 'تم تسجيل اشتراكك',
+    'ok' => 'نعم'
 ]
 ?>

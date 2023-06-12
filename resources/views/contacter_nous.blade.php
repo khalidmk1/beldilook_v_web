@@ -74,6 +74,9 @@
     margin-right: 5%;
    
    }
+   .div_colap{
+    padding: 100px;
+   }
     @media only screen and (max-width: 600px) {
         .in_contact{
         display:block;
@@ -109,6 +112,9 @@
     display:block;
     margin-left: 5%;
     margin-right: 5%;
+   }
+   .div_colap{
+    padding: 20px;
    }
 }
 </style>
@@ -168,16 +174,17 @@
 
 </div>
 
-<div style="height: 500px;background-color:#E1E2E7;margin:70px">
+<div style="background-color:#E1E2E7;margin:70px">
 
-    <div class="row" style="padding:100px">
-
-
+    <div class="row div_colap">
 
 
-<div class="col-6">  <div class="col-lg-12" style="margin-bottom: 10px">
+
+
+<div class="col-lg-6 dol-md-6 col-sm-12">  <div class="col-lg-12" style="margin-bottom: 10px">
     <div style="background-color: #FFFFFF;">
-    <button  style="background-color: #FFFFFF;border:0px solid black;padding:10px;"class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
         Link with href
       </button>
       <div class="collapse" id="collapseExample" >
@@ -191,7 +198,9 @@
 
 <div class="col-lg-12"  style="margin-bottom: 10px">
     <div style="background-color: #FFFFFF;">
-    <button  style="background-color: #FFFFFF;border:0px solid black;padding:10px;"class="" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+        
+    <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+        <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
         Link with href
       </button>
       <div class="collapse" id="collapseExample3" >
@@ -207,9 +216,10 @@
 
 
 
-<div class="col-6"> <div class="col-lg-12"  style="margin-bottom: 10px">
+<div class="col-lg-6 dol-md-6 col-sm-12"> <div class="col-lg-12"  style="margin-bottom: 10px">
     <div style="background-color: #FFFFFF;">
-    <button  style="background-color: #FFFFFF;border:0px solid black;padding:10px;"class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+    <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+        <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
         Link with href
       </button>
       <div class="collapse" id="collapseExample2" >
@@ -244,6 +254,18 @@
     </div>
 </div>
 
+<script>
+    function colapse_div(parent_div)
+    {
+     
+        if(parent_div.getAttribute('aria-expanded')=='false')
+        {
+            parent_div.children[0].src="{{asset('storage/signe-moins.png')}}";
+        }else{
+            parent_div.children[0].src="{{asset('storage/plus.png')}}";
+        }
 
+    }
+</script>
 
 @endsection
