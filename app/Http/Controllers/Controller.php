@@ -2969,5 +2969,50 @@ else
             
           }
 
+          public function produit_sous_categorie($id_type,$id_tag,$page=1)
+          {
+
+            $this->actualiser_user();
+
+            $id_user=0;
+            if (Session::get('user')){
+                $user=Session::get('user');
+                $id_user=$user['IDUtilisateurs'];
+               
+            }
+
+            $details_collection = Http::post('http://51.68.36.192/REST_BeldiLook/remplir_details_collection', [
+                'id_utilisateur' => $id_user,
+                'id_categorie' => '',
+                'id_collection' => $id_type,
+                'filtre_couleur' => '',
+                'filtre_taille' => '',
+                'filtre_etat_tenue' => '',
+                'page' => intval($page),
+                'type' => '',
+                'id_sous_categorie' => $id_tag,
+                'prix_min' => 0,
+                'prix_max' => 0
+            ]);
+    
+    
+    
+            if ($details_collection->successful()){
+                $details_collection2 = $details_collection->json();
+                //dd($details_collection2);
+                $articles=$details_collection2['tab_articles'];
+            }else{
+                return redirect()->back()->with('message', __('favoris.erreur'))->withInput();
+            }
+
+
+            return view('page_produit_sous_categorie',[
+                'articles' => $articles,
+                'page' => $page,
+                'type_tag' => $id_type,
+                'tag' => $id_tag
+            ]);
+          }
+
 
 }
