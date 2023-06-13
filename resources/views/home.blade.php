@@ -519,18 +519,6 @@
        {{--  <label for="inputsm" style="display: inline;">Search :</label> --}}
     
    
-      
-     
-
-   
-   
-    
-   
-
-      
-
-    
-     
         
 
     </div>
@@ -578,7 +566,7 @@
                         
 
     </div>
-    <div class="col  col-xl-4 col-lg-4 col-md-12 col-sm-12  ">
+    <div class="col  col-xl-5 col-lg-5 col-md-12 col-sm-12  ">
 
 
       <div class="scrollable-tabs-container-tailles container" id="scrollable-tabs-container-tailles" style="height: 42px;">
@@ -627,7 +615,7 @@
 
 
     </div>
-    <div class="col  col-xl-5 col-lg-5 col-md-12 col-sm-12   ">
+    <div class="col  col-xl-4 col-lg-4 col-md-12 col-sm-12   ">
 
       <div class="scrollable-tabs-container container">
         <div class="left-arrow d-none">
@@ -684,13 +672,13 @@
           </div>
 
           <div class="col-12 p-2 ">
-            <select class="border-0 w-100" name="" id="">
+            <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="">
               <option value="">genre</option>
             </select>
           </div>
          
           <div class="col-12 p-2">
-            <select class="border-0 w-100" name="" id="">
+            <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="">
               <option value="">Type du Tissu</option>
             </select>
           </div>

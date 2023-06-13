@@ -34,8 +34,58 @@
     <h1>{{__('offre_vente.titre')}}</h1>
     <br>
     <div class="row">
+
+
+
+      @forelse ($articles as $article)
+              <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+                
+                   
+                
+                <div class="card card_content border-0">
+
+                
+                  
+                    <a href="{{route('get_modifier_produit',$article['idarticles'])}}">
+                        <img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" >
+                    </a>
+
+                    @if ($article['favoris5']==1)
+                   <img id="art{{$article['idarticles']}}" onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
+                    @else
+                   <img id="art{{$article['idarticles']}}"  onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likevide_1.png') }} alt="">
+                    @endif
+                   
+
+                      
+
+                        @if ($article['rupture_stock']!='no')
+                        <span class="badge bg-danger bottomright" >{{__('home.rupture_stock')}}</span>
+
+                        @endif
+
+                    
+                  
+
+                  <div class="card-body p-2 ">
+                   
+                    <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
+                   
+                    <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
        
-        @forelse ($articles as $article)
+       {{--  @forelse ($articles as $article)
     <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center">
     
         <div class="card card2" >
@@ -58,15 +108,15 @@
             </div>
           </div>
     
-    </div> 
+    </div>  --}}
        @empty
-<p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
+<p class="col-12 " style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
        @endforelse
 
     </div>
 </div>
 
-<div style="text-align: center;padding-bottom:50px">
+<div style="text-align: center;padding-bottom:50px ; margin-top: 20px">
     @if ($page==1 or $page=='')
     <a class="paginationa" href="">❮</a>
     <a class="paginationa" href={{$request->fullUrlWithQuery(['page' => 2]) }}>❯</a>

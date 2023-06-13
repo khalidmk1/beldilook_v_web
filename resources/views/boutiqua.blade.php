@@ -4,6 +4,10 @@
 <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
+{{-- @php
+  dd($boutique);
+@endphp --}}
+
 
 <style>
     .a_yellow{
@@ -60,14 +64,100 @@ width: 300px;
 
 
 
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="row">
+          <div class="col-12 text-center">
+            <img src="{{$boutique['photo']}}" alt="boutique" style="height: 100px " class="rounded-circle">
+          </div>
+          <div class="col-12">
+            <div class="row ">
+              <div class="col-8">
+                <h1  style="color:#263066; ">{{$boutique['nom']}}</h1>
+              </div>
+              <div class="col-4">
+                <img src="{{ asset('storage/verifier bl.png') }}" alt="" height="50" width="50">
+              </div>
+            </div>
+           
+          </div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col  p-2">
+                @if($boutique_info['lien_facebook']!='')
+                <a style="display: inline;text-decoration:none ; color: black" class="a_blue" href="{{$boutique_info['lien_facebook']}}" target="_blank">    
+                  <div style="">Facebook 
+                    <img src="{{ asset('storage/facebbok.png') }}" alt="" height="30px" width="30px"></div>
+                </a>
+                @endif
+              </div>
+              <div class="col  p-2">
+                @if($boutique_info['lien_tiktok']!='')
+                <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_tiktok']}}" target="_blank">    
+                  <div style="">Tiktok 
+                    <img src="{{ asset('storage/tiktok.png') }}" alt="" height="30px" width="30px">
+                  </div>
+                </a>
+                @endif
+
+              </div>
+              <div class="w-100"></div>
+              <div class="col  p-2"> @if($boutique_info['lien_snapshat']!='')
+                <a style="display: inline;text-decoration:none ; color: black"  href="{{$boutique_info['lien_snapshat']}}" target="_blank">    
+                  <div style="">Snapshat <img src="{{ asset('storage/snapcaht.png') }}" alt="" height="30px" width="30px"></div>
+                </a>
+                @endif</div>
+              <div class="col  p-2"> 
+                @if($boutique_info['lien_youtube']!='')
+                <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_youtube']}}" target="_blank">    
+                  <div style="">Youtube <img src="{{ asset('storage/youtube.png') }}" alt="" height="30px" width="30px"></div>
+                </a>
+                @endif
+              </div>
+
+              <div class="w-100"></div>
+              <div class="col p-2">
+                @if($boutique_info['lien_linkdin']!='')
+                <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_linkdin']}}" target="_blank">   
+                   <div style="">Linkdin <img src="{{ asset('storage/Linkdin.png') }}" alt="" height="30px" width="30px"></div>
+                </a>
+                @endif
+              </div>
+              <div class="col  p-2">
+                @if($boutique_info['lien_instagram']!='')
+                <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_instagram']}}" target="_blank">   
+                   <div style="">Instagram <img src="{{ asset('storage/insta.png') }}" alt="" height="30px" width="30px"></div>
+                </a>
+                @endif
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-8 col-sm-6">
+            Level 2: .col-8 .col-sm-6
+          </div>
+          <div class="col-4 col-sm-6">
+            Level 2: .col-4 .col-sm-6
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
 
-<img src="{{ asset('storage/cover_boutique.jpg') }} " height="300px" width="100%" alt="">
+
+
+{{-- 
+<img src="{{ asset('storage/cover_boutique.jpg') }} " height="300px" width="100%" alt=""> --}}
 
 @if(App::getlocale()=="ar")
-<h3  style="margin: 40px 0px 20px 20px;color:#263066;text-align:end;display:inline;position: relative;top:10px">{{$boutique['nom']}}</h1>
+<h1  style="margin: 40px 0px 20px 20px;color:#263066;text-align:end;display:inline;position: relative;top:10px">{{$boutique['nom']}}</h1>
 @else
 <h3  style="margin: 40px 0px 20px 20px;color:#263066;text-align:start;display:inline;position: relative;top:10px">{{$boutique['nom']}}</h1>
 @endif
@@ -75,7 +165,8 @@ width: 300px;
 <div style="padding-top: 20px;text-align:center">
     @foreach ($produits as $produit)
     <div style="display: inline">
-        <a href="{{route('details_produit',$produit['idarticles'])}}">        <img style="border-radius: 50%;margin-right:15px"  src="{{ $produit['photo1'] }}" alt="" height="150" width="150">
+        <a href="{{route('details_produit',$produit['idarticles'])}}">        
+          <img style="border-radius: 50%;margin-right:15px"  src="{{ $produit['photo1'] }}" alt="" height="150" width="150">
         </a>
     </div>
     @endforeach
