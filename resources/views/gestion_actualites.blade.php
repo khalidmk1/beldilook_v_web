@@ -193,7 +193,39 @@ right:20px;
     <div class="row" id="div_element">
         
         @forelse ($actualites as $actualite)
-    <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center">
+
+        <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+                
+                   
+                
+          <div class="card card_content border-0">
+
+          
+            
+              
+                  <img src={{ $actualite['Image']}} class="card-img-top img_product img-fluid" onclick="afficher_blog('{{$actualite['Lien']}}','{{$actualite['Type']}}','{{ $actualite['Image']}}','{{ $actualite['idblog']}}') alt="product_card" >
+              
+
+
+            
+
+           
+             <img id="delete_blog" onclick="delete_blog('{{ $actualite['idblog']}}',this)"  class="topright pointer" height="30" width="30" src={{ asset('storage/supp2_new.png') }}  alt="">
+             
+
+              
+            
+
+            <div class="card-body p-2 ">
+             
+              <h5 class="card-title mb-1 " >{{$actualite['Type']}} </h5>
+             
+            </div>
+          </div>
+        </div>
+
+
+    {{-- <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center">
     
         <div class="card card2" >
             <div class="imgprod">          
@@ -206,7 +238,7 @@ right:20px;
              </div>
           </div>
     
-    </div> 
+    </div>  --}}
        @empty
 <p class="col-12" style="text-align: center;padding-top: 80px;">Aucune actualité</p>
        @endforelse
@@ -215,7 +247,7 @@ right:20px;
 </div>
 
 <br>
-<div id="div_paginate" style="text-align: center;padding-bottom:50px">
+<div id="div_paginate" class="p-3" style="text-align: center;">
     @if ($page==1 or $page=='')
     @if(count($actualites)>0)
     <a class="paginationa" href="">❮</a>

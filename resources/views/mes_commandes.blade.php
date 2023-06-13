@@ -259,7 +259,7 @@
     <div class="row" style="padding-top: 10px">
     
        
-            <img height="200" width="200" src="{{$commande['sImg_premier_article']}}" alt="" style="object-fit: contain">
+            <img height="200" width="200" style="border-radius: 10px ;object-fit: contain" src="{{$commande['sImg_premier_article']}}" alt="" >
        
        
        <div class="col" > <div  >

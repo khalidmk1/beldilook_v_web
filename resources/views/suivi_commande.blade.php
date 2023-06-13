@@ -215,7 +215,7 @@
       <div class="row @if(App::getlocale()=="ar") flex-row-reverse @endif" style="padding: 10px">
     
        
-            <img height="200" width="200" src="{{$details['Image']}}" alt="" style="object-fit: contain">
+            <img height="200" width="200" src="{{$details['Image']}}" alt="" style="object-fit: contain;border-radius: 10px">
        
        
        <div class="col" > <div >

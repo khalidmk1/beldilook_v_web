@@ -317,7 +317,7 @@
     <label for="name_product">{{__('ajout_produit.nom_produit')}} :</label>
     @endif
     
-    <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control " id="name_product" placeholder="" name="name_product" value="{{$details_produit['sNom_produit']}}">
+    <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="border-top-0 border-right-0 border-left-0 form-control " id="name_product" placeholder="" name="name_product" value="{{$details_produit['sNom_produit']}}">
    
     <div class="invalid-feedback" id="span_name"></div>
     
@@ -330,7 +330,7 @@
     @else
     <label for="categorie">{{__('ajout_produit.categorie')}} :</label>
     @endif
-    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control" aria-label="Default select example" id="categorie" name="categorie" required>
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="border-top-0 border-right-0 border-left-0 form-select form-control" aria-label="Default select example" id="categorie" name="categorie" required>
       <option selected></option>
     @foreach ($categories as $categorie)
   
@@ -354,7 +354,7 @@
     @else
     <label for="genre">{{__('ajout_produit.genre')}} :</label>
     @endif
-    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control" aria-label="Default select example" id="genre" name="genre" required>
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="border-top-0 border-right-0 border-left-0 form-select form-control" aria-label="Default select example" id="genre" name="genre" required>
     
    
   
@@ -380,7 +380,7 @@
         @else
         <label for="tissue">{{__('ajout_produit.tissue')}} :</label>
         @endif
-    <select  @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control" aria-label="Default select example" id="tissue" name="tissue" required>
+    <select  @if(App::getlocale()=="ar") style="text-align: end" @endif class="border-top-0 border-right-0 border-left-0 form-select form-control" aria-label="Default select example" id="tissue" name="tissue" required>
       <option selected></option>
     @foreach ($tissues as $tissue)
   
@@ -405,7 +405,7 @@
     @else
     <label for="etat_tenue">{{__('ajout_produit.etat_tenue')}} :</label>
     @endif
-    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
+    <select  @if(App::getlocale()=="ar") style="text-align: end" @endif class="border-top-0 border-right-0 border-left-0 form-select form-control" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
       <option selected></option>
     @foreach ($etats as $etat)
   
@@ -443,7 +443,7 @@
     @else
     <label for="tag1">{{__('ajout_produit.tag1')}} :</label>
     @endif
-    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control" aria-label="Default select example" id="tag1" name="tag1" required>
+    <select  @if(App::getlocale()=="ar") style="text-align: end" @endif class="border-top-0 border-right-0 border-left-0 form-select form-control" aria-label="Default select example" id="tag1" name="tag1" required>
       <option selected></option>
     @foreach ($tags1 as $tag1)
   
@@ -466,7 +466,7 @@
     @else
     <label for="tag2">{{__('ajout_produit.tag2')}} :</label>
     @endif
-    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control" aria-label="Default select example" id="tag2" name="tag2" required>
+    <select  @if(App::getlocale()=="ar") style="text-align: end" @endif class="border-top-0 border-right-0 border-left-0 form-select form-control" aria-label="Default select example" id="tag2" name="tag2" required>
       <option selected></option>
     @foreach ($tags2 as $tag2)
   
@@ -490,7 +490,7 @@
     @else
     <label for="tag3">{{__('ajout_produit.tag3')}} :</label>
     @endif
-    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control" aria-label="Default select example" id="tag3" name="tag3" required>
+    <select  @if(App::getlocale()=="ar") style="text-align: end" @endif class="border-top-0 border-right-0 border-left-0 form-select form-control border-top-0 border-right-0 border-left-0" aria-label="Default select example" id="tag3" name="tag3" required>
       <option selected></option>
     @foreach ($tags3 as $tag3)
   
@@ -512,7 +512,7 @@
     @else
     <label for="tag4">{{__('ajout_produit.tag4')}} :</label>
     @endif
-    <select  @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control" aria-label="Default select example" id="tag4" name="tag4" required>
+    <select   @if(App::getlocale()=="ar") style="text-align: end" @endif class="border-top-0 border-right-0 border-left-0 form-select form-control" aria-label="Default select example" id="tag4" name="tag4" required>
       <option selected></option>
     @foreach ($tags4 as $tag4)
   

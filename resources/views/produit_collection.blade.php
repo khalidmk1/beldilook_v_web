@@ -114,15 +114,15 @@ width:400px;
          </div>
          <div class="modal-body">
 
-             <div class="row">
+             <div class="row justify-content-center">
                  <div class="title col-12">Prix minimum</div>
                  <input class="progress_input slider  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" />
-                 <p class="col-12 RadialProgress radian p-0"  style="position: relative; top: 11px;"> <span id="pix_minimum"></span> </p>
+                 <p class="col-12 RadialProgress radian pr-2"  style="position: relative; top: 11px;"> <span id="pix_minimum"></span> </p>
 
              </div>
-             <div class="row">
+             <div class="row justify-content-center">
                  <div class="title col-12">Prix maximum</div>
-                 <div class="slidecontainer p-0">
+                 <div class="slidecontainer text-center p-0">
                    <input type="range" min="0" max="30000" value="0" class="slider col-12 p-0 " id="myRange"> 
                    <p class="col-12 RadialProgress radian m-0 " style=" position: relative;
                    top: 11px;
@@ -347,6 +347,48 @@ width:400px;
     <div id="div_articles" class="row">
         {{ csrf_field() }}
         @forelse ($articles as $article)
+
+        <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+                
+                   
+                
+          <div class="card card_content border-0">
+
+          
+            
+              <a href="{{route('details_produit',$article['idarticles'])}}">
+                  <img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" >
+              </a>
+
+              @if ($article['favoris5']==1)
+             <img id="art{{$article['idarticles']}}" onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
+              @else
+             <img id="art{{$article['idarticles']}}"  onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likevide_1.png') }} alt="">
+              @endif
+             
+
+                  @if ($article['nouveau']==1)
+                  <span class="badge  bottomleft" >{{__('home.nouveau')}}</span>
+                  @endif
+
+                  @if ($article['rupture_stock']!='no')
+                  <span class="badge bg-danger bottomright" >{{__('home.rupture_stock')}}</span>
+
+                  @endif
+
+              
+            
+
+            <div class="card-body p-2 ">
+              <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
+              <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article['etat_tenu']}} </p>
+              <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
+              <p class="mb-1"> <a href="{{route('boutiqua',$article['idutilisateurs'])}}">{{$article['nom_vendeur']}}</a></p>
+            </div>
+          </div>
+        </div>
+
+{{-- 
     <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center">
     
         <div class="card card2" >
@@ -375,7 +417,7 @@ width:400px;
             </div>
           </div>
     
-    </div> 
+    </div>  --}}
        @empty
 <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
        @endforelse

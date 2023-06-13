@@ -105,7 +105,7 @@
     <div class="row" style="padding-top: 10px">
     
        
-            <img height="200" width="200" src="{{$commande['sImg_premier_article']}}" alt="" style="object-fit: contain">
+            <img height="200" width="200" src="{{$commande['sImg_premier_article']}}" alt="" style="object-fit: contain ;border-radius: 10px">
        
        
        <div class="col" > <div  >

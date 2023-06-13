@@ -49,12 +49,14 @@ width:400px;
 <div class="container">
   <div class="row">
     @foreach ($collection as $item)
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-2">
       <div class="card">
-        <a href="{{route('produit_collection',$item['id_type_tag'])}}"><img class="card-img " src="{{$item['image_type']}}" alt="tags"></a>
+        <a href="{{route('produit_collection',$item['id_type_tag'])}}" style="position: relative ; z-index: 100;">
+          <img class="card-img " src="{{$item['image_type']}}" alt="tags">
+        </a>
         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
-          <h4 class="card-title">{{$item['Libelle']}}</h4>
-          <p class="card-text">{{$item['description']}}</p>
+          <h4 style="position: relative ; z-index: 200;" class="card-title">{{$item['Libelle']}}</h4>
+          <p style="position: relative ; z-index: 200;" class="card-text">{{$item['description']}}</p>
         </div>
       </div>
     </div>
