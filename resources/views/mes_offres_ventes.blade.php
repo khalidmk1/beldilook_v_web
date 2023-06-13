@@ -50,11 +50,12 @@
                         <img src="{{ $article['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" >
                     </a>
 
-                    @if ($article['favoris5']==1)
-                   <img id="art{{$article['idarticles']}}" onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
-                    @else
-                   <img id="art{{$article['idarticles']}}"  onclick="favoris({{$article['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likevide_1.png') }} alt="">
-                    @endif
+
+                  
+
+                 
+                   <img id="art{{$article['idarticles']}}" onclick="delete_article({{$article['idarticles']}})"  class="topright pointer" height="30" width="30" src={{ asset('storage/supp2_new.png') }}  alt="">
+                   
                    
 
                       

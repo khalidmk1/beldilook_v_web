@@ -66,25 +66,33 @@ width: 300px;
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-5">
         <div class="row">
           <div class="col-12 text-center">
             <img src="{{$boutique['photo']}}" alt="boutique" style="height: 100px " class="rounded-circle">
           </div>
           <div class="col-12">
-            <div class="row ">
-              <div class="col-8">
-                <h1  style="color:#263066; ">{{$boutique['nom']}}</h1>
+            <div class="row text-center justify-content-center">
+              <div class="col-8" style="margin: 15px 0px 8px 0px;">
+                <h1  style="color:#263066;font-size: 16px; ">{{$boutique['nom']}}</h1>
               </div>
-              <div class="col-4">
-                <img src="{{ asset('storage/verifier bl.png') }}" alt="" height="50" width="50">
+              <div class="col-4" style="position: absolute;
+              text-align: start;
+              right: 7%;
+              top: 9px;
+              margin-right: -44px;">
+                <img src="{{ asset('storage/verifier bl.png') }}" alt="" style="height: 29px;
+                width: 30px;">
               </div>
             </div>
            
           </div>
           <div class="col-12">
             <div class="row">
-              <div class="col  p-2">
+              <div class="col-12">
+                <h5  style="color:#263066;">{{__('boutiqua.reseau_sociaux')}}</h5>
+              </div>
+              <div class="col text-center p-2">
                 @if($boutique_info['lien_facebook']!='')
                 <a style="display: inline;text-decoration:none ; color: black" class="a_blue" href="{{$boutique_info['lien_facebook']}}" target="_blank">    
                   <div style="">Facebook 
@@ -92,10 +100,10 @@ width: 300px;
                 </a>
                 @endif
               </div>
-              <div class="col  p-2">
+              <div class="col  text-center  p-2">
                 @if($boutique_info['lien_tiktok']!='')
                 <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_tiktok']}}" target="_blank">    
-                  <div style="">Tiktok 
+                  <div style="margin-left: 21px;">Tiktok 
                     <img src="{{ asset('storage/tiktok.png') }}" alt="" height="30px" width="30px">
                   </div>
                 </a>
@@ -103,45 +111,155 @@ width: 300px;
 
               </div>
               <div class="w-100"></div>
-              <div class="col  p-2"> @if($boutique_info['lien_snapshat']!='')
+              <div class="col  text-center   p-2"> 
+                @if($boutique_info['lien_snapshat']!='')
                 <a style="display: inline;text-decoration:none ; color: black"  href="{{$boutique_info['lien_snapshat']}}" target="_blank">    
-                  <div style="">Snapshat <img src="{{ asset('storage/snapcaht.png') }}" alt="" height="30px" width="30px"></div>
+                  <div style="">Snapshat 
+                    <img src="{{ asset('storage/snapcaht.png') }}" alt="" height="30px" width="30px">
+                  </div>
                 </a>
                 @endif</div>
-              <div class="col  p-2"> 
+              <div class="col  text-center   p-2"> 
                 @if($boutique_info['lien_youtube']!='')
                 <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_youtube']}}" target="_blank">    
-                  <div style="">Youtube <img src="{{ asset('storage/youtube.png') }}" alt="" height="30px" width="30px"></div>
+                  <div style="">Youtube 
+                    <img src="{{ asset('storage/youtube.png') }}" alt="" height="30px" width="30px">
+                  </div>
                 </a>
                 @endif
               </div>
 
               <div class="w-100"></div>
-              <div class="col p-2">
+              <div class="col  text-center p-2" >
                 @if($boutique_info['lien_linkdin']!='')
                 <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_linkdin']}}" target="_blank">   
-                   <div style="">Linkdin <img src="{{ asset('storage/Linkdin.png') }}" alt="" height="30px" width="30px"></div>
+                   <div style="margin-left: 10px;">Linkdin 
+                    <img src="{{ asset('storage/Linkdin.png') }}" alt="" height="30px" width="30px">
+                  </div>
                 </a>
                 @endif
               </div>
-              <div class="col  p-2">
+              <div class="col  text-center   p-2">
                 @if($boutique_info['lien_instagram']!='')
                 <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_instagram']}}" target="_blank">   
-                   <div style="">Instagram <img src="{{ asset('storage/insta.png') }}" alt="" height="30px" width="30px"></div>
+                   <div style="margin-right: 16px;">
+                    Instagram 
+                    <img src="{{ asset('storage/insta.png') }}" alt="" height="30px" width="30px">
+                  </div>
                 </a>
                 @endif
               </div>
+              <div class="w-100"></div>
+              <div class="col p-2 text-center">
+                <a   href="{{route('actualites',$id_boutique)}}" class="a_yellow" >    
+                  <div style="">{{__('boutiqua.news')}} </div>
+                </a>
+              </div>
+              
+              <div class="col p-2 text-center">
+                <a onclick="show_locals()" style="color:black" class="a_blue"  href="#" >   
+                   <div >{{__('boutiqua.notre_local')}} </div>
+                </a>
+              </div>
             </div>
+            <div class="w-100"></div>
+            {{-- <div class="col  text-center" style="color:bla">
+              @if(count($produits)!=0)
+              <a style="color:black" href="{{route('page_vendeur',$id_boutique)}}">{{__('boutiqua.voir_plus')}}</a>
+              @else
+              <p class="col-12" style="text-align: center; color:black ;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
+              @endif
+            </div> --}}
           </div>
         </div>
       </div>
-      <div class="col-sm-9">
+      <div class="col-sm-7">
         <div class="row">
-          <div class="col-8 col-sm-6">
-            Level 2: .col-8 .col-sm-6
+          <div class="col-12 text-center">
+            <a href="@if($rate_user['nb_avis']!=0) {{route('commentaires',$id_boutique)}} @else # @endif" style="text-decoration: none;color: black" class="a_blue" >
+
+              <div class="stars" style="padding-top: 10px">
+          
+                  <div>
+                      <span class="star1" style="font-size: 17px ;display:inline"> {{$rate_user['nb_avis']." ".__('page_details_produit.avis')}}</span>
+          
+                    @php
+                    $etoile=$rate_user['moyenne_etoile'];
+                    $etoile=intval($etoile);
+                    @endphp
+                     @if($etoile==0)
+                     <i class="star stargrey fas fa-star" data-index="0"></i>
+                     <i class="star stargrey fas fa-star" data-index="1"></i>
+                     <i class="star stargrey fas fa-star" data-index="2"></i>
+                     <i class="star stargrey fas fa-star" data-index="3"></i>
+                     <i class="star stargrey fas fa-star" data-index="4"></i>
+                     @endif
+                    @if($etoile==1)
+                    <i class="star yellow fas fa-star" data-index="0"></i>
+                    <i class="star stargrey fas fa-star" data-index="1"></i>
+                    <i class="star stargrey fas fa-star" data-index="2"></i>
+                    <i class="star stargrey fas fa-star" data-index="3"></i>
+                    <i class="star stargrey fas fa-star" data-index="4"></i>
+                    @endif
+                    @if($etoile==2)
+                    <i class="star yellow fas fa-star" data-index="0"></i>
+                    <i class="star yellow fas fa-star" data-index="1"></i>
+                    <i class="star stargrey fas fa-star" data-index="2"></i>
+                    <i class="star stargrey fas fa-star" data-index="3"></i>
+                    <i class="star stargrey fas fa-star" data-index="4"></i>
+                    @endif
+                    @if($etoile==3)
+                    <i class="star yellow fas fa-star" data-index="0"></i>
+                    <i class="star yellow fas fa-star" data-index="1"></i>
+                    <i class="star yellow fas fa-star" data-index="2"></i>
+                    <i class="star stargrey fas fa-star" data-index="3"></i>
+                    <i class="star stargrey fas fa-star" data-index="4"></i>
+                    @endif
+                    @if($etoile==4)
+                    <i class="star yellow fas fa-star" data-index="0"></i>
+                    <i class="star yellow fas fa-star" data-index="1"></i>
+                    <i class="star yellow fas fa-star" data-index="2"></i>
+                    <i class="star yellow fas fa-star" data-index="3"></i>
+                    <i class="star stargrey fas fa-star" data-index="4"></i>
+                    @endif
+                    @if($etoile==5)
+                    <i class="star yellow fas fa-star" data-index="0"></i>
+                    <i class="star yellow fas fa-star" data-index="1"></i>
+                    <i class="star yellow fas fa-star" data-index="2"></i>
+                    <i class="star yellow fas fa-star" data-index="3"></i>
+                    <i class="star yellow fas fa-star" data-index="4"></i>
+                    @endif
+                   
+                  </div>
+          
+          
+                
+                    
+                 
+                </div>
+          
+              </a>
           </div>
-          <div class="col-4 col-sm-6">
-            Level 2: .col-4 .col-sm-6
+          @foreach ($produits as $produit)
+          <div class="col col-lg-4 col-xl-4 col-md-4 col-sm-12 text-center p-3">
+          
+    <div style="display: inline">
+        <a href="{{route('details_produit',$produit['idarticles'])}}">        
+          <img style="margin-right: 15px;
+          height: 200px;
+          width: 200px;
+          border-radius: 11px;"  src="{{ $produit['photo1'] }}" alt="" >
+        </a>
+    </div>
+   
+          </div>
+          @endforeach
+          <div class="col-12 d-flex justify-content-center align-items-center">
+            @if(count($produits)!=0)
+              <a style="color:black" href="{{route('page_vendeur',$id_boutique)}}">{{__('boutiqua.voir_plus')}}</a>
+              @else
+              <p class="col-12" style="text-align: center; color:black ;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
+              @endif
           </div>
         </div>
       </div>
@@ -156,7 +274,7 @@ width: 300px;
 {{-- 
 <img src="{{ asset('storage/cover_boutique.jpg') }} " height="300px" width="100%" alt=""> --}}
 
-@if(App::getlocale()=="ar")
+{{-- @if(App::getlocale()=="ar")
 <h1  style="margin: 40px 0px 20px 20px;color:#263066;text-align:end;display:inline;position: relative;top:10px">{{$boutique['nom']}}</h1>
 @else
 <h3  style="margin: 40px 0px 20px 20px;color:#263066;text-align:start;display:inline;position: relative;top:10px">{{$boutique['nom']}}</h1>
@@ -247,7 +365,7 @@ width: 300px;
           <i class="star yellow fas fa-star" data-index="4"></i>
           @endif
          
-        </div>
+        </div> --}}
 
 
         {{--   <span class="star1"><img src="images/stars.png" class="img_stars"   alt=""></span>
@@ -256,7 +374,7 @@ width: 300px;
           <span class="star1"><img src="images/stars.png" class="img_stars"   alt=""></span>
           <span class="star1"><img src="images/stars.png" class="img_stars"   alt=""></span> --}}
           
-       
+   {{--     
       </div>
     </a>
 </div>
@@ -374,17 +492,17 @@ width: 300px;
     @if($boutique_info['lien_visite_3d']!='')
     <a style="display: inline;text-decoration:none" class="a_blue"  href="{{$boutique_info['lien_visite_3d']}}" target="_blank">    <div style="padding-left: 20px;display:inline-block;padding-bottom:10px">{{__('boutiqua.visite_virtuelle')}} </div>
     </a>
-    @endif
+    @endif --}}
 
 
-    <a style="display: inline;text-decoration:none"  href="{{route('actualites',$id_boutique)}}" class="a_yellow" >    <div style="padding-left: 20px;display:inline-block;padding-bottom:10px;">{{__('boutiqua.news')}} </div>
+  {{--   <a style="display: inline;text-decoration:none"  href="{{route('actualites',$id_boutique)}}" class="a_yellow" >    <div style="padding-left: 20px;display:inline-block;padding-bottom:10px;">{{__('boutiqua.news')}} </div>
     </a>
     <a onclick="show_locals()" style="display: inline;text-decoration:none" class="a_blue"  href="#" >    <div style="padding-left: 20px;display:inline-block;padding-bottom:10px">{{__('boutiqua.notre_local')}} </div>
         
     </a>
   
 </div>
-</div>
+</div> --}}
 
 
 <script>

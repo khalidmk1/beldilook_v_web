@@ -661,7 +661,7 @@
 
       <div class="row">
         <div class="col-md-3  " >
-        <div class="row text-center"   >
+        <div class="row "   >
 
 
           <div class="col p-3 "> 
@@ -672,31 +672,35 @@
           </div>
 
           <div class="col-12 p-2 ">
+            <label for="" style="color:#00000070" class="text-left">Genre</label>
             <select id="combo_genre" class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="">
               <option value="">Tout</option>
               <option value="Homme">Homme</option>
               <option value="Femme">Femme</option>
               <option value="Garçon">Garçon</option>
               <option value="Fille">Fille</option>
+          
             </select>
           </div>
          
           <div class="col-12 p-2">
+            <label for=""  style="color:#00000070" class="text-left">Type du Tissu</label>
             <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="type_tissus">
               <option value="" selected>Tout</option>
               @foreach ($tissus as $tissu)
               <option value="{{$tissu['idtissus']}}">{{$tissu['Libelle']}}</option>
               @endforeach
               
+           
             </select>
           </div>
 
 
-          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter p-3"  style="font-size: 14px;">
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter p-3"  style="font-size: 14px; color:#00000070">
           Categories  
           </div>
           <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 p-3">
-            <div class="font_side_filtter" onclick="tout_selectionner_categories(this)" id="select_all">Tout sélectionner</div>
+            <div class="font_side_filtter " style="color:#00000070 ;cursor: pointer; " onclick="tout_selectionner_categories(this)" id="select_all">Tout sélectionner</div>
           </div>
           <div class="col">
 
@@ -721,8 +725,8 @@
 
           </div>
 
-          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3">Etat tenue</div>
-          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3" style="color:#00000070">Etat tenue</div>
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" style="color:#00000070" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
         
           <div class="col">
 

@@ -123,7 +123,46 @@
     <div class="container items">
         <div class="row">
             @forelse ($articles as $article)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center;padding-top:5px">
+
+
+            <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+                
+                   
+                
+              <div class="card card_content border-0">
+
+              
+                
+                  
+                      <img  src={{ $article['image1']}} class="card-img-top img_product img-fluid"  alt="product_card" >
+                  
+
+
+                
+
+               
+                 <img id="art{{$article['idarticles']}}" onclick="delete_article({{$article['idarticles']}})"  class="topright pointer" height="30" width="30" src={{ asset('storage/supp2_new.png') }}  alt="">
+                 
+                 
+
+                    
+
+
+                  
+                
+
+                <div class="card-body p-2 ">
+                 
+                  <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
+                 
+                  <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
+                </div>
+              </div>
+            </div>
+
+
+
+     {{--    <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center;padding-top:5px">
         
             <div class="card card2" >
                 <div class="imgprod">
@@ -139,7 +178,7 @@
                 </div>
               </div>
         
-        </div> 
+        </div> --}} 
            @empty
     <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
            @endforelse
@@ -152,7 +191,47 @@
     <div class="container items">
         <div class="row">
             @forelse ($boutiques as $boutique)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center;padding-top:5px">
+
+
+            <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+                
+                   
+                
+              <div class="card card_content border-0">
+
+              
+                
+                  
+                      <img src={{ $boutique['photologo']}}  class="card-img-top img_product img-fluid"  alt="product_card" >
+                  
+
+
+                
+
+               
+                 <img id="art{{$article['idarticles']}}" onclick="delete_article({{$article['idarticles']}})"  class="topright pointer" height="30" width="30" src={{ asset('storage/supp2_new.png') }}  alt="">
+                 
+                 
+
+                    
+
+
+                  
+                
+
+                <div class="card-body p-2 ">
+                 
+                  <h5 class="card-title mb-1 " >{{$boutique['nomb'].' '.$boutique['prenomb']}} </h5>
+                 
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+      {{--   <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center;padding-top:5px">
         
             <div class="card card2" >
                 <div class="imgprod">
@@ -164,7 +243,10 @@
                 </div>
               </div>
         
-        </div> 
+        </div>  --}}
+
+
+
            @empty
     <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_boutique')}}</p>
            @endforelse
