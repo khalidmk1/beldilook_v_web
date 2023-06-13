@@ -123,7 +123,11 @@
                       @php
                           $solde=number_format($user['solde'], 2, ',', ' ')
                       @endphp
-                      <a class="dropdown-item" @if($user['solde']!=0) href="{{route('solde_user')}}" @endif style="cursor: pointer;">{{__('nav.mon_solde')}} : {{$solde.' DH'}}</a>
+                      @if(App::getlocale()=="ar")
+                      <a class="dropdown-item" @if($user['solde']!=0) href="{{route('solde_user')}}" @endif style="cursor: pointer;">  {{$solde}} DH : {{__('nav.mon_solde')}}</a>
+                      @else
+                      <a class="dropdown-item" @if($user['solde']!=0) href="{{route('solde_user')}}" @endif style="cursor: pointer;">   {{__('nav.mon_solde')}} : {{$solde}} DH</a>
+                      @endif
                       <a class="dropdown-item" href={{ route('myaccount') }}>{{__('nav.myaccount')}}</a>
                      
                       @if($user['pack_user']=='GOLD' || $user['pack_user']=='SILVER' || $user['pack_user']=='BRONZE')
