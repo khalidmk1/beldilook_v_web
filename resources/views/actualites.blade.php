@@ -12,7 +12,41 @@
 
 <div class="container items">
     <div class="row">
-        
+
+
+        @forelse ($actualites as $actualite)
+        <div class="  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+
+
+            <div class="card card_content border-0">
+                
+
+                <a href="{{ $actualite['Lien']}}">
+                <img src="{{ $actualite['Image']}} " alt="product_card"
+                    class="card-img-top img_product img-fluid" alt="product_card">
+                </a>  
+
+
+
+
+                <div class="card-body p-2  ">
+
+
+                    <h5 class="card-title mb-1 text-center">{{$actualite['Type']}}</h5>
+                    
+                   
+                   
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    {{--     
         @forelse ($actualites as $actualite)
     <div class="col-lg-3 col-md-4 col-sm-6 col-6" style="padding-bottom: 20px;display:flex;justify-content:center;align-items:center">
     
@@ -28,7 +62,10 @@
              </div>
           </div>
     
-    </div> 
+    </div>  --}}
+
+
+
        @empty
 <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('actualites.aucun_actualite')}}</p>
        @endforelse

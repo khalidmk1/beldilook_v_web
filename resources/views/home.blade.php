@@ -679,6 +679,7 @@
               <option value="Femme">Femme</option>
               <option value="Garçon">Garçon</option>
               <option value="Fille">Fille</option>
+          
             </select>
           </div>
          
@@ -690,6 +691,7 @@
               <option value="{{$tissu['idtissus']}}">{{$tissu['Libelle']}}</option>
               @endforeach
               
+           
             </select>
           </div>
 

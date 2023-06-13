@@ -11,7 +11,7 @@
       <div class="mb-3 mt-3">
         <label for="code">{{__('register.code')}} :</label>
        
-        <input type="text" class="form-control @error('code') is-invalid @enderror" id="code"  name="code" value="{{ old('code') }}" required>
+        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('code') is-invalid @enderror" id="code"  name="code" value="{{ old('code') }}" required>
         
         @error('code')
         <div class="invalid-feedback">{{$message}}</div>

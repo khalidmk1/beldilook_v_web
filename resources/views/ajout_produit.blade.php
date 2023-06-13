@@ -469,7 +469,7 @@
       <label for="Description">{{__('mes_achats.description')}} :</label>
       @endif
     </div>
-  <textarea @if(App::getlocale()=="ar") style="text-align: end" @endif required class="form-control in_contact" id="description"  name="description" rows="3" id="description"></textarea>
+  <textarea @if(App::getlocale()=="ar") style="text-align: end ;" @endif required class="form-control  " id="description"  name="description" rows="3" id="description"></textarea>
   <div class="invalid-feedback" id="span_description"></div>
   </div>
 
