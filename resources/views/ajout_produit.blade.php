@@ -416,9 +416,9 @@
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-        <label for="tissue">{{__('ajout_produit.tissue')}} :</label>
-        @else
         <label for="tissue">: {{__('ajout_produit.tissue')}}</label>
+        @else
+        <label for="tissue"> {{__('ajout_produit.tissue')}} :</label>
         @endif
     <select @if(App::getlocale()=="ar") style="text-align: end" @endif  class="form-select form-control in_contact" aria-label="Default select example" id="tissue" name="tissue" required>
       <option selected></option>
@@ -439,9 +439,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="etat_tenue">: {{__('ajout_produit.etat_tenue')}}</label>
+    @else
     <label for="etat_tenue">{{__('ajout_produit.etat_tenue')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
       <option selected></option>
     @foreach ($etats as $etat)
   
@@ -457,9 +461,15 @@
     
   </div>
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-  <div @if(App::getlocale()=="ar")  style="text-align: end" @endif><label for="Description">{{__('mes_achats.description')}}</label></div>
-  <textarea required class="form-control in_contact" id="description"  name="description" rows="3" id="description"></textarea>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    <div @if(App::getlocale()=="ar")  style="text-align: end" @endif>
+      @if(App::getlocale()=="ar")
+      <label for="Description">: {{__('mes_achats.description')}}</label>
+      @else
+      <label for="Description">{{__('mes_achats.description')}} :</label>
+      @endif
+    </div>
+  <textarea @if(App::getlocale()=="ar") style="text-align: end" @endif required class="form-control in_contact" id="description"  name="description" rows="3" id="description"></textarea>
   <div class="invalid-feedback" id="span_description"></div>
   </div>
 
@@ -467,9 +477,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="etat_tenue">{{__('ajout_produit.tag1')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag1" name="tag1" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="tag1">: {{__('ajout_produit.tag1')}}</label>
+    @else
+    <label for="tag1">{{__('ajout_produit.tag1')}} :</label>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="tag1" name="tag1" required>
       <option selected></option>
     @foreach ($tags1 as $tag1)
   
@@ -487,9 +501,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="etat_tenue">{{__('ajout_produit.tag2')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag2" name="tag2" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="tag2">: {{__('ajout_produit.tag2')}}</label>
+    @else
+    <label for="tag2">{{__('ajout_produit.tag2')}} :</label>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="tag2" name="tag2" required>
       <option selected></option>
     @foreach ($tags2 as $tag2)
   
@@ -507,9 +525,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="etat_tenue">{{__('ajout_produit.tag3')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag3" name="tag3" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="tag3">: {{__('ajout_produit.tag3')}}</label>
+    @else
+    <label for="tag3">{{__('ajout_produit.tag3')}} :</label>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="tag3" name="tag3" required>
       <option selected></option>
     @foreach ($tags3 as $tag3)
   
@@ -525,9 +547,13 @@
     
   </div>
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="etat_tenue">{{__('ajout_produit.tag4')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag4" name="tag4" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="tag4">: {{__('ajout_produit.tag4')}}</label>
+    @else
+    <label for="tag4">{{__('ajout_produit.tag4')}} :</label>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="tag4" name="tag4" required>
       <option selected></option>
     @foreach ($tags4 as $tag4)
   

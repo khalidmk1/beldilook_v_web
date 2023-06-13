@@ -20,7 +20,7 @@ return [
     'comission' => 'Comission',
     'nouveau_prix' => 'Nouveau prix',
     'couleur' => 'Couleur',
-    'prix' => 'prix',
+    'prix' => 'Prix',
     'quantite' => 'Quantité',
     'remplir_qte_prix' => 'Veuillez remplir la quantité et le prix de tous les produits',
     'couleur_obligatoire' => 'Les couleurs sont obligatoire',
