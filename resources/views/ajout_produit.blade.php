@@ -363,9 +363,13 @@
   </div>
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="categorie">: {{__('ajout_produit.categorie')}}</label>
+    @else
     <label for="categorie">{{__('ajout_produit.categorie')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="categorie" name="categorie" required>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="categorie" name="categorie" required>
       <option selected></option>
     @foreach ($categories as $categorie)
   
@@ -383,9 +387,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="genre">: {{__('ajout_produit.genre')}}</label>
+    @else
     <label for="genre">{{__('ajout_produit.genre')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="genre" name="genre" required>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="genre" name="genre" required>
     
    
   
@@ -406,9 +414,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="tissue">{{__('ajout_produit.tissue')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tissue" name="tissue" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+        <label for="tissue">: {{__('ajout_produit.tissue')}}</label>
+        @else
+        <label for="tissue"> {{__('ajout_produit.tissue')}} :</label>
+        @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif  class="form-select form-control in_contact" aria-label="Default select example" id="tissue" name="tissue" required>
       <option selected></option>
     @foreach ($tissues as $tissue)
   
@@ -427,9 +439,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="etat_tenue">: {{__('ajout_produit.etat_tenue')}}</label>
+    @else
     <label for="etat_tenue">{{__('ajout_produit.etat_tenue')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
       <option selected></option>
     @foreach ($etats as $etat)
   
@@ -445,9 +461,15 @@
     
   </div>
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-  <div @if(App::getlocale()=="ar")  style="text-align: end" @endif><label for="Description">{{__('mes_achats.description')}}</label></div>
-  <textarea required class="form-control in_contact" id="description"  name="description" rows="3" id="description"></textarea>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    <div @if(App::getlocale()=="ar")  style="text-align: end" @endif>
+      @if(App::getlocale()=="ar")
+      <label for="Description">: {{__('mes_achats.description')}}</label>
+      @else
+      <label for="Description">{{__('mes_achats.description')}} :</label>
+      @endif
+    </div>
+  <textarea @if(App::getlocale()=="ar") style="text-align: end" @endif required class="form-control in_contact" id="description"  name="description" rows="3" id="description"></textarea>
   <div class="invalid-feedback" id="span_description"></div>
   </div>
 
@@ -455,9 +477,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="etat_tenue">{{__('ajout_produit.tag1')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag1" name="tag1" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="tag1">: {{__('ajout_produit.tag1')}}</label>
+    @else
+    <label for="tag1">{{__('ajout_produit.tag1')}} :</label>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="tag1" name="tag1" required>
       <option selected></option>
     @foreach ($tags1 as $tag1)
   
@@ -475,9 +501,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="etat_tenue">{{__('ajout_produit.tag2')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag2" name="tag2" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="tag2">: {{__('ajout_produit.tag2')}}</label>
+    @else
+    <label for="tag2">{{__('ajout_produit.tag2')}} :</label>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="tag2" name="tag2" required>
       <option selected></option>
     @foreach ($tags2 as $tag2)
   
@@ -495,9 +525,13 @@
 
 
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="etat_tenue">{{__('ajout_produit.tag3')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag3" name="tag3" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="tag3">: {{__('ajout_produit.tag3')}}</label>
+    @else
+    <label for="tag3">{{__('ajout_produit.tag3')}} :</label>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="tag3" name="tag3" required>
       <option selected></option>
     @foreach ($tags3 as $tag3)
   
@@ -513,9 +547,13 @@
     
   </div>
 
-  <div class="mb-3 mt-3 ml-3 mr-3">
-    <label for="etat_tenue">{{__('ajout_produit.tag4')}} :</label>
-    <select class="form-select form-control in_contact" aria-label="Default select example" id="tag4" name="tag4" required>
+  <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
+    @if(App::getlocale()=="ar")
+    <label for="tag4">: {{__('ajout_produit.tag4')}}</label>
+    @else
+    <label for="tag4">{{__('ajout_produit.tag4')}} :</label>
+    @endif
+    <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="tag4" name="tag4" required>
       <option selected></option>
     @foreach ($tags4 as $tag4)
   
@@ -605,12 +643,12 @@
 <br>
 <br>
 
-<div style="text-align: center"><button class="btn btn-primary" onclick="select_image()">Ajouter une image</button></div>
+<div style="text-align: center"><button class="btn btn-primary" onclick="select_image()">{{__('ajout_produit.ajouter_image')}}</button></div>
 <br>
 <div style="text-align:center"><span style="color:red;" id="span_images"></span></div>
 
 <br>
-<div style="text-align: center"><button class="btn btn-primary" onclick="validation()">Continuer</button></div>
+<div style="text-align: center"><button class="btn btn-primary" onclick="validation()">{{__('ajout_produit.continuer')}}</button></div>
 <br>
 <br>
 <div id="json_content"></div>
@@ -636,7 +674,7 @@ function validation(){
   if(name.replace( / +/g, '')=="")
   {
     $( "#name_product" ).addClass( "is-invalid" );
-    $('#span_name').html("Le nom est obligatoire");
+    $('#span_name').html("{{__('ajout_produit.nom_obligatoire')}}");
     view_to_scroll="name_product";
   }
 
@@ -646,7 +684,7 @@ function validation(){
   if(category.replace( / +/g, '')=="")
   {
     $( "#categorie" ).addClass( "is-invalid" );
-    $('#span_categorie').html("La catégorie est obligatoire");
+    $('#span_categorie').html("{{__('ajout_produit.categorie_obligatoire')}}");
     if(view_to_scroll=="")
     {
       view_to_scroll="categorie";
@@ -659,7 +697,7 @@ function validation(){
   if(genre=="Aucun")
   {
     $( "#genre" ).addClass( "is-invalid" );
-    $('#span_genre').html("Le genre est obligatoire");
+    $('#span_genre').html("{{__('ajout_produit.genre_obligatoire')}}");
     if(view_to_scroll=="")
     {
       view_to_scroll="genre";
@@ -673,7 +711,7 @@ function validation(){
   if(tissue.replace( / +/g, '')=="")
   {
     $( "#tissue" ).addClass( "is-invalid" );
-    $('#span_tissue').html("Le tissue est obligatoire");
+    $('#span_tissue').html("{{__('ajout_produit.tissue_obligatoire')}}");
     if(view_to_scroll=="")
     {
       view_to_scroll="tissue";
@@ -686,7 +724,7 @@ function validation(){
   if(etat_tenue.replace( / +/g, '')=="")
   {
     $( "#etat_tenue" ).addClass( "is-invalid" );
-    $('#span_etat').html("L'état est obligatoire");
+    $('#span_etat').html("{{__('ajout_produit.etat_obligatoire')}}");
     if(view_to_scroll=="")
     {
       view_to_scroll="etat_tenue";
@@ -699,7 +737,7 @@ function validation(){
   if(description.replace( / +/g, '')=="")
   {
     $( "#description" ).addClass( "is-invalid" );
-    $('#span_description').html("La description est obligatoire");
+    $('#span_description').html("{{__('ajout_produit.description_obligatoire')}}");
     if(view_to_scroll=="")
     {
       view_to_scroll="description";
@@ -714,7 +752,7 @@ tabimgs = document.getElementsByClassName("images_cl");
 
 if(tabimgs.length==0)
 {
-  $('#span_images').html("Veuillez ajouter une photo");
+  $('#span_images').html("{{__('ajout_produit.photo_obligatoire')}}");
   if(view_to_scroll=="")
     {
       view_to_scroll="div_images";
@@ -741,7 +779,7 @@ tabcolors3XL = document.getElementsByClassName("colors_3XL");
 
 if(tabcolors3XL.length==0 && tabcolorsXXL.length==0 && tabcolorsXL.length==0 && tabcolorsL.length==0 && tabcolorsM.length==0 && tabcolorsS.length==0 && tabcolorsXS.length==0)
 {
-  $('#span_colors').html("Les couleurs sont obligatoire");
+  $('#span_colors').html("{{__('ajout_produit.couleur_obligatoire')}}");
   
   if(view_to_scroll=="")
     {
@@ -835,7 +873,7 @@ if(tabcolors3XL.length==0 && tabcolorsXXL.length==0 && tabcolorsXL.length==0 && 
 
 if(bool_qte_prix==true)
 {
-  $('#span_colors').html("Veuillez remplir la quantité et le prix de tous les produits");
+  $('#span_colors').html("{{__('ajout_produit.remplir_qte_prix')}}");
 }
  
 }
@@ -1121,11 +1159,11 @@ function select_color(v)
 
  var content_div=$('#div_taille_'+taille_selected).html();
  content_div+=' <div >';
-  content_div+=' Couleur : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br>';
-  content_div+='Quantité : <input id="qte_'+index_colors+'" class="qte_'+taille_selected+'" type="number"  value="0" onchange="format_qte(this,'+index_colors+')"> <br>';
-  content_div+='Prix : <input id="prix_'+index_colors+'" class="prix_'+taille_selected+'" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="0.00" onchange="format_prix(this,'+index_colors+')"> DH';
-  content_div+='<br><p style="padding-top:10px;margin-bottom:0px;" id="tc'+index_colors+'">Comission : 0 DH</p>';
-  content_div+='<p style="padding-top:10px;" id="np'+index_colors+'">Nouveau prix : 0 DH</p>';
+  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br>';
+  content_div+='{{__("ajout_produit.quantite")}} : <input id="qte_'+index_colors+'" class="qte_'+taille_selected+'" type="number"  value="0" onchange="format_qte(this,'+index_colors+')"> <br>';
+  content_div+='{{__("ajout_produit.prix")}} : <input id="prix_'+index_colors+'" class="prix_'+taille_selected+'" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="0.00" onchange="format_prix(this,'+index_colors+')"> DH';
+  content_div+='<br><p style="padding-top:10px;margin-bottom:0px;" id="tc'+index_colors+'">{{__("ajout_produit.comission")}} : 0 DH</p>';
+  content_div+='<p style="padding-top:10px;" id="np'+index_colors+'">{{__("ajout_produit.nouveau_prix")}} : 0 DH</p>';
   content_div+='</div>';
   $('#div_taille_'+taille_selected).html(content_div);
   index_colors++;
@@ -1141,18 +1179,18 @@ function select_color2(v)
     for (i = 0; i < tabcolors.length; i++) {
    if(tabcolors[i].getAttribute("donn")==v)
    {
-    alert("Couleur existe déjà");
+    alert("{{__('ajout_produit.couleur_existe')}}");
     return
    }
     } 
   
  var content_div=$('#div_taille_'+taille_selected).html();
  content_div+=' <div >';
-  content_div+=' Couleur : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br>';
-  content_div+='Quantité : <input id="qte_'+index_colors+'" class="qte_'+taille_selected+'" type="number"  value="0" onchange="format_qte(this,'+index_colors+')"> <br>';
-  content_div+='Prix : <input id="prix_'+index_colors+'" class="prix_'+taille_selected+'" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="0.00" onchange="format_prix(this,'+index_colors+')"> DH';
-  content_div+='<br><p style="padding-top:10px;margin-bottom:0px;" id="tc'+index_colors+'">Comission : 0 DH</p>';
-  content_div+='<p style="padding-top:10px;" id="np'+index_colors+'">Nouveau prix : 0 DH</p>';
+  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br>';
+  content_div+='{{__("ajout_produit.quantite")}} : <input id="qte_'+index_colors+'" class="qte_'+taille_selected+'" type="number"  value="0" onchange="format_qte(this,'+index_colors+')"> <br>';
+  content_div+='{{__("ajout_produit.prix")}} : <input id="prix_'+index_colors+'" class="prix_'+taille_selected+'" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="0.00" onchange="format_prix(this,'+index_colors+')"> DH';
+  content_div+='<br><p style="padding-top:10px;margin-bottom:0px;" id="tc'+index_colors+'">{{__("ajout_produit.comission")}} : 0 DH</p>';
+  content_div+='<p style="padding-top:10px;" id="np'+index_colors+'">{{__("ajout_produit.nouveau_prix")}} : 0 DH</p>';
 
   content_div+='</div>';
   $('#div_taille_'+taille_selected).html(content_div);
@@ -1209,8 +1247,8 @@ function format_prix(v,index)
 
  d2=d2.toLocaleString(undefined, {minimumFractionDigits: 2});
 
-$('#tc'+index).html("Comission : "+d+" DH");
-$('#np'+index).html("Nouveau prix : "+d2+" DH");
+$('#tc'+index).html("{{__('ajout_produit.comission')}} : "+d+" DH");
+$('#np'+index).html("{{__('ajout_produit.nouveau_prix')}} : "+d2+" DH");
 
   var num=num.toFixed(2);
 var num=num.toLocaleString();
