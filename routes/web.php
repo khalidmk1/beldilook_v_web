@@ -187,6 +187,8 @@ Route::group(['prefix'=> LaravelLocalization::setLocale(),
     Route::get('produit_sous_categorie/{id_type}/{id_tag}/{page?}','Controller@produit_sous_categorie')->name('produit_sous_categorie');
 
     Route::post('register_newsletter','Controller@register_newsletter')->name('register_newsletter');
+
+    Route::post('filtre_page_vendeur','Controller@filtre_page_vendeur')->name('filtre_page_vendeur');
 });
    // Route::get('/test', 'Controller@test')->name('test');
     
