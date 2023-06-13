@@ -125,6 +125,13 @@ $colors=["#EFEFF4","#E6D0C5","#E2E2E2","#F0E6CC","#DCE6F1","#DAE8E3","#F44336","
           }
 
 
+   $tissus = Http::get('http://51.68.36.192/REST_BeldiLook/recuperer_tissus');
+          if ($tissus->successful()){
+              $tissus2 = $tissus->json();
+          }else{
+              return redirect(url()->previous())->with('message', __('favoris.erreur'));
+          }
+
 
         return view('home',[
             'articles' => $jsonData,
@@ -135,7 +142,8 @@ $colors=["#EFEFF4","#E6D0C5","#E2E2E2","#F0E6CC","#DCE6F1","#DAE8E3","#F44336","
             'etats_tenues' => $etat_tenues2,
             'colors' => $colors,
             'popups' => $popups2,
-            'search' => $search
+            'search' => $search,
+            'tissus' => $tissus2
 
         ]);
     }
@@ -2155,10 +2163,20 @@ public function delete_blog(Request $request)
         $prix_min=$request->input('prix_min');
         $prix_max=$request->input('prix_max');
         $sort=$request->input('sort');
+        $genre=$request->input('genre');
+        $type_tissue=$request->input('type_tissue');
           //dd($taille_filtre);
 
        
         //dd($request->all());
+        if ($genre==null)
+        {
+            $genre ='';
+        }
+        if ($type_tissue==null)
+        {
+            $type_tissue ='';
+        }
         if ($tailles==null)
         {
             $tailles ='';
@@ -2206,7 +2224,9 @@ public function delete_blog(Request $request)
             'prix_min' => $prix_min,
             'prix_max' => $prix_max,
             'sort' => $sort,
-            'platform' => 'web'
+            'platform' => 'web',
+            'genre' => $genre,
+            'type_tissue' => $type_tissue
         ]);
 
           $jsonData = $response->json();

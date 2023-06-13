@@ -672,14 +672,22 @@
           </div>
 
           <div class="col-12 p-2 ">
-            <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="">
-              <option value="">genre</option>
+            <select id="combo_genre" class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="">
+              <option value="">Tout</option>
+              <option value="Homme">Homme</option>
+              <option value="Femme">Femme</option>
+              <option value="Garçon">Garçon</option>
+              <option value="Fille">Fille</option>
             </select>
           </div>
          
           <div class="col-12 p-2">
-            <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="">
-              <option value="">Type du Tissu</option>
+            <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="type_tissus">
+              <option value="" selected>Tout</option>
+              @foreach ($tissus as $tissu)
+              <option value="{{$tissu['idtissus']}}">{{$tissu['Libelle']}}</option>
+              @endforeach
+              
             </select>
           </div>
 
@@ -816,6 +824,7 @@
 <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
 @endforelse
 
+<div onclick="afficher_plus()" class="col-12" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
 
 
 </div>
@@ -976,7 +985,6 @@
 
         </div> --}}
 
-        <div onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
         <button
         type="button"
         class="btn position-fixed btn-lg  m-2 " style="border-radius:50px ; bottom: 0 ; right: 0; background-color: #B09636"
@@ -1045,7 +1053,8 @@ document.documentElement.scrollTop = 0;
     var etats="";
     var tab_etats = [];
     var search="";
-
+    var genre="";
+    var type_tissus="";
         var myTimeout;
         function favoris(id,art)
         {
@@ -1352,7 +1361,8 @@ for (i = 0; i < tab_etats.length; i++) {
         etats+=tab_etats[i].getAttribute("donn");
      }
 }
-
+ genre=$('#combo_genre').val();
+ type_tissus=$('#type_tissus').val();
 console.log(etats); 
 
 min_valider=min;
@@ -1383,7 +1393,9 @@ var _token=$('input[name="_token"]').val();
        prix_min:min,
        prix_max:max,
        search:search,
-       sort:sort_selectionner_valider
+       sort:sort_selectionner_valider,
+       genre:genre,
+       type_tissue:type_tissus
        },
        success:function(data)
        {
@@ -1439,7 +1451,9 @@ function afficher_plus()
        prix_min:min,
        prix_max:max,
        search:search,
-       sort:sort_selectionner_valider
+       sort:sort_selectionner_valider,
+       genre:genre,
+       type_tissue:type_tissus
        },
        success:function(data)
        {
