@@ -21,7 +21,7 @@
           
   @forelse ($articles as $article)
 
-<div class="col   col-lg-4 col-md-4 col-sm-4 col-xl-4  ">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
   
      
   
@@ -150,7 +150,7 @@
        
 @forelse ($articles as $article)
 
-<div class="col   col-lg-4 col-md-4 col-sm-4 col-xl-4  ">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
   
      
   

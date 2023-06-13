@@ -193,7 +193,7 @@
 </style>
 
 
-
+{{ csrf_field() }}
 
 <div id="modal_popup" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -769,7 +769,7 @@
 
 
 
-  {{ csrf_field() }}
+ 
 
 
 
