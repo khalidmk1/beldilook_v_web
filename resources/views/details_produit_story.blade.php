@@ -3,9 +3,14 @@
 
 @if(count($articles)==0)
 <div class="container">
-    <p @if(App::getlocale()=="ar") style="padding-left: 13%;text-align: end" @endif >{{__('boutique_une.0article')}}</p></div>
+  <p @if (App::getlocale() == 'ar') style="text-align: end " @else style="padding-left: 13%;"  @endif>{{ __('boutique_une.0article') }}</p>
+</div>
 
-<p class="col-12" style="padding-left: 13%;text-align: center;padding-top: 20px;"><img src="{{$user['Photo_Logo']}}" style="border-radius: 50%" alt="" height="200px" width="200px"><br><br><a style="font-size: 26px" href="{{route('boutiqua',$user['IDUtilisateurs'])}}">{{'@'.$user['Nom'].' '.$user['Prenom']}}</a></p>
+<p class="col-12" style="text-align: center;padding-top: 20px;"><img src="{{ $user['Photo_Logo'] }}"
+      style="border-radius: 50%" alt="" height="200px" width="200px"><br><br><a
+      style="font-size: 26px"
+      href="{{ route('boutiqua', $user['IDUtilisateurs']) }}">{{ '@' . $user['Nom'] . ' ' . $user['Prenom'] }}</a>
+</p>
 
 
 @else

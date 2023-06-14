@@ -509,7 +509,7 @@
  <div class="col position-absolute" style="right: 0"> 
   <img onclick="valider_filtre('search')" src="{{asset('storage/searchbl_1.png')}}" style="cursor: pointer;
   position: absolute;
-  right: 30%;
+  right: 32%;
   bottom: -15px;
   background: white;
   padding: 3px;" alt="" height="30px" width="30px">
@@ -540,15 +540,17 @@
 
       <div class="slidecontainer row m-0 p-0 ">
         <div class="col d-flex flex-column justify-content-center p-0">
-          <p class="RadialProgress radian " > <span style="font-size:15px" id="pix_minimum"></span> </p>
+          <p style="font-weight: 500;" > Min
+            <span style="font-size:15px" id="pix_minimum"> </span> </p>
       
           <input class="progress_input slider slider_min  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" />
         </div>
        
 
         <div class="col  p-0 d-flex justify-content-center  flex-column">
-          <p class=" RadialProgress radian  "> 
+          <p class=" RadialProgress radian  ">
             <span style="font-size:15px" id="demo"></span> 
+            <span style="font-size: 15px ; margin-left: 2px"> Max</span>
           </p>
           <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> 
         </div>
@@ -780,7 +782,7 @@
           
   @forelse ($articles as $article)
 
-<div class="col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
+<div class="col-6 col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
   
      
   

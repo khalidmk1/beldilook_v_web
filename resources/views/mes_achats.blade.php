@@ -42,7 +42,8 @@
       <div class="modal-content">
         <div  class="modal-header @if(App::getlocale()=="ar")  flex-row-reverse @endif">
           <h5 class="modal-title"  id="exampleModalLabel">{{__('mes_achats.titre')}}</h5>
-          <div @if(App::getlocale()=="ar") style="text-align: end" @endif><button type="button" class="close pl-0" data-dismiss="modal" aria-label="Close">
+          <div @if(App::getlocale()=="ar") style="text-align: end" @endif>
+            <button type="button" class="close pl-0" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button></div>
           
@@ -136,7 +137,8 @@
     <div class="row  flex-row-reverse" >
         <div class="col-0 "></div>
         <div class="col-8">
-            <b class="float-right"> {{__('mes_achats.commande')}} </b><b class="float-right" style="padding-right: 7px"> {{$achat['NumCommande']}}</b>
+            <b class="float-right"> {{__('mes_achats.commande')}} </b>
+            <b class="float-right" style="padding-right: 7px"> {{$achat['NumCommande']}}</b>
            
         </div>
        
@@ -159,7 +161,7 @@
     <div class="row flex-row-reverse" style="padding-top: 10px">
     
        
-            <img height="200" width="200" src="{{$achat['sImg_premier_article']}}" alt="" style="object-fit: contain">
+            <img height="200" width="200" src="{{$achat['sImg_premier_article']}}" alt="" style=" border-radius: 20px ; padding-left: 2px">
        
        
        <div class="col" > <div  style="padding-top: 30px;">
@@ -235,10 +237,10 @@
            <b>{{__('mes_achats.le')}} : {{$achat['DateCommande']}}</b>
         </div>
     </div>
-    <div class="row" style="padding-top: 10px">
+    <div class="row" style="padding-top: 10px ; justify-content: center">
     
        
-            <img height="200" width="200" src="{{$achat['sImg_premier_article']}}" alt="" style="object-fit: contain">
+      <img height="200" width="200" src="{{$achat['sImg_premier_article']}}" alt="" style=" border-radius: 20px ; padding-left: 2px">
        
        
        <div class="col" > <div  style="padding-top: 30px">

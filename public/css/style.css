@@ -10,7 +10,7 @@
     right: 0;
   }
   .bottomleft {
-    width: 92px;
+    /* width: 92px; */
   padding: 5px;
   margin: 5px 5px 5px 0px;
   position: absolute;
@@ -27,12 +27,12 @@
     max-width: 232px !important;
   }
 
-@media (max-width:400px){
+/* @media (max-width:400px){
   .bottomleft {
     width: 85px;
   }
 
-}
+} */
   @media  (min-width: 992px){
     .width_card {
       max-width: 20% !important;

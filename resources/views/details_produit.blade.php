@@ -96,12 +96,12 @@
     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
 
       <div class="row ">
-        <div class="col   pb-2 pl-2 pr-2 pt-0 text-center">
+        <div class="col   p-2 pb-2 pl-2 p-sm-2 pr-2 pt-0  text-center">
           @if($article['sPhoto1']!="")
                 <img  onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto1']}}">
               @endif
         </div>
-        <div class="col pb-2 pl-2 pr-2 pt-0 text-center">
+        <div class="col p-2 pb-2 pl-2 p-sm-2 pr-2 pt-0 text-center">
           @if($article['sPhoto2']!="")
         
             <img  onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto2']}}">

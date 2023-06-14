@@ -26,17 +26,7 @@ width: 300px;
 }
 }
 
-.parentContainer{
-  position: relative;
-text-align: center;
-color: white;
-}
 
-.centered {
-position: absolute;
-top: 50%;
-left: 50%;
-}
 </style>
 
 
@@ -83,16 +73,8 @@ left: 50%;
           <div class="col-12 text-center">
             <img src="{{$boutique['photo']}}" alt="boutique" style="height: 100px;
             width: 100px; " class="rounded-circle">
-            <div class="centered">Centered</div>
-            <div style="height: 90px;
-            top: 5%;
-            padding: 2px;
-            /* color: white; */
-            border: 4px white solid;
-            width: 90px;
-            border-radius: 50px;
-            position: absolute;
-            right: 39%;"></div>
+           
+          
           </div>
           <div class="col-12">
             <div class="row text-center justify-content-center">

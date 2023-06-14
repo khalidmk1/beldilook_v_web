@@ -257,7 +257,9 @@ console.log(error);
   
         <div class="slidecontainer row m-0 p-0 ">
           <div class="col d-flex flex-column justify-content-center p-0">
-            <p class="RadialProgress radian " > <span style="font-size:15px" id="pix_minimum"></span> </p>
+            <p  style="font-weight: 500;"> Min
+              <span style="font-size:15px" id="pix_minimum"> </span> 
+            </p>
         
             <input class="progress_input slider slider_min  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" />
           </div>
@@ -265,7 +267,9 @@ console.log(error);
   
           <div class="col  p-0 d-flex justify-content-center  flex-column">
             <p class=" RadialProgress radian  "> 
+           
               <span style="font-size:15px" id="demo"></span> 
+            <span style="font-size: 15px ; margin-left: 2px"> Max</span>
             </p>
             <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> 
           </div>

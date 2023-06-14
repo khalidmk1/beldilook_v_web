@@ -9,34 +9,44 @@
     <h2>{{__('myaccount.title')}} </h2>
     <form action={{route('demande_boutique')}} method="POST" enctype="multipart/form-data">
       @csrf
-     <div style="text-align: center">
+   
+    <div style="text-align: center ; position: relative">
       @if ($data['Photo_Logo']=='')
      <img style="border-radius: 50%" width="200" height="200" src="{{ asset('storage/user.png') }}" alt="" id="image_profile">
      @else
      <img style="border-radius: 50%" width="200" height="200" src="{{$data['Photo_Logo']}}" alt="" id="image_profile">
+    
      @endif
      <br><br>
      @if(old('image')==null)
-     <input name="image" type='file' accept="image/*" onchange="readURL(this);" />
+     <input style="z-index: 100;  position: absolute;top: 50%;left: 50%; transform: translate(-50%, -50%); height: 100%; opacity: 0;"  
+     name="image" type='file' accept="image/*" onchange="readURL(this);" />
+     <i style="font-size: 30px; position: absolute;bottom: 26px;margin-left: 55px;color: #918e26;" 
+     class='fas fa-images'></i>
+   
+  
      @else
-     <input value="{{old('image')}}" name="image" type='file' accept="image/*" onload="readURL(this)" onchange="readURL(this);" />
+     <input style="position: absolute; opacity: 0; z-index: 100;  top: 50%; left: 50%; height: 100%;transform: translate(-50%, -50%); 
+     cursor: pointer;" value="{{old('image')}}" name="image" type='file' accept="image/*" onload="readURL(this)" onchange="readURL(this);" />
+      
      @endif
      @error('image')
      <div style="color: red">{{$message}}</div>
      @enderror
     </div>
+   
 
 
     <div class="mb-3">
       <label for="sexe">{{__('myaccount.sexe')}} :</label>
       @if(old('sexe')==null)
-      <select class="form-select form-control @error('sexe') is-invalid @enderror" aria-label="Default select example" id="sexe" name="sexe" required>
+      <select class="form-select form-control border-top-0 border-right-0 border-left-0 @error('sexe') is-invalid @enderror" aria-label="Default select example" id="sexe" name="sexe" required>
         <option selected></option>
         <option value="1" @if ('H'==$data['Sexe']) {{"selected"}} @endif>Homme</option>
         <option value="2" @if ('F'==$data['Sexe']) {{"selected"}} @endif>Femme</option>
       </select>
       @else
-      <select class="form-select form-control @error('sexe') is-invalid @enderror" aria-label="Default select example" id="sexe" name="sexe" required>
+      <select class="form-select form-control  border-top-0 border-right-0 border-left-0 @error('sexe') is-invalid @enderror" aria-label="Default select example" id="sexe" name="sexe" required>
         <option selected></option>
         <option value="1" @if ('1'==old('sexe')) {{"selected"}} @endif>Homme</option>
         <option value="2" @if ('2'==old('sexe'))  {{"selected"}} @endif>Femme</option>
@@ -51,9 +61,9 @@
       <div class="mb-3 mt-3">
         <label for="prenom">{{__('myaccount.prenom')}} :</label>
         @if(old('prenom')==null)
-        <input type="text" class="form-control @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ $data['Prenom'] }}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ $data['Prenom'] }}" required>
         @else
-        <input type="text" class="form-control @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ old('prenom') }}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ old('prenom') }}" required>
         @endif
         @error('prenom')
         <div class="invalid-feedback">{{$message}}</div>
@@ -63,9 +73,9 @@
       <div class="mb-3">
         <label for="nom">{{__('myaccount.nom')}} :</label>
         @if(old('nom')==null)
-        <input type="text" class="form-control @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{$data['Nom']}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{$data['Nom']}}" required>
         @else
-        <input type="text" class="form-control @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{old('nom')}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{old('nom')}}" required>
         @endif
         @error('nom')
         <div class="invalid-feedback">{{$message}}</div>
@@ -76,9 +86,9 @@
       <div class="mb-3">
         <label for="telephone">{{__('myaccount.telephone')}} :</label>
         @if(old('telephone')==null)
-        <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" name="telephone" value="{{$data['Telephone']}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('telephone') is-invalid @enderror" id="telephone" name="telephone" value="{{$data['Telephone']}}" required>
         @else
-        <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" name="telephone" value="{{old('telephone')}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('telephone') is-invalid @enderror" id="telephone" name="telephone" value="{{old('telephone')}}" required>
         @endif
         @error('telephone')
         <div class="invalid-feedback">{{$message}}</div>
@@ -87,7 +97,7 @@
 
       <div class="mb-3">
         <label for="pays">{{__('myaccount.pays')}} :</label>
-        <select class="form-select form-control @error('pays') is-invalid @enderror" aria-label="Default select example" id="pays" name="pays" required>
+        <select class="form-select form-control  border-top-0 border-right-0 border-left-0 @error('pays') is-invalid @enderror" aria-label="Default select example" id="pays" name="pays" required>
           <option selected></option>
         @foreach ($pays as $pay)
         @if(old('pays')==null)
@@ -108,7 +118,7 @@
       <div class="mb-3">
         <label for="ville">{{__('adresses_livraison.ville')}} :</label>
        
-        <select class="form-select form-control @error('ville') is-invalid @enderror" aria-label="Default select example" id="ville" name="ville" required onchange="select_ville()">
+        <select class="form-select form-control  border-top-0 border-right-0 border-left-0 @error('ville') is-invalid @enderror" aria-label="Default select example" id="ville" name="ville" required onchange="select_ville()">
           <option selected></option>
         @foreach ($villes as $ville)
         @if(old('ville')==null)
@@ -131,7 +141,7 @@
       <div class="mb-3">
         <label for="secteur">{{__('adresses_livraison.secteur')}} :</label>
        
-        <select class="form-select form-control @error('secteur') is-invalid @enderror" aria-label="Default select example" id="secteur" name="secteur" required>
+        <select class="form-select form-control  border-top-0 border-right-0 border-left-0 @error('secteur') is-invalid @enderror" aria-label="Default select example" id="secteur" name="secteur" required>
           <option selected></option> 
           @foreach ($secteurs as $secteur)
           @if(old('secteur')==null)
@@ -149,7 +159,7 @@
       <div class="mb-3">
         <label for="adresse">{{__('myaccount.adresse')}} :</label>
         @if(old('adresse')==null)
-        <input type="text" class="form-control @error('adresse') is-invalid @enderror" id="adresse" name="adresse" value="{{$data['adresse1']}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('adresse') is-invalid @enderror" id="adresse" name="adresse" value="{{$data['adresse1']}}" required>
         @else
         <input type="text" class="form-control @error('adresse') is-invalid @enderror" id="adresse" name="adresse" value="{{old('adresse')}}" required>
         @endif
@@ -162,9 +172,9 @@
       <div class="mb-3">
         <label for="adresse2">{{__('myaccount.adresse2')}} :</label>
         @if(old('adresse2')==null)
-        <input type="text" class="form-control @error('adresse2') is-invalid @enderror" id="adresse2" name="adresse2" value="{{$data['adresse2']}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('adresse2') is-invalid @enderror" id="adresse2" name="adresse2" value="{{$data['adresse2']}}" required>
         @else
-        <input type="text" class="form-control @error('adresse2') is-invalid @enderror" id="adresse2" name="adresse2" value="{{old('adresse2')}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('adresse2') is-invalid @enderror" id="adresse2" name="adresse2" value="{{old('adresse2')}}" required>
         @endif
         @error('adresse2')
         <div class="invalid-feedback">{{$message}}</div>
@@ -174,9 +184,9 @@
       <div class="mb-3">
         <label for="ice">{{__('myaccount.ice')}} :</label>
         @if(old('ice')==null)
-        <input type="text" class="form-control @error('ice') is-invalid @enderror" id="ice" name="ice" value="{{$data['ICE']}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('ice') is-invalid @enderror" id="ice" name="ice" value="{{$data['ICE']}}" required>
         @else
-        <input type="text" class="form-control @error('ice') is-invalid @enderror" id="ice" name="ice" value="{{old('ice')}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('ice') is-invalid @enderror" id="ice" name="ice" value="{{old('ice')}}" required>
         @endif
         @error('ice')
         <div class="invalid-feedback">{{$message}}</div>
@@ -186,9 +196,9 @@
       <div class="mb-3">
         <label for="raison_sociale">{{__('myaccount.raison_sociale')}} :</label>
         @if(old('raison_sociale')==null)
-        <input type="text" class="form-control @error('raison_sociale') is-invalid @enderror" id="raison_sociale" name="raison_sociale" value="{{$data['Raison_sociale']}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('raison_sociale') is-invalid @enderror" id="raison_sociale" name="raison_sociale" value="{{$data['Raison_sociale']}}" required>
         @else
-        <input type="text" class="form-control @error('raison_sociale') is-invalid @enderror" id="raison_sociale" name="raison_sociale" value="{{old('raison_sociale')}}" required>
+        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('raison_sociale') is-invalid @enderror" id="raison_sociale" name="raison_sociale" value="{{old('raison_sociale')}}" required>
         @endif
         @error('raison_sociale')
         <div class="invalid-feedback">{{$message}}</div>

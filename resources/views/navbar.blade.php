@@ -219,6 +219,7 @@
     <div class="col"><a class="nav-link @if(URL()->full() == URL(route('boutique'))) {{'link_slected'}}  @endif" href={{route('boutique')}}>{{__('nav.boutique')}}</a></div>
     <div class="col"> <a class="nav-link @if(URL()->full() == URL(route('news'))) {{'link_slected'}}  @endif" href={{route('news')}}>{{__('nav.nouveaute')}}</a></div>
     <div class="col"> <a class="nav-link @if(URL()->full() == URL(route('boutique_une'))) {{'link_slected'}}  @endif" href={{route('boutique_une')}}>{{__('boutique_une.titre')}}</a></div>
+    
     @if (Session::get('user'))
     <?php
     $user=Session::get('user');
@@ -233,6 +234,9 @@
     <div class="col">
       <a class="nav-link @if(URL()->full() == URL(route('explorer'))) {{'link_slected'}}  @endif" href={{route('explorer')}}>{{__('nav.explorer')}}</a>
     </div>
+   
+      <div class="col"> <a class="nav-link @if(URL()->full() == URL(route('contacter_nous'))) {{'link_slected'}}  @endif" href={{route('contacter_nous')}}>{{__('contacter_nous.titre')}}</a></div>
+   
   </div>
 </div>
 
@@ -406,6 +410,7 @@ $user=Session::get('user');
     @yield('content')
   </div>
 
+  @if(URL()->full() != route('chat_support') )
   <footer>
 		<div class=" container-fluid footer mt-3 ">
 			<div class="row justify-content-center mr-0">
@@ -507,7 +512,7 @@ $user=Session::get('user');
 			<div class="col d-flex p-0  "><h6>Sécurité</h6> <p class="ml-2 mr-2"><h6>|</h6></p> <h6>Politique de confidentialité et de cookies </h6><p class="ml-2 mr-2">|</p><h6> Conditions d’utilisation</h6></div>
 		</div>
 	</footer>
-
+@endif
     
 </body>
 

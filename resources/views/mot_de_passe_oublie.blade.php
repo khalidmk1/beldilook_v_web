@@ -18,7 +18,7 @@
         <label for="email">{{__('login.email')}} :</label>
         @endif
         
-        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="{{__('login.entreemail')}}" name="email" value="{{ old('email') }}">
+        <input  @if(App::getlocale()=="ar") style="text-align: end" @endif type="email" class="form-control border-top-0 border-right-0 border-left-0 @error('email') is-invalid @enderror" id="email" placeholder="{{__('login.entreemail')}}" name="email" value="{{ old('email') }}">
         @error('email')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror

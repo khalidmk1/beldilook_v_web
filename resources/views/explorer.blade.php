@@ -49,7 +49,7 @@ width:400px;
 <div class="container">
   <div class="row">
     @foreach ($collection as $item)
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-2">
+    <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12 p-2">
       <div class="card">
         <a href="{{route('produit_collection',$item['id_type_tag'])}}" style="position: relative ; z-index: 100;">
           <img class="card-img " src="{{$item['image_type']}}" alt="tags">
