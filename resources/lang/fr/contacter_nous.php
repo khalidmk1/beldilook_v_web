@@ -4,6 +4,7 @@ return [
     'nom_prenom' => 'Nom et prénom',
     'votre_email' => 'Votre Email',
     'envoyer' => 'Envoyer',
-    'message' => 'Message'
+    'message' => 'Message',
+    'foire_aux_question' => 'Foire aux questions'
 ]
 ?>

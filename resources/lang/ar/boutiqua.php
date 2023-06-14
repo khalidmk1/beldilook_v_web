@@ -1,6 +1,6 @@
 <?php
 return [
-    'reseau_sociaux' => 'الشبكات الاجتماع',
+    'reseau_sociaux' => 'الشبكات الاجتماعية',
     'news' => 'المقالات',
     'notre_local' => 'متجري',
     'visite_virtuelle' => 'جولة افتراضية',

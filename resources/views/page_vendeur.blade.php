@@ -5,6 +5,20 @@
 
 <link rel="stylesheet" type="text/css" href="{{ url('/css/filter.css') }}" />
 <style>
+  .btn_sort_2:hover{
+        background-color: #83cad3;
+        border: 1px solid #2d1194;
+    }
+    .btn_sort_2{
+        background-color: #ffffff;
+        border: 1px solid #2d1194;
+        width: 80px;
+        font-size: 17px;
+        width: 100px;
+        color: #2d1194;
+        height: 40px;
+        border-radius: 30px;
+    }
        .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -548,7 +562,7 @@ console.log(error);
   <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
   @endforelse
   
-  <div onclick="afficher_plus()" class="col-12" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
+  <div onclick="afficher_plus()" class="col-12" style="text-align: center" id="afficher_plus"><button class="btn_sort_2">{{__('home.afficher_plus')}}</button></div>
   
   
   </div>

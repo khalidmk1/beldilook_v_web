@@ -4,6 +4,7 @@ return [
     'nom_prenom' => 'الإسم واللقب',
     'votre_email' => 'بريدك الإلكتروني',
     'envoyer' => 'أرسل',
-    'message' => 'رسالة'
+    'message' => 'رسالة',
+    'foire_aux_question' =>  'أسئلة مكررة'
 ]
 ?>

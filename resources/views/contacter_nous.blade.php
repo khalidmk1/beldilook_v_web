@@ -169,7 +169,7 @@
 
 
 <div>
-<h1 style="text-align: center">Foire aux questions
+<h1 style="text-align: center">{{__('contacter_nous.foire_aux_question')}} 
 </h1>
 
 </div>
