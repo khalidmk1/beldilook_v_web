@@ -112,10 +112,10 @@
 
 
 
-  <h2 style="padding: 20px">{{__('nav.myfavoris')}} </h2>
+  <h2 style="padding: 20px;@if(App::getlocale()=="ar") text-align:end; @endif">{{__('nav.myfavoris')}} </h2>
 <div class="tab" >
-    <button class="tablinks" onclick="openCity(event, 'Articles')">{{__('nav.articles')}}</button>
-    <button class="tablinks" onclick="openCity(event, 'Boutiques')">{{__('nav.boutiques')}}</button>
+    <button class="tablinks @if(App::getlocale()=="ar") float-right @endif" onclick="openCity(event, 'Articles')">{{__('nav.articles')}}</button>
+    <button class="tablinks @if(App::getlocale()=="ar") float-right @endif" onclick="openCity(event, 'Boutiques')">{{__('nav.boutiques')}}</button>
     
   </div>
   
