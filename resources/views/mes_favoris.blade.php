@@ -7,20 +7,21 @@
     /* Style the tab */
     .tab {
       overflow: hidden;
-      border: 1px solid #ccc;
-      background-color: #f1f1f1;
+      text-align: center;
     }
     
     /* Style the buttons inside the tab */
     .tab button {
       background-color: inherit;
-      float: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-      font-size: 17px;
+    border-radius: 50px;
+    width: 153px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 16px;
+    transition: 0.3s;
+    font-size: 17px;
     }
     
     /* Change background color of buttons on hover */
@@ -114,8 +115,8 @@
 
   <h2 style="padding: 20px;@if(App::getlocale()=="ar") text-align:end; @endif">{{__('nav.myfavoris')}} </h2>
 <div class="tab" >
-    <button class="tablinks @if(App::getlocale()=="ar") float-right @endif" onclick="openCity(event, 'Articles')">{{__('nav.articles')}}</button>
-    <button class="tablinks @if(App::getlocale()=="ar") float-right @endif" onclick="openCity(event, 'Boutiques')">{{__('nav.boutiques')}}</button>
+    <button class="tablinks" onclick="openCity(event, 'Articles')">{{__('nav.articles')}}</button>
+    <button class="tablinks " onclick="openCity(event, 'Boutiques')">{{__('nav.boutiques')}}</button>
     
   </div>
   
