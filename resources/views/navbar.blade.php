@@ -69,7 +69,7 @@
         <div class="row mr-0 responsive  align-items-center">
           <div class="col col-lg-2 col-xl-2 col-md-12 col-sm-12 text-center" >
             <a href="/home">
-              <img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" alt="" class="img_logo_top image_obligatoire">
+              <img src="{{asset('storage/logo-beldiloock.png')}}" alt="" class="img_logo_top image_obligatoire">
             </a>
           </div>
 

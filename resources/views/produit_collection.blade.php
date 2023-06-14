@@ -424,7 +424,13 @@ width:400px;
        @endforelse
 
     </div>
-    <div class="col-12"  onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
+    <div class="col-12"  onclick="afficher_plus()" style="text-align: center" id="afficher_plus">
+      <button style="background-color: #6e6e6b70; border: none; border-radius: 50px;
+    padding: 11px; height: 42px;width: 227px;">
+    {{__('home.afficher_plus')}} 
+    <span style="margin-left: 10px">-></span>
+  </button>
+      </div>
 
 </div>
 

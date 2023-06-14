@@ -26,6 +26,14 @@ width: 300px;
 }
 }
 
+.img-2{
+  height: 110px;
+  width: 110px;
+    bottom: 24px;
+    position: relative;
+}
+
+
 
 </style>
 
@@ -67,13 +75,25 @@ width: 300px;
 
 
   <div class="container">
-    <div class="row">
+    <div class="row @if (App::getlocale() == 'ar') flex-row-reverse @endif">
       <div class="col-sm-5">
-        <div class="row parentContainer">
-          <div class="col-12 text-center">
-            <img src="{{$boutique['photo']}}" alt="boutique" style="height: 100px;
-            width: 100px; " class="rounded-circle">
+        <div class="row ">
+          <div class="col-12 text-center position-relative">
+            <div class="card border-0">
+              <a style="position: relative ; z-index: 100;">
+                <img src="{{$boutique['photo']}}" alt="boutique" style="height: 100px;
+                padding: 2px;border: 4px solid white;
+                width: 100px;" class="rounded-circle img-1">
+              </a>
+              <div class="card-img-overlay">
+                <img src="{{$boutique['photo']}}" alt="boutique"
+                 class="rounded-circle img-2">
+                </p>
+              </div>
+            </div>
+
            
+       
           
           </div>
           <div class="col-12">
@@ -95,7 +115,7 @@ width: 300px;
           <div class="col-12">
             <div class="row">
               <div class="col-12">
-                <h5  style="color:#263066;">{{__('boutiqua.reseau_sociaux')}}</h5>
+                <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
               </div>
               <div class="col text-center p-2">
                 @if($boutique_info['lien_facebook']!='')

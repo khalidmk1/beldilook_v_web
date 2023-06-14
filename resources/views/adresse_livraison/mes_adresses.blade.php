@@ -58,8 +58,11 @@
     <td>{{$adresse['sVille']}}</td>
     <td>{{$adresse['sSecteur']}}</td>
     <td>{{$adresse['sCodePostal']}}</td>
-    <td> <a class="btn btn-success" href="{{route('get_update_adresse',$adresse['sIDLivraison'])}}">{{__('adresses_livraison.modifier')}}</a>
-    <button id="delete_adresse" class="btn btn-danger" value="{{$adresse['sIDLivraison']}}">{{__('adresses_livraison.supprimer')}}</button></td>
+    <td>
+       <a class="btn btn-success" href="{{route('get_update_adresse',$adresse['sIDLivraison'])}}"><i class="fas fa-edit"></i></a>
+       <button id="delete_adresse" class="btn btn-danger" value="{{$adresse['sIDLivraison']}}"><i class="fas fa-trash"></i></button>
+
+  </td>
 
   </tr>
 

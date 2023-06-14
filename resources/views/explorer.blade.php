@@ -56,7 +56,8 @@ width:400px;
         </a>
         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
           <h4 style="position: relative ; z-index: 200;" class="card-title">{{$item['Libelle']}}</h4>
-          <p style="position: relative ; z-index: 200;" class="card-text">{{$item['description']}}</p>
+          <p style="position: relative ; z-index: 200;" class="card-text">{{$item['description']}}
+          </p>
         </div>
       </div>
     </div>
