@@ -83,6 +83,7 @@ width:400px;
   100% { transform: rotate(360deg); }
 }
 </style>
+{{ csrf_field() }}
 <div class="modal" id="modal_loading" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content" style="background-color: transparent;border:transparent">
@@ -345,7 +346,7 @@ width:400px;
 
 <div  class="container items">
     <div id="div_articles" class="row">
-        {{ csrf_field() }}
+       
         @forelse ($articles as $article)
 
         <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
@@ -423,7 +424,7 @@ width:400px;
        @endforelse
 
     </div>
-    <div onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
+    <div class="col-12"  onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
 
 </div>
 
@@ -493,6 +494,7 @@ console.log(error);
         }
 function select_tag(div_tag,id_tag)
 {
+  pagination=1;
     $('#modal_loading').modal('show');
 
     var _token=$('input[name="_token"]').val();

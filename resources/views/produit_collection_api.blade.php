@@ -1,9 +1,9 @@
 
 @if($page==1)
 <input id="nb_articl" type="hidden" name="" value="{{$nb_article}}">
-<div  class="container items">
-    <div id="div_articles" class="row">
-        {{ csrf_field() }}
+
+  
+        
         @forelse ($articles as $article)
 
 
@@ -85,11 +85,11 @@
 @endif
        @endforelse
 
-    </div>
+    
     @if(count($articles)!=0)
-    <div onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
+    <div class="col-12" onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
     @endif
-</div>
+
 @else
 
 
@@ -97,7 +97,7 @@
 
 
     
-        {{ csrf_field() }}
+        
         @forelse ($articles as $article)
 
 
@@ -178,7 +178,7 @@
 
    
     @if(count($articles)!=0)
-    <div onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
+    <div class="col-12" onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
     @endif
 
 
