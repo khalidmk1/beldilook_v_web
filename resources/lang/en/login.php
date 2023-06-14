@@ -11,6 +11,7 @@ return [
     'valider' => 'validate',
     'email_required' => "email address is required",
     'email_email' => "Invalid email format",
-    'email_introuvable' => "Email not found"
+    'email_introuvable' => "Email not found",
+    'block' => 'Your account has been blocked'
 ]
 ?>

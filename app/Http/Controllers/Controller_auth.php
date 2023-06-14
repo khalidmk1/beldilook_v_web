@@ -47,11 +47,14 @@ if ($reponse['message']!='Erreur' && $reponse['id']!=0){
     ]);
     if ($response->successful()){
         $reponse2 = $response->json();
+       
+
+     
+        if($reponse2['black_liste']=='oui')
+        {
+            return redirect()->back()->with('message', __('login.block'));
+        }
         Session::put('user',$reponse2);
-
-     
-
-     
         return redirect(route('home'));
     }
     

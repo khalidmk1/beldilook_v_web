@@ -32,6 +32,11 @@ class Controller extends BaseController
             ]);
             if ($response->successful()){
                 $reponse2 = $response->json();
+                if($reponse2['black_liste']=='oui')
+                {
+                    Session::put('user',null);
+                    return redirect()->back()->with('message', __('login.block'));
+                }
                 Session::put('user',$reponse2);
      
             }

@@ -48,6 +48,11 @@ class Controller_facebook extends Controller
                 ]);
                 if ($response33->successful()){
                     $reponse332 = $response33->json();
+                    if($reponse332['black_liste']=='oui')
+                    {
+                       
+                        return redirect()->back()->with('message', __('login.block'));
+                    }
                     Session::put('user',$reponse332);
                     return redirect('home');
                 }else{

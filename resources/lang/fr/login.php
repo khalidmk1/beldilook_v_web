@@ -12,6 +12,7 @@ return [
     'email_required' => "l'adresse mail est obligatoire",
     'email_email' => "Format email invalide",
     'email_introuvable' => "Email non trouvé",
-    'comission' => 'Comission'
+    'comission' => 'Comission',
+    'block' => 'Votre compte a été bloqué'
 ]
 ?>
