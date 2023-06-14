@@ -80,7 +80,12 @@
             <i class="fa fa-facebook fa-fw"></i> Login with Facebook
            </a>
           </div>
+          
     </form>
    
   </div>
+  @if(App::getlocale()=="ar")
+  <br>
+  <br>
+  @endif
 @endsection
