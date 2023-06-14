@@ -13,6 +13,10 @@ return [
     'email_email' => "Format email invalide",
     'email_introuvable' => "Email non trouvé",
     'comission' => 'Comission',
-    'block' => 'Votre compte a été bloqué'
+    'block' => 'Votre compte a été bloqué',
+
+    'mot_de_passe_oublie' => 'Mot de passe oublié ?',
+    'se_connecter_facebook' => 'Se connecter avec facebook',
+    'se_connecter_google' => 'Se connecter avec google'
 ]
 ?>

@@ -67,17 +67,17 @@
           <input class="form-check-input" type="checkbox" name="remember"> Remember me
         </label>
       </div> -->
-      <div   @if(App::getlocale()=="ar")  style="direction: rtl;" @endif> <a href="{{route('mot_de_passe_oublie_get')}}">Mot de passe oublié ?</a> </div> <br>
+      <div   @if(App::getlocale()=="ar")  style="direction: rtl;" @endif> <a href="{{route('mot_de_passe_oublie_get')}}">{{__('login.mot_de_passe_oublie')}}</a> </div> <br>
       <div   @if(App::getlocale()=="ar")  style="direction: rtl;" @endif>
       <button @if(App::getlocale()=="ar") style="margin-left:5px " @endif type="submit" class="btn btn-primary @if(App::getlocale()=="ar") float-right @endif">{{__('login.login')}} </button>
     
-          <a @if(App::getlocale()=="ar") style="margin-left:5px " @endif class="btn btn-outline-dark @if(App::getlocale()=="ar") float-right @endif" href="{{route('google_auth')}}" role="button" style="text-transform:none">
+          <a @if(App::getlocale()=="ar") style="margin-left:5px" @endif class="btn btn-outline-dark @if(App::getlocale()=="ar") float-right @endif" href="{{route('google_auth')}}" role="button" style="text-transform:none">
             <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-            Login with Google
+            {{__('login.se_connecter_google')}}
           </a>
           
           <a @if(App::getlocale()=="ar") style="margin-left:5px " @endif href="{{route('facebook_auth')}}" class="btn fb btn2 marg @if(App::getlocale()=="ar") float-right @endif">
-            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+            <i class="fa fa-facebook fa-fw"></i> {{__('login.se_connecter_facebook')}}
            </a>
           </div>
           

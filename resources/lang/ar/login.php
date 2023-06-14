@@ -12,6 +12,9 @@ return [
     'email_required' => "مطلوب عنوان البريد الإلكتروني",
     'email_email' => "تنسيق بريد إلكتروني غير صالح",
     'email_introuvable' => "البريد الإلكتروني غير موجود",
-    'block' => 'تم حظر حسابك'
+    'block' => 'تم حظر حسابك',
+    'mot_de_passe_oublie' => 'نسيت كلمة السر ؟',
+    'se_connecter_facebook' => 'تسجيل الدخول باستخدام الفيسبوك',
+    'se_connecter_google' => 'تسجيل الدخول عبر جوجل'
 ]
 ?>

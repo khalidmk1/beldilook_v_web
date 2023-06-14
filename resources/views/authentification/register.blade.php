@@ -87,16 +87,21 @@
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
       </div>
-      
-      <button type="submit" class="btn btn-primary">{{__('nav.register')}} </button>
-      <a class="btn btn-outline-dark" href="{{route('google_auth')}}" role="button" style="text-transform:none">
+      <div @if(App::getlocale()=="ar")  style="direction: rtl;" @endif>
+      <button  @if(App::getlocale()=="ar") style="margin-left:5px " @endif  type="submit" class="btn btn-primary @if(App::getlocale()=="ar") float-right @endif">{{__('nav.register')}} </button>
+      <a  @if(App::getlocale()=="ar") style="margin-left:5px " @endif  class="btn btn-outline-dark @if(App::getlocale()=="ar") float-right @endif" href="{{route('google_auth')}}" role="button" style="text-transform:none">
         <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-        Login with Google
+        {{__('login.se_connecter_google')}}
       </a>
       
-      <a href="{{route('facebook_auth')}}" class="btn fb btn2">
-        <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+      <a  @if(App::getlocale()=="ar") style="margin-left:5px " @endif  href="{{route('facebook_auth')}}" class="btn fb btn2 @if(App::getlocale()=="ar") float-right @endif">
+        <i class="fa fa-facebook fa-fw"></i>{{__('login.se_connecter_facebook')}}
        </a>
+      </div>
     </form>
   </div>
+  @if(App::getlocale()=="ar")
+  <br>
+  <br>
+  @endif
 @endsection

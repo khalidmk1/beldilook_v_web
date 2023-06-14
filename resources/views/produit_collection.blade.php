@@ -108,7 +108,7 @@ width:400px;
  <div class="modal-dialog">
      <div class="modal-content">
          <div class="modal-header">
-             <h1 class="modal-title fs-5" id="staticBackdropLabel">Filtres</h1>
+             <h1 class="modal-title fs-5" id="staticBackdropLabel">{{__('filtre.filtres')}}</h1>
              <button onclick="close_filter()" type="button" class="close" aria-label="Close">
                <span aria-hidden="true">&times;</span>
              </button>
@@ -116,13 +116,13 @@ width:400px;
          <div class="modal-body">
 
              <div class="row justify-content-center">
-                 <div class="title col-12">Prix minimum</div>
+                 <div class="title col-12">{{__('filtre.prix_minimum')}}</div>
                  <input class="progress_input slider  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" />
                  <p class="col-12 RadialProgress radian pr-2"  style="position: relative; top: 11px;"> <span id="pix_minimum"></span> </p>
 
              </div>
              <div class="row justify-content-center">
-                 <div class="title col-12">Prix maximum</div>
+                 <div class="title col-12">{{__('filtre.prix_maximum')}}</div>
                  <div class="slidecontainer text-center p-0">
                    <input type="range" min="0" max="30000" value="0" class="slider col-12 p-0 " id="myRange"> 
                    <p class="col-12 RadialProgress radian m-0 " style=" position: relative;
@@ -138,7 +138,7 @@ width:400px;
              
              <div class="container containe mt-5">
 
-                 <div class="title">Taille</div>
+                 <div class="title">{{__('filtre.tailles')}}</div>
 
                  <div class="scrollable-tabs-container-tailles container" id="scrollable-tabs-container-tailles" style="height: 42px;">
                     
@@ -194,7 +194,7 @@ width:400px;
 
              <div class="container containe mt-5">
 
-                 <div class="title">Couleurs</div>
+                 <div class="title">{{__('filtre.couleurs')}}</div>
 
                  <div class="scrollable-tabs-container container">
                      <div class="left-arrow d-none">
@@ -233,8 +233,8 @@ width:400px;
 
              <div class="row">
                  <div class="col text-start" style="font-weight: 500;
-                 font-size: max(23px, 0.4rem);">Categories</div>
-                 <div onclick="tout_selectionner_categories(this)" class="col cursor_link" style="text-align: end;" id="select_all">Tout sélectionner</div>
+                 font-size: max(23px, 0.4rem);">{{__('filtre.categories')}}</div>
+                 <div onclick="tout_selectionner_categories(this)" class="col cursor_link" style="text-align: end;" id="select_all">{{__('filtre.tout_selectionner')}}</div>
              </div>
 
 
@@ -256,8 +256,8 @@ width:400px;
 
              <div class="row mt-5">
                  <div class="col text-start" style="font-weight: 500;
-                 font-size: max(23px, 0.4rem);">Etat tenue</div>
-                 <div onclick="tout_selectionner_etat(this)" class="col cursor_link"  style="text-align: end;" id="select_all">Tout sélectionner</div>
+                 font-size: max(23px, 0.4rem);">{{__('filtre.etat_tenue')}}</div>
+                 <div onclick="tout_selectionner_etat(this)" class="col cursor_link"  style="text-align: end;" id="select_all">{{__('filtre.tout_selectionner')}}</div>
              </div>
 
 
@@ -329,7 +329,7 @@ width:400px;
 @endphp
 <div class="scrollmenu" style="margin: 20px 20px 20px 20px;">
     <div class="catgs selected" onclick="select_tag(this,'0')" style="display: inline-block;margin-right:20px;cursor:pointer;min-width: 50px;padding: 10px;">
-        Tout affiché
+      {{__('filtre.tout_afficher')}}
         </div>
 @foreach ($sous_categories as $sous_categorie)
     <div class="catgs" onclick="select_tag(this,'{{$sous_categorie['id_sous_categorie']}}')" style="display: inline-block;margin-right:20px;cursor:pointer; min-width: 50px;padding: 10px;">

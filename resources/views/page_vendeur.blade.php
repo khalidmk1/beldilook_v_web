@@ -386,28 +386,28 @@ console.log(error);
   
   
             <div class="col p-3 "> 
-              <button type="button" class="btn  text-black bg-light  " onclick="effacer_filtre()">Effacer</button>
+              <button type="button" class="btn  text-black bg-light  " onclick="effacer_filtre()">{{__('filtre.effacer')}}</button>
             </div>
             <div class="col d-flex align-items-center justify-content-center  col-sm-6  ">
-              <button type="button" onclick="valider_filtre('filtre')"  class="btn btn-submit">Appliquer</button>
+              <button type="button" onclick="valider_filtre('filtre')"  class="btn btn-submit">{{__('filtre.appliquer')}}</button>
             </div>
   
             <div class="col-12 p-2 ">
-              <label for="" style="color:#00000070" class="text-left">Genre</label>
+              <label for="" style="color:#00000070" class="text-left">{{__('filtre.genre')}}</label>
               <select id="combo_genre" class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="">
-                <option value="">Tout</option>
-                <option value="Homme">Homme</option>
-                <option value="Femme">Femme</option>
-                <option value="Garçon">Garçon</option>
-                <option value="Fille">Fille</option>
+                <option value="">{{__('filtre.tout')}}</option>
+                <option value="Homme">{{__('filtre.homme')}}</option>
+                <option value="Femme">{{__('filtre.femme')}}</option>
+                <option value="Garçon">{{__('filtre.garcon')}}</option>
+                <option value="Fille">{{__('filtre.fille')}}</option>
             
               </select>
             </div>
            
             <div class="col-12 p-2">
-              <label for=""  style="color:#00000070" class="text-left">Type du Tissu</label>
+              <label for=""  style="color:#00000070" class="text-left">{{__('filtre.type_tissue')}}</label>
               <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="type_tissus">
-                <option value="" selected>Tout</option>
+                <option value="" selected>{{__('filtre.tout')}}</option>
                 @foreach ($tissus as $tissu)
                 <option value="{{$tissu['idtissus']}}">{{$tissu['Libelle']}}</option>
                 @endforeach
@@ -418,10 +418,10 @@ console.log(error);
   
   
             <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter p-3"  style="font-size: 14px; color:#00000070">
-            Categories  
+              {{__('filtre.categories')}}   
             </div>
             <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 p-3">
-              <div class="font_side_filtter " style="color:#00000070 ;cursor: pointer; " onclick="tout_selectionner_categories(this)" id="select_all">Tout sélectionner</div>
+              <div class="font_side_filtter " style="color:#00000070 ;cursor: pointer; " onclick="tout_selectionner_categories(this)" id="select_all">{{__('filtre.tout_selectionner')}}</div>
             </div>
             <div class="col">
   
@@ -446,8 +446,8 @@ console.log(error);
   
             </div>
   
-            <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3" style="color:#00000070">Etat tenue</div>
-            <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" style="color:#00000070" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
+            <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3" style="color:#00000070">{{__('filtre.etat_tenue')}}</div>
+            <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" style="color:#00000070" id="select_all" onclick="tout_selectionner_etat(this)" >{{__('filtre.tout_selectionner')}}</div>
           
             <div class="col">
   
@@ -1299,7 +1299,7 @@ console.log(error);
   var listItems_link2 = document.querySelectorAll('#Categories li a');
   
   
-  if(select.innerHTML=="Tout sélectionner")
+  if(select.innerHTML=="{{__('filtre.tout_selectionner')}}")
   {
   
   
@@ -1322,7 +1322,7 @@ console.log(error);
    
   })
   
-  select.innerHTML="Tout désélectionner";
+  select.innerHTML="{{__('filtre.tout_deselectionner')}}";
   
   }else{
    
@@ -1340,7 +1340,7 @@ console.log(error);
   item.classList.remove('change');
   
   })
-  select.innerHTML="Tout sélectionner";
+  select.innerHTML="{{__('filtre.tout_selectionner')}}";
   }
   }
   
@@ -1352,7 +1352,7 @@ console.log(error);
   var listItems_link_etat2 = document.querySelectorAll('#etat li a');
   
   
-  if(select.innerHTML=="Tout sélectionner")
+  if(select.innerHTML=="{{__('filtre.tout_selectionner')}}")
   {
   
   
@@ -1375,7 +1375,7 @@ console.log(error);
    
   })
   
-  select.innerHTML="Tout désélectionner";
+  select.innerHTML="{{__('filtre.tout_deselectionner')}}";
   
   }else{
    
@@ -1393,7 +1393,7 @@ console.log(error);
   item.classList.remove('change_etat');
   
   })
-  select.innerHTML="Tout sélectionner";
+  select.innerHTML="{{__('filtre.tout_selectionner')}}";
   }
   
   

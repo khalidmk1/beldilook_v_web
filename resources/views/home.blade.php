@@ -280,23 +280,23 @@
         <div style="align-items: center;position:relative">
 
           <div class="row" style="margin-bottom: 20px;cursor: pointer;" onclick="select_sort('image_sort_1','NG')">
-            <img class="col-2" src="{{asset('storage/list.png')}}" height="50px" width="50px" alt="" style="margin-left:15px">  <div class="col" style="text-align: center;margin: auto;">Nom ascendent</div> <img style="object-fit: contain;margin:auto;visibility:hidden" height="25px" width="25px" class="col-2" id="image_sort_1" src="{{asset('storage/Rectangle_4-removebg-preview.png')}}" alt="">
+            <img class="col-2" src="{{asset('storage/list.png')}}" height="50px" width="50px" alt="" style="margin-left:15px">  <div class="col" style="text-align: center;margin: auto;">{{__('filtre.nom_ascendent')}}</div> <img style="object-fit: contain;margin:auto;visibility:hidden" height="25px" width="25px" class="col-2" id="image_sort_1" src="{{asset('storage/Rectangle_4-removebg-preview.png')}}" alt="">
           </div>
           <div class="row" style="margin-bottom: 20px;cursor: pointer;" onclick="select_sort('image_sort_2','ND')">
-            <img class="col-2" src="{{asset('storage/list2.png')}}" height="50px" width="50px" alt="" style="margin-left:15px">  <div class="col" style="text-align: center;margin: auto;">Nom descendant</div> <img style="object-fit: contain;margin:auto;visibility:hidden" height="25px" width="25px" class="col-2" id="image_sort_2" src="{{asset('storage/Rectangle_4-removebg-preview.png')}}" alt="">
+            <img class="col-2" src="{{asset('storage/list2.png')}}" height="50px" width="50px" alt="" style="margin-left:15px">  <div class="col" style="text-align: center;margin: auto;">{{__('filtre.nom_descendant')}}</div> <img style="object-fit: contain;margin:auto;visibility:hidden" height="25px" width="25px" class="col-2" id="image_sort_2" src="{{asset('storage/Rectangle_4-removebg-preview.png')}}" alt="">
           </div>
           <div class="row" style="margin-bottom: 20px;cursor: pointer;" onclick="select_sort('image_sort_3','PG')">
-            <img class="col-2" src="{{asset('storage/list3.png')}}" height="50px" width="50px" alt="" style="margin-left:15px">  <div class="col" style="text-align: center;margin: auto;">Prix ascendant</div> <img style="object-fit: contain;margin:auto;visibility:hidden" height="25px" width="25px" class="col-2" id="image_sort_3" src="{{asset('storage/Rectangle_4-removebg-preview.png')}}" alt="">
+            <img class="col-2" src="{{asset('storage/list3.png')}}" height="50px" width="50px" alt="" style="margin-left:15px">  <div class="col" style="text-align: center;margin: auto;">{{__('filtre.prix_ascendent')}}</div> <img style="object-fit: contain;margin:auto;visibility:hidden" height="25px" width="25px" class="col-2" id="image_sort_3" src="{{asset('storage/Rectangle_4-removebg-preview.png')}}" alt="">
           </div>
           <div class="row" style="margin-bottom: 20px;cursor: pointer;" onclick="select_sort('image_sort_4','PD')">
-            <img class="col-2" src="{{asset('storage/list4.png')}}" height="50px" width="50px" alt="" style="margin-left:15px">  <div class="col" style="text-align: center;margin: auto;">Prix descendant</div> <img style="object-fit: contain;margin:auto;visibility:hidden" height="25px" width="25px" class="col-2" id="image_sort_4" src="{{asset('storage/Rectangle_4-removebg-preview.png')}}" alt="">
+            <img class="col-2" src="{{asset('storage/list4.png')}}" height="50px" width="50px" alt="" style="margin-left:15px">  <div class="col" style="text-align: center;margin: auto;">{{__('filtre.prix_descendant')}}</div> <img style="object-fit: contain;margin:auto;visibility:hidden" height="25px" width="25px" class="col-2" id="image_sort_4" src="{{asset('storage/Rectangle_4-removebg-preview.png')}}" alt="">
           </div>
         </div>
         
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-clear text-black bg-light  " onclick="effacer_sort()">Effacer</button>
-        <button type="button" onclick="valider_filtre('sort')"  class="btn btn-submit">Appliquer</button>
+        <button type="button" class="btn btn-clear text-black bg-light  " onclick="effacer_sort()">{{__('filtre.effacer')}}</button>
+        <button type="button" onclick="valider_filtre('sort')"  class="btn btn-submit">{{__('filtre.appliquer')}}</button>
     </div>
      
     </div>
@@ -667,28 +667,28 @@
 
 
           <div class="col p-3 "> 
-            <button type="button" class="btn  text-black bg-light  " onclick="effacer_filtre()">Effacer</button>
+            <button type="button" class="btn  text-black bg-light  " onclick="effacer_filtre()">{{__('filtre.effacer')}}</button>
           </div>
           <div class="col d-flex align-items-center justify-content-center  col-sm-6  ">
-            <button type="button" onclick="valider_filtre('filtre')"  class="btn btn-submit">Appliquer</button>
+            <button type="button" onclick="valider_filtre('filtre')"  class="btn btn-submit">{{__('filtre.appliquer')}}</button>
           </div>
 
           <div class="col-12 p-2 ">
-            <label for="" style="color:#00000070" class="text-left">Genre</label>
+            <label for="" style="color:#00000070" class="text-left">{{__('filtre.genre')}}</label>
             <select id="combo_genre" class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="">
-              <option value="">Tout</option>
-              <option value="Homme">Homme</option>
-              <option value="Femme">Femme</option>
-              <option value="Garçon">Garçon</option>
-              <option value="Fille">Fille</option>
+              <option value="">{{__('filtre.tout')}}</option>
+              <option value="Homme">{{__('filtre.homme')}}</option>
+              <option value="Femme">{{__('filtre.femme')}}</option>
+              <option value="Garçon">{{__('filtre.garcon')}}</option>
+              <option value="Fille">{{__('filtre.fille')}}</option>
           
             </select>
           </div>
          
           <div class="col-12 p-2">
-            <label for=""  style="color:#00000070" class="text-left">Type du Tissu</label>
+            <label for=""  style="color:#00000070" class="text-left">{{__('filtre.type_tissue')}}</label>
             <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="type_tissus">
-              <option value="" selected>Tout</option>
+              <option value="" selected>{{__('filtre.tout')}}</option>
               @foreach ($tissus as $tissu)
               <option value="{{$tissu['idtissus']}}">{{$tissu['Libelle']}}</option>
               @endforeach
@@ -699,10 +699,10 @@
 
 
           <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter p-3"  style="font-size: 14px; color:#00000070">
-          Categories  
+            {{__('filtre.categories')}}  
           </div>
           <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 p-3">
-            <div class="font_side_filtter " style="color:#00000070 ;cursor: pointer; " onclick="tout_selectionner_categories(this)" id="select_all">Tout sélectionner</div>
+            <div class="font_side_filtter " style="color:#00000070 ;cursor: pointer; " onclick="tout_selectionner_categories(this)" id="select_all">{{__('filtre.tout_selectionner')}}</div>
           </div>
           <div class="col">
 
@@ -727,8 +727,8 @@
 
           </div>
 
-          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3" style="color:#00000070">Etat tenue</div>
-          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" style="color:#00000070" id="select_all" onclick="tout_selectionner_etat(this)" >Tout sélectionner</div>
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3" style="color:#00000070">{{__('filtre.etat_tenue')}}</div>
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" style="color:#00000070" id="select_all" onclick="tout_selectionner_etat(this)" >{{__('filtre.tout_selectionner')}}</div>
         
           <div class="col">
 
@@ -1583,7 +1583,7 @@ function tout_selectionner_categories(select)
 var listItems_link2 = document.querySelectorAll('#Categories li a');
 
 
-if(select.innerHTML=="Tout sélectionner")
+if(select.innerHTML=="{{__('filtre.tout_selectionner')}}")
 {
 
 
@@ -1606,7 +1606,7 @@ listItems_link2.forEach(function (item) {
  
 })
 
-select.innerHTML="Tout désélectionner";
+select.innerHTML="{{__('filtre.tout_deselectionner')}}";
 
 }else{
  
@@ -1624,7 +1624,7 @@ listItems_link2.forEach(function (item) {
 item.classList.remove('change');
 
 })
-select.innerHTML="Tout sélectionner";
+select.innerHTML="{{__('filtre.tout_selectionner')}}";
 }
 }
 
@@ -1636,7 +1636,7 @@ function tout_selectionner_etat(select)
 var listItems_link_etat2 = document.querySelectorAll('#etat li a');
 
 
-if(select.innerHTML=="Tout sélectionner")
+if(select.innerHTML=="{{__('filtre.tout_selectionner')}}")
 {
 
 
@@ -1659,7 +1659,7 @@ listItems_link_etat2.forEach(function (item) {
  
 })
 
-select.innerHTML="Tout désélectionner";
+select.innerHTML="{{__('filtre.tout_deselectionner')}}";
 
 }else{
  
@@ -1677,7 +1677,7 @@ listItems_link_etat2.forEach(function (item) {
 item.classList.remove('change_etat');
 
 })
-select.innerHTML="Tout sélectionner";
+select.innerHTML="{{__('filtre.tout_selectionner')}}";
 }
 
 
