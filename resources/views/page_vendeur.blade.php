@@ -12,9 +12,8 @@
     .btn_sort_2{
         background-color: #ffffff;
         border: 1px solid #2d1194;
-        width: 80px;
         font-size: 17px;
-        width: 100px;
+        width: 150px;
         color: #2d1194;
         height: 40px;
         border-radius: 30px;

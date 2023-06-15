@@ -68,7 +68,7 @@
        <div class="container ">
         <div class="row mr-0 responsive  align-items-center">
           <div class="col col-lg-2 col-xl-2 col-md-12 col-sm-12 text-center" >
-            <a href="/home">
+            <a href="{{route('welcome')}}">
               <img src="{{asset('storage/logo-beldiloock.png')}}" alt="" class="img_logo_top image_obligatoire">
             </a>
           </div>
