@@ -31,6 +31,7 @@ return [
     'ok' => 'ok',
     'email_invalide' => "the email address is invalid",
     'email_obligatoire' => "Email is required",
-    'accept_recev' => 'You must agree to receive emails'
+    'accept_recev' => 'You must agree to receive emails',
+    'paye' => 'Paid the request'
 ]
 ?>

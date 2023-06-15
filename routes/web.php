@@ -189,6 +189,10 @@ Route::group(['prefix'=> LaravelLocalization::setLocale(),
     Route::post('register_newsletter','Controller@register_newsletter')->name('register_newsletter');
 
     Route::post('filtre_page_vendeur','Controller@filtre_page_vendeur')->name('filtre_page_vendeur');
+
+    Route::get('page_paiement_demande','Controller@page_paiement_demande')->name('page_paiement_demande');
+
+    Route::get('payer_demande','Controller@payer_demande')->name('payer_demande');
 });
    // Route::get('/test', 'Controller@test')->name('test');
     

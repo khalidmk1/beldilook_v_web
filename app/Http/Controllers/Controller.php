@@ -2487,7 +2487,9 @@ if ($response->successful()){
     if ($response3->successful()){
         $reponse4 = $response3->json();
         Session::put('user',$reponse4);
-        return redirect('home')->with('success', __('myaccount.demande_success'));
+       
+
+        return redirect('page_paiement_demande');
     }else{
         return redirect()->back()->with('message', __('favoris.erreur'))->withInput();
     }
@@ -3198,4 +3200,85 @@ $email=$request->input('email');
 
 
           }
+          public function page_paiement_demande()
+          {
+            $this->actualiser_user();
+            if (Session::get('user')){
+                $user=Session::get('user');
+                $id=$user['IDUtilisateurs'];
+            } else{
+              return redirect('home')->with('message', __('favoris.message_connection'));
+            }
+
+
+            if ($user['demande']=='E'&& $user['type_pour_demande']=='V' && $user['paye']=='faux')
+            {
+                
+            }else{
+                return redirect(route('home'));
+            }
+
+
+
+
+            return view('page_paiement_demande');
+          }
+
+          public function payer_demande()
+          {
+            $this->actualiser_user();
+            if (Session::get('user')){
+                $user=Session::get('user');
+                $id=$user['IDUtilisateurs'];
+            } else{
+              return redirect('home')->with('message', __('favoris.message_connection'));
+            }
+            if ($user['demande']=='E'&& $user['type_pour_demande']=='V' && $user['paye']=='faux')
+            {
+                
+            }else{
+                return redirect(route('home'));
+            }
+
+            $existe_demande = Http::post('http://51.68.36.192/REST_BeldiLook/Utilisateur_existeDemande', [
+                'sIdUtilisateur' => $id
+            ]);
+    
+    
+    
+            if ($existe_demande->successful()){
+                $existe_demande2 = $existe_demande->json();
+            $num_demande=$existe_demande2['numero'];
+
+
+            $response_paiement = Http::withHeaders([
+                'x-api-key' => 'mLFiwvRIirTCrzE7t5XZe6kQPV9vU6nFi77uUNbMNzPhOmKiz6SH0WQp7OURDz7D',
+                'x-api-user' => 'beldilook@acal.ma'
+            ])->post('https://sandbox.api.acal.ma/v1/plug-n-pay/card/pay', [
+                'reference' => $num_demande,
+                'returnUrl' => 'https://beldilook.ma',
+                'website' => 'https://beldilook.ma',
+                'amount' => ['value' => 79,
+                'currency' => ['code'=> 'MAD',
+                'name' => 'Moroccan Dirham'
+                ]
+                ]
+            ]);
+            if ($response_paiement->successful()){
+                $response_paiement2 = $response_paiement->json();
+                dd($response_paiement2);
+               return redirect($response_paiement2['redirectUrl']);
+            }else{
+                $response_paiement2 = $response_paiement->json();
+                dd($response_paiement2);
+                return redirect()->back()->with('message', __('favoris.erreur'))->withInput();
+            }
+
+
+            }else{
+                return redirect()->back()->with('message', __('favoris.erreur'))->withInput();
+            }
+
+          }
+
 }

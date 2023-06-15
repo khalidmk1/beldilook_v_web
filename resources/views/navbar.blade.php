@@ -143,7 +143,11 @@
                       @endif
                       @if($user['Type']=='A')
                       @if($user['demande']=='E')
+                      @if ($user['demande']=='E'&& $user['type_pour_demande']=='V' && $user['paye']=='faux')
+                      <a class="dropdown-item" href={{ route('page_paiement_demande') }}>{{__('nav.paye')}}</a>
+                      @else
                       <a class="dropdown-item" href="#">{{__('nav.en_cours')}}</a>
+                      @endif
                       @else
                       <a class="dropdown-item" href={{ route('devenir_vendeur') }}>{{__('nav.devenir_vendeur')}}</a>
                       @endif

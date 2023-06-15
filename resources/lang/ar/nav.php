@@ -28,6 +28,7 @@ return [
     'acheter_maintenant' => 'اشتري الآن',
     'titre_success_newsletter' => 'رسالة إخبارية',
     'success_newsletter' => 'تم تسجيل اشتراكك',
-    'ok' => 'نعم'
+    'ok' => 'نعم',
+    'paye' => 'سدد الطلب'
 ]
 ?>
