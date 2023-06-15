@@ -1,6 +1,17 @@
 @extends('navbar')
+
+
 @section('content')
 
+
+<style>
+  .table td{
+    text-align: center;
+  }
+  .table td, .table th{
+    padding: 5px;
+  }
+</style>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -40,7 +51,7 @@
 @if($adresses!=null)
 <table class="table">
     <thead>
-      <tr>
+      <tr style="padding: 5px !important">
         
         <th scope="col">{{__('adresses_livraison.adresse')}}</th>
         <th scope="col">{{__('adresses_livraison.ville')}}</th>
@@ -50,7 +61,7 @@
         
       </tr>
     </thead>
-    <tbody>
+    <tbody style="padding: 5px !important">
 @foreach($adresses as $adresse)
 
    <tr> 

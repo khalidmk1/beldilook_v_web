@@ -796,7 +796,7 @@
           
   @forelse ($articles as $article)
 
-<div class="col-6 col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
+<div class="col-6 col-xl-4 col-lg-4 col-md-4 col-sm-6 d-flex  flex-column  ">
   
      
   
@@ -1008,7 +1008,7 @@
 
         <button
         type="button"
-        class="btn position-fixed btn-lg  m-2 " style="border-radius:50px ; bottom: 0 ; right: 0; background-color: #B09636"
+        class="btn position-fixed btn-lg  m-2 " style="border-radius:50px ; z-index: 200 ;  bottom: 0 ; right: 24px; background-color: #B09636"
         id="btn-back-to-top"
         >
         <i class="fas fa-arrow-up"></i>
