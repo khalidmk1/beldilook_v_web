@@ -24,7 +24,7 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-12 text-center p-2">{{__('nav.text_download')}}</div>
-         <div class="col-12  text-center"> <a href="https://play.google.com/store/apps/details?id=com.isi.beldi_look"><img src="{{asset('storage/093c-DX36-y.png')}}" alt="" style="height: 63px;"></a>
+         <div class="col-12  text-center"> <a target="_blank" href="https://play.google.com/store/apps/details?id=com.isi.beldi_look"><img src="{{asset('storage/093c-DX36-y.png')}}" alt="" style="height: 63px;"></a>
          </div>
         </div>
 
