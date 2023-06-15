@@ -21,10 +21,10 @@
 <br>
 <br>
 <br>
-<div style="text-align: center">Nous vous remercions pour votre demande de conversion vendeur. Afin de valider votre statut vendeur, merci de payer 79 dhs dans un délai de 24H.</div>
+<div style="text-align: center">{{__('paiement.text')}}</div>
 <br>
 <br>
-<div style="text-align: center"><button onclick="window.location='{{route('payer_demande')}}'" class="btn_payer">Payer</button></div>
+<div style="text-align: center"><button onclick="window.location='{{route('payer_demande')}}'" class="btn_payer">{{__('paiement.payer')}}</button></div>
 <br>
 <br>
 <br>

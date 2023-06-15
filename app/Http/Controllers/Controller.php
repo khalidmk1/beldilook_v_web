@@ -3266,11 +3266,10 @@ $email=$request->input('email');
             ]);
             if ($response_paiement->successful()){
                 $response_paiement2 = $response_paiement->json();
-                dd($response_paiement2);
+              
                return redirect($response_paiement2['redirectUrl']);
             }else{
-                $response_paiement2 = $response_paiement->json();
-                dd($response_paiement2);
+               
                 return redirect()->back()->with('message', __('favoris.erreur'))->withInput();
             }
 

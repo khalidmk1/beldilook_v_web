@@ -16,20 +16,19 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-12 text-center p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum distinctio veniam inventore sint modi, tempore ducimus voluptatibus? Ab, quisquam pariatur?</div>
-         <div class="col-12  text-center"> <img src="{{asset('storage/093c-DX36-y.png')}}" alt="" style="height: 63px;">
+          <div class="col-12 text-center p-2">{{__('nav.text_download')}}</div>
+         <div class="col-12  text-center"> <a href="https://play.google.com/store/apps/details?id=com.isi.beldi_look"><img src="{{asset('storage/093c-DX36-y.png')}}" alt="" style="height: 63px;"></a>
          </div>
         </div>
 
         <div class="row">
-          <div class="col-12 text-center p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum distinctio veniam inventore sint modi, tempore ducimus voluptatibus? Ab, quisquam pariatur?</div>
          <div class="col-12  text-center"> <img src="{{asset('storage/telecharger-apple-app-store_francais.png')}}" alt="" style="height: 105px;">
          </div>
         </div>
@@ -53,7 +52,7 @@
 
 
 @if($article['smessage']=='non trouvé')
-      <div style="text-align: center;padding-top: 15%">Article non trouvé</div> 
+      <div style="text-align: center;padding-top: 15%">{{__('nav.article_non_trouve')}}</div> 
       @else 
 <div class="container">
 
@@ -194,7 +193,7 @@
        
         </div>
         <button class="btn btn_add_cart mt-2 " data-toggle="modal" data-target="#exampleModal" type="submit">
-            <i class="fas fa-shopping-cart" ></i> ADD TO CART
+            <i class="fas fa-shopping-cart" ></i> {{__('nav.add_to_cart')}}
         </button>
     </div>
 </div>

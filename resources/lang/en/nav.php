@@ -32,6 +32,9 @@ return [
     'email_invalide' => "the email address is invalid",
     'email_obligatoire' => "Email is required",
     'accept_recev' => 'You must agree to receive emails',
-    'paye' => 'Paid the request'
+    'paye' => 'Paid the request',
+    'add_to_cart' => 'Add to Cart',
+    'article_non_trouve' => 'Item not found',
+    'text_download' => "Please continue to the Beldilook app"
 ]
 ?>

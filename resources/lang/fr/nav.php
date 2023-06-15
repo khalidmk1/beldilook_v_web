@@ -32,6 +32,9 @@ return [
     'email_invalide' => "l'adresse email est invalide",
     'email_obligatoire' => "L'email est obligatoire",
     'accept_recev' => 'Vous devez accepter de recevoir des mails',
-    'paye' => 'Payé la demande'
+    'paye' => 'Payé la demande',
+    'add_to_cart' => 'Ajouter au panier',
+    'article_non_trouve' => 'Article non trouvé',
+    'text_download' => "Veuiller continuer vers l'application Beldilook"
 ]
 ?>

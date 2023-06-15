@@ -29,6 +29,9 @@ return [
     'titre_success_newsletter' => 'رسالة إخبارية',
     'success_newsletter' => 'تم تسجيل اشتراكك',
     'ok' => 'نعم',
-    'paye' => 'سدد الطلب'
+    'paye' => 'سدد الطلب',
+    'add_to_cart' => 'أضف إلى السلة',
+    'article_non_trouve' => 'العنصر غير موجود',
+    'text_download' => "الرجاء المتابعة إلى تطبيق بيلديلوك"
 ]
 ?>
