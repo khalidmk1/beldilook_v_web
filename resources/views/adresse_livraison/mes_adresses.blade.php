@@ -5,9 +5,7 @@
 
 
 <style>
-  .table td{
-    text-align: center;
-  }
+
   .table td, .table th{
     padding: 5px;
   }
@@ -69,7 +67,7 @@
     <td>{{$adresse['sVille']}}</td>
     <td>{{$adresse['sSecteur']}}</td>
     <td>{{$adresse['sCodePostal']}}</td>
-    <td>
+    <td style="text-align: center;">
        <a class="btn btn-success" href="{{route('get_update_adresse',$adresse['sIDLivraison'])}}"><i class="fas fa-edit"></i></a>
        <button id="delete_adresse" class="btn btn-danger" value="{{$adresse['sIDLivraison']}}"><i class="fas fa-trash"></i></button>
 

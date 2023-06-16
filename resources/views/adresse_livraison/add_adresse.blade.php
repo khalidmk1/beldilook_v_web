@@ -2,23 +2,23 @@
 @section('content')
 <div class="container mt-3">
 
-    <h2>{{__('adresses_livraison.add_adresse')}} </h2>
+    <h2 @if(App::getlocale()=="ar") style="text-align: end" @endif>{{__('adresses_livraison.add_adresse')}} </h2>
     <form action={{route('add_adresses')}} method="POST">
       @csrf
-      <div class="mb-3 mt-3">
+      <div class="mb-3 mt-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
         <label for="adresse">{{__('adresses_livraison.adresse')}} :</label>
        
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('adresse') is-invalid @enderror" id="adresse"  name="adresse" value="{{ old('adresse') }}" required>
+        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('adresse') is-invalid @enderror" id="adresse"  name="adresse" value="{{ old('adresse') }}" required>
         
         @error('adresse')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
         <label for="ville">{{__('adresses_livraison.ville')}} :</label>
        
-        <select class="form-select form-control  border-top-0 border-right-0 border-left-0 @error('ville') is-invalid @enderror" aria-label="Default select example" id="ville" name="ville" required onchange="select_ville()">
+        <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control  border-top-0 border-right-0 border-left-0 @error('ville') is-invalid @enderror" aria-label="Default select example" id="ville" name="ville" required onchange="select_ville()">
           <option selected></option>
         @foreach ($villes as $ville)
         @if(old('ville')==null)
@@ -38,10 +38,10 @@
 
 
 
-      <div class="mb-3">
+      <div class="mb-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
         <label for="secteur">{{__('adresses_livraison.secteur')}} :</label>
        
-        <select class="form-select form-control  border-top-0 border-right-0 border-left-0 @error('secteur') is-invalid @enderror" aria-label="Default select example" id="secteur" name="secteur" required>
+        <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control  border-top-0 border-right-0 border-left-0 @error('secteur') is-invalid @enderror" aria-label="Default select example" id="secteur" name="secteur" required>
           <option selected></option> 
         </select>       
         @error('secteur')
@@ -53,9 +53,9 @@
 
 
 
-      <div class="mb-3 mt-3">
+      <div class="mb-3 mt-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
         <label for="code_postal">{{__('adresses_livraison.code_postal')}} :</label>
-        <input type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('code_postal') is-invalid @enderror" id="code_postal"  name="code_postal" value="{{ old('code_postal') }}" required>
+        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control  border-top-0 border-right-0 border-left-0 @error('code_postal') is-invalid @enderror" id="code_postal"  name="code_postal" value="{{ old('code_postal') }}" required>
         @error('code_postal')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
