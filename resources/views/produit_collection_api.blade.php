@@ -80,13 +80,13 @@
     
     </div>  --}}
        @empty
-       @if($page==1)
+      
 <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
-@endif
+
        @endforelse
 
     
-    @if(count($articles)!=0)
+{{--     @if(count($articles)!=0)
     <div class="col-12" onclick="afficher_plus()" style="text-align: center" id="afficher_plus">
       <button style="background-color: #6e6e6b70; border: none; border-radius: 50px;
     padding: 11px; height: 42px;width: 227px;">
@@ -94,7 +94,7 @@
     <span style="margin-left: 10px">-></span>
   </button>
       </div>
-    @endif
+    @endif --}}
 
 @else
 
@@ -179,13 +179,13 @@
     
     </div>  --}}
        @empty
-  
+       <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
        @endforelse
 
    
-    @if(count($articles)!=0)
+   {{--  @if(count($articles)!=0)
     <div class="col-12" onclick="afficher_plus()" style="text-align: center" id="afficher_plus"><button>{{__('home.afficher_plus')}}</button></div>
-    @endif
+    @endif --}}
 
 
 

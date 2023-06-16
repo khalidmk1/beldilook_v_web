@@ -107,6 +107,10 @@
         </div>
       </div>
       @endforeach
+
+      @if(count($liste_notif)==0)
+      <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('notification.aucun_notification')}}</p>
+      @endif
     </div>
   </section>
 

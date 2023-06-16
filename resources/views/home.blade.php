@@ -1471,19 +1471,21 @@ console.log(error);
 
 function afficher_plus(sign)
 {
-  $('#modal_loading').modal('show');
+
+ 
 if(sign=='+')
 {
   pagination=pagination+1;
 }
 if(sign=='-')
 {
+  if(pagination==1)
+{
+  return
+}
   pagination=pagination-1;
 }
-if(pagination==0)
-{
-  pagination=1;
-}
+$('#modal_loading').modal('show');
   
     var _token=$('input[name="_token"]').val();
            $.ajax({

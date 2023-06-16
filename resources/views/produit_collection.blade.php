@@ -307,13 +307,13 @@ width:400px;
 
 <div class="col"  id="snackbar">Some text some message..</div>
 <div style="position: relative;">
-<img  src="{{ $details['image_type'] }} " height="300px" width="100%" alt="">
-<strong class="desc">{{ $details['Libelle'] }}</strong>
+<img style="object-fit: cover;"  src="{{ $details['image_type'] }} " height="300px" width="100%" alt="">
+<strong class="desc" >{{ $details['Libelle'] }}</strong>
 </div>
 <div class="row" style="margin-right: 0px">
 
     <div class="col">
-        <h3 style="padding: 20px 20px 5px 20px;color:#263066;">{{ $details['Libelle'] }}</h3>
+        <h3 id="titre_id" style="padding: 20px 20px 5px 20px;color:#263066;">{{ $details['Libelle'] }}</h3>
     </div>
     <div class="col" style="text-align: end;margin:auto;margin-right:15px">
         <img src="{{asset('storage/parambl.png')}}" alt="" height="30px" width="30px" style="cursor: pointer " onclick="open_filter()">
@@ -424,17 +424,26 @@ width:400px;
        @endforelse
 
     </div>
-    <div class="col-12"  onclick="afficher_plus()" style="text-align: center" id="afficher_plus">
+ {{--    <div class="col-12"  onclick="afficher_plus()" style="text-align: center" id="afficher_plus">
       <button style="background-color: #6e6e6b70; border: none; border-radius: 50px;
     padding: 11px; height: 42px;width: 227px;">
     {{__('home.afficher_plus')}} 
     <span style="margin-left: 10px">-></span>
   </button>
-      </div>
+      </div> --}}
 
 </div>
 
+<div class="mt-5" style="text-align: center;padding-bottom:50px">
 
+
+  <a onclick="afficher_plus('-')"  class="paginationa" style="cursor: pointer">❮</a>
+
+
+  <a onclick="afficher_plus('+')"  class="paginationa" style="cursor: pointer">❯</a>
+
+
+</div>
 
 
 
@@ -882,9 +891,25 @@ console.log(error);
 
 
 
-function afficher_plus()
+function afficher_plus(sign)
 {
-    pagination=pagination+1;
+
+
+
+    if(sign=='+')
+{
+  pagination=pagination+1;
+}
+if(sign=='-')
+{
+  if(pagination==1)
+{
+  return
+}
+  pagination=pagination-1;
+}
+$('#modal_loading').modal('show');
+
     var _token=$('input[name="_token"]').val();
            $.ajax({
             url:("{{route('produit_collection_apî')}}"),
@@ -905,10 +930,12 @@ function afficher_plus()
        if(data!='erreur')
        {
         $( "#afficher_plus" ).remove();
-        var content_d =$('#div_articles').html();
+       /*  var content_d =$('#div_articles').html();
         content_d+=data;
-        
-        $('#div_articles').html(content_d);
+         */
+        $('#div_articles').html(data);
+        document.getElementById('titre_id').scrollIntoView();
+        $('#modal_loading').modal('hide');
        }
        
        }
@@ -916,6 +943,7 @@ function afficher_plus()
 {
 // error alert message
 console.log(error);
+$('#modal_loading').modal('hide');
 }
        });
 

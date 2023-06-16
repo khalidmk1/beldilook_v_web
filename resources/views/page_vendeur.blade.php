@@ -60,7 +60,7 @@
 <div class="col" id="snackbar">Some text some message..</div>
 <div style="text-align: center">
     @if($vendeur['photo']!='no' && $vendeur['photo']!='')
-    <img style="border-radius: 50%" src="{{ $vendeur['photo'] }}" alt="" height="150px" width="150px">
+    <img id="image_p" style="border-radius: 50%" src="{{ $vendeur['photo'] }}" alt="" height="150px" width="150px">
     @else
     <img style="border-radius: 50%" src="{{ asset('storage/user.png') }}" alt="" height="150px" width="150px">
     @endif
@@ -562,13 +562,21 @@ console.log(error);
   @endforelse
   
 
-  <div onclick="afficher_plus()" class="col-12" style="text-align: center" id="afficher_plus"><button class="btn_sort_2">{{__('home.afficher_plus')}}</button></div>
 
   
   
   </div>
   
+  <div class="mt-5" style="text-align: center;padding-bottom:50px">
+
+
+    <a onclick="afficher_plus('-')"  class="paginationa" style="cursor: pointer">❮</a>
   
+  
+    <a onclick="afficher_plus('+')"  class="paginationa" style="cursor: pointer">❯</a>
+  
+  
+  </div>
   
   
           </div>
@@ -1171,9 +1179,27 @@ console.log(error);
   
   
   
-  function afficher_plus()
+  function afficher_plus(sign)
   {
-      pagination=pagination+1;
+
+    
+if(sign=='+')
+{
+  pagination=pagination+1;
+}
+if(sign=='-')
+{
+  if(pagination==1)
+{
+  return
+}
+  pagination=pagination-1;
+}
+if(pagination==0)
+{
+  pagination=1;
+}
+$('#modal_loading').modal('show');
       var _token=$('input[name="_token"]').val();
              $.ajax({
          url:("{{route('filtre_page_vendeur')}}"),
@@ -1197,10 +1223,12 @@ console.log(error);
          if(data!='erreur')
          {
           $( "#afficher_plus" ).remove();
-          var content_d =$('#div_articles').html();
-          content_d+=data;
+        /*   var content_d =$('#div_articles').html();
+          content_d+=data; */
           
-          $('#div_articles').html(content_d);
+          $('#div_articles').html(data);
+          document.getElementById('image_p').scrollIntoView();
+          $('#modal_loading').modal('hide');
          }
          
          }
@@ -1208,6 +1236,7 @@ console.log(error);
   {
   // error alert message
   console.log(error);
+  $('#modal_loading').modal('hide');
   }
          });
   
