@@ -32,6 +32,8 @@ return [
     'categorie_obligatoire' => 'اختيار القسم مطلوب',
     'nom_obligatoire' => 'مطلوب اسم',
     'continuer' => 'يكمل',
-    'ajouter_image' => 'أضف صورة'
+    'ajouter_image' => 'أضف صورة',
+    'crop' => 'قص',
+    'cancel' => 'إلغاء'
 ]
 ?>

@@ -32,6 +32,8 @@ return [
     'categorie_obligatoire' => 'Category is required',
     'nom_obligatoire' => 'Name is required',
     'continuer' => 'Continue',
-    'ajouter_image' => 'Add a picture'
+    'ajouter_image' => 'Add a picture',
+    'crop' => 'Crop',
+    'cancel' => 'Cancel'
 ]
 ?>

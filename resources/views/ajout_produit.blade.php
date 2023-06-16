@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"  />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
 <style>
-
+.images_cl{
+  border:1px solid black;
+}
 .image_area {
 		  position: relative;
 		}
@@ -99,7 +101,7 @@
   position: relative;
     top: 8px;
     left: 80px;
- 
+    border:1px solid black;
  }
 
  .colors2{
@@ -174,8 +176,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="crop" class="btn btn-primary">Crop</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" id="crop" class="btn btn-primary">{{__('ajout_produit.crop')}}</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('ajout_produit.cancel')}}</button>
         </div>
     </div>
   </div>
@@ -1296,12 +1298,12 @@ $modal.on('shown.bs.modal', function() {
 
 
 content_div+='<div style="display: inline-block">';
-  content_div+='<img src="'+base64data+'" alt="" class="images_cl image_obligatoire" height="150px" width="150px"  style="padding-left:10px;object-fit:contain;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" class="image_obligatoire" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
+  content_div+='<img src="'+base64data+'" alt="" class="images_cl image_obligatoire" height="150px" width="150px"  style="margin-left:10px;object-fit:contain;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" class="image_obligatoire" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
   content_div+='</div>';
 
       $('#div_images').html(content_div);
 
-
+$('#select_im').val('');
 			};
 		});
 	});

@@ -32,6 +32,8 @@ return [
     'categorie_obligatoire' => 'La catégorie est obligatoire',
     'nom_obligatoire' => 'Le nom est obligatoire',
     'continuer' => 'Continuer',
-    'ajouter_image' => 'Ajouter une image'
+    'ajouter_image' => 'Ajouter une image',
+    'crop' => 'recadrer',
+    'cancel' => 'Annuler'
 ]
 ?>
