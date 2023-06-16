@@ -43,6 +43,7 @@ color: rgba(117, 119, 5, 0.562);
     }
     .photo_local{
 margin-top: 20px;
+border: 1px solid black;
 }
     @media only screen and (max-width: 600px) {
       .photo_local2{
@@ -143,17 +144,17 @@ width: 300px;
 <div id="photos_local" style="text-align: center">
 @if($info_social['photol1']!='')
 <div style="display: inline">
-    <img src="{{ $info_social['photol1'] }}" alt="" class="photo_local" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
+    <img src="{{ $info_social['photol1'] }}" alt="" class="photo_local" height="150px" width="150px" style="margin-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
 </div>
 @endif
 @if($info_social['photol2']!='')
 <div style="display: inline">
-    <img src="{{ $info_social['photol2'] }}" alt="" class="photo_local" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
+    <img src="{{ $info_social['photol2'] }}" alt="" class="photo_local" height="150px" width="150px" style="margin-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
 </div>
 @endif
 @if($info_social['photol3']!='')
 <div style="display: inline">
-    <img src="{{ $info_social['photol3'] }}" alt="" class="photo_local" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
+    <img src="{{ $info_social['photol3'] }}" alt="" class="photo_local" height="150px" width="150px" style="margin-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">
 </div>
 @endif
 </div>
@@ -467,7 +468,7 @@ function readURL(input) {
 
 
 content_div+='<div style="display: inline-block">';
-  content_div+='<img src="'+im+'" alt="" class="photo_local" height="150px" width="150px" style="padding-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
+  content_div+='<img src="'+im+'" alt="" class="photo_local" height="150px" width="150px" style="margin-left:10px;" ><img src={{ asset('storage/close.png') }} height="20px" width="20px" alt="" style="position: relative;right:0px;top:-70px;" onclick=" this.parentNode.parentNode.removeChild(this.parentNode);">';
   content_div+='</div>';
 
 

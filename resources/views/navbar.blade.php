@@ -105,7 +105,7 @@
               ?>
       
       
-                  <div class="nav-item dropdown" >
+                  <div class="nav-item dropdown"  >
                     <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       @if($user['Photo_Logo']!='') 
                    
@@ -119,7 +119,7 @@
                       </span>
                       
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" @if(App::getlocale()=="ar") style="text-align: end" @endif>
                       @php
                           $solde=number_format($user['solde'], 2, ',', ' ')
                       @endphp
