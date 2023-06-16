@@ -541,7 +541,7 @@
 
 
 <div style="text-align: center;margin-top:20px;margin-bottom:20px">
-  <button style="margin-right: 10px" class="btn_sort" onclick="open_sort()"> {{__('home.sort')}} </button>
+  <button style="margin-right: 10px" id="btn_sort_id" class="btn_sort" onclick="open_sort()"> {{__('home.sort')}} </button>
   {{-- <button class="btn_ajouter" onclick="open_filter()"> {{__('home.filtre')}} </button> --}}
 </div>
 
@@ -1511,7 +1511,7 @@ if(pagination==0)
         content_d+=data; */
         
         $('#div_articles').html(data);
-        backToTop();
+        document.getElementById('btn_sort_id').scrollIntoView();
         $('#modal_loading').modal('hide');
        }
        
