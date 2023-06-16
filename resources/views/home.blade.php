@@ -686,7 +686,7 @@
             <button type="button" onclick="valider_filtre('filtre')"  class="btn btn-submit">{{__('filtre.appliquer')}}</button>
           </div>
 
-          <div class="col-12 p-2 ">
+          <div class="col-12 p-2   @if(App::getlocale() == "ar") text-right @endif">
             <label for="" style="color:#00000070" class="text-left">{{__('filtre.genre')}}</label>
             <select id="combo_genre" class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="">
               <option value="">{{__('filtre.tout')}}</option>
@@ -698,9 +698,9 @@
             </select>
           </div>
          
-          <div class="col-12 p-2">
-            <label for=""  style="color:#00000070" class="text-left">{{__('filtre.type_tissue')}}</label>
-            <select class="border-right-0 border-top-0 border-left-0 p-2 w-100" name="" id="type_tissus">
+          <div class="col-12 p-2   @if(App::getlocale() == "ar") text-right @endif">
+            <label for=""  style="color:#00000070" class="text-left @if(App::getlocale() == "ar") text-right @endif">{{__('filtre.type_tissue')}}</label>
+            <select class="border-right-0 border-top-0 border-left-0 p-2 w-100 " name="" id="type_tissus">
               <option value="" selected>{{__('filtre.tout')}}</option>
               @foreach ($tissus as $tissu)
               <option value="{{$tissu['idtissus']}}">{{$tissu['Libelle']}}</option>
@@ -711,11 +711,13 @@
           </div>
 
 
-          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter p-3"  style="font-size: 14px; color:#00000070">
-            {{__('filtre.categories')}}  
-          </div>
-          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 p-3">
-            <div class="font_side_filtter " style="color:#00000070 ;cursor: pointer; " onclick="tout_selectionner_categories(this)" id="select_all">{{__('filtre.tout_selectionner')}}</div>
+          <div class="row w-100 @if(App::getlocale() == "ar") flex-row-reverse text-right @endif">
+            <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter p-3 "  style="font-size: 14px; color:#00000070">
+              {{__('filtre.categories')}}  
+            </div>
+            <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 p-3 ">
+              <div class="font_side_filtter @if(App::getlocale() == "ar") text-left @endif " style="color:#00000070 ;cursor: pointer; " onclick="tout_selectionner_categories(this)" id="select_all">{{__('filtre.tout_selectionner')}}</div>
+            </div>
           </div>
           <div class="col">
 
@@ -740,9 +742,11 @@
 
           </div>
 
+          <div class="row w-100 @if(App::getlocale() == "ar") flex-row-reverse text-right @endif">
+
           <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 font_side_filtter  p-3" style="color:#00000070">{{__('filtre.etat_tenue')}}</div>
-          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3" style="color:#00000070" id="select_all" onclick="tout_selectionner_etat(this)" >{{__('filtre.tout_selectionner')}}</div>
-        
+          <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-6 cursor_link font_side_filtter  p-3  @if(App::getlocale() == "ar") text-left @endif " style="color:#00000070" id="select_all" onclick="tout_selectionner_etat(this)" >{{__('filtre.tout_selectionner')}}</div>
+          </div>
           <div class="col">
 
             <div id="container-categorie" class="container-categorie h-100">
