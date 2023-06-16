@@ -185,11 +185,11 @@
     <div style="background-color: #FFFFFF;">
     <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
-        Link with href
+        Comment devenir vendeur ?
       </button>
       <div class="collapse" id="collapseExample" >
         <div class="" style="background-color: #FFFFFF;padding:10px;">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            Il suffit de créer votre compte et activer le switch vendeur en payant le montant de 79 dhs pour activer votre statut vendeur. Petite précision : ce montant n’est payé qu’une fois. Une fois votre statut activé, amusez-vous à prendre de belles photos de vos tenues en les mettant en valeur.
         </div>
       </div>
 </div>
@@ -201,36 +201,120 @@
         
     <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
-        Link with href
+        Pourquoi payer le montant de 79 dhs pour devenir vendeur ?
       </button>
       <div class="collapse" id="collapseExample3" >
         <div class="" style="background-color: #FFFFFF;padding:10px;">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-        </div>
+            Il est important pour Beldi Look d’assurer un service de qualité, c’est pour cela que nous voulons que nos vendeurs soient engagés avec nous et fournissent des articles conformes aux photos. Nous voulons attirer des vendeurs sérieux et qui utiliseront l’application sur le court et le long terme.        </div>
       </div>
 </div>
 </div>
 
-</div>
-
-
-
-
-<div class="col-lg-6 dol-md-6 col-sm-12"> <div class="col-lg-12"  style="margin-bottom: 10px">
+<div class="col-lg-12"  style="margin-bottom: 10px">
     <div style="background-color: #FFFFFF;">
-    <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+        
+    <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
-        Link with href
+        Comment se fait le paiement pour devenir vendeur ?
       </button>
-      <div class="collapse" id="collapseExample2" >
+      <div class="collapse" id="collapseExample4" >
         <div class="" style="background-color: #FFFFFF;padding:10px;">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-        </div>
+            Vous pouvez payer pour devenir vendeur à travers votre carte bancaire ou à travers Barid Cash.         </div>
       </div>
 </div>
-</div></div>
+</div>
+
+<div class="col-lg-12"  style="margin-bottom: 10px">
+    <div style="background-color: #FFFFFF;">
+        
+    <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
+        <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
+        Qu’est-ce que je dois faire pour vendre mes tenues ?
+      </button>
+      <div class="collapse" id="collapseExample5" >
+        <div class="" style="background-color: #FFFFFF;padding:10px;">
+            Assure toi d’abord que tes tenues sont toujours de bonne qualité (même si elles sont anciennes), et qu’il soit dans un état correct. Voici les degrés d’usure que nous acceptons sur Beldi Look :
+
+            Neuf : l’article n’a jamais été porté ou utilisé. Il est donc comme neuf.
+            Excellent état : l’article n’a presque pas été porté ou utilisé et ne présente quasiment aucun signe d’usure.
+            Très bon état : l'article a été utilisé ou porté et présente quelques signes d'usure mais a toujours fière allure.
+            Bon état : l'article a été utilisé ou porté et montre des signes modérés d'usure mais a toujours fière allure.
+            État modéré : l'article présente des signes évidents d'usure (fils de couture, tâches, perles qui manquent).
+            Nettoyez soigneusement les articles que vous souhaitez vendre. Pensez à les faire laver par un professionnel afin qu'ils soient en parfait état. Ceci augmentera vos chances d’avoir un client fidèle.
+            
+            Active ton statut vendeur et commence à prendre de belles photos. Au moins une photo de bonne qualité doit être téléchargée. Les photos doivent refléter la qualité réelle et l'aspect extérieur de l'article, ainsi que la présence éventuelle de défauts sur l'article. Ne négligez pas les détails des coutures, les couleurs etc. Mentionnez l’état d’usure de votre article dans la description de votre article, ainsi que la taille en centimètres. Remplissez les filtres pour avoir plus de visibilité. Il faut décrire l'article le plus précisément possible, indiquer les défauts éventuels et préciser le prix de l'article.
+            
+            Une fois que ta tenue a trouvé son acheteur, nous vous enverrons un mail qui vous annonce que votre tenue est vendue. Nous vous enverrons également un bon de livraison que vous devrez imprimer. Emballez votre tenue soigneusement et collez le bon de livraison sur l’emballage.
+            
+            Un livreur vous contactera pour venir récupérer votre tenue et la ramènera à son nouveau propriétaire.
+       </div>
+      </div>
+</div>
+</div>
+
+</div>
 
 
+
+
+<div class="col-lg-6 dol-md-6 col-sm-12">
+     <div class="col-lg-12"  style="margin-bottom: 10px">
+    <div style="background-color: #FFFFFF;">
+    <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
+        <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
+        Une fois mon article vendu, comment est-ce que je vais être payé ?
+      </button>
+      <div class="collapse" id="collapseExample6" >
+        <div class="" style="background-color: #FFFFFF;padding:10px;">
+            Une fois que l’acheteur a reçu sa commande et qu’il est satisfait de ce qu’il a reçu, Beldi Look vous versera le montant de votre commande par virement bancaire.        </div>
+      </div>
+</div>
+</div>
+
+
+
+<div class="col-lg-12"  style="margin-bottom: 10px">
+    <div style="background-color: #FFFFFF;">
+    <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
+        <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
+        Quels articles puis-je vendre sur l’application Beldi Look ?     
+     </button>
+      <div class="collapse" id="collapseExample7" >
+        <div class="" style="background-color: #FFFFFF;padding:10px;">
+            Vous pouvez vendre toute tenue traditionnelle que vous avez. Qu’il s’agit de caftan, tekchita, djellaba etc.. Le plus important c’est qu’elle soit TRADITIONNELLE.            </div>
+      </div>
+</div>
+</div>
+
+<div class="col-lg-12"  style="margin-bottom: 10px">
+    <div style="background-color: #FFFFFF;">
+    <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
+        <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
+        Où trouver mon bon de livraison ?    
+     </button>
+      <div class="collapse" id="collapseExample8" >
+        <div class="" style="background-color: #FFFFFF;padding:10px;">
+            Votre étiquette d'expédition vous sera envoyée par e-mail dans les 48 heures suivant la vente de votre tenue.      </div>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="col-lg-12"  style="margin-bottom: 10px">
+    <div style="background-color: #FFFFFF;">
+    <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
+        <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
+        Mon article est-il couvert contre la perte ou les dommages ?
+         </button>
+      <div class="collapse" id="collapseExample9" >
+        <div class="" style="background-color: #FFFFFF;padding:10px;">
+            Vous êtes responsable de tout risque de perte ou de dommage concernant votre article jusqu'à ce que nous en prenions physiquement possession à son arrivée à notre entrepôt. Nous acceptons le risque de perte ou de dommage des articles uniquement lorsque (i) nous prenons physiquement possession du ou des articles, ou lorsque (ii) vous utilisez notre étiquette d'expédition prépayée et approuvée ainsi que l'expédition approuvée et que l'étiquette est traitée dans le système de suivi de notre partenaire d'expédition approuvé. Si un article est endommagé, volé ou perdu pendant qu'il est en notre possession ou durant l'expédition approuvée, et que la perte est confirmée par le service d'expédition, il sera traité comme vendu et nous vous rembourserons la valeur de l'article.          </div>
+</div>
+</div>
+
+</div>
 
 
 
