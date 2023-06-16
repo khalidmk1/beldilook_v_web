@@ -58,6 +58,8 @@
             border-radius: 5%;
            
         }
+
+
       div.scrollmenu {
     overflow: auto;
     white-space: nowrap;
@@ -125,6 +127,8 @@
 
             }
         }
+
+
 
         .loader {
             border: 16px solid #f3f3f3;

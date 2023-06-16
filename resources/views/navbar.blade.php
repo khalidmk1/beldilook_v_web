@@ -417,7 +417,7 @@ $user=Session::get('user');
   @if(URL()->full() != route('chat_support') )
   <footer>
 		<div class=" container-fluid footer mt-3 ">
-			<div class="row justify-content-center mr-0">
+			<div class="row justify-content-center mr-0 @if(App::getlocale() == "ar") flex-row-reverse @endif">
 				<div class="footer-col  col-xl-3 col-lg-4 col-md-6 col-12 ">
 					<div>
             <img src="{{asset('storage/Web_Site_Beldilook_Home_02062023-removebg-preview.png')}}" class="image_obligatoire" style="height: 144px;"
