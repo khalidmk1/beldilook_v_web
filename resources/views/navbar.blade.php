@@ -30,6 +30,11 @@
   
 }
 
+.dropdown-toggle::after{
+  color: white;
+
+}
+
 @media screen and (max-width: 960px) {
   .responsive {
     flex-direction: column;
@@ -193,12 +198,14 @@
          
           
           <div class="col-lg-2 col-xl-2 col-md-12 col-sm-12 ">
-            <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-dark text-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="{{asset('storage/language.png')}}" class="image_obligatoire" alt="language" style="height: 39px;">
+            <div class="nav-item dropdown  text-light">
+              <a class="nav-link dropdown-toggle text-dark text-center  text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{{asset('storage/download-removebg-preview.png')}}" class="image_obligatoire" alt="language" 
+                style="height: 27px;">
+             
    
               </a>
-              <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu dropdown-menu-right text-light " aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href={{ route('langue', ['lang'=>'en']) }}>{{__('nav.Anglais')}}</a>
                 <a class="dropdown-item" href={{ route('langue', ['lang'=>'fr']) }}>{{__('nav.francais')}}</a>
                 <a class="dropdown-item" href={{ route('langue', ['lang'=>'ar']) }}>{{__('nav.arabe')}}</a>
@@ -512,8 +519,8 @@ $user=Session::get('user');
 
 		</div>
 		<div class="row container-fluid justify-content-center mt-5 mb-4 m-0 ">
-			<div class="col text-center "><h5 style="font-size: 18px;">2023 Beldilook. All rights reserved</h5></div>
-			<div class="col d-flex p-0  "><h6>Sécurité</h6> <p class="ml-2 mr-2"><h6>|</h6></p> <h6>Politique de confidentialité et de cookies </h6><p class="ml-2 mr-2">|</p><h6> Conditions d’utilisation</h6></div>
+			<div class="col text-center "><a href="https://www.beldilook.ma/beldilook/politique_beldi_look.html" style="text-decoration:none ; color: black"><h5 style="font-size: 18px;">2023 Beldilook. All rights reserved</h5></a></div>
+			<div class="col  p-0  "><a href="https://www.beldilook.ma/beldilook/politique_beldi_look.html" class="d-flex" style="text-decoration:none ; color: black"><h6>Sécurité</h6> <p class="ml-2 mr-2"><h6>|</h6></p> <h6>Politique de confidentialité et de cookies </h6><p class="ml-2 mr-2">|</p><h6> Conditions d’utilisation</h6></a></div>
 		</div>
 	</footer>
 @endif
