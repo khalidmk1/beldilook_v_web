@@ -66,7 +66,7 @@
    <nav class="nav_top " > 
       
        <div class="container ">
-        <div class="row mr-0 responsive  align-items-center">
+        <div class="row mr-0 responsive  align-items-center @if (App::getlocale()=="ar") flex-row-reverse @endif">
           <div class="col col-lg-2 col-xl-2 col-md-12 col-sm-12 text-center" >
             <a href="{{route('welcome')}}">
               <img src="{{asset('storage/logo-beldiloock.png')}}" alt="" class="img_logo_top image_obligatoire">
@@ -217,7 +217,7 @@
 
  
 <div class="container ">
-  <div class="row p-2 mr-0 contain_link mt-3">
+  <div class="row p-2 mr-0 contain_link mt-3 @if (App::getlocale() == "ar") flex-row-reverse @endif">
    
     <div class="col"><a class="nav-link @if(URL()->full() == URL(route('home'))) {{'link_slected'}}  @endif" href={{route('home')}}>{{__('home.home')}}<span class="sr-only">(current)</span></a></div>
     <div class="col"><a class="nav-link @if(URL()->full() == URL(route('boutique'))) {{'link_slected'}}  @endif" href={{route('boutique')}}>{{__('nav.boutique')}}</a></div>
@@ -481,7 +481,7 @@ $user=Session::get('user');
 						<li class="input_check gap-1">
 						
 							<div class="mb-3">
-								<input id="sub-check" type="checkbox" aria-label="Checkbox for following text input">
+								<input id="sub-check" type="checkbox" style="opacity: .5" aria-label="Checkbox for following text input">
 							  </div>
 							<p>
 								Je suis d’accord pour recevoir des e-mails et
