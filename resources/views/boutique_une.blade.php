@@ -8,7 +8,7 @@
     <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" >-->
 
 
-
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/story.css') }}" />
 
     <style>
@@ -262,49 +262,43 @@
             <div class="row " style="padding-top:30px">
 
 
+
+
                 @foreach ($articles as $article)
-                    <div class="  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+                  
+   
+        <div class="  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
 
 
-                        <div class="card card_content border-0">
+            <div class="card card_content border-0">
+      
+        
+                <img src="{{$article['Image']}}" alt="product_card" class="card-img-top img_product img-fluid"  alt="product_card">
+      
+      
+              
+            
+      
+            <div class="card-body p-2  ">
+             
+              <h5 class="card-title mb-1 @if(App::getlocale()=="ar") text-right @endif"  @if(App::getlocale()=="ar") dir="rtl" @endif >{{$article['Libelle']}}</h5>
+              <p style="font-size: 14px" class=" @if(App::getlocale()=="ar") text-right d-flex justify-content-end  @endif  card-text mb-1  " >  
+                {{$article['Prix']}} 
+                <span class="ml-1"> DH</span> 
+            </p>
+              <p style="font-size: 14px" class="card-text mb-1  @if(App::getlocale()=="ar") text-right @endif"  @if(App::getlocale()=="ar") dir="rtl" @endif>{{__('boutique_une.etat')}} : {{$article['etat_tenu']}}</p>
+              <div class="text-center">
+                <button onclick="window.location = '{{route('details_produit',$article['IDArticles'])}}'"  id="btn_suivi" class="btn text-light  btn_suivi" >{{__('boutique_une.consulter')}}</button>
+              </div>
+            </div>
+          </div>
 
 
-                            <img src="{{ $article['Image'] }}" alt="product_card"
-                                class="card-img-top img_product img-fluid" alt="product_card">
-
-
-
-
-
-                            <div class="card-body p-2  ">
-
-                                <h5 class="card-title mb-1 @if (App::getlocale() == 'ar') text-right @endif"
-                                @if (App::getlocale() == 'ar') dir="rtl" @endif>
-                                {{ $article['Libelle'] }}</h5>
-                                <p style="font-size: 14px"
-                                    class=" @if (App::getlocale() == 'ar') text-right d-flex justify-content-end @endif  card-text mb-1">
-                                    {{ $article['Prix'] }}
-                                    <span class="ml-1"> DH</span>
-                                </p>
-                                <p style="font-size: 14px"
-                                    class="card-text mb-1  @if (App::getlocale() == 'ar') text-right @endif"
-                                    @if (App::getlocale() == 'ar') dir="rtl" @endif>{{ __('boutique_une.etat') }} :
-                                    {{ $article['etat_tenu'] }}</p>
-                                <div class="text-center">
-                                    <button
-                                        onclick="window.location = '{{ route('details_produit', $article['IDArticles']) }}'"
-                                        id="btn_suivi"
-                                        class="btn text-light btn_suivi">{{ __('boutique_une.consulter') }}</button>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-                    </div>
+       
+     
+           
+       
+    </div>
 
 
 
