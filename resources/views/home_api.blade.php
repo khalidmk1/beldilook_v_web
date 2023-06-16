@@ -136,9 +136,9 @@
 
     </div> --}}
     
-    @if(count($articles)!=0)
+  {{--   @if(count($articles)!=0)
     <div onclick="afficher_plus()" class="col-12" style="text-align: center" id="afficher_plus"><button class="btn_sort_2">{{__('home.afficher_plus')}}</button></div>
-    @endif
+    @endif --}}
 
 @else
 
@@ -199,11 +199,11 @@
 @endforelse
 
    
-    @if(count($articles)!=0)
+   {{--  @if(count($articles)!=0)
     <div onclick="afficher_plus()" class="col-12" style="text-align: center" id="afficher_plus"><button class="btn_sort_2">{{__('home.afficher_plus')}}</button></div>
 
     
-    @endif
+    @endif --}}
 
 
 

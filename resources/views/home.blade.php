@@ -847,13 +847,23 @@
 <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
 @endforelse
 
-<div onclick="afficher_plus()" class="col-12" style="text-align: center" id="afficher_plus"><button class="btn_sort_2">{{__('home.afficher_plus')}}</button></div>
-
+{{-- <div onclick="afficher_plus()" class="col-12" style="text-align: center" id="afficher_plus"><button class="btn_sort_2">{{__('home.afficher_plus')}}</button></div>
+ --}}
 
 
 </div>
 
 
+<div class="mt-5" style="text-align: center;padding-bottom:50px">
+
+
+  <a onclick="afficher_plus('-')"  class="paginationa" style="cursor: pointer">❮</a>
+
+
+  <a onclick="afficher_plus('+')"  class="paginationa" style="cursor: pointer">❯</a>
+
+
+</div>
 
 
         </div>
@@ -1459,9 +1469,22 @@ console.log(error);
 
 
 
-function afficher_plus()
+function afficher_plus(sign)
 {
-    pagination=pagination+1;
+  $('#modal_loading').modal('show');
+if(sign=='+')
+{
+  pagination=pagination+1;
+}
+if(sign=='-')
+{
+  pagination=pagination-1;
+}
+if(pagination==0)
+{
+  pagination=1;
+}
+  
     var _token=$('input[name="_token"]').val();
            $.ajax({
        url:("{{route('filtre_home')}}"),
@@ -1484,16 +1507,19 @@ function afficher_plus()
        if(data!='erreur')
        {
         $( "#afficher_plus" ).remove();
-        var content_d =$('#div_articles').html();
-        content_d+=data;
+     /*    var content_d =$('#div_articles').html();
+        content_d+=data; */
         
-        $('#div_articles').html(content_d);
+        $('#div_articles').html(data);
+        backToTop();
+        $('#modal_loading').modal('hide');
        }
        
        }
        ,error:function(error)
 {
 // error alert message
+$('#modal_loading').modal('hide');
 console.log(error);
 }
        });
