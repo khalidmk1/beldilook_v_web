@@ -34,6 +34,8 @@ return [
     'article_non_trouve' => 'العنصر غير موجود',
     'text_download' => "الرجاء المتابعة إلى تطبيق بيلديلوك",
     'recherche' => 'بحث',
-    'vente_avec_beldi' => 'بيع مع بيلدي لوك'
+    'vente_avec_beldi' => 'بيع مع بيلدي لوك',
+    'blogs_actus' => 'مدونة وأخبار',
+    'lire_suite' => 'اقرأ أكثر'
 ]
 ?>

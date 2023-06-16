@@ -2,7 +2,7 @@
 return [
     'effacer' => 'لمحو',
     'appliquer' => 'تطبيق',
-    'genre' => 'جنس',
+    'genre' => 'الجنس',
     'tout' => 'الجميع',
     'homme' => 'رجل',
     'femme' => 'امراة',

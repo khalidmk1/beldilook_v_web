@@ -37,6 +37,8 @@ return [
     'article_non_trouve' => 'Article non trouvé',
     'text_download' => "Veuiller continuer vers l'application Beldilook",
     'recherche' => 'Recherche',
-    'vente_avec_beldi' => 'Vends avec Beldi Look'
+    'vente_avec_beldi' => 'Vends avec Beldi Look',
+    'blogs_actus' => 'Blog et Actus',
+    'lire_suite' => 'Lire la suite'
 ]
 ?>
