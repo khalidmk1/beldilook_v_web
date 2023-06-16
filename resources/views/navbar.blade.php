@@ -77,7 +77,7 @@
           <div class="col col-lg-3 col-xl-3 " style="text-align: center;">
             <div class="search d-flex justify-content-center">
             <form action="{{Route('home')}}"  method="GET">
-              <input name="search" type="text" class="form-control m-0" placeholder="Recheche">
+              <input name="search" type="text" class="form-control m-0" placeholder="{{__('nav.recherche')}}">
               <button style="background-color: transparent; border: none; position: absolute;
               top: 0; margin-left: 111px;" type="submit"> 
                 <i class="fa fa-search"></i></button>
@@ -90,7 +90,7 @@
           <div class="col col-xl-2 col-lg-2 col-md-12 col-sm-12 " style="text-align: center;">
            
               <button class="btn_sell shadow "  style="font-size: 10px;">
-               <a href="{{route('ajout_produit')}}" class="text-light link_product"> <span class="btn_plus">+</span> Vends avec Beldi Look</a>
+               <a href="{{route('ajout_produit')}}" class="text-light link_product"> <span class="btn_plus">+</span> {{__('nav.vente_avec_beldi')}}</a>
               </button>
             
           </div>

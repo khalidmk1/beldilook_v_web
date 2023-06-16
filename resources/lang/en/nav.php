@@ -35,6 +35,8 @@ return [
     'paye' => 'Paid the request',
     'add_to_cart' => 'Add to Cart',
     'article_non_trouve' => 'Item not found',
-    'text_download' => "Please continue to the Beldilook app"
+    'text_download' => "Please continue to the Beldilook app",
+    'recherche' => 'Search',
+    'vente_avec_beldi' => 'Sell ​​with Beldi Look'
 ]
 ?>

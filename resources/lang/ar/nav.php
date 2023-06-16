@@ -32,6 +32,8 @@ return [
     'paye' => 'سدد الطلب',
     'add_to_cart' => 'أضف إلى السلة',
     'article_non_trouve' => 'العنصر غير موجود',
-    'text_download' => "الرجاء المتابعة إلى تطبيق بيلديلوك"
+    'text_download' => "الرجاء المتابعة إلى تطبيق بيلديلوك",
+    'recherche' => 'بحث',
+    'vente_avec_beldi' => 'بيع مع بيلدي لوك'
 ]
 ?>
