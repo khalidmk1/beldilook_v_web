@@ -301,7 +301,7 @@
 </div>
 
 
-<h3 style="margin-left:100px;color:#263066;">Blog et Actus</h3>
+<h3 style="margin-left:100px;color:#263066; @if(App::getlocale()=="ar") text-align:end;margin-right:100px; @endif">{{__('nav.blogs_actus')}}</h3>
 
 
 <div class="row div_blogs justify-content-center" >
@@ -310,7 +310,7 @@
 <img  class="image_blog" src="https://www.blog.beldilook.ma/wp-content/uploads/2023/05/caftan-toute-occas-1-1024x576.webp" alt="">
 <h5 style="margin-top: 10px" class="titre2">Comment porter son caftan en toute occasion : De la tenue décontractée à l’événement formel</h5>
 <p class="text2">Le caftan est une tenue traditionnelle marocaine qui peut être portée lors de différentes occasions, qu’elles soient décontractées ou formelles. Voici quelques conseils pour porter un caftan en toute occasion :</p>
-<button onclick="window.location='https://www.blog.beldilook.ma/comment-porter-son-caftan-en-toute-occasion-de-la-tenue-decontractee-a-levenement-formel/'" class="btn_blogs">Lire la suite</button>
+<button onclick="window.location='https://www.blog.beldilook.ma/comment-porter-son-caftan-en-toute-occasion-de-la-tenue-decontractee-a-levenement-formel/'" class="btn_blogs">{{__('nav.lire_suite')}}</button>
     </div>
     <div class="col-lg-1 col-md-1 col-sm-12">
        
@@ -319,7 +319,7 @@
         <img class="image_blog" src="https://www.blog.beldilook.ma/wp-content/uploads/2021/07/repass-new-1024x576.jpg" alt="">
         <h5 style="margin-top: 10px" class="titre2">Comment bien repasser ses tenues traditionnelles Marocaines ?</h5>
         <p class="text2">Le caftan est une tenue traditionnelle marocaine qui peut être portée lors de différentes occasions, qu’elles soient décontractées ou formelles. Peu importe l’occasion, n’importe quelle tenue Marocaine est mise en valeur que si elle est bien repassée et entretenue.</p>
-        <button onclick="window.location='https://www.blog.beldilook.ma/comment-bien-repasser-ses-tenues-traditionnelles-marocaines/'" class="btn_blogs">Lire la suite</button>
+        <button onclick="window.location='https://www.blog.beldilook.ma/comment-bien-repasser-ses-tenues-traditionnelles-marocaines/'" class="btn_blogs">{{__('nav.lire_suite')}}</button>
     </div>
 
 </div>
