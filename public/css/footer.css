@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 
 
+
 :root {
   
   --font-primary: 'Rubik', sans-serif;
@@ -41,10 +42,15 @@ body {
 
 
 
+/** @med Top header logo **/
+
 .img_logo_top{
-	height: 79px;
-	
+	height: 6rem;	
+  position: relative;
+  top:-.15rem !important;
 }
+
+/** **/
 
 
 
@@ -285,27 +291,52 @@ input[type="checkbox"] {
       top: -12px;
     }
 
-    
+/** @med  Header Top search   **/    
 
 .search{
        position: relative;
-       box-shadow: 0 0 40px rgba(51, 51, 51, .1);
-         
+       top:0px !important;
+      /* box-shadow: 0 0 40px rgba(51, 51, 51, .1); */
+       width:auto;
+       
        }
+
 
        .search input{
 
         height: 30px;
-        border: 2px solid #d6d4d4;
-
+        width:250px;
+        border-radius: 50px; 
+        border:none;
+        font-size: .8rem;
 
        }
 
 
+/*** **/
+
+@media screen and (min-width:992px) {
+  .search{ 
+  }
+
+  .btn_sell 
+  {
+    left:5px;
+   
+  }
+
+  .nav_top .row :nth-last-child(-n+4) 
+  {
+    top:2px;
+  }
+}
+
+/*******/
+
        .search input:focus{
 
         box-shadow: none;
-        border: 2px solid blue;
+        border: 0px solid blue;
 
 
        }
@@ -314,8 +345,8 @@ input[type="checkbox"] {
         padding: 5px;
         position: absolute;
         top: 2px;
-        right: 4px;
-        background-color: #fff;
+        right: -8px;
+        background-color: transparent;
         cursor: pointer;
     
 
@@ -324,6 +355,13 @@ input[type="checkbox"] {
        .fa-search:before {
    
     padding: 5px;
+}
+
+.search input::placeholder
+{
+  font-family: var(--font-primary);
+  font-weight: 200;
+  font-size: .8rem;
 }
     
        
@@ -334,11 +372,14 @@ input[type="checkbox"] {
     color: #fff;
     border-radius: 50px !important;
     padding: 7px !important;
+    height:30px;
+
        }
 
        .btn_plus{
         position: relative;
-    left: -12px;
+        top:0px !important;
+        left: -12px;
        }
        .btn_sing_up{
         border: none; 
@@ -350,9 +391,9 @@ input[type="checkbox"] {
        }
       
        .bell_not{
-        background-color: #fff;
-        border-radius: 50px;
-        height: 28px;
+       /** background-color: #fff;
+        border-radius: 50px; **/
+        height: 30px;
 
        }
        .border_log{
@@ -367,8 +408,13 @@ input[type="checkbox"] {
         border-radius: 50% ;
          background-color: #ffffff ; 
          padding: 2px;
-        height: 50px;
-        width: 50px;
+        height: 43px;
+        width: 43px;
+       }
+
+       .img_avatar + .text-light
+       {
+        margin-left:.2rem;
        }
 
        .link_product{
