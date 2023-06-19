@@ -14,7 +14,7 @@
 
 <div class="container items">
     <br>
-    <h1 @if(App::getlocale()=="ar") style="text-align: end" @endif>{{__('nav.nouveaute')}}</h1>
+    <h1 style="color:#263066;"  @if(App::getlocale()=="ar") style="text-align: end ;color:#263066;" @endif>{{__('nav.nouveaute')}}</h1>
     <div class="row " style="padding-top:30px">
         {{ csrf_field() }}
           
