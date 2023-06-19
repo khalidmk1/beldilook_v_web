@@ -18,10 +18,18 @@
 
 
 
-          
+  @if(count($articles)!=0)
+  @if($articles[0]['nbr_articles']==1)
+  <input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}">
+  @else
+  <input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}">
+  @endif
+  @else
+<input id="input_nbr_article" type="hidden" name="" value=" ">
+ @endif
   @forelse ($articles as $article)
 
-  <div class="col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
+  <div class="col-6 col-xl-4 col-lg-4 col-md-4 col-sm-6 d-flex  flex-column  ">
   
      
   
@@ -144,13 +152,20 @@
 
 
 
+@if(count($articles)!=0)
+@if($articles[0]['nbr_articles']==1)
+<input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}">
+@else
+<input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}">
+@endif
 
+@endif
 
     
        
 @forelse ($articles as $article)
 
-<div class="col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
+<div class="col-6 col-xl-4 col-lg-4 col-md-4 col-sm-6 d-flex  flex-column  ">
   
      
   

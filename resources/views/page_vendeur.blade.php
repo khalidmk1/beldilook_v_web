@@ -501,7 +501,13 @@ console.log(error);
   
           <div class="col-md-9">
   
-  
+            @if(count($articles)!=0)
+            @if($articles[0]['nbr_articles']==1)
+            <div id="div_nb_article" style="padding-left: 15px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}</div>
+            @else
+            <div id="div_nb_article" style="padding-left: 15px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}</div>
+            @endif
+           @endif
            
   <div class="row" id="div_articles">
   
@@ -1147,6 +1153,7 @@ console.log(error);
          {
           $( "#afficher_plus" ).remove();
           $('#div_articles').html(data);
+          $('#div_nb_article').html($('#input_nbr_article').val());
          }
          $('#modal_loading').modal('hide');
        
@@ -1228,9 +1235,10 @@ $('#modal_loading').modal('show');
           
           $('#div_articles').html(data);
           document.getElementById('image_p').scrollIntoView();
-          $('#modal_loading').modal('hide');
+          $('#div_nb_article').html($('#input_nbr_article').val());
+          
          }
-         
+         $('#modal_loading').modal('hide');
          }
          ,error:function(error)
   {

@@ -10,7 +10,15 @@
 
 
          
-
+@if(count($articles)!=0)
+@if($articles[0]['nbr_articles']==1)
+<input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}">
+@else
+<input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}">
+@endif
+@else
+<input id="input_nbr_article" type="hidden" name="" value=" ">
+@endif
 
 
 
@@ -144,7 +152,15 @@
 @else
 
 
+@if(count($articles)!=0)
+@if($articles[0]['nbr_articles']==1)
+<input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}">
+@else
+<input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}">
+@endif
 
+
+@endif
 
 
     
