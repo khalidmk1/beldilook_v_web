@@ -24,6 +24,8 @@
   @else
   <input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}">
   @endif
+  @else
+<input id="input_nbr_article" type="hidden" name="" value=" ">
  @endif
   @forelse ($articles as $article)
 
@@ -156,6 +158,7 @@
 @else
 <input id="input_nbr_article" type="hidden" name="" value="{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}">
 @endif
+
 @endif
 
     
