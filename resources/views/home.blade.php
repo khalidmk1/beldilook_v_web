@@ -1442,6 +1442,7 @@ var _token=$('input[name="_token"]').val();
         $( "#afficher_plus" ).remove();
         $('#div_articles').html(data);
        }
+       $('#div_nb_article').html($('#input_nbr_article').val());
        $('#modal_loading').modal('hide');
      
        }
@@ -1517,6 +1518,7 @@ $('#modal_loading').modal('show');
         content_d+=data; */
         
         $('#div_articles').html(data);
+        $('#div_nb_article').html($('#input_nbr_article').val());
         document.getElementById('btn_sort_id').scrollIntoView();
         $('#modal_loading').modal('hide');
        }
