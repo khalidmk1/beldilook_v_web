@@ -79,7 +79,7 @@
           </div>
 
   
-          <div class="col col-lg-3 col-xl-3 " style="text-align: center;">
+          <div class="col col-lg-3 col-xl-3 ml-sm-5" style="text-align: center;">
             <div class="search d-flex justify-content-center">
             <form action="{{Route('home')}}"  method="GET">
               <input name="search" type="text" class="form-control m-0" placeholder="{{__('nav.recherche')}}">
@@ -197,7 +197,7 @@
         
          
           
-          <div class="col-lg-2 col-xl-2 col-md-12 col-sm-12 ">
+          <div class="col-lg-1 col-xl-1 col-md-12 col-sm-12 ">
             <div class="nav-item dropdown  text-light">
               <a class="nav-link dropdown-toggle text-dark text-center  text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="{{asset('storage/download-removebg-preview.png')}}" class="image_obligatoire" alt="language" 
