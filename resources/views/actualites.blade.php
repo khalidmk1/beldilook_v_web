@@ -3,15 +3,17 @@
 
 <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 
-@if(App::getlocale()=="ar")
-<h1  style="padding: 20px;color:#263066;text-align:end">{{__('actualites.actualites')}}</h1>
-@else
-<h1  style="padding: 20px;color:#263066;text-align:start">{{__('actualites.actualites')}}</h1>
-@endif
+
 
 
 <div class="container items">
-    <div class="row">
+
+    @if(App::getlocale()=="ar")
+<h1  style="padding: 20px 20px 20px 0;color:#263066;text-align:end">{{__('actualites.actualites')}}</h1>
+@else
+<h1  style="padding: 20px 20px 20px 0;color:#263066;text-align:start">{{__('actualites.actualites')}}</h1>
+@endif
+    <div class="row container">
 
 
         @forelse ($actualites as $actualite)

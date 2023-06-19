@@ -233,8 +233,10 @@
 
 
 
-
-<p style="text-align: center;padding-top:50px"> Avis général :</p>
+<div class="container">
+  
+<p style="text-align: start;padding-top:50px"> Avis général :</p>
+</div>
 
 
 @php
@@ -254,7 +256,7 @@ $poucentage1=0;
 $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
 //dd($poucentage5);
 @endphp
-<div style="width: 70%;  margin: auto;">
+{{-- <div style="width: 70%;  margin: auto;">
   <div >
     <div class="row" style="align-items: center;padding-bottom:20px">
 <div class="col-1" style="font-size: 40px">{{$nombre_format_francais}}</div><br>
@@ -381,7 +383,7 @@ $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
 </div>
 @endforeach
 </div>
-</div>
+</div> --}}
 @endif
 
 

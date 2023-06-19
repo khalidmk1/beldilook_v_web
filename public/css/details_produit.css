@@ -141,6 +141,11 @@ margin: 10px 5px;
   color: #fff;
   border: none;
   outline: none;
+  border-radius: 50px;
+}
+
+.btn_add_cart:hover{
+  color: #fff;
 }
 
 
