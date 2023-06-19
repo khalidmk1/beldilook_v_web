@@ -62,7 +62,7 @@
     @if($vendeur['photo']!='no' && $vendeur['photo']!='')
     <img id="image_p" style="border-radius: 50%" src="{{ $vendeur['photo'] }}" alt="" height="150px" width="150px">
     @else
-    <img style="border-radius: 50%" src="{{ asset('storage/user.png') }}" alt="" height="150px" width="150px">
+    <img id="image_p" style="border-radius: 50%" src="{{ asset('storage/user.png') }}" alt="" height="150px" width="150px">
     @endif
 </div>
 <div style="text-align: center">

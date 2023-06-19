@@ -785,9 +785,13 @@
 
 
         <div class="col-md-9">
-
-
-         
+@if(count($articles)!=0)
+          @if($articles[0]['nbr_articles']==1)
+          <div id="div_nb_article" style="padding-left: 5px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}</div>
+          @else
+          <div id="div_nb_article" style="padding-left: 5px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}</div>
+          @endif
+         @endif
 <div class="row" id="div_articles">
 
 

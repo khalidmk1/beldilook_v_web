@@ -839,6 +839,7 @@ if ($response->successful()){
         ]);
          if($response->successful()) {
             $reponse2 = $response->json();
+            //dd($reponse2[0]['nbr_articles']);
          }else{
             return redirect(url()->previous())->with('message', __('favoris.erreur'));
          }
