@@ -633,7 +633,7 @@
     <div class="col  col-xl-4 col-lg-4 col-md-12 col-sm-12   ">
 
       <div class="scrollable-tabs-container container">
-        <div class="left-arrow d-none">
+        <div class="left-arrow ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -655,7 +655,7 @@
   
           </ul>
 
-        <div class="right-arrow active d-none">
+        <div class="right-arrow active ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -785,9 +785,13 @@
 
 
         <div class="col-md-9">
-
-
-         
+@if(count($articles)!=0)
+          @if($articles[0]['nbr_articles']==1)
+          <div id="div_nb_article" style="padding-left: 5px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}</div>
+          @else
+          <div id="div_nb_article" style="padding-left: 5px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}</div>
+          @endif
+         @endif
 <div class="row" id="div_articles">
 
 

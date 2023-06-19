@@ -137,14 +137,12 @@ margin: 10px 5px;
  .btn_add_cart {
   font-size: 16px;
   cursor: pointer;
-  background: linear-gradient(13deg, #272F56 33%, #AA832C 71%);
+  background-color: #272F56;
   color: #fff;
   border: none;
   outline: none;
 }
-.btn_add_cart:hover {
-  box-shadow: 0 0 6px #000;
-}
+
 
 
 
