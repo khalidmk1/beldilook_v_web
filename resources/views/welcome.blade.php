@@ -67,9 +67,9 @@
     border: #212951 1px solid;
   }
   .selected{
-    border: #212951 1px solid;
-    background-color: #212951;
-    color: white;
+    border: #EFEFEF 1px solid;
+    background-color: #EFEFEF;
+    color: #33286e;
     padding: 10px;
     border-radius: 10px;
     min-width: 50px;
@@ -229,86 +229,109 @@
 
 
     
-
-
-    <div class=" containe container mt-2 ">
-      @if (App::getlocale() == 'ar')
-      <h1 class=" title_botique"  style="padding-left: 13%; color:#263066;text-align:end ;font-size: 29px;">{{ __('boutique_une.titre') }}</h1>
-  @else
-      <h1 class="title_botique" style="padding-left: 13%; color:#263066;text-align:start ;font-size: 29px;">{{ __('boutique_une.titre') }}</h1>
-  @endif
-        {{ csrf_field() }}
-        <div class="scrollable-tabs-container container border border-dark " style="max-width: 740px;">
+    <div style="background:#EFEFEF;  padding-top:40px; padding-bottom:80px;">
+    
+    <div class=" containe container" style="margin-top:45px;">
+    <div class="row d-flex" style="justify-content:center;">   
+        @if (App::getlocale() == 'ar')
         
-            <div class="left-arrow d-none">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
-            </div>
-
-            @if (count($boutiques) == 0)
-                <p class="col-12" style="text-align: center;padding-top: 80px;">{{ __('home.aucun_boutique') }}</p>
-            @endif
-            <ul>
-                @foreach ($boutiques as $boutique)
-                    @php
-                        $btq_image = '"' . $boutique['image'] . '"';
-                        $name = '"' . $boutique['nom'] . '"';
-                    @endphp
-                    <li class="text-center d-flex flex-column justify-content-center"
-                        @if ($boutique['story'] == '1') onclick="show_image({{ $boutique['id_utilisateur'] . ',' . $btq_image . ',' . $name }})" @else onclick="" @endif>
-                        <a href="#" @if ($boutique['story'] == '1') class="active" @endif>
-                            <div class="bg">
-                                @if ($boutique['image'] == '')
-                                    <img src="{{ asset('storage/user.png') }} " class="image_story" alt="#">
-                                @else
-                                    <img src="{{ $boutique['image'] }}" class="image_story" alt="#">
-                                @endif
-
-
-                            </div>
-                        </a>
-                        <p class="text-center">{{ $boutique['nom'] }}</p>
-                    </li>
-                @endforeach
-
-
-            </ul>
-
-            <div class="right-arrow active d-none">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-            </div>
-        </div>
-
+      <h1 class=" title_botique"  style="margin-left:15px;">{{ __('boutique_une.titre') }}</h1>
+       
+     @else
+     
+      <h1 class="title_botique" style="text-align:start ; margin-left:15px; ">{{ __('boutique_une.titre') }}</h1>
+      
+     @endif
+     </div>
+     
+        {{ csrf_field() }}
     </div>
-<div style="padding: 10px;">
+
+    <div class="containe container mt-2">
+        <div class="row d-flex justify-content-center m-0">
+        <div class="scrollable-tabs-container container" style="max-width: 740px;">
+        
+        <div class="left-arrow d-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </div> 
+
+        @if (count($boutiques) == 0)
+            <p class="col-12" style="text-align: center;padding-top: 80px;">{{ __('home.aucun_boutique') }}</p>
+        @endif
+        <ul>
+            @foreach ($boutiques as $boutique)
+                @php
+                    $btq_image = '"' . $boutique['image'] . '"';
+                    $name = '"' . $boutique['nom'] . '"';
+                @endphp
+                <li class="text-center d-flex flex-column justify-content-center"
+                    @if ($boutique['story'] == '1') onclick="show_image({{ $boutique['id_utilisateur'] . ',' . $btq_image . ',' . $name }})" @else onclick="" @endif>
+                    <a href="#" @if ($boutique['story'] == '1') class="active" @endif>
+                        <div class="bg">
+                            @if ($boutique['image'] == '')
+                                <img src="{{ asset('storage/user.png') }} " class="image_story" alt="#">
+                            @else
+                                <img src="{{ $boutique['image'] }}" class="image_story" alt="#">
+                            @endif
+
+
+                        </div>
+                    </a>
+                    <p class="text-center">{{ $boutique['nom'] }}</p>
+                </li>
+            @endforeach
+
+
+        </ul>
+
+        <div class="right-arrow active d-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </div>
+    </div>
+        </div>
+    </div>
+    </div>
+<div style="" class="home_category_list_container">
 @foreach ($type_tags as $type_tag)
 
 @php
     $tags=$type_tag['tags'];
 @endphp
-
-<h1>{{$type_tag['libelle']}}</h1>
-<div class="scrollmenu" style="margin: 20px 20px 20px 20px;">
+<div class="container">
+ <div class="row mt-5">
+   <h1 class="home_category_title">{{$type_tag['libelle']}}</h1>
+ </div>
+ <div class="row" style="">
+ <div class="" style="margin: 5px 0; "> <!-- Removed scrollmenu class -->
     @foreach ($tags as $tag)
-    <div onclick="window.location='{{route('produit_sous_categorie',['id_type'=>$type_tag['id_type'], 'id_tag'=>$tag['id_tag']]) }}'" class="catgs selected" style="display: inline-block;margin-right:20px;cursor:pointer; min-width: 50px;padding: 10px;">
-        {{$tag['libelle']}}
+    <div onclick="window.location='{{route('produit_sous_categorie',['id_type'=>$type_tag['id_type'], 'id_tag'=>$tag['id_tag']]) }}'" 
+    class="catgs selected" style="display: inline-block;margin-right:12px; letter-spacing:1px; margin-top:10px; cursor:pointer; min-width: 50px;padding: 10px 27px;">
+        {{ mb_strtoupper($tag['libelle'], 'UTF-8')}}
         </div>
     @endforeach
 
+ </div>
+ </div>
+
 </div>
+
 @endforeach
 </div>
 
+<div>
+<div class="container home_blog_and_actu"  style="margin-top:200px; margin-bottom:160px;">
 
-<h3 style="margin-left:100px;color:#263066; @if(App::getlocale()=="ar") text-align:end;margin-right:100px; @endif">{{__('nav.blogs_actus')}}</h3>
+<div class="row justify-content-center">
+<h3 style="@if(App::getlocale()=="ar") text-align:end;margin-right:100px; @endif">{{__('nav.blogs_actus')}}</h3>
+</div>
 
-
-<div class="row div_blogs justify-content-center" >
+<div class="row div_blogs justify-content-center " >
     
     <div class="col-lg-4 col-md-4 col-sm-6 blogs">
 <img  class="image_blog" src="https://www.blog.beldilook.ma/wp-content/uploads/2023/05/caftan-toute-occas-1-1024x576.webp" alt="">
@@ -326,6 +349,8 @@
         <button onclick="window.location='https://www.blog.beldilook.ma/comment-bien-repasser-ses-tenues-traditionnelles-marocaines/'" class="btn_blogs">{{__('nav.lire_suite')}}</button>
     </div>
 
+</div>
+</div>
 </div>
 
   

@@ -52,6 +52,11 @@ body {
 
 /** **/
 
+/** @med nav menu **/
+.contain_link .nav-link
+{
+ white-space: nowrap;
+}
 
 
 ul {
@@ -316,8 +321,6 @@ input[type="checkbox"] {
 /*** **/
 
 @media screen and (min-width:992px) {
-  .search{ 
-  }
 
   .btn_sell 
   {
@@ -439,8 +442,9 @@ input[type="checkbox"] {
        }
 
        .contain_link a{
-        font-size: 13px;
-        color: #000000;
+        font-size: 15px;
+        color: var(--color-primary);
+
        }
        .link_slected{
         border-radius: 50px;
@@ -459,3 +463,49 @@ input[type="checkbox"] {
 }
 }
     
+
+/**** Welcome page ****/
+
+/** Titles **/
+
+.container .title_botique,
+.home_category_title,
+.home_blog_and_actu h3
+{
+  color: #212529;
+  font-family: var(--font-primary);
+  font-size: 35px;
+}
+
+
+
+@media screen and (min-width:992px) {
+  .scrollable-tabs-container .text-center
+  {
+    min-height: 30px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    line-height: 1rem;
+    margin-top: 5px;
+  }
+
+  .scrollable-tabs-container .image_story
+{
+  width:100px;
+  height:100px;
+}
+.scrollable-tabs-container
+{
+  
+  max-width: 960px !important;
+  padding: 3%;
+}
+
+}
+
+/** Home category list **/
+
+.home_category_list_container
+{
+  margin-top: 90px !important;
+}

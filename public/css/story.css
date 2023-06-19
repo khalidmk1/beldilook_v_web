@@ -3,7 +3,7 @@
     background: #ffffff;
     max-width:95%;;
     margin: 16px auto;
-    border-radius: 4px;
+    border-radius: 30px;
     overflow: hidden;
     position: relative;
   }
@@ -21,7 +21,7 @@
   .scrollable-tabs-container ul {
     display: flex;
     gap: 40px;
-    padding: 12px 24px;
+    padding: 12px 0px 12px 5px ;
     margin: 0;
     list-style: none;
     overflow-x: scroll;
@@ -38,7 +38,7 @@
   .bg{
     padding: 3px;
     background-color: white;
-    border-radius: 49px;
+    border-radius: 66px;
   }
   
   .scrollable-tabs-container ul.dragging {
@@ -62,7 +62,7 @@
     border-radius: 25px;
     user-select: none;
     white-space: nowrap;
-    border-radius: 39px;
+    border-radius: 66px;
   }
   
   .scrollable-tabs-container a.active {

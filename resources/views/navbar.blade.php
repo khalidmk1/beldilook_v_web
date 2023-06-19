@@ -379,7 +379,7 @@ $user=Session::get('user');
     
 </head>
 <body>
-  <div style="padding-top: 25px">
+  <div style="padding-top: 15px">
 
     @if(Session::has('message'))
     @if(App::getlocale()=="ar")
