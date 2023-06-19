@@ -2282,6 +2282,8 @@ public function delete_blog(Request $request)
 
           $jsonData = $response->json();
 
+        
+
 
 
       
