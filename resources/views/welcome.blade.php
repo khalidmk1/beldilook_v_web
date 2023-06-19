@@ -41,22 +41,25 @@
     
  }
         .blogs{
-         border: 1px solid black;
-         margin: 15px;
-         padding: 15px;
+        background:#ffff;
+         margin: 30px 15px 15px 15px;
+         padding: 16px 15px 25px 15px;
       text-align: center;
-           border-radius: 7px;
+           border-radius: 30px;
         }
         .div_blogs{
            text-align: center;
            margin: 0px;
         }
         .image_blog{
-            object-fit: contain;
-            width: 90%;
-            height: 200px;
-            border-radius: 5%;
+            
+            width: 100%;
+            height: 220px;
+            border-radius: 19px;
            
+        }
+        .image_blog + h5 {
+           margin-top:23px !important; 
         }
 
 
@@ -69,7 +72,7 @@
   .selected{
     border: #EFEFEF 1px solid;
     background-color: #EFEFEF;
-    color: #33286e;
+    color: #212529;
     padding: 10px;
     border-radius: 10px;
     min-width: 50px;
@@ -324,8 +327,8 @@
 @endforeach
 </div>
 
-<div>
-<div class="container home_blog_and_actu"  style="margin-top:200px; margin-bottom:160px;">
+<div style="background-color: #EFEFEF; padding-top:50px; padding-bottom:100px; margin-top:150px;">
+<div class="container home_blog_and_actu"  style="">
 
 <div class="row justify-content-center">
 <h3 style="@if(App::getlocale()=="ar") text-align:end;margin-right:100px; @endif">{{__('nav.blogs_actus')}}</h3>

@@ -21,7 +21,7 @@
   .scrollable-tabs-container ul {
     display: flex;
     gap: 40px;
-    padding: 12px 0px 12px 5px ;
+    padding: 7px 0px 12px 4px ;
     margin: 0;
     list-style: none;
     overflow-x: scroll;

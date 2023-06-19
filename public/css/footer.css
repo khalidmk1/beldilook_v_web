@@ -472,12 +472,20 @@ input[type="checkbox"] {
 .home_category_title,
 .home_blog_and_actu h3
 {
-  color: #212529;
+  color: #33286e;
   font-family: var(--font-primary);
-  font-size: 35px;
 }
 
-
+.home_category_title
+{
+font-size: 35px;
+}
+.container .title_botique,
+.home_blog_and_actu h3
+{
+  font-size: 60px;
+  font-weight: 600;
+}
 
 @media screen and (min-width:992px) {
   .scrollable-tabs-container .text-center
