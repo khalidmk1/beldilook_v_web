@@ -4,7 +4,7 @@
     max-width:95%;;
     margin: 16px auto;
     border-radius: 30px;
-    overflow: hidden;
+   /* overflow: hidden; */
     position: relative;
   }
   
@@ -73,31 +73,99 @@
   .scrollable-tabs-container .right-arrow,
   .scrollable-tabs-container .left-arrow {
     position: absolute;
-    height: 35%;
+   height: 35%;
     background-color: #e1e1e1;
     border-radius: 34px;
     width: 59px;
-    top: 23px;
+    top: 30%;
     display: none;
     align-items: center;
     padding: 0 10px;
     pointer-events: none;
-  }
-  
+    
+}
+
+@media screen and (min-width:992px) {
+  .scrollable-tabs-container .right-arrow,
+  .scrollable-tabs-container .left-arrow {
+
+    height: 24%;
+    border-radius: 34px;
+    top: 35%;
+    padding: 0 10px;
+    
+    
+}
+
+}
+
   .scrollable-tabs-container .right-arrow.active,
   .scrollable-tabs-container .left-arrow.active {
     display: flex;
   }
   
   .scrollable-tabs-container .right-arrow {
-    right: 0;
+    right: -3%;
     justify-content: flex-end;
   }
+
+  .scrollable-tabs-container .left-arrow {
+    left: -3%;
+    justify-content: flex-start;
+  }
+
+ 
 
   .image_story{
     height: 66px;
     width: 66px;
     border-radius: 50px;
   }
+
+  #Modal_image .modal-header
+  {
+    border-bottom: none;
+  }
+  #Modal_image .modal-body
+  {
+    padding: 0;
+  }
+
+  #Modal_image .modal-body
+  {
+    position: relative;
+  }
+
+  #Modal_image .story_user {
+  position: absolute !important;
+  top: 10px;
+  left: 0;
+  padding: 2px;
+  z-index: 1000;
+
+  }
+
+  #Modal_image .modal-content
+  {
+    width:350px;
   
+    min-height: 600px;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(6px);
+    left:13%;
+  }
+  
+  @media screen and (min-width:962px) {
+    #Modal_image .modal-content
+    {
+      left:28%;
+    }
+
+  }
+  
+  #Modal_image .modal-footer
+  {
+    padding-bottom: 18px;
+  }
+
   

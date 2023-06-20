@@ -118,16 +118,17 @@
         }
 
         .img_stor {
-            height: 400px;
-            width: 400px;
-            object-fit: contain;
+        
+    object-fit: cover;
+    height: 100%;
+    
+  
         }
 
         @media only screen and (max-width: 600px) {
             .img_stor {
                 width: 300px;
                 height: 300px;
-
             }
         }
 
@@ -196,8 +197,8 @@
     <!-- Modal image -->
     <div class="modal fade" id="Modal_image" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style="background-color: black">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content" style="">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <button onclick="close_story()" type="button" class="close">
@@ -206,24 +207,25 @@
 
                 </div>
                 <div class="modal-body">
-                    <div style="padding-bottom: 15px">
+                    <div style="">  <!--  -->
                         <div id="progress" class="w3-white" style="height:7px;width:0%"></div>
                     </div>
-                    <div style="padding-bottom: 10px">
+                    <div style="padding-bottom: 10px; padding-left:10px;" class="story_user"> <!--  -->
                         <img id="img_user" style="border-radius: 50%;background-color:white"
                             src={{ asset('storage/user.png') }} alt="" height="30" width="30">
-                        <div id="name_user" style="display: inline;padding-left:5px;color:white">test</div>
+                        <div id="name_user" style="display: inline;padding-left:5px;color:#212529;">test</div>
                     </div>
-                    <div style="text-align: center"><img onclick="detail_produit()" id="image_popup"
-                            src="{{ asset('storage/A_black_image.jpg') }}" class="img_stor">
+                    <div style="text-align: center;">
+                    <div style="position:relative; "><img onclick="detail_produit()" id="image_popup"
+                            src="{{ asset('storage/A_black_image.jpg') }}" class="img_stor img-fluid">
                         <div onclick="right()" class="div_right"></div>
                         <div onclick="left()" class="div_left"> </div>
                     </div>
-                    <div style="text-align: center;padding-top:15px;font-size:20px;color:white" id="lib_article"></div>
+                    </div>
+                    
                 </div>
-                <div class="modal-footer">
-
-
+                <div class="modal-footer justify-content-center" style="border:none;">
+                <div style="text-align: center;font-size:20px;color:#212529;" id="lib_article"></div>
                 </div>
             </div>
         </div>
@@ -254,7 +256,7 @@
         <div class="row d-flex justify-content-center m-0">
         <div class="scrollable-tabs-container container" style="max-width: 740px;">
         
-        <div class="left-arrow d-none">
+        <div class="left-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -290,7 +292,7 @@
 
         </ul>
 
-        <div class="right-arrow active d-none">
+        <div class="right-arrow active">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
