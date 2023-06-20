@@ -387,7 +387,7 @@
                 }
 
 
-                if (progr == 10000) {
+                if (progr == 100) {
                     console.log(i);
                     console.log(data2.length);
                     progr = 0;
