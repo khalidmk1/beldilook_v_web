@@ -1256,6 +1256,11 @@ if(count($reponse2)>0){
     public function boutiqua($id_boutique)
     {
         $this->actualiser_user();
+        $id=0;
+        if (Session::get('user')){
+            $user=Session::get('user');
+            $id=$user['IDUtilisateurs'];
+        }
         $response55 = Http::post('http://51.68.36.192/REST_BeldiLook/recuperer_nom_vendeur_2_web', [
             'id_utilisateur' => $id_boutique
         ]);
@@ -1323,13 +1328,93 @@ if(count($reponse2)>0){
         }
 
 
+        
+      
+
+
+
+        $response = Http::post('http://51.68.36.192/REST_BeldiLook/Produit_Vendeur_web_9', [
+            'id_utilisateur' => $id_boutique,
+            'iduser' => $id,
+            'par_categories' => '',
+            'par_couleurs' => '',
+            'par_tailles' => '',
+            'sort' => '',
+            'par_lib_articles' => '',
+            'page' => 1,
+            'type_operation' => ''
+        ]);
+         if($response->successful()) {
+            $reponse2 = $response->json();
+            //dd($reponse2[0]['nbr_articles']);
+         }else{
+            return redirect(url()->previous())->with('message', __('favoris.erreur'));
+         }
+
+
+
+
+
+
+         $categories = Http::get('http://51.68.36.192/REST_BeldiLook/recuperer_categories');
+         if ($categories->successful()){
+             $categories2 = $categories->json();
+         }else{
+             return redirect(url()->previous())->with('message', __('favoris.erreur'));
+         }
+ 
+ 
+         $etat_tenues = Http::get('http://51.68.36.192/REST_BeldiLook/recuperer_etat_tenue');
+         if ($etat_tenues->successful()){
+             $etat_tenues2 = $etat_tenues->json();
+         }else{
+             return redirect(url()->previous())->with('message', __('favoris.erreur'));
+         }
+
+
+$colors=["#EFEFF4","#E6D0C5","#E2E2E2","#F0E6CC","#DCE6F1","#DAE8E3","#F44336","#E91E63","#673AB7","#2196F3","#00BCD4","#4CAF50","#CDDC39","#FFEB3B","#FF9800","#795548","#808000","#C0C000","#E6E600","#E1FF00","#E4F37E","#F3F1B4","#FAFECD","#4F7800","#6DA600","#008000","#00FF00","#99FF99","#C1FECA","#000080","#0000C0","#0000FF","#004FA0","#0080FF","#81BFFF","#B7EEFE","#800080","#8000FF","#A800FF","#C000C0","#FF00FF","#C040FF","#FF99FF","#000000","#303030","#505050","#808080","#E0E0E0","#FFFFFF","#800000","#C00000","#FF0000","#D74F00","#FF8000","#FFC040","#FFC080","#C0C0C0","#FFD700"];
+
+
+
+      
+
+
+  $tissus = Http::get('http://51.68.36.192/REST_BeldiLook/recuperer_tissus');
+         if ($tissus->successful()){
+             $tissus2 = $tissus->json();
+         }else{
+             return redirect(url()->previous())->with('message', __('favoris.erreur'));
+         }
+
+
+      /*    return view('page_vendeur',[
+            'articles' => $reponse2,
+            'page' => $page,
+            'request' => $request,
+            'vendeur' => $reponse59, 
+            'categories' => $categories2,
+            'etats_tenues' => $etat_tenues2,
+            'colors' => $colors,
+            'tissus' => $tissus2,
+            'id_vendeur' => $id_vendeur
+           ]); */
+
+
+
 //dd($response2);
        return view('boutiqua',[
         'boutique' => $response556,
         'produits' => $response2,
         'rate_user' => $response4,
         'boutique_info' => $response8,
-        'id_boutique' => $id_boutique
+        'id_boutique' => $id_boutique,
+        'id_vendeur' => $id_boutique,
+        'tissus' => $tissus2,
+        'colors' => $colors,
+        'etats_tenues' => $etat_tenues2,
+        'categories' => $categories2,
+        'vendeur' => $response556,
+        'articles' => $reponse2
        ]);
     }
 
@@ -3140,6 +3225,7 @@ $email=$request->input('email');
         $sort=$request->input('sort');
         $genre=$request->input('genre');
         $type_tissue=$request->input('type_tissue');
+        $pagination=$request->input('pagination');
           //dd($taille_filtre);
 
        
@@ -3168,6 +3254,10 @@ $email=$request->input('email');
         {
             $etats ='';
         }
+        if ($pagination==null)
+        {
+            $pagination =30;
+        }
        
     
         if (Session::get('user')){
@@ -3180,6 +3270,7 @@ $email=$request->input('email');
             $page=1;
         }
         
+if($pagination==30){
         $response = Http::post('http://51.68.36.192/REST_BeldiLook/Produit_Vendeur', [
             'id_utilisateur' => $id_vendeur,
             'iduser' => $id,
@@ -3201,9 +3292,31 @@ $email=$request->input('email');
           $jsonData = $response->json();
 
 
-
+    }
       
+    if($pagination==9){
+        $response = Http::post('http://51.68.36.192/REST_BeldiLook/Produit_Vendeur_web_9', [
+            'id_utilisateur' => $id_vendeur,
+            'iduser' => $id,
+            'par_categories' => $categories,
+            'par_couleurs' => $colors,
+            'par_tailles' => $tailles,
+            'sort' => '',
+            'par_lib_articles' => '',
+            'page' => $page,
+            'type_operation' => '',   
+            'par_etat_tenue' => $etats,
+            'prix_min' => $prix_min,
+            'prix_max' => $prix_max,
+            'platform' => 'web',
+            'genre' => $genre,
+            'type_tissue' => $type_tissue
+        ]);
+     
+          $jsonData = $response->json();
 
+
+    }
 
 
           //dd($jsonData);
