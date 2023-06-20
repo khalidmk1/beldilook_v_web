@@ -36,24 +36,24 @@
 
 .slider {
   -webkit-appearance: none;
-  width: 95%;
-  background: rgb(176 ,150,54);
-  left: 2px;
-  outline: none;
-  height: 4px;
-  border-radius: 22px;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  position: relative;
-  top: 5px;
+    width: 100%;
+    background: rgb(176 ,150,54);
+    top: 1px;
+    outline: none;
+    height: 4px;
+    border-radius: 22px;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    position: relative;
+    
  
 }
 .slider_min {
- top: 0;
-left: 9px;
-border-top-right-radius:0 ;
-border-bottom-right-radius: 0;
+  top: -4px;
+ 
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .slider_max{

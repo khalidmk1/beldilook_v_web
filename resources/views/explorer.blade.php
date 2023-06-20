@@ -40,14 +40,17 @@ width:400px;
   } */
 </style>
 
-@if(App::getlocale()=="ar")
+
+
+<div class="container">
+  @if(App::getlocale()=="ar")
 <h1  style="padding: 20px;color:#263066;text-align:end">{{__('nav.explorer')}}</h1>
 @else
 <h1  style="padding: 20px;color:#263066;text-align:start">{{__('nav.explorer')}}</h1>
 @endif
-
-<div class="container">
-  <div class="row">
+  <div class="row" style="    max-width: 846px;
+  margin: auto;
+">
     @foreach ($collection as $item)
     <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12 p-2">
       <div class="card">
