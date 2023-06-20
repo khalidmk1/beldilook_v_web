@@ -119,16 +119,18 @@
 
         .img_stor {
         
-    object-fit: cover;
-    height: 100%;
+    object-fit: contain;
+    height:100%;
+    width: 100%;
     
   
         }
 
         @media only screen and (max-width: 600px) {
             .img_stor {
-                width: 300px;
+               /* width: 300px;
                 height: 300px;
+                */
             }
         }
 
@@ -196,7 +198,7 @@
 
     <!-- Modal image -->
     <div class="modal fade" id="Modal_image" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+        aria-hidden="true" style="margin: 0 auto; ">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content" style="">
                 <div class="modal-header">
@@ -215,13 +217,13 @@
                             src={{ asset('storage/user.png') }} alt="" height="30" width="30">
                         <div id="name_user" style="display: inline;padding-left:5px;color:#212529;">test</div>
                     </div>
-                    <div style="text-align: center;">
-                    <div style="position:relative; "><img onclick="detail_produit()" id="image_popup"
+                    
+                    <div style="text-align: center; "><img onclick="detail_produit()" id="image_popup"
                             src="{{ asset('storage/A_black_image.jpg') }}" class="img_stor img-fluid">
                         <div onclick="right()" class="div_right"></div>
                         <div onclick="left()" class="div_left"> </div>
                     </div>
-                    </div>
+                    
                     
                 </div>
                 <div class="modal-footer justify-content-center" style="border:none;">
@@ -309,10 +311,10 @@
     $tags=$type_tag['tags'];
 @endphp
 <div class="container">
- <div class="row mt-5">
+ <div class="row mt-5 ml-0">
    <h1 class="home_category_title">{{$type_tag['libelle']}}</h1>
  </div>
- <div class="row" style="">
+ <div class="row ml-0" style="">
  <div class="" style="margin: 5px 0; "> <!-- Removed scrollmenu class -->
     @foreach ($tags as $tag)
     <div onclick="window.location='{{route('produit_sous_categorie',['id_type'=>$type_tag['id_type'], 'id_tag'=>$tag['id_tag']]) }}'" 
@@ -332,7 +334,7 @@
 <div style="background-color: #EFEFEF; padding-top:50px; padding-bottom:100px; margin-top:150px;">
 <div class="container home_blog_and_actu"  style="">
 
-<div class="row justify-content-center">
+<div class="row  justify-content-center">
 <h3 style="@if(App::getlocale()=="ar") text-align:end;margin-right:100px; @endif">{{__('nav.blogs_actus')}}</h3>
 </div>
 
@@ -385,7 +387,7 @@
                 }
 
 
-                if (progr == 100) {
+                if (progr == 10000) {
                     console.log(i);
                     console.log(data2.length);
                     progr = 0;

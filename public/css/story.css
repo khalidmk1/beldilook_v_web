@@ -147,21 +147,16 @@
 
   #Modal_image .modal-content
   {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width:350px;
-  
     min-height: 600px;
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(6px);
-    left:13%;
   }
-  
-  @media screen and (min-width:962px) {
-    #Modal_image .modal-content
-    {
-      left:28%;
-    }
-
-  }
+ 
   
   #Modal_image .modal-footer
   {
