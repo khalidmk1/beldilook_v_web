@@ -3075,8 +3075,12 @@ else
     
             if ($details_collection->successful()){
                 $details_collection2 = $details_collection->json();
-                //dd($details_collection2);
+              
                 $articles=$details_collection2['tab_articles'];
+                $lib_type_tag=$details_collection2['Libelle'];
+
+                $lib_tag=$details_collection2['tab_sous_categorie'][0]['libelle'];
+                //dd($lib_type_tag);
             }else{
                 return redirect()->back()->with('message', __('favoris.erreur'))->withInput();
             }
@@ -3086,7 +3090,9 @@ else
                 'articles' => $articles,
                 'page' => $page,
                 'type_tag' => $id_type,
-                'tag' => $id_tag
+                'tag' => $id_tag,
+                'lib_type_tag' => $lib_type_tag,
+                'lib_tag' => $lib_tag
             ]);
           }
 

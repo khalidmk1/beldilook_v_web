@@ -12,10 +12,15 @@
 
 <div class="col" id="snackbar">Some text some message..</div>
 
+
+<h1 style="color:#263066;margin-left:100px;" >{{$lib_type_tag}}</h1>
+
+<h5 style="color:#263066;margin-left:100px;" >{{$lib_tag}}</h5>
+
 <div class="container items">
-    <br>
+    
    
-    <div class="row " style="padding-top:30px">
+    <div class="row " style="padding-top:10px">
         {{ csrf_field() }}
           
                 @forelse ($articles as $article)
