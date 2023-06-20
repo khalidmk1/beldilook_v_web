@@ -1543,7 +1543,7 @@ $colors=["#EFEFF4","#E6D0C5","#E2E2E2","#F0E6CC","#DCE6F1","#DAE8E3","#F44336","
             $user=Session::get('user');
             if($user['Type']=='A')
             {
-              return redirect(Route('home'));
+              return redirect(Route('devenir_vendeur'));
             }
             $id=$user['IDUtilisateurs'];
         } else{
