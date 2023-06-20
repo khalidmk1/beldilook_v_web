@@ -463,12 +463,18 @@ if ($response->successful()){
     public function details_produit($id){
        // $this->change_l();
        $this->actualiser_user();
+       $id_user=0;
+       if (Session::get('user')){
+        $user=Session::get('user');
+        $id_user=$user['IDUtilisateurs'];
+    } 
         $response = Http::post('http://51.68.36.192/REST_BeldiLook/afficher_details_produit_web', [
             'sID_Produit' => $id,
+            'id_utilisateur' => $id_user
         ]);
          if($response->successful()) {
             $reponse2 = $response->json();
-            //dd($reponse2);
+           // dd($reponse2);
             if( $reponse2['publier']=="non")
             {
                 return redirect(Route('home'));
@@ -502,7 +508,8 @@ if ($response->successful()){
                 'article' => $reponse2,
                 'idarticle' => $id,
                 'rate' => $response_rate2,
-                'commentaires' => $response_commentaire2
+                'commentaires' => $response_commentaire2,
+                'articles2' => $reponse2['tab_produit_suggerer']
             ]);
          }else{
             return redirect(url()->previous())->with('message', __('favoris.erreur'));
@@ -2284,7 +2291,7 @@ public function delete_blog(Request $request)
 
         
 
-
+          //return $jsonData;
 
       
 

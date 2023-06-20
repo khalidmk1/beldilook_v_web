@@ -36,6 +36,7 @@ return [
     'recherche' => 'بحث',
     'vente_avec_beldi' => 'بيع مع بيلدي لوك',
     'blogs_actus' => 'مدونة وأخبار',
-    'lire_suite' => 'اقرأ أكثر'
+    'lire_suite' => 'اقرأ أكثر',
+    'produit_suggerer' => 'المنتجات المقترحة'
 ]
 ?>

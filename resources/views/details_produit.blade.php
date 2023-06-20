@@ -3,13 +3,14 @@
 <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{ url('/css/details_produit.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 <style>
   .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
   .w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
 
 </style>
 
-
+<div class="col"  id="snackbar">Some text some message..</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -212,6 +213,68 @@
 
 
 
+<br>
+<h5 style="padding-left:122px;padding-bottom:10px">{{__('nav.produit_suggerer')}}</h5>
+<div class="container">
+<div class="row" >
+@foreach ($articles2 as $article2)
+    
+
+
+<div style="justify-content: center" class=" col-xl-3 col-lg-3 col-md-4 col-sm-2  d-flex ">
+  
+     
+  
+  <div class="card card_content border-0">
+
+  
+    
+      <a href="{{route('details_produit',$article2['idarticles'])}}">
+          <img src="{{ $article2['photo1']}}" class="card-img-top img_product img-fluid"  alt="product_card" >
+      </a>
+
+      @if ($article2['favoris5']==1)
+     <img id="art{{$article2['idarticles']}}" onclick="favoris({{$article2['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likeplein.png') }}  alt="">
+      @else
+     <img id="art{{$article2['idarticles']}}"  onclick="favoris({{$article2['idarticles']}},this.id)" class="topright pointer" height="30" width="30" src={{ asset('storage/likevide_1.png') }} alt="">
+      @endif
+     
+
+          @if ($article2['nouveau']==1)
+          <span class="badge  bottomleft" >{{__('home.nouveau')}}</span>
+          @endif
+
+          @if ($article2['rupture_stock']!='no')
+          <span class="badge bg-danger bottomright" >{{__('home.rupture_stock')}}</span>
+
+          @endif
+
+      
+    
+
+    <div class="card-body p-2 ">
+      <p class="mb-1"> <a href="{{route('boutiqua',$article2['idutilisateurs'])}}">{{$article2['nom_vendeur']}}</a></p>
+      <h5 class="card-title mb-1 " >{{$article2['libellé']}}</h5>
+      <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article2['etat_tenu']}} </p>
+      <p style="font-size: 14px" class="card-text mb-1">{{$article2['prix']." DH"}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+@endforeach
+
+</div>
+
+
+
+</div>
 
 
 
@@ -222,22 +285,14 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+@if(count($commentaires)!=0)
 <div class="container">
   
 <p style="text-align: start;padding-top:50px"> Avis général :</p>
 </div>
-
+@else
+<br>
+@endif
 
 @php
 if($rate['nb_avis']!=0){
@@ -332,7 +387,7 @@ $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
 </div>
 </div>
 {{$rate['nb_1t']}}
-</div><br>
+</div><br>--}}
 @php
 //dd($commentaires);
 @endphp
@@ -383,9 +438,54 @@ $nombre_format_francais = number_format($rate['moyenne_etoile'], 1, ',', ' ');
 </div>
 @endforeach
 </div>
-</div> --}}
+</div> 
 @endif
 
+
+
+<script>
+  var myTimeout;
+  function favoris(id,art)
+  {
+      var snack = document.getElementById("snackbar");
+      snack.className = snack.className.replace("show", "");
+     var _token=$('input[name="_token"]').val();
+     $.ajax({
+ url:("{{route('change_favoris')}}"),
+ method:"POST",
+ data:{idarticle:id,
+ _token:_token
+ 
+ },
+ success:function(data)
+ {
+ 
+ 
+     var x = document.getElementById("snackbar");
+ 
+ // Add the "show" class to DIV
+ x.className = "show col";
+ 
+ // After 3 seconds, remove the show class from DIV
+ console.log(art);
+ $("#snackbar").html(data);
+ if(data=="{{__('favoris.like')}}"){
+  $("#"+art).attr("src","{{ asset('storage/likeplein.png') }}");
+ }else{
+  $("#"+art).attr("src","{{ asset('storage/likevide_1.png') }}");
+ }
+ clearTimeout(myTimeout);
+ myTimeout=setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+ }
+ ,error:function(error)
+{
+// error alert message
+console.log(error);
+}
+ });
+  }
+ 
+ </script>
 
 <script>
   function get_prix(pr)

@@ -39,6 +39,7 @@ return [
     'recherche' => 'Search',
     'vente_avec_beldi' => 'Sell ​​with Beldi Look',
     'blogs_actus' => 'Blog and News',
-    'lire_suite' => 'Read more'
+    'lire_suite' => 'Read more',
+    'produit_suggerer' => 'Products suggest'
 ]
 ?>

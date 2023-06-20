@@ -12,7 +12,7 @@ return [
     'myfavoris' => 'Mes favoris',
     'articles' => 'Articles',
     'boutiques' => 'Boutiques',
-    'nouveaute' => 'Nouveauté',
+    'nouveaute' => 'Nouveautés',
     'mes_achats' => 'Mes achats',
     'mes_commandes' => 'Mes commandes',
     'changer_mot_de_passe' => 'Changer mot de passe',
@@ -39,6 +39,7 @@ return [
     'recherche' => 'Recherche',
     'vente_avec_beldi' => 'Vends avec Beldi Look',
     'blogs_actus' => 'Blog et Actus',
-    'lire_suite' => 'Lire la suite'
+    'lire_suite' => 'Lire la suite',
+    'produit_suggerer' => 'Produits suggérés'
 ]
 ?>
