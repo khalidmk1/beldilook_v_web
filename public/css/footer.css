@@ -650,3 +650,14 @@ border-top-right-radius: 15px;
 }
 
 }
+
+.nouveaute_page_container .card_content
+{
+  background-color: #efeff4;
+  border-radius: 15px;
+}
+
+.nouveaute_page_container .card-body
+{
+  padding-left: 12px !important;
+}
