@@ -512,6 +512,9 @@
 
 
 <div class="col"  id="snackbar">Some text some message..</div>
+<div></div>
+<h1 style="color:#263066;text-align: center;margin-bottom:20px;margin-top:20px;"   >{{__('home.titre')}}</h1>
+
  <div class="container">
     <div class="row justify-content-center" style="align-items: center">
 

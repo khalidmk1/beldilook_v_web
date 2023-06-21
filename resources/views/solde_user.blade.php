@@ -5,7 +5,7 @@
 <br>
 <h3 style="text-align: center">{{__('solde.details_solde')}}</h3>
 
-
+<div class="container">
 <div style="padding: 20px; @if(App::getlocale()=="ar") text-align: end @endif" >
 @foreach ($details_soldes as $details_solde)
       @if($details_solde['IDCommande']!=0)
@@ -54,7 +54,7 @@ $montant=number_format($details_solde['MontantSansCommission'], 2, ',', ' ');
 </div>
 
 
-
+</div>
 
 
 

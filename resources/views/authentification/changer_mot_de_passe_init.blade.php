@@ -2,7 +2,23 @@
 @section('content')
 
 
+<style>
 
+  .btn_ajouter{
+        background-color: #212951;
+        border: #212951;
+        width: 100px;
+        font-size: 17px;
+        color: white;
+        height: 40px;
+        border-radius: 30px;
+    }
+  
+    .btn_ajouter:hover{
+        background-color: #283991;
+        border: #283991;
+    }
+  </style>
 
 
 <div class="container mt-3">
@@ -37,7 +53,7 @@
       </div>
       
       <div   @if(App::getlocale()=="ar")  style="direction: rtl;" @endif>
-        <button @if(App::getlocale()=="ar") style="margin-left:5px " @endif type="submit" class="btn btn-primary @if(App::getlocale()=="ar") float-right @endif">Valider </button>
+        <button @if(App::getlocale()=="ar") style="margin-left:5px " @endif type="submit" class="btn_ajouter @if(App::getlocale()=="ar") float-right @endif">Valider </button>
       </div>
    
     </form>

@@ -7,6 +7,7 @@ return [
     'nouveau' => 'جديد',
     'filtre' => 'فرز',
     'sort' => 'صنف',
-    'afficher_plus' => 'أظهر المزيد'
+    'afficher_plus' => 'أظهر المزيد',
+    'titre' => 'عروض البيع'
 ]
 ?>

@@ -1,5 +1,22 @@
 @extends('navbar')
 @section('content')
+<style>
+
+  .btn_ajouter{
+        background-color: #212951;
+        border: #212951;
+        width: 100px;
+        font-size: 17px;
+        color: white;
+        height: 40px;
+        border-radius: 30px;
+    }
+  
+    .btn_ajouter:hover{
+        background-color: #283991;
+        border: #283991;
+    }
+  </style>
 <div class="container mt-3">
 
 
@@ -20,7 +37,7 @@
 
      
       
-      <button type="submit" class="btn btn-primary">{{__('myaccount.valider')}} </button>
+      <button type="submit" class="btn_ajouter">{{__('myaccount.valider')}} </button>
     </form>
   </div>
 @endsection

@@ -112,16 +112,98 @@ width: 300px;
       </div>
     </div>
   </div>
-<div class="col" id="snackbar">Some text some message..</div>
-<div style="text-align: center">
-    @if($vendeur['photo']!='no' && $vendeur['photo']!='')
-    <img id="image_p" style="border-radius: 50%" src="{{ $vendeur['photo'] }}" alt="" height="150px" width="150px">
-    @else
-    <img id="image_p" style="border-radius: 50%" src="{{ asset('storage/user.png') }}" alt="" height="150px" width="150px">
-    @endif
-</div>
-<div style="text-align: center">
-    <h3>{{$vendeur['nom']}}</h3>
+<div class="container">
+  <div class="row flex-column">
+    <div class="col" id="snackbar">Some text some message..</div>
+  <div style="text-align: center">
+      @if($vendeur['photo']!='no' && $vendeur['photo']!='')
+      <img id="image_p" style="border-radius: 50%" src="{{ $vendeur['photo'] }}" alt="" height="150px" width="150px">
+      @else
+      <img id="image_p" style="border-radius: 50%" src="{{ asset('storage/user.png') }}" alt="" height="150px" width="150px">
+      @endif
+  </div>
+  
+  <div class="col text-center">
+   <div class="row p-2">
+    <div class="col-7 align-self-center d-flex justify-content-end pr-5 ">
+      <a href="@if($rate_user['nb_avis']!=0) {{route('commentaires',$id_boutique)}} @else # @endif" style="text-decoration: none;color: black" class="a_blue" >
+  
+        <div class="stars" style="padding-top: 10px ; ">
+    
+            <div>
+                <span class="star1" style="font-size: 17px ;display:inline"> {{$rate_user['nb_avis']." ".__('page_details_produit.avis')}}</span>
+    
+              @php
+              $etoile=$rate_user['moyenne_etoile'];
+              $etoile=intval($etoile);
+              @endphp
+               @if($etoile==0)
+               <i class="star stargrey fas fa-star" data-index="0"></i>
+               <i class="star stargrey fas fa-star" data-index="1"></i>
+               <i class="star stargrey fas fa-star" data-index="2"></i>
+               <i class="star stargrey fas fa-star" data-index="3"></i>
+               <i class="star stargrey fas fa-star" data-index="4"></i>
+               @endif
+              @if($etoile==1)
+              <i class="star yellow fas fa-star" data-index="0"></i>
+              <i class="star stargrey fas fa-star" data-index="1"></i>
+              <i class="star stargrey fas fa-star" data-index="2"></i>
+              <i class="star stargrey fas fa-star" data-index="3"></i>
+              <i class="star stargrey fas fa-star" data-index="4"></i>
+              @endif
+              @if($etoile==2)
+              <i class="star yellow fas fa-star" data-index="0"></i>
+              <i class="star yellow fas fa-star" data-index="1"></i>
+              <i class="star stargrey fas fa-star" data-index="2"></i>
+              <i class="star stargrey fas fa-star" data-index="3"></i>
+              <i class="star stargrey fas fa-star" data-index="4"></i>
+              @endif
+              @if($etoile==3)
+              <i class="star yellow fas fa-star" data-index="0"></i>
+              <i class="star yellow fas fa-star" data-index="1"></i>
+              <i class="star yellow fas fa-star" data-index="2"></i>
+              <i class="star stargrey fas fa-star" data-index="3"></i>
+              <i class="star stargrey fas fa-star" data-index="4"></i>
+              @endif
+              @if($etoile==4)
+              <i class="star yellow fas fa-star" data-index="0"></i>
+              <i class="star yellow fas fa-star" data-index="1"></i>
+              <i class="star yellow fas fa-star" data-index="2"></i>
+              <i class="star yellow fas fa-star" data-index="3"></i>
+              <i class="star stargrey fas fa-star" data-index="4"></i>
+              @endif
+              @if($etoile==5)
+              <i class="star yellow fas fa-star" data-index="0"></i>
+              <i class="star yellow fas fa-star" data-index="1"></i>
+              <i class="star yellow fas fa-star" data-index="2"></i>
+              <i class="star yellow fas fa-star" data-index="3"></i>
+              <i class="star yellow fas fa-star" data-index="4"></i>
+              @endif
+             
+            </div>
+    
+    
+          
+              
+           
+          </div>
+    
+        </a>
+    </div>
+    <div class="col d-flex align-self-center justify-content-start" style="padding-top: 10px"><a href="#resau_social" style="color: #B09636">Contactez Nous</a></div>
+   </div>
+  </div>
+  
+  <div class="col" style="text-align: center">
+      <div class="row">
+        <div class="col-7 align-self-center d-flex justify-content-end"><h3>{{$vendeur['nom']}}</h3></div>
+        <div class="col d-flex align-self-center justify-content-start">
+            <img src="{{ asset('storage/verifier bl.png') }}" alt="" style="height: 29px; width: 30px;">
+        </div>
+      </div>
+  </div>
+  
+  </div>
 </div>
 <hr>
 
@@ -214,7 +296,7 @@ width: 300px;
     <div class="col  col-xl-4 col-lg-4 col-md-12 col-sm-12   ">
 
       <div class="scrollable-tabs-container container">
-        <div class="left-arrow d-none">
+        <div class="left-arrow ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -236,7 +318,7 @@ width: 300px;
   
           </ul>
 
-        <div class="right-arrow active d-none">
+        <div class="right-arrow active">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -462,10 +544,205 @@ width: 300px;
   </div>
 
 
+{{--   <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
+          </div>
+          <div class="col text-center p-2">
+            @if($boutique_info['lien_facebook']!='')
+            <a style="display: inline;text-decoration:none ; color: black" class="a_blue" href="{{$boutique_info['lien_facebook']}}" target="_blank">    
+              <div style="">Facebook 
+                <img src="{{ asset('storage/facebbok.png') }}" alt="" height="30px" width="30px"></div>
+            </a>
+            @endif
+          </div>
+          <div class="col  text-center  p-2">
+            @if($boutique_info['lien_tiktok']!='')
+            <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_tiktok']}}" target="_blank">    
+              <div style="margin-left: 21px;">Tiktok 
+                <img src="{{ asset('storage/tiktok.png') }}" alt="" height="30px" width="30px">
+              </div>
+            </a>
+            @endif
+
+          </div>
+          <div class="w-100"></div>
+          <div class="col  text-center   p-2"> 
+            @if($boutique_info['lien_snapshat']!='')
+            <a style="display: inline;text-decoration:none ; color: black"  href="{{$boutique_info['lien_snapshat']}}" target="_blank">    
+              <div style="">Snapshat 
+                <img src="{{ asset('storage/snapcaht.png') }}" alt="" height="30px" width="30px">
+              </div>
+            </a>
+            @endif</div>
+          <div class="col  text-center   p-2"> 
+            @if($boutique_info['lien_youtube']!='')
+            <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_youtube']}}" target="_blank">    
+              <div style="">Youtube 
+                <img src="{{ asset('storage/youtube.png') }}" alt="" height="30px" width="30px">
+              </div>
+            </a>
+            @endif
+          </div>
+
+          <div class="w-100"></div>
+          <div class="col  text-center p-2" >
+            @if($boutique_info['lien_linkdin']!='')
+            <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_linkdin']}}" target="_blank">   
+               <div style="margin-left: 10px;">Linkdin 
+                <img src="{{ asset('storage/Linkdin.png') }}" alt="" height="30px" width="30px">
+              </div>
+            </a>
+            @endif
+          </div>
+          <div class="col  text-center   p-2">
+            @if($boutique_info['lien_instagram']!='')
+            <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_instagram']}}" target="_blank">   
+               <div style="margin-right: 16px;">
+                Instagram 
+                <img src="{{ asset('storage/insta.png') }}" alt="" height="30px" width="30px">
+              </div>
+            </a>
+            @endif
+          </div>
+          <div class="w-100"></div>
+          <div class="col p-2 text-center">
+            <a   href="{{route('actualites',$id_boutique)}}" class="a_yellow" >    
+              <div style="">{{__('boutiqua.news')}} </div>
+            </a>
+          </div>
+          
+          <div class="col p-2 text-center">
+            <a onclick="show_locals()" style="color:black" class="a_blue"  href="#" >   
+               <div >{{__('boutiqua.notre_local')}} </div>
+            </a>
+          </div>
+        </div>
+        <div class="w-100"></div>
+      
+      </div>
+    </div>
+  </div> --}}
 
 
 
-  <div class="container">
+  <div class="container" id="resau_social" >
+    <div class="row">
+      <div class="col-12 p-2">
+        <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
+      </div>
+      <div class="col-sm text-center p-2 ">
+        @if($boutique_info['lien_facebook']!='')
+        <a style="display: inline;text-decoration:none ; color: black" class="a_blue" href="{{$boutique_info['lien_facebook']}}" target="_blank">    
+          <div class="row" >
+            <div class="col  d-flex justify-content-end">
+              Facebook
+            </div> 
+            <div class="col d-flex justify-content-start p-0">
+              <img src="{{ asset('storage/facebbok.png') }}" alt="" height="30px" width="30px"></div>
+            </div>
+        </a>
+        @endif
+      </div>
+      <div class="col-sm  text-center p-2  ">
+        @if($boutique_info['lien_tiktok']!='')
+        <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_tiktok']}}" target="_blank">    
+          <div class="row" >
+            <div class="col  d-flex justify-content-end">
+              Tiktok
+            </div> 
+           <div class="col d-flex justify-content-start p-0">
+            <img src="{{ asset('storage/tiktok.png') }}" alt="" height="30px" width="30px">
+           </div>
+          </div>
+        </a>
+        @endif
+
+      </div>
+    
+      <div class="col-sm  text-center p-2 "> 
+        @if($boutique_info['lien_snapshat']!='')
+        <a style="display: inline;text-decoration:none ; color: black"  href="{{$boutique_info['lien_snapshat']}}" target="_blank">    
+          <div class="row" >
+            <div class="col d-flex justify-content-end">
+              Snapshat
+            </div> 
+            <div class="col  d-flex justify-content-start p-0">
+              <img src="{{ asset('storage/snapcaht.png') }}" alt="" height="30px" width="30px">
+            </div>
+          </div>
+        </a>
+        @endif</div>
+        <div class="w-100"></div>
+
+
+      <div class="col-sm  text-center p-2 "> 
+        @if($boutique_info['lien_youtube']!='')
+        <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_youtube']}}" target="_blank">    
+          <div class="row">
+            <div class="col d-flex justify-content-end">
+              Youtube 
+            </div>
+            <div class="col  d-flex justify-content-start p-0">
+              <img src="{{ asset('storage/youtube.png') }}" alt="" height="30px" width="30px">
+            </div>        
+          </div>
+        </a>
+        @endif
+      </div>
+
+   
+      <div class="col-sm  text-center p-2 " >
+        @if($boutique_info['lien_linkdin']!='')
+        <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_linkdin']}}" target="_blank">   
+           <div class="row" >
+            <div class="col  d-flex justify-content-end">
+              Linkdin 
+            </div>
+            <div class="col d-flex justify-content-start p-0">
+              <img src="{{ asset('storage/Linkdin.png') }}" alt="" height="30px" width="30px">
+            </div>
+          </div>
+        </a>
+        @endif
+      </div>
+      <div class="col-sm  text-center p-2 ">
+        @if($boutique_info['lien_instagram']!='')
+        <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_instagram']}}" target="_blank">   
+           <div class="row">
+            <div class="col  d-flex justify-content-end ">
+              Instagram
+            </div>
+            <div class="col d-flex justify-content-start p-0">
+              <img src="{{ asset('storage/insta.png') }}" alt="" height="30px" width="30px">
+              </div> 
+          </div>
+        </a>
+        @endif
+      </div>
+      <div class="w-100"></div>
+      <div class="col-sm text-center p-3">
+        <a   href="{{route('actualites',$id_boutique)}}" class="a_yellow" >    
+          <div style="">{{__('boutiqua.news')}} </div>
+        </a>
+      </div>
+      
+      <div class="col-sm text-center p-3">
+        <a onclick="show_locals()" style="color:black" class="a_blue"  href="#" >   
+           <div >{{__('boutiqua.notre_local')}} </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+{{--   <div class="container">
     <div class="row @if (App::getlocale() == 'ar') flex-row-reverse @endif">
       <div class="col-sm-5">
         <div class="row ">
@@ -579,13 +856,7 @@ width: 300px;
               </div>
             </div>
             <div class="w-100"></div>
-            {{-- <div class="col  text-center" style="color:bla">
-              @if(count($produits)!=0)
-              <a style="color:black" href="{{route('page_vendeur',$id_boutique)}}">{{__('boutiqua.voir_plus')}}</a>
-              @else
-              <p class="col-12" style="text-align: center; color:black ;padding-top: 80px;">{{__('home.aucun_produit')}}</p>
-              @endif
-            </div> --}}
+          
           </div>
         </div>
       </div>
@@ -662,7 +933,7 @@ width: 300px;
       </div>
     </div>
   </div>
-
+ --}}
 
 
 

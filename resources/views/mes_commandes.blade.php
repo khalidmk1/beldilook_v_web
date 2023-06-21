@@ -99,9 +99,9 @@
 
 
 @if(App::getlocale()=="ar")
-<h1  style="padding: 20px;color:#263066;text-align:end">{{__('nav.mes_commandes')}}</h1>
+<h1  style="margin-right: 105px;margin-bottom:20px;color:#263066;text-align:end">{{__('nav.mes_commandes')}}</h1>
 @else
-<h1  style="padding: 20px;color:#263066;text-align:start">{{__('nav.mes_commandes')}}</h1>
+<h1  style="margin-left: 105px;margin-bottom:20px;color:#263066;text-align:start">{{__('nav.mes_commandes')}}</h1>
 @endif
 
 
