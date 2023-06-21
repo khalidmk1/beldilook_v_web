@@ -75,7 +75,8 @@
    
    }
    .div_colap{
-    padding: 100px;
+    padding: 100px 30px 100px 30px;
+    
    }
     @media only screen and (max-width: 600px) {
         .in_contact{
@@ -117,6 +118,26 @@
     padding: 20px;
    }
 }
+
+.foire_au_questions h1
+   {
+    font-size:60px;
+    font-weight:600;
+    color:#33286e;
+   }
+
+   .foire_au_questions .question_div,
+   .foire_au_questions .question_div button
+   {
+    border-radius:10px;
+   }
+
+   .foire_au_questions .question_div button + div>div
+   {
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+   }
+
 </style>
 
 
@@ -125,7 +146,7 @@
 
 
 
-<div>
+<div class="container">
     <div class="row @if(App::getlocale()=="ar") flex-row-reverse @endif" style="border: 1px solid black;margin:50px;border-radius:8px;">
         <div class="col-lg-6 col-md-12 col-sm-12">
             <h3 class="titre_contact" @if(App::getlocale()=="ar") style="text-align: end" @endif>{{__('contacter_nous.titre')}}</h3>
@@ -169,21 +190,22 @@
 
 
 <div>
-<h1 style="text-align: center">{{__('contacter_nous.foire_aux_question')}} 
-</h1>
 
 </div>
 
-<div style="background-color:#E1E2E7;margin:70px">
+<div style="background-color:#EFEFEF; padding-top:50px;" class="foire_au_questions">
 
-    <div class="row div_colap">
+<h1 style="text-align: center">{{__('contacter_nous.foire_aux_question')}} 
+</h1>
+
+    <div class="row div_colap container ">
 
 
 
 
 <div class="col-lg-6 dol-md-6 col-sm-12">  <div class="col-lg-12" style="margin-bottom: 10px">
-    <div style="background-color: #FFFFFF;">
-    <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <div style="background-color: #FFFFFF;" class="question_div">
+    <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left;"class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
         Comment devenir vendeur ?
       </button>
@@ -197,7 +219,7 @@
 
 
 <div class="col-lg-12"  style="margin-bottom: 10px">
-    <div style="background-color: #FFFFFF;">
+    <div style="background-color: #FFFFFF;"  class="question_div">
         
     <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
@@ -211,7 +233,7 @@
 </div>
 
 <div class="col-lg-12"  style="margin-bottom: 10px">
-    <div style="background-color: #FFFFFF;">
+    <div style="background-color: #FFFFFF;"  class="question_div">
         
     <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
@@ -225,7 +247,7 @@
 </div>
 
 <div class="col-lg-12"  style="margin-bottom: 10px">
-    <div style="background-color: #FFFFFF;">
+    <div style="background-color: #FFFFFF;"  class="question_div">
         
     <button onclick="colapse_div(this)" style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
@@ -259,7 +281,7 @@
 
 <div class="col-lg-6 dol-md-6 col-sm-12">
      <div class="col-lg-12"  style="margin-bottom: 10px">
-    <div style="background-color: #FFFFFF;">
+    <div style="background-color: #FFFFFF;"  class="question_div">
     <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
         Une fois mon article vendu, comment est-ce que je vais être payé ?
@@ -274,7 +296,7 @@
 
 
 <div class="col-lg-12"  style="margin-bottom: 10px">
-    <div style="background-color: #FFFFFF;">
+    <div style="background-color: #FFFFFF;"  class="question_div">
     <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
         Quels articles puis-je vendre sur l’application Beldi Look ?     
@@ -287,7 +309,7 @@
 </div>
 
 <div class="col-lg-12"  style="margin-bottom: 10px">
-    <div style="background-color: #FFFFFF;">
+    <div style="background-color: #FFFFFF;"  class="question_div">
     <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
         Où trouver mon bon de livraison ?    
@@ -303,7 +325,7 @@
 
 
 <div class="col-lg-12"  style="margin-bottom: 10px">
-    <div style="background-color: #FFFFFF;">
+    <div style="background-color: #FFFFFF;"  class="question_div">
     <button onclick="colapse_div(this)"  style="background-color: #FFFFFF;border:0px solid black;padding:10px;width:100%;text-align:left"class="" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
         <img src="{{asset('storage/plus.png')}}" alt="" height="12px" width="12px">
         Mon article est-il couvert contre la perte ou les dommages ?
