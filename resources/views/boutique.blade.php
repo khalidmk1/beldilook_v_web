@@ -2,7 +2,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 <div class="col" id="snackbar">Some text some message..</div>
-    <div class="container items" style="padding-top:7px">
+    <div class="container items boutique_page_container" style="padding-top:7px">
         <div class="row">
             {{ csrf_field() }}
             @forelse ($boutiques as $boutique)
@@ -78,7 +78,7 @@
         </div>
     </div>
    
-<div style="text-align: center;padding-bottom:50px">
+<div style="text-align: center;padding-bottom:60px;">
     @if ($page==1)
     <a class="paginationa" href="">❮</a>
     @else

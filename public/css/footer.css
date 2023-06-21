@@ -517,3 +517,122 @@ font-size: 35px;
 {
   margin-top: 90px !important;
 }
+
+/******** End welcome page **********/
+
+
+/** ***** Home Page  *****/
+
+.home_article_container
+{
+ padding-left:4% !important;
+}
+
+.taillles_home
+{
+  padding-top:3px;
+  padding-left:4%;
+}
+
+.home_article_container .card_content
+{
+
+  padding-bottom: 25px;
+  
+
+}
+
+.card_content .card-body p:first-child a
+{
+  color:#bd8c2f !important;
+  font-size : 15px !important;
+  font-weight:400;
+  letter-spacing: .1px;
+}
+
+.card_content h5
+{
+ color:var(--color-primary);
+ font-weight: 600;
+ font-size: 16px !important;
+ letter-spacing: .5px;
+}
+
+.card-body p:nth-of-type(2)
+{
+  color:var(--color-primary);
+  letter-spacing: .4px;
+  font-size: 1.1 rem;
+}
+
+.card-body p:nth-of-type(3)
+{
+  color:#fff;
+  font-size:16px;
+  background-color: #aa8226 !important;
+  display: inline-block;
+  padding:8px;
+  border-radius: 5px;
+}
+
+.home_article_container .card-body{
+  border: solid transparent 1px;
+  border-top:none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  
+  background-color: #efeff4 !important;
+  padding-bottom: 10px !important;
+  padding-left:12px !important;
+}
+
+.home_article_container .card_content a:first-of-type {
+background-color: #efeff4 !important;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+}
+
+.home_article_container .card-img-top
+{
+  height:220px !important;
+}
+
+.home_article_container .card_content h5
+{
+  margin-top: 8px;
+
+}
+
+.home_article_container .bottomright,
+.home_article_container .bottomleft
+{
+   bottom:42.3%;
+   
+}
+
+
+/** Page boutique **/
+
+.boutique_page_container
+{
+  padding-bottom: 80px;
+  margin-top:40px;
+}
+
+.boutique_page_container .width_card
+{
+  padding: .6rem !important;
+}
+
+.boutique_page_container .card-img-top
+{
+  height: 220px;;
+}
+
+.boutique_page_container .card-body p
+{
+  color:var(--color-primary);
+  font-size: 16px;
+  font-weight:600;
+  letter-spacing: .2px;
+}

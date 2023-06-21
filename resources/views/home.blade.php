@@ -359,7 +359,7 @@
 
                   <div class="scrollable-tabs-container-tailles container" id="scrollable-tabs-container-tailles" style="height: 42px;">
                      
-                      <ul class="tailles_responsive" >
+                      <ul class="tailles_responsive " >
 
                           <li  >
                             <a  class="shadow-sm class_tailles" style="padding-left: 16px;
@@ -584,42 +584,42 @@
     <div class="col  col-xl-5 col-lg-5 col-md-12 col-sm-12  ">
 
 
-      <div class="scrollable-tabs-container-tailles container" id="scrollable-tabs-container-tailles" style="height: 42px;">
+      <div class="scrollable-tabs-container-tailles taillles_home container" id="scrollable-tabs-container-tailles" style="height: 42px;">
                      
         <ul class="tailles_responsive" >
 
             <li  >
               <a  class="class_tailles" style="padding-left: 16px;
-                  padding-top: 13px;cursor: pointer;" donn="XS" >XS</a>
+                  padding-top: 17px;cursor: pointer;" donn="XS" >XS</a>
             </li>
     
             <li>
-              <a  class="class_tailles" style="padding-top: 13px;
+              <a  class="class_tailles" style="padding-top: 17px;
               padding-left: 21px;cursor: pointer;" donn="S" >S</a>
             </li>
     
             <li>
-              <a  class=" class_tailles" style="padding-top: 13px;
-              padding-left: 18px;cursor: pointer;" donn="M" >M</a>
+              <a  class=" class_tailles" style="padding-top: 17px;
+              padding-left: 20px;cursor: pointer;" donn="M" >M</a>
             </li>
     
             <li>
-              <a  class="class_tailles" style="    padding-top: 13px;
+              <a  class="class_tailles" style="    padding-top: 17px;
               padding-left: 20px;cursor: pointer;" donn="L" >L</a>
             </li>
     
             <li>
-              <a  class="class_tailles" style="padding-top: 13px;
+              <a  class="class_tailles" style="padding-top: 17px;
               padding-left: 17px;cursor: pointer;" donn="XL" >XL</a>
             </li>
     
             <li>
-              <a  class="class_tailles" style="padding-top: 13px;
+              <a  class="class_tailles" style="padding-top: 17px;
               padding-left: 12px;cursor: pointer;" donn="XXL" >XXL</a>
             </li>
     
             <li>
-              <a  class=" class_tailles" style="padding-top: 15px;
+              <a  class=" class_tailles" style="padding-top: 17px;
               padding-left: 13px;cursor: pointer;" donn="3XL" >3XL</a>
             </li>
   
@@ -784,7 +784,7 @@
         </div>
 
 
-        <div class="col-md-9">
+        <div class="col-md-9 home_article_container">
 @if(count($articles)!=0)
           @if($articles[0]['nbr_articles']==1)
           <div id="div_nb_article" style="padding-left: 5px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}</div>
