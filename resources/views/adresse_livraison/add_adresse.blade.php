@@ -1,5 +1,22 @@
 @extends('navbar')
 @section('content')
+
+<style>
+    .btn_ajouter{
+        background-color: #212951;
+        border: #212951;
+        width: 100px;
+        font-size: 17px;
+        color: white;
+        height: 40px;
+        border-radius: 30px;
+    }
+
+    .btn_ajouter:hover{
+        background-color: #283991;
+        border: #283991;
+    }
+</style>
 <div class="container mt-3">
 
     <h2 @if(App::getlocale()=="ar") style="text-align: end" @endif>{{__('adresses_livraison.add_adresse')}} </h2>
@@ -60,7 +77,7 @@
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
       </div>
-      <button type="submit" class="btn btn-primary">{{__('adresses_livraison.valider')}} </button>
+      <button type="submit" class="btn_ajouter">{{__('adresses_livraison.valider')}} </button>
     </form>
 
   </div>

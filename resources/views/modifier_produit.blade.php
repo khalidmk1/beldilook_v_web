@@ -126,7 +126,21 @@
   position: relative;
   left: 35%;
 }
+.btn_ajouter{
+        background-color: #212951;
+        border: #212951;
+        width: 80px;
+        font-size: 17px;
+        width: 100px;
+        color: white;
+        height: 40px;
+        border-radius: 30px;
+    }
 
+    .btn_ajouter:hover{
+        background-color: #283991;
+        border: #283991;
+    }
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -794,12 +808,12 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
 <br>
 <br>
 
-<div style="text-align: center"><button class="btn btn-primary" onclick="select_image()">{{__('ajout_produit.ajouter_image')}}</button></div>
+<div style="text-align: center"><button class="btn_ajouter" style="width: 200px" onclick="select_image()">{{__('ajout_produit.ajouter_image')}}</button></div>
 <br>
 <div style="text-align:center"><span style="color:red;" id="span_images"></span></div>
 
 <br>
-<div style="text-align: center"><button class="btn btn-primary" onclick="validation()">{{__('ajout_produit.continuer')}}</button></div>
+<div style="text-align: center"><button class="btn_ajouter"  onclick="validation()">{{__('ajout_produit.continuer')}}</button></div>
 <br>
 <br>
 <div id="json_content"></div>
