@@ -9,6 +9,20 @@
   .table td, .table th{
     padding: 5px;
   }
+  .btn_ajouter{
+        background-color: #212951;
+        border: #212951;
+        width: 100px;
+        font-size: 17px;
+        color: white;
+        height: 40px;
+        border-radius: 30px;
+    }
+
+    .btn_ajouter:hover{
+        background-color: #283991;
+        border: #283991;
+    }
 </style>
 
 <!-- Modal -->
@@ -41,9 +55,9 @@
 <div class="container mt-3">
 
     <div class="col-md-12  text-right">
-        
-        <a class="btn btn-primary" href="{{route('get_add_adresses')}}">{{__('adresses_livraison.ajouter')}}</a>
-    </div>
+        <button class="btn_ajouter" onclick="window.location='{{route('get_add_adresses')}}'">{{__('adresses_livraison.ajouter')}}</button>
+{{--         <a class="btn btn-primary" href="{{route('get_add_adresses')}}">{{__('adresses_livraison.ajouter')}}</a>
+ --}}    </div>
 <h5>{{__('adresses_livraison.titre')}}</h5>
 <br>
 @if($adresses!=null)
