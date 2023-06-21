@@ -111,9 +111,12 @@
 
 
 
-
+<div class="container">
 
   <h2 style="padding: 20px;@if(App::getlocale()=="ar") text-align:end; @endif">{{__('nav.myfavoris')}} </h2>
+
+</div>
+
 <div class="tab" >
     <button class="tablinks" onclick="openCity(event, 'Articles')">{{__('nav.articles')}}</button>
     <button class="tablinks " onclick="openCity(event, 'Boutiques')">{{__('nav.boutiques')}}</button>
@@ -134,10 +137,10 @@
 
               
                 
-                  
+                <a href="{{route('details_produit',$article['idarticles'])}}">
                       <img  src={{ $article['image1']}} class="card-img-top img_product img-fluid"  alt="product_card" >
                   
-
+                </a>
 
                 
 
@@ -202,15 +205,15 @@
 
               
                 
-                  
+                <a href="{{route('boutiqua',$boutique['id_utilisateur'])}}">
                       <img src={{ $boutique['photologo']}}  class="card-img-top img_product img-fluid"  alt="product_card" >
                   
-
+                </a>
 
                 
 
                
-                 <img id="art{{$article['idarticles']}}" onclick="delete_article({{$article['idarticles']}})"  class="topright pointer" height="30" width="30" src={{ asset('storage/supp2_new.png') }}  alt="">
+                      <img id="delete_article" onclick="delete_boutique({{$boutique['id_utilisateur']}})"  class="topright pointer" height="30" width="30" src={{ asset('storage/supp2_new.png') }} alt="">
                  
                  
 
