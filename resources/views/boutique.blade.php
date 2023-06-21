@@ -8,7 +8,7 @@
             @forelse ($boutiques as $boutique)
 
 
-            <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+            <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-3 d-flex justify-content-center">
                 
                    
                 

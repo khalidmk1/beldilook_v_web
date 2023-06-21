@@ -17,7 +17,10 @@
 @if(count($articles)==1)
 <div class="container"><p @if(App::getlocale()=="ar") style="padding-left: 13%;text-align: end" @endif>{{count($articles).' '.__('boutique_une.1article')}}</p></div>
 @else
-<div class="container"><p @if(App::getlocale()=="ar") style="padding-left: 13%; text-align: end" @endif >{{count($articles).' '.__('boutique_une.articles_trouve')}}</p></div>
+<div class="container">
+  <p @if(App::getlocale()=="ar") style="padding-left: 13%; text-align: end" @endif >
+  <img src="{{asset('storage/icon-article-shop.png')}}" class="image_obligatoire" style="height:30px;"  alt="icon-article">
+  {{count($articles).' '.__('boutique_une.articles_trouve')}}</p></div>
 @endif
 @endif
 
@@ -28,10 +31,10 @@
 
 
 
-<div class="container">
+<div class="container articles_boutique_une" style="margin-bottom:20px;">
 
    
-    <div class="row mr-0">
+    <div class="row">
     @foreach ($articles as $article)
 
 
@@ -52,8 +55,8 @@
       
             <div class="card-body p-2  ">
              
-              <h5 class="card-title mb-1 @if(App::getlocale()=="ar") text-right @endif"  @if(App::getlocale()=="ar") dir="rtl" @endif >{{$article['Libelle']}}</h5>
-              <p style="font-size: 14px" class=" @if(App::getlocale()=="ar") text-right d-flex justify-content-end  @endif  card-text mb-1  " >  
+              <h5 class="card-title mb-2 @if(App::getlocale()=="ar") text-right @endif"  @if(App::getlocale()=="ar") dir="rtl" @endif >{{$article['Libelle']}}</h5>
+              <p style="font-size: 14px; margin-bottom:0;" class=" @if(App::getlocale()=="ar") text-right d-flex justify-content-end  @endif  card-text " >  
                 {{$article['Prix']}} 
                 <span class="ml-1"> DH</span> 
             </p>
