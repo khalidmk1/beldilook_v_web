@@ -137,10 +137,10 @@
 
               
                 
-                  
+                <a href="{{route('details_produit',$article['idarticles'])}}">
                       <img  src={{ $article['image1']}} class="card-img-top img_product img-fluid"  alt="product_card" >
                   
-
+                </a>
 
                 
 
@@ -205,10 +205,10 @@
 
               
                 
-                  
+                <a href="{{route('boutiqua',$boutique['id_utilisateur'])}}">
                       <img src={{ $boutique['photologo']}}  class="card-img-top img_product img-fluid"  alt="product_card" >
                   
-
+                </a>
 
                 
 
