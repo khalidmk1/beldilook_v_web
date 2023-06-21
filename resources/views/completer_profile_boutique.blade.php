@@ -1,6 +1,22 @@
 @extends('navbar')
 @section('content')
 
+<style>
+  .btn_ajouter{
+      background-color: #212951;
+      border: #212951;
+      width: 100px;
+      font-size: 17px;
+      color: white;
+      height: 40px;
+      border-radius: 30px;
+  }
+
+  .btn_ajouter:hover{
+      background-color: #283991;
+      border: #283991;
+  }
+</style>
 
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
@@ -205,7 +221,7 @@
         @enderror
       </div>
 
-      <button type="submit" class="btn btn-primary">{{__('myaccount.valider')}} </button>
+      <button type="submit" class="btn_ajouter">{{__('myaccount.valider')}} </button>
     </form>
   </div>
 
