@@ -7,6 +7,7 @@ return [
     'nouveau' => 'Nouveau',
     'filtre' => 'Filter',
     'sort' => 'Trier',
-    'afficher_plus' => 'Afficher plus'
+    'afficher_plus' => 'Afficher plus',
+    'titre' => 'Offres de vente'
 ]
 ?>
