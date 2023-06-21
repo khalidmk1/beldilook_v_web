@@ -165,17 +165,17 @@
 
     
 
-
-    <div class=" containe container mt-2 ">
+<div style="background:#EFEFEF;  padding-top:40px; padding-bottom:80px;">
+    <div class="containe container" style="margin-top:45px;">
       @if (App::getlocale() == 'ar')
-      <h1 class=" title_botique"  style="padding-left: 13%; color:#263066;text-align:end ;font-size: 29px;">{{ __('boutique_une.titre') }}</h1>
+      <h1 class=" title_botique d-flex justify-content-center"  style="color:#263066;text-align:end;">{{ __('boutique_une.titre') }}</h1>
   @else
-      <h1 class="title_botique" style="padding-left: 13%; color:#263066;text-align:start ;font-size: 29px;">{{ __('boutique_une.titre') }}</h1>
+      <h1 class="title_botique d-flex justify-content-center" style="color:#263066;text-align:start ;">{{ __('boutique_une.titre') }}</h1>
   @endif
         {{ csrf_field() }}
-        <div class="scrollable-tabs-container container border border-dark " style="max-width: 740px;">
+        <div class="scrollable-tabs-container container" style="max-width: 740px; margin-top:32px;">
         
-            <div class="left-arrow d-none">
+            <div class="left-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -211,7 +211,7 @@
 
             </ul>
 
-            <div class="right-arrow active d-none">
+            <div class="right-arrow active">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -220,9 +220,10 @@
         </div>
 
     </div>
+</div>
 
     <!-- div articles -->
-    <div id="div_articles">
+    <div id="div_articles" style="margin-top: 40px; margin-bottom:20px;">
 
         @if (count($articles) == 0)
             <div class="container">
@@ -243,6 +244,7 @@
             @else
                 <div class="container">
                     <p @if (App::getlocale() == 'ar') style="text-align: end" @endif>
+                    <img src="{{asset('storage/icon-article-shop.png')}}" class="image_obligatoire" style="height:30px;"  alt="icon-article">
                         {{ count($articles) . ' ' . __('boutique_une.articles_trouve') }}</p>
                 </div>
             @endif
@@ -258,8 +260,8 @@
 
 
 
-        <div class="container">
-            <div class="row " style="padding-top:30px">
+        <div class="container articles_boutique_une">
+            <div class="row " style="">
 
 
 
@@ -281,8 +283,8 @@
       
             <div class="card-body p-2  ">
              
-              <h5 class="card-title mb-1 @if(App::getlocale()=="ar") text-right @endif"  @if(App::getlocale()=="ar") dir="rtl" @endif >{{$article['Libelle']}}</h5>
-              <p style="font-size: 14px" class=" @if(App::getlocale()=="ar") text-right d-flex justify-content-end  @endif  card-text mb-1  " >  
+              <h5 class="card-title mb-2 @if(App::getlocale()=="ar") text-right @endif"  @if(App::getlocale()=="ar") dir="rtl" @endif >{{$article['Libelle']}}</h5>
+              <p style="font-size: 14px; margin-bottom:0;" class=" @if(App::getlocale()=="ar") text-right d-flex justify-content-end  @endif  card-text " >  
                 {{$article['Prix']}} 
                 <span class="ml-1"> DH</span> 
             </p>
@@ -322,7 +324,7 @@
           <b class="float-right">{{__('boutique_une.etat')}} </b><b class="float-right" style="padding-right: 4px;padding-left:4px">  :  </b><b class="float-right"> {{$article['etat_tenu']}} </b>
          </div>
          <div style="padding-top: 30px">
-          <button onclick="window.location = '{{route('details_produit',$article['IDArticles'])}}'"  id="btn_suivi" class="btn btn-primary btn_suivi float-left" >{{__('boutique_une.consulter')}}</button>
+          <button onclick="window.location = '{{route('details_produit',$article['IDArticles'])}}'"  id="btn_suivi" class="btn btn-primary btn_suivi float-left" style="" >{{__('boutique_une.consulter')}}</button>
          </div>
       </div>
              
