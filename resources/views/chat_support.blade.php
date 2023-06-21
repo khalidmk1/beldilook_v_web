@@ -7,7 +7,31 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 
 
+<style>
+      .loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #B09636;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  position: relative;
+  left: 35%;
+}
 
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
 <!-- Modal  envoi image -->
 
 
@@ -54,7 +78,21 @@
 
 
 
+<div class="modal" id="modal_loading" tabindex="-1" role="dialog" data-backdrop="static" >
+  <div class="modal-dialog modal-dialog-centered" role="document" >
+    <div class="modal-content" style="background-color: transparent;border:transparent">
+    
+      <div class="modal-body">
+        <div style="align-items: center;position:relative">
 
+          <div class="loader"></div>
+        </div>
+        
+      </div>
+     
+    </div>
+  </div>
+</div>
 
 
 
@@ -185,13 +223,13 @@ nb_ligne=data.length;
       if(nb_ligne_prec!=0){
       var x = document.getElementById("snackbar");
        
-       x.className = "show col";
+      // x.className = "show col";
        
       
       
       
        
-       setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+       //setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
       }
       
     }
@@ -240,7 +278,7 @@ function send_message(){
 
 function send_message_image(){
 
-
+  $('#modal_loading').modal('show');
 $('#msg_image').ajaxForm({
           beforeSend:function(){
           
@@ -259,13 +297,13 @@ $('#msg_image').ajaxForm({
             $('#exampleModal_message_image').modal('hide')
             fetch_data();
             go_to_top();
-                  
+            $('#modal_loading').modal('hide');
               
               
           },
           error:function(data2)
           { console.log(data2)
-            
+            $('#modal_loading').modal('hide');
 
           }
           
