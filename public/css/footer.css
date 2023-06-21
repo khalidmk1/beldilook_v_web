@@ -636,3 +636,17 @@ border-top-right-radius: 15px;
   font-weight:600;
   letter-spacing: .2px;
 }
+
+
+
+/*** Page nouveauté ***/
+@media  (min-width: 992px) {
+
+.nouveaute_page_container .width_card
+{
+  padding: .5rem !important;
+
+  margin-bottom:10px;
+}
+
+}

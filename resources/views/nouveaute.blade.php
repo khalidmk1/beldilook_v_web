@@ -12,7 +12,7 @@
 
 <div class="col" id="snackbar">Some text some message..</div>
 
-<div class="container items">
+<div class="container nouveaute_page_container items">
     <br>
     <h1 style="color:#263066;"  @if(App::getlocale()=="ar") style="text-align: end ;color:#263066;" @endif>{{__('nav.nouveaute')}}</h1>
     <div class="row " style="padding-top:30px">
