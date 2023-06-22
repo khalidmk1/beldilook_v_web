@@ -43,6 +43,7 @@ width:400px;
   .container_explorer img
   {
       height:300px;
+      
       object-fit:cover;
       border-radius:30px;
   }
@@ -54,6 +55,7 @@ width:400px;
 
   .container_explorer .card
   {
+    width:450px;
     position:relative;
     border:none;
   }
@@ -81,8 +83,8 @@ width:400px;
   left: 0;
   width: 100%;
   height: 60%;
-  background: linear-gradient(to top, rgba(196,170,75,1)
-, rgba(196,170,75,0) 
+  background: linear-gradient(to top, rgba(38,48,102,1) 
+, rgba(38,48,102,0) 
 );
   z-index: 199;
 }
@@ -100,14 +102,14 @@ width:400px;
 @else
 <h1  style="padding: 20px;color:#263066;text-align:start">{{__('nav.explorer')}}</h1>
 @endif
-  <div class="row pt-5" style="    max-width: 846px;
+  <div class="row pt-2" style="    max-width: 980px;
   margin: auto;
 ">
     @foreach ($collection as $item)
     <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12 p-3">
       <div class="card">
         <a href="{{route('produit_collection',$item['id_type_tag'])}}" style="position: relative ; z-index: 100;">
-          <img class="card-img " src="{{$item['image_type']}}" alt="tags">
+          <img class="card-img img-fluid " src="{{$item['image_type']}}" alt="tags">
         
         <div class="card-img-overlay text-white d-flex flex-column justify-content-end gradient-background-text">
           <h4 style="position: relative ; z-index: 200;" class="card-title">{{$item['Libelle']}}</h4>
