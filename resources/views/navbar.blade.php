@@ -422,7 +422,7 @@ $user=Session::get('user');
   </div>
 
   @if(URL()->full() != route('chat_support') )
-  <footer>
+  <footer class="mt-3">
 		<div class=" container-fluid footer ">
 			<div class="row justify-content-center mr-0 @if(App::getlocale() == "ar") flex-row-reverse @endif">
 				<div class="footer-col  col-xl-3 col-lg-4 col-md-6 col-12 ">

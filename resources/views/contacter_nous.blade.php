@@ -192,7 +192,7 @@
 <div>
 
 </div>
-
+<div class="container">
 <div style="background-color:#EFEFEF; padding-top:50px;" class="foire_au_questions">
 
 <h1 style="text-align: center">{{__('contacter_nous.foire_aux_question')}} 
@@ -358,6 +358,8 @@
 
 
     </div>
+</div>
+</div>
 </div>
 
 <script>

@@ -58,6 +58,14 @@ width: 300px;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.border_social{
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    max-width: 697px;
+    margin: auto;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+}
 
 
 </style>
@@ -212,7 +220,25 @@ width: 300px;
   <div class="row p-2 " style="row-gap: 27px;">
     <div class="col  col-xl-3 col-lg-3 col-md-12 col-sm-12 d-flex flex-column justify-content-around">
 
-      <div class="slidecontainer row m-0 p-0 ">
+      <div class="row slidecontainer">
+        <div class="col">
+          <p style="font-weight: 500;" > 
+            Min <span style="font-size:15px" id="pix_minimum"> </span> </p>
+        </div>
+        <div class="col">
+          <p class=" RadialProgress radian  ">
+            <span style="font-size:15px" id="demo"></span> 
+            <span style="font-size: 15px ; margin-left: 2px"> Max</span>
+          </p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col pr-0">
+          <input class="progress_input slider slider_min  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" /></div>
+        <div class="col pl-0"> 
+          <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> </div>
+      </div>
+
+      {{-- <div class="slidecontainer row m-0 p-0 ">
         <div class="col d-flex flex-column justify-content-center p-0">
           <p  style="font-weight: 500;"> Min
             <span style="font-size:15px" id="pix_minimum"> </span> 
@@ -231,7 +257,7 @@ width: 300px;
           <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> 
         </div>
        
-      </div>
+      </div> --}}
      
     
     <div>
@@ -629,11 +655,12 @@ width: 300px;
 
 
 
-  <div class="container" id="resau_social" >
-    <div class="row">
-      <div class="col-12 p-2">
-        <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
-      </div>
+  <div class="container p-3" id="resau_social" >
+    <div class="col-12 p-2">
+      <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
+    </div>
+    <div class="row p-3  border_social" >
+     
       <div class="col-sm text-center p-2 ">
         @if($boutique_info['lien_facebook']!='')
         <a style="display: inline;text-decoration:none ; color: black" class="a_blue" href="{{$boutique_info['lien_facebook']}}" target="_blank">    
@@ -735,7 +762,8 @@ width: 300px;
            <div >{{__('boutiqua.notre_local')}} </div>
         </a>
       </div>
-    </div>
+  
+    </d>
   </div>
 
 

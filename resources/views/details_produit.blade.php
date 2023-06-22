@@ -7,14 +7,41 @@
 <style>
   .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
   .w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
+  .selected{
+    border: #EFEFEF 1px solid;
+    background-color: #EFEFEF;
+    color: #212529;
+    padding: 10px;
+    border-radius: 10px;
+  
+    
+  }
+  .tags{
+    display: inline-block;
+    margin-right: 12px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    cursor: pointer;
+    min-width: 50px;
+    padding: 10px 27px;
+  }
 
+  @media screen and (max-width:768px) {
+    .image_principal{
+      margin-top: 13px;
+    }
+  .img_chontio {
+    margin: 1rem 0 1rem 0 ;
+    padding: 0 0 0 0 !important;
+  }
+}
 </style>
 
 <div class="col"  id="snackbar">Some text some message..</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"></h5>
@@ -42,11 +69,174 @@
   </div>
 </div>
 
+<div class="container">
+  {{ csrf_field() }}
+<input name="article_id" type="hidden"  value="{{$idarticle}}">
+@if ($article['smessage']=='non trouvé')
+ <div style="text-align: center;padding-top: 15%">{{__('nav.article_non_trouve')}}</div> 
+@else
+
+    <div class="row justify-content-center">
+    <div class="col-sm col-lg-3">
+     <div class="row justify-content-center ">
+      <div class="col-12 text-center">
+        <h1 class="p-2" style="font-size: 30px;">{{$article['sNom_produit']}}</h1>
+      </div>
+      <div class="col-12  text-center">
+  @php
+        $etoile=$rate['moyenne_etoile'];
+        $etoile=intval($etoile);
+        @endphp
+         @if($etoile==0)
+         <i class="star stargrey fas fa-star" data-index="0"></i>
+         <i class="star stargrey fas fa-star" data-index="1"></i>
+         <i class="star stargrey fas fa-star" data-index="2"></i>
+         <i class="star stargrey fas fa-star" data-index="3"></i>
+         <i class="star stargrey fas fa-star" data-index="4"></i>
+         @endif
+        @if($etoile==1)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star stargrey fas fa-star" data-index="1"></i>
+        <i class="star stargrey fas fa-star" data-index="2"></i>
+        <i class="star stargrey fas fa-star" data-index="3"></i>
+        <i class="star stargrey fas fa-star" data-index="4"></i>
+        @endif
+        @if($etoile==2)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star yellow fas fa-star" data-index="1"></i>
+        <i class="star stargrey fas fa-star" data-index="2"></i>
+        <i class="star stargrey fas fa-star" data-index="3"></i>
+        <i class="star stargrey fas fa-star" data-index="4"></i>
+        @endif
+        @if($etoile==3)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star yellow fas fa-star" data-index="1"></i>
+        <i class="star yellow fas fa-star" data-index="2"></i>
+        <i class="star stargrey fas fa-star" data-index="3"></i>
+        <i class="star stargrey fas fa-star" data-index="4"></i>
+        @endif
+        @if($etoile==4)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star yellow fas fa-star" data-index="1"></i>
+        <i class="star yellow fas fa-star" data-index="2"></i>
+        <i class="star yellow fas fa-star" data-index="3"></i>
+        <i class="star stargrey fas fa-star" data-index="4"></i>
+        @endif
+        @if($etoile==5)
+        <i class="star yellow fas fa-star" data-index="0"></i>
+        <i class="star yellow fas fa-star" data-index="1"></i>
+        <i class="star yellow fas fa-star" data-index="2"></i>
+        <i class="star yellow fas fa-star" data-index="3"></i>
+        <i class="star yellow fas fa-star" data-index="4"></i>
+        @endif
+        <span class="star1" style="font-size: 12px ;display:inline"> {{$rate['nb_avis']." ".__('page_details_produit.avis')}}</span>
+       
+      </div>
+
+      <div class="col-12  ">
+       <div class="row justify-content-center align-items-center">
+       @if ($article['tag1'] != "")
+       <div class=" tags selected "> {{$article['tag1']}}</div>
+       @endif
+     @if ($article['tag2'] != "")
+     <div class=" tags selected">{{$article['tag2']}}</div>
+     @endif
+     @if ($article['tag3'] != "")
+     <div class=" tags selected  ">{{$article['tag3']}}</div>
+     @endif
+     @if ($article['tag4'] != "")
+     <div class=" tags selected  ">{{$article['tag4']}}</div>
+     @endif
+    
+       </div>
+      
+    
+      </div>
+     </div>
+    </div>
+    <div class="col-sm col-lg-4 p-0">
+      @if($article['sPhoto1']!="")
+    
+      <img id="image_principal"  class = "img-responsive image_principal w-100"  src="{{$article['sPhoto1']}}">
+
+    @endif
+    </div>
+    <div class="col col-lg-1 pl-lg-1 pl-xl-1 pl-md-1 pl-sm  ">
+      <div class="row flex-xl-column flex-lg-column flex-md-row   flex-sm-row">
+        <div class="col">
+          @if($article['sPhoto1']!="")
+          <img  onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto1']}}">
+        @endif
+        </div>
+        <div class="col">
+          @if($article['sPhoto2']!="")
+        
+          <img  onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto2']}}">
+       
+        @endif
+        </div>
+        <div class="col">
+          @if($article['sPhoto3']!="")
+           
+          <img onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto3']}}">
+      
+        @endif
+        </div>
+        <div class="col">
+          @if($article['sPhoto4']!="")
+         
+          <img onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto4']}}">
+       
+        @endif
+        </div>
+        <div class="col">
+          @if($article['sPhoto5']!="")
+          
+          <img  onclick="change_image(this.src)" class="img_chontio" src="{{$article['sPhoto5']}}">
+        
+        @endif
+        </div>
+      </div>
+    </div>
+    <div class="col-sm col-lg-4 d-flex align-items-center ">
+     <div class="row align-items-center">
+      <div class="col-12">
+        <p>
+          {{$article['sDescription']}}
+        </p>
+      </div>
+      <div class="col-12 price">
+        <span  id="prix"></span>
+      </div>
+      @php
+        $tailles=$article['tabTaille_produit'];
+        $couleurs=$tailles[0];
+        @endphp
+      <div class="col-12 taille">
+        @foreach($tailles as $taille)
+        <span classe="black" onclick="get_color('{{$taille['sLib_taille']}}')">{{$taille["sLib_taille"]}}</span>
+        @endforeach
+      </div>
+      <div class="col-12 colors" id="couleur_produit">
+        @foreach($couleurs['tabCouleur'] as $couleur)
+        <span class="black" onclick="get_prix('{{$couleur['rPrix']}}')" style="background-color: {{$couleur['sHtml_couleur']}};cursor:pointer"></span>
+        @endforeach
+      </div>
+      <div class="col-12">
+        <button class="btn btn_add_cart mt-2 " data-toggle="modal" data-target="#exampleModal" type="submit">
+          <i class="fas fa-shopping-cart" ></i> {{__('nav.add_to_cart')}}
+      </button>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+{{-- @endif --}}
 
 
 
 
-<div class="containe" style="display: flex;justify-content: center; margin-top:20px">
+{{-- <div class="containe" style="display: flex;justify-content: center; margin-top:20px">
 
             
 {{ csrf_field() }}
@@ -201,7 +391,7 @@
     </div>
 </div>
 </div>
-</div>
+</div> --}}
 
 
 

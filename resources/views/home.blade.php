@@ -201,6 +201,15 @@
   font-size: 14px;
 }
 
+@media screen and (max-width: 540px) {
+  .img_search {
+    max-width: 43% !important;
+
+  }
+}
+
+
+
 
 
 </style>
@@ -522,11 +531,14 @@
         <input {{-- style="display: inline;width:50%;margin-left:20px;margin-right:20px" --}} id="search" name="search" class="form-control input-sm" id="inputsm" type="text" value="{{$search}}">
       </div>
 
- <div class="col position-absolute" style="right: 0"> 
+ <div class="col position-absolute img_search" style="right: 0;
+ display: flex;
+ align-items: center;
+ justify-content: start;
+ max-width: 35%;"> 
   <img onclick="valider_filtre('search')" src="{{asset('storage/searchbl_1.png')}}" style="cursor: pointer;
   position: absolute;
-  right: 32%;
-  bottom: -15px;
+
   background: white;
   padding: 3px;" alt="" height="30px" width="30px">
  </div>
@@ -551,10 +563,31 @@
 
 <div class="container" >
 
+ 
+    
+
   <div class="row p-2 " style="row-gap: 27px;">
     <div class="col  col-xl-3 col-lg-3 col-md-12 col-sm-12 d-flex flex-column justify-content-around">
 
-      <div class="slidecontainer row m-0 p-0 ">
+      <div class="row slidecontainer">
+        <div class="col">
+          <p style="font-weight: 500;" > 
+            Min <span style="font-size:15px" id="pix_minimum"> </span> </p>
+        </div>
+        <div class="col">
+          <p class=" RadialProgress radian  ">
+            <span style="font-size:15px" id="demo"></span> 
+            <span style="font-size: 15px ; margin-left: 2px"> Max</span>
+          </p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col pr-0">
+          <input class="progress_input slider slider_min  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" /></div>
+        <div class="col pl-0"> 
+          <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> </div>
+      </div>
+
+     {{--  <div class="slidecontainer row m-0 p-0 ">
         <div class="col d-flex flex-column justify-content-center p-0">
           <p style="font-weight: 500;" > Min
             <span style="font-size:15px" id="pix_minimum"> </span> </p>
@@ -571,7 +604,7 @@
           <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> 
         </div>
        
-      </div>
+      </div> --}}
      
     
     <div>

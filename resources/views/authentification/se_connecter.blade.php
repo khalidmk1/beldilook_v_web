@@ -223,7 +223,9 @@ width:45%;
      
           <div class="connect_link_container d-flex flex-row justify-content-between">
           <a @if(App::getlocale()=="ar") style="background-color:#fff;" @endif class="btn google_connect @if(App::getlocale()=="ar") float-right @endif" href="{{route('google_auth')}}" role="button" style="text-transform:none; background-color:#fff;">
-            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            <img  style="margin-bottom: 2px;
+            margin-right: 5px;
+            width: 13px;" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
             {{__('login.se_connecter_google')}}
           </a>
           
