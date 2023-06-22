@@ -125,6 +125,7 @@
   font-size:13px; 
   margin-top:5px;
   line-height:1.7rem;
+  width:100% !important;
 }
 }
 
