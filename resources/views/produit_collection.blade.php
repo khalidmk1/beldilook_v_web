@@ -384,7 +384,7 @@ width:400px;
               <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
               <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article['etat_tenu']}} </p>
               <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
-              <p class="mb-1"> <a href="{{route('boutiqua',$article['idutilisateurs'])}}">{{$article['nom_vendeur']}}</a></p>
+              <p class="mb-1"> <a href="{{route('boutiqua',$article['id_vendeur'])}}">{{$article['nom_vendeur']}}</a></p>
             </div>
           </div>
         </div>
