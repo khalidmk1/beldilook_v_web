@@ -38,30 +38,83 @@ font-size: 20px;
 background-color: rgb(0, 0, 0,0.5);
 width:400px;
   } */
+
+
+  .container_explorer img
+  {
+      height:300px;
+      object-fit:cover;
+      border-radius:30px;
+  }
+
+  .container_explorer{
+    padding-bottom:50px;
+    padding-top:60px; 
+  }
+
+  .container_explorer .card
+  {
+    position:relative;
+    border:none;
+  }
+  .container_explorer h1
+  {
+   color: #33286e;
+   font-size:60px;
+   font-weight:600;
+   display:flex;
+   justify-content:center;
+   
+  }
+
+  .container_explorer .card-title,
+  .container_explorer .card-text {
+  position: relative;
+  z-index: 2;
+}
+
+
+.gradient-background-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(196,170,75,1)
+, rgba(196,170,75,0) 
+);
+  z-index: 199;
+}
+.container_explorer .card{
+  border-radius:30px;
+  overflow:hidden
+}
 </style>
 
 
 
-<div class="container">
+<div class="container container_explorer">
   @if(App::getlocale()=="ar")
 <h1  style="padding: 20px;color:#263066;text-align:end">{{__('nav.explorer')}}</h1>
 @else
 <h1  style="padding: 20px;color:#263066;text-align:start">{{__('nav.explorer')}}</h1>
 @endif
-  <div class="row" style="    max-width: 846px;
+  <div class="row pt-5" style="    max-width: 846px;
   margin: auto;
 ">
     @foreach ($collection as $item)
-    <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12 p-2">
+    <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12 p-3">
       <div class="card">
         <a href="{{route('produit_collection',$item['id_type_tag'])}}" style="position: relative ; z-index: 100;">
           <img class="card-img " src="{{$item['image_type']}}" alt="tags">
-        </a>
-        <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+        
+        <div class="card-img-overlay text-white d-flex flex-column justify-content-end gradient-background-text">
           <h4 style="position: relative ; z-index: 200;" class="card-title">{{$item['Libelle']}}</h4>
           <p style="position: relative ; z-index: 200;" class="card-text">{{$item['description']}}
           </p>
         </div>
+        </a>
       </div>
     </div>
     @endforeach
