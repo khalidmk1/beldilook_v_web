@@ -61,7 +61,7 @@
     
 
     <div class="card-body p-2 ">
-      <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
+      <h5 class="card-title mb-1 mt-1" >{{$article['libellé']}}</h5>
       <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article['etat_tenu']}} </p>
       <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
     </div>

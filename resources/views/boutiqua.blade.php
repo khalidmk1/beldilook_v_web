@@ -67,7 +67,22 @@ width: 300px;
     color: var(--color-primary) !important;
 }
 
+@media screen and (max-width:1200px) {
 
+  .top_boutiqua_user .col
+  {
+    justify-content:center !important;
+  }
+  .top_boutiqua_user_container
+  {
+    width:100% !important;
+  }
+
+  .stars{
+    right:0px !important;
+  }
+  
+}
 </style>
 
 
@@ -120,9 +135,9 @@ width: 300px;
       </div>
     </div>
   </div>
-<div class="container pt-5">
-  <div class="row flex-column">
-    <div class="col" id="snackbar">Some text some message..</div>
+<div class="container mt-5">
+  <div class="row top_boutiqua_user_container  flex-row justify-content-center" style="margin:0 auto; width:44%;">
+    <div class="col-xl-5 col-12" id="snackbar">Some text some message..</div>
   <div style="text-align: center">
       @if($vendeur['photo']!='no' && $vendeur['photo']!='')
       <img id="image_p" style="border-radius: 50%" src="{{ $vendeur['photo'] }}" alt="" height="150px" width="150px">
@@ -131,12 +146,13 @@ width: 300px;
       @endif
   </div>
   
-  <div class="col text-center">
-   <div class="row p-2">
-    <div class="col-7 align-self-center d-flex justify-content-end pr-5 ">
+  <div class="col-xl-5 col-12 text-center" style="width:auto;">
+   <div class="row top_boutiqua_user p-2 flex-column">
+   <div class="col   d-flex justify-content-start"><h3>{{$vendeur['nom']}}</h3><img src="{{ asset('storage/verifier bl.png') }}" alt="" style="height: 29px; width: 30px;"></div>  
+    <div class="col  d-flex justify-content-start ">
       <a href="@if($rate_user['nb_avis']!=0) {{route('commentaires',$id_boutique)}} @else # @endif" style="text-decoration: none;color: black" class="a_blue" >
   
-        <div class="stars" style="padding-top: 10px ; ">
+        <div class="stars" style="margin-top: 5px ; position:relative; right:5px; ">
     
             <div>
                 <span class="star1" style="font-size: 17px ;display:inline"> {{$rate_user['nb_avis']." ".__('page_details_produit.avis')}}</span>
@@ -198,19 +214,12 @@ width: 300px;
     
         </a>
     </div>
-    <div class="col d-flex align-self-center justify-content-start" style="padding-top: 10px"><a href="#resau_social" style="color: #B09636">Contactez Nous</a></div>
-   </div>
+    <div class="col d-flex justify-content-start" style="padding-top: 10px"><a href="#resau_social" style="color: #B09636">Contactez Nous</a></div>
+ 
   </div>
+    </div>
   
-  <div class="col" style="text-align: center">
-      <div class="row">
-        <div class="col-7 align-self-center d-flex justify-content-end"><h3>{{$vendeur['nom']}}</h3></div>
-        <div class="col d-flex align-self-center justify-content-start">
-            <img src="{{ asset('storage/verifier bl.png') }}" alt="" style="height: 29px; width: 30px;">
-        </div>
-      </div>
-  </div>
-  
+ 
   </div>
 </div>
 <hr>
