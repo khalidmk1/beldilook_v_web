@@ -92,6 +92,13 @@ width:400px;
   border-radius:30px;
   overflow:hidden
 }
+
+.container_explorer .card h4{
+  font-size:30px;
+  font-weight:600;
+  letter-spacing:.1px;
+}
+
 </style>
 
 
