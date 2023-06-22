@@ -220,7 +220,25 @@ width: 300px;
   <div class="row p-2 " style="row-gap: 27px;">
     <div class="col  col-xl-3 col-lg-3 col-md-12 col-sm-12 d-flex flex-column justify-content-around">
 
-      <div class="slidecontainer row m-0 p-0 ">
+      <div class="row slidecontainer">
+        <div class="col">
+          <p style="font-weight: 500;" > 
+            Min <span style="font-size:15px" id="pix_minimum"> </span> </p>
+        </div>
+        <div class="col">
+          <p class=" RadialProgress radian  ">
+            <span style="font-size:15px" id="demo"></span> 
+            <span style="font-size: 15px ; margin-left: 2px"> Max</span>
+          </p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col pr-0">
+          <input class="progress_input slider slider_min  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" /></div>
+        <div class="col pl-0"> 
+          <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> </div>
+      </div>
+
+      {{-- <div class="slidecontainer row m-0 p-0 ">
         <div class="col d-flex flex-column justify-content-center p-0">
           <p  style="font-weight: 500;"> Min
             <span style="font-size:15px" id="pix_minimum"> </span> 
@@ -239,7 +257,7 @@ width: 300px;
           <input type="range" min="0" max="30000" value="0" class="slider  slider_max p-0 " id="myRange"> 
         </div>
        
-      </div>
+      </div> --}}
      
     
     <div>
