@@ -1,15 +1,14 @@
 .image_principal{
   height: 500px;
-  border-radius: 21px;
   width: 100%;
 }
 
 
 .img_chontio{
   cursor: pointer;
-  width: 77px;
-  height: 77px;
-  border-radius: 10px;
+  width: 51px;
+  height: 60px;
+  padding-bottom: 3px;
   object-fit: fill;
  }
 

@@ -629,11 +629,15 @@ width: 300px;
 
 
 
-  <div class="container" id="resau_social" >
-    <div class="row">
-      <div class="col-12 p-2">
-        <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
-      </div>
+  <div class="container p-3" id="resau_social" >
+    <div class="col-12 p-2">
+      <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
+    </div>
+    <div class="row p-3 " style="border: 1px solid;
+    border-radius: 20px;
+    max-width: 697px;
+    margin: auto;">
+     
       <div class="col-sm text-center p-2 ">
         @if($boutique_info['lien_facebook']!='')
         <a style="display: inline;text-decoration:none ; color: black" class="a_blue" href="{{$boutique_info['lien_facebook']}}" target="_blank">    
@@ -735,7 +739,8 @@ width: 300px;
            <div >{{__('boutiqua.notre_local')}} </div>
         </a>
       </div>
-    </div>
+  
+    </d>
   </div>
 
 
