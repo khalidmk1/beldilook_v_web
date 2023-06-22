@@ -40,6 +40,9 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+/**  */
+
+
 
 </style>
 <div class="modal" id="modal_loading" tabindex="-1" role="dialog" data-backdrop="static" >
@@ -518,11 +521,13 @@ console.log(error);
           </div>
   
   
-          <div class="col-md-9">
+          <div class="col-md-9 vendor_home_article_container">
   
             @if(count($articles)!=0)
             @if($articles[0]['nbr_articles']==1)
-            <div id="div_nb_article" style="padding-left: 15px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}</div>
+            <div id="div_nb_article" style="padding-left: 5px;margin-bottom:15px;">
+            <img src="{{asset('storage/icon-article-shop.png')}}" class="image_obligatoire" style="height:30px;"  alt="icon-article">
+            {{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}</div>
             @else
             <div id="div_nb_article" style="padding-left: 15px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}</div>
             @endif
@@ -539,7 +544,7 @@ console.log(error);
             
     @forelse ($articles as $article)
   
-  <div class="col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center ">
+  <div class="col-6 col-xl-4 col-lg-4 col-md-4 col-sm-6 d-flex  flex-column ">
     
        
     
@@ -571,7 +576,7 @@ console.log(error);
       
   
       <div class="card-body p-2 ">
-        <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
+        <h5 class="card-title mb-1 mt-1" >{{$article['libellé']}}</h5>
         <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article['etat_tenu']}} </p>
         <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
       </div>
@@ -668,7 +673,7 @@ console.log(error);
                   
                      
                   
-                  <div class="card card_content border-0">
+                  <div class="card card_content card_content_vendor border-0">
   
                   
                     
