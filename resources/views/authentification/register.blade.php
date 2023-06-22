@@ -135,7 +135,7 @@
 {
  color:#bbbbbb;
  position:relative;
- margin-top:20px;
+ margin-top:17px;
 }
 .or_separator::before,
 .or_separator::after {
@@ -172,7 +172,7 @@ width:45%;
   <div class="row" style="width:46%; margin:0 auto;">
     <div class="col-12">
     <h2 @if(App::getlocale()=="ar") style="text-align: end" @endif>{{__('register.creecompte')}} </h2>
-    <form action={{route('register')}} method="POST" class="form_register">
+    <form action={{route('register')}} method="POST" class="form_register pt-2">
       @csrf
       <div class="mb-3 mt-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
        
@@ -181,7 +181,7 @@ width:45%;
         @else
         <label for="pwd">{{__('myaccount.prenom')}} :</label>
         @endif
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ old('prenom') }}" required>
+        <input type="text" class="form-control  @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ old('prenom') }}" required>
         
         @error('prenom')
         <div class="invalid-feedback">{{$message}}</div>
@@ -195,7 +195,7 @@ width:45%;
         @else
         <label for="pwd">{{__('myaccount.nom')}} :</label>
         @endif
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{old('nom')}}" required>
+        <input type="text" class="form-control @error('nom') is-invalid @enderror" placeholder="" id="nom" name="nom" value="{{old('nom')}}" required>
        
         @error('nom')
         <div class="invalid-feedback">{{$message}}</div>
@@ -210,7 +210,7 @@ width:45%;
         <label for="pwd">{{__('login.email')}} :</label>
         @endif
 
-        <input type="email" class="form-control border-top-0 border-right-0 border-left-0 @error('email') is-invalid @enderror" id="email"  name="email" value="{{ old('email') }}" required>
+        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"  name="email" value="{{ old('email') }}" required>
         @error('email')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
@@ -221,16 +221,16 @@ width:45%;
         @else
         <label for="pwd">{{__('login.password')}} :</label>
         @endif
-        <input type="password" class="form-control border-top-0 border-right-0 border-left-0 @error('pswd') is-invalid @enderror" id="pwd"  name="pswd" value="{{ old('pswd') }}" required>
+        <input type="password" class="form-control  @error('pswd') is-invalid @enderror" id="pwd"  name="pswd" value="{{ old('pswd') }}" required>
         @error('pswd')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
       </div>
       <div @if(App::getlocale()=="ar")  style="direction: rtl;" @endif>
-      <button  @if(App::getlocale()=="ar") style="margin-left:5px; width:100%;" @endif  type="submit" style="width:100%;" class="btn btn-primary @if(App::getlocale()=="ar") float-right @endif">{{__('nav.register')}} </button>
+      <button  @if(App::getlocale()=="ar") style="width:100%;" @endif  type="submit" style="width:100%;" class="btn mt-4 btn-primary @if(App::getlocale()=="ar") float-right @endif">{{__('nav.register')}} </button>
       <div class="or_separator text-center">or</div>
       <div class="connect_link_container d-flex flex-row justify-content-between">
-      <a  @if(App::getlocale()=="ar") style="margin-left:5px; background-color:#fff; " @endif  class="btn google_connect @if(App::getlocale()=="ar") float-right @endif" href="{{route('google_auth')}}" role="button" style="text-transform:none; background-color:#fff;">
+      <a  @if(App::getlocale()=="ar") style="background-color:#fff; " @endif  class="btn google_connect @if(App::getlocale()=="ar") float-right @endif" href="{{route('google_auth')}}" role="button" style="text-transform:none; background-color:#fff;">
         <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
         {{__('login.se_connecter_google')}}
       </a>
