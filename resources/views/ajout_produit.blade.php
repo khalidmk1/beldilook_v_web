@@ -357,7 +357,7 @@
 
 
 
-
+<div class="container">
 @if(App::getlocale()=="ar")
 <h1  style="font-size: 28px !important;padding: 20px;color:#263066;text-align:end">{{__('ajout_produit.ajouter_produit')}}</h1>
 @else
@@ -668,6 +668,7 @@
 <br>
 <br>
 <div id="json_content"></div>
+</div>
 <script>
   
 var taille_selected="S";

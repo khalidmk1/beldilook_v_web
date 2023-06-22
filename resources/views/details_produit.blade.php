@@ -135,10 +135,19 @@
 
       <div class="col-12  ">
        <div class="row justify-content-center align-items-center">
-        <div class=" tags selected "> {{$article['tag1']}}</div>
-        <div class=" tags selected">{{$article['tag2']}}</div>
-        <div class=" tags selected  ">{{$article['tag3']}}</div>
-        <div class=" tags selected  ">{{$article['tag4']}}</div>
+       @if ($article['tag1'] != "")
+       <div class=" tags selected "> {{$article['tag1']}}</div>
+       @endif
+     @if ($article['tag2'] != "")
+     <div class=" tags selected">{{$article['tag2']}}</div>
+     @endif
+     @if ($article['tag3'] != "")
+     <div class=" tags selected  ">{{$article['tag3']}}</div>
+     @endif
+     @if ($article['tag4'] != "")
+     <div class=" tags selected  ">{{$article['tag4']}}</div>
+     @endif
+    
        </div>
       
     

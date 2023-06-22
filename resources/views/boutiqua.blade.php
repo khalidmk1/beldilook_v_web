@@ -58,6 +58,14 @@ width: 300px;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.border_social{
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    max-width: 697px;
+    margin: auto;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+}
 
 
 </style>
@@ -633,10 +641,7 @@ width: 300px;
     <div class="col-12 p-2">
       <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
     </div>
-    <div class="row p-3 " style="border: 1px solid;
-    border-radius: 20px;
-    max-width: 697px;
-    margin: auto;">
+    <div class="row p-3  border_social" >
      
       <div class="col-sm text-center p-2 ">
         @if($boutique_info['lien_facebook']!='')
