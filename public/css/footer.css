@@ -698,9 +698,11 @@ padding-top:10px !important;
 .vendor_home_article_container .card_content
 {
   padding-bottom:4px;
+  margin-bottom:24px;
 }
 
-.vendor_home_article_container .bottomright
+.vendor_home_article_container .bottomright,
+.vendor_home_article_container .bottomleft
 {
-  bottom:33.3%;
+  bottom:33%;
 }

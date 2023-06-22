@@ -120,7 +120,7 @@ width: 300px;
       </div>
     </div>
   </div>
-<div class="container">
+<div class="container pt-5">
   <div class="row flex-column">
     <div class="col" id="snackbar">Some text some message..</div>
   <div style="text-align: center">
@@ -469,13 +469,17 @@ width: 300px;
         </div>
 
 
-        <div class="col-md-9">
+        <div class="col-md-9 vendor_home_article_container">
 
           @if(count($articles)!=0)
           @if($articles[0]['nbr_articles']==1)
-          <div id="div_nb_article" style="padding-left: 15px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}</div>
+          <div id="div_nb_article" style="padding-left: 15px;margin-bottom:10px;">
+          <img src="{{asset('storage/icon-article-shop.png')}}" class="image_obligatoire" style="height:30px;"  alt="icon-article">
+          {{$articles[0]['nbr_articles'].' '.__('produit_collection.article')}}</div>
           @else
-          <div id="div_nb_article" style="padding-left: 15px;margin-bottom:10px;">{{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}</div>
+          <div id="div_nb_article" style="padding-left: 15px;margin-bottom:10px;">
+          <img src="{{asset('storage/icon-article-shop.png')}}" class="image_obligatoire" style="height:30px;"  alt="icon-article">
+          {{$articles[0]['nbr_articles'].' '.__('produit_collection.articles')}}</div>
           @endif
          @endif
          
@@ -522,7 +526,7 @@ width: 300px;
     
 
     <div class="card-body p-2 ">
-      <h5 class="card-title mb-1 " >{{$article['libellé']}}</h5>
+      <h5 class="card-title mb-1 mt-1" >{{$article['libellé']}}</h5>
       <p style="font-size: 14px" class="card-text mb-1"> {{__('boutique_une.etat')}} : {{$article['etat_tenu']}} </p>
       <p style="font-size: 14px" class="card-text mb-1">{{$article['prix']." DH"}}</p>
     </div>

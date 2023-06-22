@@ -544,7 +544,7 @@ console.log(error);
             
     @forelse ($articles as $article)
   
-  <div class="col-6 col-xl-4 col-lg-4 col-md-4 col-sm-6 d-flex  flex-column ">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xl-4  d-flex  flex-column align-items-center">
     
        
     
