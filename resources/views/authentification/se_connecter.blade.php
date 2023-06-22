@@ -56,7 +56,7 @@
   text-decoration:none;
   color: #bbbbbb;
   font-size:15px;
-  font-family:var(--font-secondary);
+  
   
 }
 .form_connect .mot_de_pass_oublie_txt a:hover
@@ -88,7 +88,7 @@
   border: solid 1px #dadada;
   border-radius:10px;
   font-size:14px;
-  line-height:1.5rem;
+  line-height:1.7rem;
   width:240px !important;
 
 }
@@ -99,6 +99,14 @@
   background-color: #3B5998;
   opacity: 0.70;
   text-decoration: none;
+}
+
+.form_connect .fa-facebook
+{
+  font-size:18px;
+  position:relative;
+  top:2px;
+  
 }
 
 @media screen and (max-width:1160px) {
@@ -124,7 +132,6 @@
 {
   font-size:13px; 
   margin-top:5px;
-  line-height:1.7rem;
   width:100% !important;
 }
 }
