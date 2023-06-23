@@ -119,8 +119,8 @@
 
         .img_stor {
         
-    object-fit: contain;
-    height:100%;
+    object-fit: cover;
+    height:400px;
     width: 100%;
     
   
@@ -200,7 +200,7 @@
     <div class="modal fade" id="Modal_image" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true" style="margin: 0 auto; ">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content" style="">
+            <div class="modal-content" style="height:580px;">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <button onclick="close_story()" type="button" class="close">
@@ -208,7 +208,7 @@
                     </button>
 
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" >
                     <div style="">  <!--  -->
                         <div id="progress" class="w3-white" style="height:7px;width:0%"></div>
                     </div>
@@ -218,7 +218,7 @@
                         <div id="name_user" style="display: inline;padding-left:5px;color:#212529;">test</div>
                     </div>
                     
-                    <div style="text-align: center; "><img onclick="detail_produit()" id="image_popup"
+                    <div style="text-align: center; height:80%; width:100%;"><img onclick="detail_produit()" id="image_popup"
                             src="{{ asset('storage/A_black_image.jpg') }}" class="img_stor img-fluid">
                         <div onclick="right()" class="div_right"></div>
                         <div onclick="left()" class="div_left"> </div>
@@ -387,7 +387,7 @@
                 }
 
 
-                if (progr == 100) {
+                if (progr == 100000) {
                     console.log(i);
                     console.log(data2.length);
                     progr = 0;
