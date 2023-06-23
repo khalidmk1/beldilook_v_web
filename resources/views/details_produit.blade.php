@@ -27,6 +27,10 @@
     padding: 10px 27px;
   }
 
+  .image_principal{
+    object-fit: cover;
+  }
+
   @media screen and (max-width:768px) {
     .image_principal{
       margin-top: 13px;
@@ -36,7 +40,16 @@
     padding: 0 0 0 0 !important;
   }
 }
+
+.price_card{
+  color: #000000;
+    font-size: 16px;
+  
+   
+}
 </style>
+
+
 
 <div class="col"  id="snackbar">Some text some message..</div>
 
@@ -78,60 +91,64 @@
 @else
 
     <div class="row justify-content-center ">
-    <div class="col-sm col-lg-3">
+    <div class="col-sm col-lg-3 ">
      <div class="row justify-content-center" >
-      <div class="col-12 text-center">
-        <h1 class="p-2" style="font-size: 30px;">{{$article['sNom_produit']}}</h1>
-      </div>
+      
       <div class="col-12  text-center">
-  @php
-        $etoile=$rate['moyenne_etoile'];
-        $etoile=intval($etoile);
-        @endphp
-         @if($etoile==0)
-         <i class="star stargrey fas fa-star" data-index="0"></i>
-         <i class="star stargrey fas fa-star" data-index="1"></i>
-         <i class="star stargrey fas fa-star" data-index="2"></i>
-         <i class="star stargrey fas fa-star" data-index="3"></i>
-         <i class="star stargrey fas fa-star" data-index="4"></i>
-         @endif
-        @if($etoile==1)
-        <i class="star yellow fas fa-star" data-index="0"></i>
-        <i class="star stargrey fas fa-star" data-index="1"></i>
-        <i class="star stargrey fas fa-star" data-index="2"></i>
-        <i class="star stargrey fas fa-star" data-index="3"></i>
-        <i class="star stargrey fas fa-star" data-index="4"></i>
-        @endif
-        @if($etoile==2)
-        <i class="star yellow fas fa-star" data-index="0"></i>
-        <i class="star yellow fas fa-star" data-index="1"></i>
-        <i class="star stargrey fas fa-star" data-index="2"></i>
-        <i class="star stargrey fas fa-star" data-index="3"></i>
-        <i class="star stargrey fas fa-star" data-index="4"></i>
-        @endif
-        @if($etoile==3)
-        <i class="star yellow fas fa-star" data-index="0"></i>
-        <i class="star yellow fas fa-star" data-index="1"></i>
-        <i class="star yellow fas fa-star" data-index="2"></i>
-        <i class="star stargrey fas fa-star" data-index="3"></i>
-        <i class="star stargrey fas fa-star" data-index="4"></i>
-        @endif
-        @if($etoile==4)
-        <i class="star yellow fas fa-star" data-index="0"></i>
-        <i class="star yellow fas fa-star" data-index="1"></i>
-        <i class="star yellow fas fa-star" data-index="2"></i>
-        <i class="star yellow fas fa-star" data-index="3"></i>
-        <i class="star stargrey fas fa-star" data-index="4"></i>
-        @endif
-        @if($etoile==5)
-        <i class="star yellow fas fa-star" data-index="0"></i>
-        <i class="star yellow fas fa-star" data-index="1"></i>
-        <i class="star yellow fas fa-star" data-index="2"></i>
-        <i class="star yellow fas fa-star" data-index="3"></i>
-        <i class="star yellow fas fa-star" data-index="4"></i>
-        @endif
-        <span class="star1" style="font-size: 12px ;display:inline"> {{$rate['nb_avis']." ".__('page_details_produit.avis')}}</span>
-       
+        <div class="row">
+          <div class="col-12"><h5>Avis :</h5></div>
+          <div class="col-12">
+            @php
+            $etoile=$rate['moyenne_etoile'];
+            $etoile=intval($etoile);
+            @endphp
+             @if($etoile==0)
+             <i class="star stargrey fas fa-star" data-index="0"></i>
+             <i class="star stargrey fas fa-star" data-index="1"></i>
+             <i class="star stargrey fas fa-star" data-index="2"></i>
+             <i class="star stargrey fas fa-star" data-index="3"></i>
+             <i class="star stargrey fas fa-star" data-index="4"></i>
+             @endif
+            @if($etoile==1)
+            <i class="star yellow fas fa-star" data-index="0"></i>
+            <i class="star stargrey fas fa-star" data-index="1"></i>
+            <i class="star stargrey fas fa-star" data-index="2"></i>
+            <i class="star stargrey fas fa-star" data-index="3"></i>
+            <i class="star stargrey fas fa-star" data-index="4"></i>
+            @endif
+            @if($etoile==2)
+            <i class="star yellow fas fa-star" data-index="0"></i>
+            <i class="star yellow fas fa-star" data-index="1"></i>
+            <i class="star stargrey fas fa-star" data-index="2"></i>
+            <i class="star stargrey fas fa-star" data-index="3"></i>
+            <i class="star stargrey fas fa-star" data-index="4"></i>
+            @endif
+            @if($etoile==3)
+            <i class="star yellow fas fa-star" data-index="0"></i>
+            <i class="star yellow fas fa-star" data-index="1"></i>
+            <i class="star yellow fas fa-star" data-index="2"></i>
+            <i class="star stargrey fas fa-star" data-index="3"></i>
+            <i class="star stargrey fas fa-star" data-index="4"></i>
+            @endif
+            @if($etoile==4)
+            <i class="star yellow fas fa-star" data-index="0"></i>
+            <i class="star yellow fas fa-star" data-index="1"></i>
+            <i class="star yellow fas fa-star" data-index="2"></i>
+            <i class="star yellow fas fa-star" data-index="3"></i>
+            <i class="star stargrey fas fa-star" data-index="4"></i>
+            @endif
+            @if($etoile==5)
+            <i class="star yellow fas fa-star" data-index="0"></i>
+            <i class="star yellow fas fa-star" data-index="1"></i>
+            <i class="star yellow fas fa-star" data-index="2"></i>
+            <i class="star yellow fas fa-star" data-index="3"></i>
+            <i class="star yellow fas fa-star" data-index="4"></i>
+            @endif
+            <span class="star1" style="font-size: 12px ;display:inline"> {{$rate['nb_avis']." ".__('page_details_produit.avis')}}</span>
+           
+          </div>
+        </div>
+ 
       </div>
 
       <div class="col-12  ">
@@ -158,7 +175,7 @@
     <div class="col-sm col-lg-4 p-0">
       @if($article['sPhoto1']!="")
     
-      <img id="image_principal"  class = "img-responsive image_principal w-100"  src="{{$article['sPhoto1']}}">
+      <img id="image_principal"  class = "img-responsive image_principal w-100 "  src="{{$article['sPhoto1']}}">
 
     @endif
     </div>
@@ -201,29 +218,59 @@
     </div>
     <div class="col-sm col-lg-4 d-flex align-items-start ">
      <div class="row align-items-center">
-      <div class="col-12">
-        <p>
-          {{$article['sDescription']}}
-        </p>
+      <div class="col-12 text-center">
+        <h1 class="p-2" style="font-size: 30px;">{{$article['sNom_produit']}}</h1>
       </div>
-      <div class="col-12 price">
-        <span  id="prix"></span>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12"><h5>Description :</h5></div>
+          <div class="col-12">
+            <p>
+              {{$article['sDescription']}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 ">
+        <div class="col p-0">
+          <h5>prix : <span style="font-size: 11px;">(selectionner une couleur pour avoir le prix )</span></h5>
+          
+        </div>
+        <div class="col price p-0">
+          <span id="prix" class="price_card"></span>
+        </div>
       </div>
       <hr class="border w-100 m-0">
       @php
         $tailles=$article['tabTaille_produit'];
+       
         $couleurs=$tailles[0];
+       
         @endphp
-      <div class="col-12 taille">
-        @foreach($tailles as $taille)
-        <span classe="black" onclick="get_color('{{$taille['sLib_taille']}}')">{{$taille["sLib_taille"]}}</span>
-        @endforeach
+      <div class="col-12  mt-2">
+        <div class="row">
+          <div class="col-12"><h5>Taille :</h5></div>
+          <div class="col-12 taille">
+            @foreach($tailles as $taille)
+            <span classe="black " onclick="get_color('{{$taille['sLib_taille']}}')">{{$taille["sLib_taille"]}}</span>
+            @endforeach
+          </div>
+         
+        </div>
+      
       </div>
       <hr class="border w-100 m-0">
-      <div class="col-12 colors" id="couleur_produit">
-        @foreach($couleurs['tabCouleur'] as $couleur)
+      <div class="col-12 colors mt-2" id="couleur_produit">
+        <div class="row">
+          <div class="col-12"><h5>Couleur :</h5></div>
+          <div class="col-12">
+            @foreach($couleurs['tabCouleur'] as $couleur)
         <span class="black" onclick="get_prix('{{$couleur['rPrix']}}')" style="background-color: {{$couleur['sHtml_couleur']}};cursor:pointer"></span>
         @endforeach
+          </div>
+         
+        </div>
+       
       </div>
       <div class="col-12">
         <button class="btn btn_add_cart mt-2 " data-toggle="modal" data-target="#exampleModal" type="submit">
@@ -710,7 +757,7 @@ console.log(error);
 
 function myFunction(item) {
   var su="'"+item['rPrix']+"'";
-  var d='<span class="black" onclick="get_prix('+su+')" style="background-color: '+item['sHtml_couleur']+';cursor:pointer"></span>'
+  var d='<span class="black " onclick="get_prix('+su+')" style=" ; background-color: '+item['sHtml_couleur']+';cursor:pointer"></span>'
   sum += d;
 }
 console.log(sum);
