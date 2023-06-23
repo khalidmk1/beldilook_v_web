@@ -22,7 +22,7 @@
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
-<div class="container mt-3">
+<div class="container mt-3 mb-5">
     <h2>{{__('myaccount.title')}} </h2>
     <form action={{route('modifier_compte')}} method="POST" enctype="multipart/form-data">
       @csrf
