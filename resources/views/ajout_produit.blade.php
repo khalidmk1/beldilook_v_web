@@ -138,19 +138,20 @@
   left: 35%;
 }
 .btn_ajouter{
-        background-color: #212951;
-        border: #212951;
-        width: 80px;
-        font-size: 17px;
-        width: 100px;
-        color: white;
-        height: 40px;
-        border-radius: 30px;
+  color:#fff;
+  background-color: var(--color-primary);
+  border: solid 2px transparent;
+  border-radius:10px;
+  padding:8px;
+  margin-bottom:20px;
     }
 
     .btn_ajouter:hover{
-        background-color: #283991;
-        border: #283991;
+       
+  background:#EFEFEF;
+  color:var(--color-primary);
+  border: solid 2px var(--color-primary);
+  transition:.2s;
     }
 /* Safari */
 @-webkit-keyframes spin {
@@ -162,6 +163,39 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.input_style input{
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+    font-weight: 400 !important;
+}
+.input_style select{
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+    font-weight: 400 !important;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
 
   </style>
 
@@ -357,11 +391,17 @@
 
 
 
-<div class="container">
+<div class="container input_style">
 @if(App::getlocale()=="ar")
-<h1  style="font-size: 28px !important;padding: 20px;color:#263066;text-align:end">{{__('ajout_produit.ajouter_produit')}}</h1>
+<h1  style="    color: #263066;
+text-align: center;
+margin-bottom: 20px;
+margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 @else
-<h1  style="font-size: 28px !important; padding: 20px;color:#263066;text-align:start">{{__('ajout_produit.ajouter_produit')}}</h1>
+<h1  style="color: #263066; font-size: 2.5rem;
+text-align: center;
+margin-bottom: 20px;
+margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 @endif
 
 
