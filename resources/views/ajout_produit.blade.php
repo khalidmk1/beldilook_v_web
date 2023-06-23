@@ -433,9 +433,9 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 
 <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <label for="name_product"> : {{__('ajout_produit.nom_produit')}}</label>
+    <label id="name_product_label" for="name_product"> : {{__('ajout_produit.nom_produit')}}</label>
     @else
-    <label for="name_product">{{__('ajout_produit.nom_produit')}} :</label>
+    <label id="name_product_label" for="name_product">{{__('ajout_produit.nom_produit')}} :</label>
     @endif
     
     <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control in_contact " id="name_product" placeholder="" name="name_product" value="">
@@ -447,9 +447,9 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <label for="categorie">: {{__('ajout_produit.categorie')}}</label>
+    <label id="categorie_label" for="categorie">: {{__('ajout_produit.categorie')}}</label>
     @else
-    <label for="categorie">{{__('ajout_produit.categorie')}} :</label>
+    <label id="categorie_label" for="categorie">{{__('ajout_produit.categorie')}} :</label>
     @endif
     <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="categorie" name="categorie" required>
       <option selected></option>
@@ -471,9 +471,9 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <label for="genre">: {{__('ajout_produit.genre')}}</label>
+    <label id="genre_label" for="genre">: {{__('ajout_produit.genre')}}</label>
     @else
-    <label for="genre">{{__('ajout_produit.genre')}} :</label>
+    <label id="genre_label" for="genre">{{__('ajout_produit.genre')}} :</label>
     @endif
     <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="genre" name="genre" required>
     
@@ -498,9 +498,9 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-        <label for="tissue">: {{__('ajout_produit.tissue')}}</label>
+        <label id="tissue_label" for="tissue">: {{__('ajout_produit.tissue')}}</label>
         @else
-        <label for="tissue"> {{__('ajout_produit.tissue')}} :</label>
+        <label id="tissue_label" for="tissue"> {{__('ajout_produit.tissue')}} :</label>
         @endif
     <select @if(App::getlocale()=="ar") style="text-align: end" @endif  class="form-select form-control in_contact" aria-label="Default select example" id="tissue" name="tissue" required>
       <option selected></option>
@@ -523,9 +523,9 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <label for="etat_tenue">: {{__('ajout_produit.etat_tenue')}}</label>
+    <label id="etat_tenue_label" for="etat_tenue">: {{__('ajout_produit.etat_tenue')}}</label>
     @else
-    <label for="etat_tenue">{{__('ajout_produit.etat_tenue')}} :</label>
+    <label id="etat_tenue_label" for="etat_tenue">{{__('ajout_produit.etat_tenue')}} :</label>
     @endif
     <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control in_contact" aria-label="Default select example" id="etat_tenue" name="etat_tenue" required>
       <option selected></option>
@@ -546,9 +546,9 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     <div @if(App::getlocale()=="ar")  style="text-align: end" @endif>
       @if(App::getlocale()=="ar")
-      <label for="Description">: {{__('mes_achats.description')}}</label>
+      <label id="description_label" for="description">: {{__('mes_achats.description')}}</label>
       @else
-      <label for="Description">{{__('mes_achats.description')}} :</label>
+      <label id="description_label"  for="description">{{__('mes_achats.description')}} :</label>
       @endif
     </div>
   <textarea @if(App::getlocale()=="ar") style="text-align: end ;" @else  style="" @endif required class="form-control  " id="description"  name="description" rows="3" id="description"></textarea>
@@ -964,9 +964,9 @@ if(bool_qte_prix==true)
 
 if(view_to_scroll!="")
 {
-  document.getElementById(view_to_scroll).scrollIntoView();
-  var d=window.scrollY-100;
-  window.scrollTo(0, d);
+  document.getElementById(view_to_scroll+'_label').scrollIntoView();
+  //var d=window.scrollY-100;
+  //window.scrollTo(0, d);
   return
 }else{
   if(bool_qte_prix==true)
