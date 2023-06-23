@@ -5,7 +5,7 @@ return [
     'notre_local' => 'متجري',
     'visite_virtuelle' => 'جولة افتراضية',
     'voir_plus' => 'شاهد المزيد',
-    'auncune_photo' => 'لا توجد صورة',
+    'aucune_photo' => 'لا توجد صورة',
     'ajouter' => 'اضف',
     'ajouter_images_locale' => 'أضف صور المحل ',
     'max_trois_images' => 'يمكنك إضافة 3 صور!!',
