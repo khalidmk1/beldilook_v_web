@@ -408,7 +408,7 @@
 
 
 
-<div class="container ajout_produit_contain input_style" style="width:50%;">
+<div class="container ajout_produit_contain input_style mt-5" style="width:50%;">
 @if(App::getlocale()=="ar")
 <h1  style="    color: #263066;
 text-align: center;
