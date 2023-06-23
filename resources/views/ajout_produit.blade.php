@@ -164,7 +164,8 @@
   100% { transform: rotate(360deg); }
 }
 
-.input_style input{
+.input_style input,
+.input_style textarea {
   border: solid var(--color-primary) 1px;
     border-radius: 10px;
     margin-top: 5px;
@@ -407,7 +408,7 @@
 
 
 
-<div class="container ajout_produit_contain input_style" style="width:50%;">
+<div class="container ajout_produit_contain input_style mt-5" style="width:50%;">
 @if(App::getlocale()=="ar")
 <h1  style="    color: #263066;
 text-align: center;
@@ -541,7 +542,7 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
       <label for="Description">{{__('mes_achats.description')}} :</label>
       @endif
     </div>
-  <textarea @if(App::getlocale()=="ar") style="text-align: end ;border-bottom: 1px solid grey;" @else  style="border: 1px solid grey;" @endif required class="form-control  " id="description"  name="description" rows="3" id="description"></textarea>
+  <textarea @if(App::getlocale()=="ar") style="text-align: end ;" @else  style="" @endif required class="form-control  " id="description"  name="description" rows="3" id="description"></textarea>
   <div class="invalid-feedback" id="span_description"></div>
   </div>
 
