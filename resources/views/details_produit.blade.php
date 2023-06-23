@@ -223,7 +223,7 @@
       </div>
       <div class="col-12">
         <div class="row">
-          <div class="col-12"><h5>Description :</h5></div>
+          <div class="col-12"><h5>{{__('boutique_une.titre_description')}} :</h5></div>
           <div class="col-12">
             <p>
               {{$article['sDescription']}}
@@ -233,7 +233,7 @@
       </div>
       <div class="col-12 ">
         <div class="col p-0">
-          <h5>prix : <span style="font-size: 11px;">(Sélectionner une couleur pour avoir le prix)</span></h5>
+          <h5>{{__('boutique_une.titre_prix')}} : <span style="font-size: 11px;">({{__('boutique_une.description_prix')}})</span></h5>
           
         </div>
         <div class="col price p-0">
@@ -249,7 +249,7 @@
         @endphp
       <div class="col-12  mt-2">
         <div class="row">
-          <div class="col-12"><h5>Taille :</h5></div>
+          <div class="col-12"><h5>{{__('boutique_une.titre_taille')}} :</h5></div>
           <div class="col-12 taille">
             @foreach($tailles as $taille)
             <span classe="black " onclick="get_color('{{$taille['sLib_taille']}}')">{{$taille["sLib_taille"]}}</span>
@@ -262,7 +262,7 @@
       <hr class="border w-100 m-0">
       <div class="col-12 colors mt-2" id="couleur_produit">
         <div class="row">
-          <div class="col-12"><h5>Couleur :</h5></div>
+          <div class="col-12"><h5>{{__('boutique_une.titre_couleur')}} :</h5></div>
           <div class="col-12">
             @foreach($couleurs['tabCouleur'] as $couleur)
         <span class="black" onclick="get_prix('{{$couleur['rPrix']}}')" style="background-color: {{$couleur['sHtml_couleur']}};cursor:pointer"></span>
