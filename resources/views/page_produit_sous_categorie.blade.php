@@ -7,27 +7,35 @@
 <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 
 
+<style>
+    .cont_title h1
+    {
+        font-size:40px;
+        font-weight:600;
+        letter-spacing:.1px;
+    }
 
+</style>
 
 
 <div class="col" id="snackbar">Some text some message..</div>
 
-<div class="container">
-    <h1 style="color:#263066" >{{$lib_type_tag}}</h1>
+<div class="container cont_title mt-5 mb-2">
+    <h1 style="color:#263066" class="text-center" >{{$lib_type_tag}}</h1>
 
-<h5 style="color:#263066" >{{$lib_tag}}</h5>
+<h5 style="color:#bd8c2f" class="text-center" >{{$lib_tag}}</h5>
 </div>
 
 
 
-<div class="container items">
+<div class="container items articles_boutique_une">
     
    
     <div class="row " style="padding-top:10px">
         {{ csrf_field() }}
           
                 @forelse ($articles as $article)
-              <div class="col  width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
+              <div class="width_card col-lg-3 col-md-4 col-sm-6 col-6 p-1 d-flex justify-content-center">
                 
                    
                 
