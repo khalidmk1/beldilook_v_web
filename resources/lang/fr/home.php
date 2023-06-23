@@ -8,6 +8,7 @@ return [
     'filtre' => 'Filter',
     'sort' => 'Trier',
     'afficher_plus' => 'Afficher plus',
-    'titre' => 'Offres de vente'
+    'titre' => 'Offres de vente',
+    'btn_ajouter_produit' =>'ajouter produit'
 ]
 ?>

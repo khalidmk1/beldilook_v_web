@@ -23,7 +23,7 @@
         border: #212951;
         width: 80px;
         font-size: 17px;
-        width: 100px;
+        width: 192px;
         color: white;
         height: 40px;
         border-radius: 30px;
@@ -131,7 +131,7 @@ width: 300px;
 <br>
 <div style="text-align: center">
 
-<button class="btn_ajouter" style="margin-bottom:10px;" onclick="window.location='{{route('ajout_produit')}}'">{{__('boutiqua.ajouter')}}</button>
+<button class="btn_ajouter" style="margin-bottom:10px;" onclick="window.location='{{route('ajout_produit')}}'">{{__('home.btn_ajouter_produit')}}</button>
 </div>
 <br>
 @if($pack['pack']=='GOLD' || $pack['pack']=='SILVER')

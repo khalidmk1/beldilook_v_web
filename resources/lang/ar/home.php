@@ -8,6 +8,7 @@ return [
     'filtre' => 'فرز',
     'sort' => 'صنف',
     'afficher_plus' => 'أظهر المزيد',
-    'titre' => 'عروض البيع'
+    'titre' => 'عروض البيع',
+  'btn_ajouter_produit' => ' أضف منتج'
 ]
 ?>
