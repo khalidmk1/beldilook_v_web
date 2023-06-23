@@ -100,7 +100,7 @@ width: 300px;
 @endif
 
 @if($pack['pack']=='GOLD')
-<div style="position: relative;"><div  style="width: 100%;height:150px;background-color:#B3961E"><strong style="position: absolute;bottom:3px;left:15px;color:white;font-size:40px;">{{__('boutiqua.pack_gold')}}</strong></div>
+<div style="position: relative;" class="d-flex justify-content-center"><div  style="width: 100%;height:150px;background-color:#B3961E"><strong style="position: absolute;bottom:3px;left:15px;color:white;font-size:40px;">{{__('boutiqua.pack_gold')}}</strong></div>
 </div>
 
 @endif
@@ -131,14 +131,14 @@ width: 300px;
 <br>
 <div style="text-align: center">
 
-<button class="btn_ajouter" onclick="window.location='{{route('ajout_produit')}}'">{{__('boutiqua.ajouter')}}</button>
+<button class="btn_ajouter" style="margin-bottom:10px;" onclick="window.location='{{route('ajout_produit')}}'">{{__('boutiqua.ajouter')}}</button>
 </div>
 <br>
 @if($pack['pack']=='GOLD' || $pack['pack']=='SILVER')
 @if(App::getlocale()=="ar")
-<h3 style="padding: 10px;text-align:end">{{__('boutiqua.ajouter_images_locale')}} </h3>
+<h3 style="padding: 10px;" class="text-center">{{__('boutiqua.ajouter_images_locale')}} </h3>
 @else
-<h3 style="padding: 10px;">{{__('boutiqua.ajouter_images_locale')}} </h3>
+<h3 style="padding: 10px;" class="text-center">{{__('boutiqua.ajouter_images_locale')}} </h3>
 @endif
 
 <div id="photos_local" style="text-align: center">
@@ -184,7 +184,7 @@ width: 300px;
 <div class="col-6 " style="text-align: end"><h5  style="margin: 40px 0px 0px 0px;color:#263066;text-align:end;display:inline;position: relative;top:10px">@if($pack['pack']=='GOLD') {{__('boutiqua.reseau_sociaux')}} @endif</h5>
 </div>
 @else
-<div class="col-6 "><h5  style="margin: 40px 0px 0px 0px;color:#263066;text-align:start;display:inline;position: relative;top:10px">@if($pack['pack']=='GOLD') {{__('boutiqua.reseau_sociaux')}} @endif</h5>
+<div class="col-6 "><h5  style="font-size:25px;margin: 40px 0px 0px 0px;color:#263066;text-align:start;display:inline;position: relative;top:10px">@if($pack['pack']=='GOLD') {{__('boutiqua.reseau_sociaux')}} @endif</h5>
 </div>
 @endif
 @if(App::getlocale()=="ar")
@@ -330,6 +330,8 @@ width: 300px;
 <br>
 <br>
 
+<div class="container">
+  
 <form action="{{route('modifier_ma_boutique')}}" method="post">
 @csrf
     <input type="hidden" id="photol1" name="photol1" value="{{ $info_social['photol1'] }}">
@@ -338,9 +340,9 @@ width: 300px;
 @if($pack['pack']=='GOLD')
 <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <img src="{{ asset('storage/facebbok.png') }}" style="margin-right: 10px"  alt="" height="30px" width="30px"><label for="facebook">  Facebook</label> 
+    <img src="{{ asset('storage/facebook-app-symbol.png') }}" style="margin-right: 5px; margin-bottom:5px;"  alt="" height="23px" width="23px"><label for="facebook">  Facebook</label> 
     @else
-    <label for="facebook">Facebook </label> <img src="{{ asset('storage/facebbok.png') }}" alt="" height="30px" width="30px">
+    <img src="{{ asset('storage/facebook-app-symbol.png') }}" alt="" style=" margin-bottom:5px;" height="23px" width="23px"> <label for="facebook">Facebook </label> 
     @endif
     
     <input @if(App::getlocale()=="ar") style="text-align: end;margin-top:10px;" @else style="margin-top:10px;" @endif type="text" class="form-control " id="facebook" placeholder="" name="facebook" value="{{ $info_social['lienface'] }}">
@@ -350,9 +352,9 @@ width: 300px;
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <img src="{{ asset('storage/youtube.png') }}" style="margin-right: 10px"  alt="" height="30px" width="30px"><label for="youtube">  Youtube</label> 
+    <img src="{{ asset('storage/youtube-symbol.png') }}" style="margin-right: 10px"  alt="" height="30px" width="30px"><label for="youtube">  Youtube</label> 
     @else
-    <label for="youtube">Youtube </label> <img src="{{ asset('storage/youtube.png') }}" alt="" height="30px" width="30px">
+     <img src="{{ asset('storage/youtube-symbol.png') }}" alt="" height="30px" width="30px"> <label for="youtube" style="margin-left:5px;">Youtube </label>
     @endif
     
     <input @if(App::getlocale()=="ar") style="text-align: end;margin-top:10px;" @else style="margin-top:10px;" @endif type="text" class="form-control " id="youtube" placeholder="" name="youtube" value="{{ $info_social['lienyout'] }}">
@@ -362,9 +364,9 @@ width: 300px;
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <img src="{{ asset('storage/snapcaht.png') }}" style="margin-right: 10px" alt="" height="30px" width="30px"><label for="snapshat">  Snapshat</label> 
+    <img src="{{ asset('storage/snapchat.png') }}" style="margin-right: 10px" alt="" height="28px" width="28px"><label for="snapshat">  Snapchat</label> 
     @else
-    <label for="snapshat">Snapshat </label> <img src="{{ asset('storage/snapcaht.png') }}" alt="" height="30px" width="30px">
+     <img src="{{ asset('storage/snapchat.png') }}" alt="" height="28px" width="28px"> <label for="snapshat" style="margin-left:3px;">Snapchat </label>
     @endif
     
     <input @if(App::getlocale()=="ar") style="text-align: end;margin-top:10px;" @else style="margin-top:10px;" @endif type="text" class="form-control " id="snapshat" placeholder="" name="snapshat" value="{{ $info_social['liensnap'] }}">
@@ -373,9 +375,9 @@ width: 300px;
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <img src="{{ asset('storage/Linkdin.png') }}" style="margin-right: 10px" alt="" height="30px" width="30px"><label for="linkdin">  Linkdin</label> 
+    <img src="{{ asset('storage/linkedin-symbol.png') }}" style="margin-right: 10px;margin-bottom:10px;" alt="" height="24px" width="24px"><label for="linkdin">  Linked-in</label> 
     @else
-    <label for="linkdin">Linkdin </label> <img src="{{ asset('storage/Linkdin.png') }}" alt="" height="30px" width="30px">
+     <img src="{{ asset('storage/linkedin-symbol.png') }}" alt="" height="24px" width="24px" style="margin-right:8px;margin-bottom:12px;"><label for="linkdin" >Linked-in </label>
     @endif
     
     <input @if(App::getlocale()=="ar") style="text-align: end;margin-top:10px;" @else style="margin-top:10px;" @endif type="text" class="form-control " id="linkdin" placeholder="" name="linkdin" value="{{ $info_social['lienlink'] }}">
@@ -384,9 +386,9 @@ width: 300px;
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <img src="{{ asset('storage/insta.png') }}" style="margin-right: 10px" alt="" height="30px" width="30px"><label for="instagram">  Instagram</label> 
+    <img src="{{ asset('storage/instagram.png') }}" style="margin-right: 10px" alt="" height="25px" width="25px"><label for="instagram">  Instagram</label> 
     @else
-    <label for="instagram">Instagram </label> <img src="{{ asset('storage/insta.png') }}" alt="" height="30px" width="30px">
+    <img src="{{ asset('storage/instagram.png') }}" alt="" height="25px" width="25px" style="margin-right:5px;"> <label for="instagram">Instagram </label> 
     @endif
     
     <input @if(App::getlocale()=="ar") style="text-align: end;margin-top:10px;" @else style="margin-top:10px;" @endif type="text" class="form-control " id="instagram" placeholder="" name="instagram" value="{{ $info_social['lieninst'] }}">
@@ -395,9 +397,9 @@ width: 300px;
 
   <div class="mb-3 mt-3 ml-3 mr-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
     @if(App::getlocale()=="ar")
-    <img src="{{ asset('storage/tiktok.png') }}" style="margin-right: 10px" alt="" height="30px" width="30px"><label for="tiktok">  Tiktok</label> 
+    <img src="{{ asset('storage/tik-tok.png') }}" style="margin-right: 10px" alt="" height="25px" width="25px" style="margin-bottom:3px;"><label for="tiktok">  Tiktok</label> 
     @else
-    <label for="tiktok">Tiktok </label> <img src="{{ asset('storage/tiktok.png') }}" alt="" height="30px" width="30px">
+    <img src="{{ asset('storage/tik-tok.png') }}" alt="" height="25px" width="25px" style="margin-right:8px; margin-bottom:3px;"><label for="tiktok">Tiktok </label> 
     @endif
     
     <input @if(App::getlocale()=="ar") style="text-align: end;margin-top:10px;" @else style="margin-top:10px;" @endif type="text" class="form-control " id="tiktok" placeholder="" name="tiktok" value="{{ $info_social['lienti'] }}">
@@ -440,6 +442,7 @@ width: 300px;
   <br>
 
 </form>
+</div>
 
 <script>
 function select_image()
