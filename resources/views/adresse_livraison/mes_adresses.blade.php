@@ -52,10 +52,10 @@
 </div>
 
 
-<div class="container mt-3">
+<div class="container mt-5 mb-5">
 
     <div class="col-md-12  text-right">
-        <button class="btn_ajouter" onclick="window.location='{{route('get_add_adresses')}}'">{{__('adresses_livraison.ajouter')}}</button>
+        <button class="btn_ajouter mt-2" onclick="window.location='{{route('get_add_adresses')}}'">{{__('adresses_livraison.ajouter')}}</button>
 {{--         <a class="btn btn-primary" href="{{route('get_add_adresses')}}">{{__('adresses_livraison.ajouter')}}</a>
  --}}    </div>
 <h5>{{__('adresses_livraison.titre')}}</h5>
