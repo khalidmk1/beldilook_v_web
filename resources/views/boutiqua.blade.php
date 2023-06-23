@@ -194,7 +194,7 @@ width: 300px;
     </div>
   </div>
 <div class="container mt-5">
-  <div class="row top_boutiqua_user_container  flex-row justify-content-center" style="margin:0 auto; width:44%;">
+  <div class="row top_boutiqua_user_container  flex-row justify-content-center" style="margin:0 auto; width:45%;">
     <div class="col-xl-5 col-12" id="snackbar">Some text some message..</div>
   <div style="text-align: center">
       @if($vendeur['photo']!='no' && $vendeur['photo']!='')
