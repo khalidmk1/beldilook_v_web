@@ -21,6 +21,7 @@
     margin-right: 12px;
     letter-spacing: 1px;
     margin-top: 10px;
+    font-size: 11px;
     cursor: pointer;
     min-width: 50px;
     padding: 10px 27px;
@@ -76,9 +77,9 @@
  <div style="text-align: center;padding-top: 15%">{{__('nav.article_non_trouve')}}</div> 
 @else
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center ">
     <div class="col-sm col-lg-3">
-     <div class="row justify-content-center ">
+     <div class="row justify-content-center" >
       <div class="col-12 text-center">
         <h1 class="p-2" style="font-size: 30px;">{{$article['sNom_produit']}}</h1>
       </div>
@@ -134,7 +135,7 @@
       </div>
 
       <div class="col-12  ">
-       <div class="row justify-content-center align-items-center">
+       <div class="row justify-content-start align-items-center">
        @if ($article['tag1'] != "")
        <div class=" tags selected "> {{$article['tag1']}}</div>
        @endif
@@ -198,7 +199,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm col-lg-4 d-flex align-items-center ">
+    <div class="col-sm col-lg-4 d-flex align-items-start ">
      <div class="row align-items-center">
       <div class="col-12">
         <p>
@@ -208,6 +209,7 @@
       <div class="col-12 price">
         <span  id="prix"></span>
       </div>
+      <hr class="border w-100 m-0">
       @php
         $tailles=$article['tabTaille_produit'];
         $couleurs=$tailles[0];
@@ -217,6 +219,7 @@
         <span classe="black" onclick="get_color('{{$taille['sLib_taille']}}')">{{$taille["sLib_taille"]}}</span>
         @endforeach
       </div>
+      <hr class="border w-100 m-0">
       <div class="col-12 colors" id="couleur_produit">
         @foreach($couleurs['tabCouleur'] as $couleur)
         <span class="black" onclick="get_prix('{{$couleur['rPrix']}}')" style="background-color: {{$couleur['sHtml_couleur']}};cursor:pointer"></span>

@@ -5,7 +5,7 @@ return [
     'notre_local' => 'Notre locale',
     'visite_virtuelle' => 'Visite virtuelle',
     'voir_plus' => 'Voir plus',
-    'auncune_photo' => 'Aucune photo',
+    'aucune_photo' => 'Aucune photo',
     'ajouter' => 'Ajouter',
     'ajouter_images_locale' => 'Ajouter Images locale',
     'max_trois_images' => 'Vous pouvez ajouter que 3 images !!',

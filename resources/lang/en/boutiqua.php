@@ -5,7 +5,7 @@ return [
     'notre_local' => 'Our shop',
     'visite_virtuelle' => 'Virtual tour',
     'voir_plus' => 'see more',
-    'auncune_photo' => 'No picture',
+    'aucune_photo' => 'No picture',
     'ajouter' => 'Add',
     'ajouter_images_locale' => 'Add Shop images',
     'max_trois_images' => 'You can add that 3 images !!',
