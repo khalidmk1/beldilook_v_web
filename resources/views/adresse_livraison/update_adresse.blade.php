@@ -15,16 +15,37 @@
       background-color: #283991;
       border: #283991;
   }
-</style>
-<div class="container mt-3">
 
-    <h2 @if(App::getlocale()=="ar") style="text-align: end" @endif>{{__('adresses_livraison.add_adresse')}} </h2>
-    <form action={{route('update_adresse',$adresse['id'])}} method="POST">
+
+  .input_style input,
+.input_style textarea,
+.input_style select {
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+    font-weight: 400 !important;
+}
+
+@media screen and (max-width:900px) {
+  
+  .container_add_livraison
+  {
+    width:80% !important;
+  }
+  
+}
+
+</style>
+<div class="container container_add_livraison mt-5 mb-5 input_style" style="width:45%; margin:0 auto;">
+
+    <h2 class="text-center" @if(App::getlocale()=="ar") style="" @endif>{{__('adresses_livraison.add_adresse')}} </h2>
+    <form action={{route('update_adresse',$adresse['id'])}} method="POST" class="mt-5">
       @csrf
       <div class="mb-3 mt-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
         <label for="adresse">{{__('adresses_livraison.adresse')}} :</label>
        
-        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('adresse') is-invalid @enderror" id="adresse"  name="adresse" value="{{ old('adresse',$adresse['adresse']) }}" required>
+        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control  @error('adresse') is-invalid @enderror" id="adresse"  name="adresse" value="{{ old('adresse',$adresse['adresse']) }}" required>
         
         @error('adresse')
         <div class="invalid-feedback">{{$message}}</div>
@@ -36,7 +57,7 @@
       <div class="mb-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
         <label for="ville">{{__('adresses_livraison.ville')}} :</label>
        
-        <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control border-top-0 border-right-0 border-left-0 @error('ville') is-invalid @enderror" aria-label="Default select example" id="ville" name="ville" required onchange="select_ville()">
+        <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control @error('ville') is-invalid @enderror" aria-label="Default select example" id="ville" name="ville" required onchange="select_ville()">
           <option selected></option>
         @foreach ($villes as $ville)
         @if(old('ville')==null)
@@ -59,7 +80,7 @@
       <div class="mb-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
         <label for="secteur">{{__('adresses_livraison.secteur')}} :</label>
        
-        <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control border-top-0 border-right-0 border-left-0 @error('secteur') is-invalid @enderror" aria-label="Default select example" id="secteur" name="secteur" required>
+        <select @if(App::getlocale()=="ar") style="text-align: end" @endif class="form-select form-control  @error('secteur') is-invalid @enderror" aria-label="Default select example" id="secteur" name="secteur" required>
           <option selected></option> 
           @foreach ($secteurs as $secteur)
           @if(old('secteur')==null)
@@ -93,7 +114,7 @@
 
       <div class="mb-3 mt-3" @if(App::getlocale()=="ar") style="text-align: end" @endif>
         <label for="code_postal">{{__('adresses_livraison.code_postal')}} :</label>
-        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control border-top-0 border-right-0 border-left-0
+        <input @if(App::getlocale()=="ar") style="text-align: end" @endif type="text" class="form-control
          @error('code_postal') is-invalid @enderror" id="code_postal"  name="code_postal" value="{{ old('code_postal',$adresse['code_postal']) }}" required>
         @error('code_postal')
         <div class="invalid-feedback">{{$message}}</div>
