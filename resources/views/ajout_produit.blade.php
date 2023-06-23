@@ -196,6 +196,22 @@
 }
 
 
+@media screen and (max-width:960px)
+{
+  .ajout_produit_contain 
+  {
+    width:70% !important;
+  }
+}
+
+@media screen and (max-width:600px)
+{
+  .ajout_produit_contain 
+  {
+    width:85% !important;
+  }
+}
+
 
   </style>
 
@@ -391,7 +407,7 @@
 
 
 
-<div class="container input_style">
+<div class="container ajout_produit_contain input_style" style="width:50%;">
 @if(App::getlocale()=="ar")
 <h1  style="    color: #263066;
 text-align: center;
