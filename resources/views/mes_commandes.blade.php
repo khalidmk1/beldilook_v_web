@@ -253,7 +253,7 @@
     <div class="row">
         <div class="col-0 "></div>
         <div class="col-8">
-           <b>{{__('mes_achats.le')}} : {{$commande['DateCommande']}}</b>
+           {{__('mes_achats.le')}} : {{$commande['DateCommande']}}
         </div>
     </div>
     <div class="row" style="padding-top: 10px">
@@ -290,7 +290,7 @@
         }
     @endphp
        <div  style="padding-top: 30px">
-        <b>{{__('mes_achats.status')}} : {{$statut}}</b>
+        <b>{{__('mes_achats.status')}}</b> : {{$statut}}
        </div>
        <div style="padding-top: 30px">
         <button id="btn_suivi" value="{{route('suivi_commande',$commande['sId_commande'])}}" class="btn btn-primary float-right btn_suivi" >{{__('mes_achats.suivi')}}</button>
