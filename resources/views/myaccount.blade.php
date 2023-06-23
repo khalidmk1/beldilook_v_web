@@ -3,28 +3,72 @@
 
 <style>
 
-  .btn_ajouter{
-        background-color: #212951;
-        border: #212951;
-        width: 100px;
-        font-size: 17px;
-        color: white;
-        height: 40px;
-        border-radius: 30px;
+ 
+    .input_style input,
+.input_style textarea {
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+    font-weight: 400 !important;
+}
+.input_style select{
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+    font-weight: 400 !important;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn_valider{
+  color:#fff;
+  background-color: var(--color-primary);
+  border: solid 2px transparent;
+  border-radius:10px;
+  padding:8px;
+  margin-bottom:20px;
     }
-  
-    .btn_ajouter:hover{
-        background-color: #283991;
-        border: #283991;
+
+    .btn_valider:hover{
+       
+  background:#EFEFEF;
+  color:var(--color-primary);
+  border: solid 2px var(--color-primary);
+  transition:.2s;
     }
+
+    .container_form{
+      max-width: 886px;
+    }
+
+    
+
+
+
   </style>
 
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
-<div class="container mt-3 mb-5">
-    <h2>{{__('myaccount.title')}} </h2>
-    <form action={{route('modifier_compte')}} method="POST" enctype="multipart/form-data">
+<div class="container  mt-5 ajout_produit_contain input_style">
+    <h2 class="text-center" style="color: #212951">{{__('myaccount.title')}} </h2>
+    <form class="container_form m-auto" action={{route('modifier_compte')}} method="POST" enctype="multipart/form-data">
       @csrf
     <div class="row justify-content-center">
       <div class="col" style="text-align: center">
@@ -38,9 +82,9 @@
        <div class="col position-absolute d-flex justify-content-center h-30">
         <img src="{{asset('storage/change-icon-png-0.jpg')}}" class="position-absolute" style="bottom: 80px;" height="40" alt="">
        @if(old('image')==null)
-       <input name="image" type='file' style="height: 201px; z-index: 100; opacity: 0;" class="border-top-0 border-right-0 border-left-0 " accept="image/*" onchange="readURL(this);" />
+       <input name="image" type='file' style="height: 201px; z-index: 100; opacity: 0;"  accept="image/*" onchange="readURL(this);" />
        @else
-       <input value="{{old('image')}}" style="height: 201px; z-index: 100; opacity:0" class="border-top-0 border-right-0 border-left-0" name="image" type='file' accept="image/*" onload="readURL(this)" onchange="readURL(this);" />
+       <input value="{{old('image')}}" style="height: 201px; z-index: 100; opacity:0" name="image" type='file' accept="image/*" onload="readURL(this)" onchange="readURL(this);" />
        @endif
        @error('image')
        <div style="color: red">{{$message}}</div>
@@ -50,15 +94,15 @@
 
 
     <div class="mb-3">
-      <label for="sexe">{{__('myaccount.sexe')}} </label>
+      <label for="sexe">{{__('myaccount.sexe')}} :</label>
       @if(old('sexe')==null)
-      <select class="form-select form-control border-top-0 border-right-0 border-left-0 @error('sexe') is-invalid @enderror" aria-label="Default select example" id="sexe" name="sexe" required>
+      <select class="form-select form-control @error('sexe') is-invalid @enderror" aria-label="Default select example" id="sexe" name="sexe" required>
         <option selected ></option>
         <option value="1" @if ('H'==$data['Sexe']) {{"selected"}} @endif>Homme</option>
         <option value="2" @if ('F'==$data['Sexe']) {{"selected"}} @endif>Femme</option>
       </select>
       @else
-      <select class="form-select form-control border-top-0 border-right-0 border-left-0 @error('sexe') is-invalid @enderror" aria-label="Default select example" id="sexe" name="sexe" required>
+      <select class="form-select form-control @error('sexe') is-invalid @enderror" aria-label="Default select example" id="sexe" name="sexe" required>
         <option selected></option>
         <option value="1" @if ('1'==old('sexe')) {{"selected"}} @endif>Homme</option>
         <option value="2" @if ('2'==old('sexe'))  {{"selected"}} @endif>Femme</option>
@@ -71,11 +115,11 @@
     </div>
 
       <div class="mb-3 mt-3">
-        <label for="prenom">{{__('myaccount.prenom')}} </label>
+        <label for="prenom">{{__('myaccount.prenom')}} :</label>
         @if(old('prenom')==null)
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ $data['Prenom'] }}" required>
+        <input type="text" class="form-control  @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ $data['Prenom'] }}" required>
         @else
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ old('prenom') }}" required>
+        <input type="text" class="form-control @error('prenom') is-invalid @enderror" id="prenom"  name="prenom" value="{{ old('prenom') }}" required>
         @endif
         @error('prenom')
         <div class="invalid-feedback">{{$message}}</div>
@@ -83,11 +127,11 @@
       </div>
 
       <div class="mb-3">
-        <label for="nom">{{__('myaccount.nom')}} </label>
+        <label for="nom">{{__('myaccount.nom')}} :</label>
         @if(old('nom')==null)
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{$data['Nom']}}" required>
+        <input type="text" class="form-control @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{$data['Nom']}}" required>
         @else
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{old('nom')}}" required>
+        <input type="text" class="form-control @error('nom') is-invalid @enderror" id="nom" name="nom" value="{{old('nom')}}" required>
         @endif
         @error('nom')
         <div class="invalid-feedback">{{$message}}</div>
@@ -96,11 +140,11 @@
 
       
       <div class="mb-3">
-        <label for="telephone">{{__('myaccount.telephone')}} </label>
+        <label for="telephone">{{__('myaccount.telephone')}} :</label>
         @if(old('telephone')==null)
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('telephone') is-invalid @enderror" id="telephone" name="telephone" value="{{$data['Telephone']}}" required>
+        <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" name="telephone" value="{{$data['Telephone']}}" required>
         @else
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('telephone') is-invalid @enderror" id="telephone" name="telephone" value="{{old('telephone')}}" required>
+        <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" name="telephone" value="{{old('telephone')}}" required>
         @endif
         @error('telephone')
         <div class="invalid-feedback">{{$message}}</div>
@@ -108,8 +152,8 @@
       </div>
 
       <div class="mb-3">
-        <label for="pays">{{__('myaccount.pays')}} </label>
-        <select class="form-select form-control border-top-0 border-right-0 border-left-0 @error('pays') is-invalid @enderror" aria-label="Default select example" id="pays" name="pays" required>
+        <label for="pays">{{__('myaccount.pays')}} :</label>
+        <select class="form-select form-control @error('pays') is-invalid @enderror" aria-label="Default select example" id="pays" name="pays" required>
           <option selected></option>
         @foreach ($pays as $pay)
         @if(old('pays')==null)
@@ -128,9 +172,9 @@
       </div>
 
       <div class="mb-3">
-        <label for="ville">{{__('adresses_livraison.ville')}} </label>
+        <label for="ville">{{__('adresses_livraison.ville')}} :</label>
        
-        <select class="form-select form-control border-top-0 border-right-0 border-left-0 @error('ville') is-invalid @enderror" aria-label="Default select example" id="ville" name="ville" required onchange="select_ville()">
+        <select class="form-select form-control @error('ville') is-invalid @enderror" aria-label="Default select example" id="ville" name="ville" required onchange="select_ville()">
           <option selected></option>
         @foreach ($villes as $ville)
         @if(old('ville')==null)
@@ -151,9 +195,9 @@
 
 
       <div class="mb-3">
-        <label for="secteur">{{__('adresses_livraison.secteur')}} </label>
+        <label for="secteur">{{__('adresses_livraison.secteur')}} :</label>
        
-        <select class="form-select form-control border-top-0 border-right-0 border-left-0 @error('secteur') is-invalid @enderror" aria-label="Default select example" id="secteur" name="secteur" required>
+        <select class="form-select form-control @error('secteur') is-invalid @enderror" aria-label="Default select example" id="secteur" name="secteur" required>
           <option selected></option> 
           @foreach ($secteurs as $secteur)
           @if(old('secteur')==null)
@@ -169,11 +213,11 @@
       </div>
       
       <div class="mb-3">
-        <label for="adresse">{{__('myaccount.adresse')}} </label>
+        <label for="adresse">{{__('myaccount.adresse')}} :</label>
         @if(old('adresse')==null)
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('adresse') is-invalid @enderror" id="adresse" name="adresse" value="{{$data['adresse1']}}" required>
+        <input type="text" class="form-control @error('adresse') is-invalid @enderror" id="adresse" name="adresse" value="{{$data['adresse1']}}" required>
         @else
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('adresse') is-invalid @enderror" id="adresse" name="adresse" value="{{old('adresse')}}" required>
+        <input type="text" class="form-control @error('adresse') is-invalid @enderror" id="adresse" name="adresse" value="{{old('adresse')}}" required>
         @endif
         @error('adresse')
         <div class="invalid-feedback">{{$message}}</div>
@@ -185,18 +229,20 @@
 @endphp
 @if ($user['Type']!='A')
       <div class="mb-3">
-        <label for="adresse2">{{__('myaccount.adresse2')}} </label>
+        <label for="adresse2">{{__('myaccount.adresse2')}} :</label>
         @if(old('adresse2')==null)
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('adresse2') is-invalid @enderror" id="adresse2" name="adresse2" value="{{$data['adresse2']}}" required>
+        <input type="text" class="form-control @error('adresse2') is-invalid @enderror" id="adresse2" name="adresse2" value="{{$data['adresse2']}}" required>
         @else
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('adresse2') is-invalid @enderror" id="adresse2" name="adresse2" value="{{old('adresse2')}}" required>
+        <input type="text" class="form-control @error('adresse2') is-invalid @enderror" id="adresse2" name="adresse2" value="{{old('adresse2')}}" required>
         @endif
         @error('adresse2')
         <div class="invalid-feedback">{{$message}}</div>
         @enderror
       </div>
 @endif
-      <button type="submit" class="btn_ajouter">{{__('myaccount.valider')}} </button>
+      <div class="text-center">
+        <button type="submit" class="btn_valider ">{{__('myaccount.valider')}} </button>
+      </div>
     </form>
   </div>
 

@@ -164,6 +164,15 @@
   100% { transform: rotate(360deg); }
 }
 
+.input_style label{
+  
+  color: var(--color-primary);
+    font-weight: 400;
+    letter-spacing: .1px;
+    font-size: 16px;
+    font-family: var(--font-secondary);
+}
+
 .input_style input,
 .input_style textarea {
   border: solid var(--color-primary) 1px;

@@ -68,6 +68,50 @@
   100% { transform: rotate(360deg); }
 }
 
+.input_style input {
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+    font-weight: 400 !important;
+}
+.input_style select{
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+    font-weight: 400 !important;
+}
+
+
+.btn_valider{
+  color:#fff;
+  background-color: var(--color-primary);
+  border: solid 2px transparent;
+  border-radius:10px;
+  padding:8px;
+  margin-bottom:20px;
+    }
+
+    .btn_valider:hover{
+       
+  background:#EFEFEF;
+  color:var(--color-primary);
+  border: solid 2px var(--color-primary);
+  transition:.2s;
+ 
+    }
+
+    .input_style label{
+  
+  color: var(--color-primary);
+    font-weight: 400;
+    letter-spacing: .1px;
+    font-size: 16px;
+    font-family: var(--font-secondary);
+}
+
+
 
 </style>
 
@@ -99,16 +143,16 @@
 
 
 @if(App::getlocale()=="ar")
-<h1  style="margin-right: 105px;margin-bottom:20px;color:#263066;text-align:end">{{__('nav.mes_commandes')}}</h1>
+<h1  style="margin-right: 105px;margin-bottom:20px;color:#263066;text-align:center">{{__('nav.mes_commandes')}}</h1>
 @else
-<h1  style="margin-left: 105px;margin-bottom:20px;color:#263066;text-align:start">{{__('nav.mes_commandes')}}</h1>
+<h1  style="margin-left: 105px;margin-bottom:20px;color:#263066;text-align:center">{{__('nav.mes_commandes')}}</h1>
 @endif
 
 
 
 <div class="container " >
     
-    <div class="row justify-content-center">
+    <div class="row justify-content-center input_style">
         <div class="col-lg-3 col-sm-6">
             <label for="startDate">{{__('mes_achats.du')}} : </label>
             <input id="startDate" class="form-control" type="date" />
@@ -123,7 +167,7 @@
 
 
     <div class="row justify-content-center">
-    <div class="mb-3 mt-3 ml-3 mr-3" style="width: 30%">
+    <div class="mb-3 mt-3 ml-3 mr-3 input_style" style="width: 30%">
         <label for="etat">{{__('mes_achats.etat')}} :</label>
         <select class="form-select form-control" aria-label="Default select example" id="etat" name="etat" required>
         
@@ -143,7 +187,7 @@
         
       </div>
     </div>
-    <div style="text-align: center"> <button class="btn_ajouter" onclick="valider_filtre()"> {{__('home.filtre')}} </button></div>
+    <div style="text-align: center"> <button class="btn_valider" style=" width: 100px !important;" onclick="valider_filtre()"> {{__('home.filtre')}} </button></div>
 
    
 </div>

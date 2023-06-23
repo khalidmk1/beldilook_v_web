@@ -233,7 +233,7 @@
       </div>
       <div class="col-12 ">
         <div class="col p-0">
-          <h5>prix : <span style="font-size: 11px;">(selectionner une couleur pour avoir le prix )</span></h5>
+          <h5>prix : <span style="font-size: 11px;">(Sélectionner une couleur pour avoir le prix)</span></h5>
           
         </div>
         <div class="col price p-0">
