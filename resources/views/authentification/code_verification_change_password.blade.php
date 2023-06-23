@@ -3,6 +3,15 @@
 
 <style>
 
+  
+.input_style input {
+  border: solid var(--color-primary) 1px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: var(--color-primary) !important;
+    font-weight: 400 !important;
+}
+
   .btn_ajouter{
         background-color: #212951;
         border: #212951;
@@ -26,12 +35,12 @@
 <h5>{{__('register.email_envoi').' '.$email}}</h5>
 
 <p>{{__('register.tentative_restante').' '.Session::get('tentative_change_password').'.'}}</p>
-    <form action={{route('code_change_password_post')}} method="POST">
+    <form class="input_style" action={{route('code_change_password_post')}} method="POST">
       @csrf
       <div class="mb-3 mt-3">
         <label for="code">{{__('register.code')}} :</label>
        
-        <input type="text" class="form-control border-top-0 border-right-0 border-left-0 @error('code') is-invalid @enderror" id="code"  name="code" value="{{ old('code') }}" required>
+        <input type="text" class="form-control  @error('code') is-invalid @enderror" id="code"  name="code" value="{{ old('code') }}" required>
         
         @error('code')
         <div class="invalid-feedback">{{$message}}</div>

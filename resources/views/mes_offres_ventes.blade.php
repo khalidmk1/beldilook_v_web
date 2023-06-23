@@ -2,6 +2,12 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 
+<style>
+  .title{
+    color: #212951;
+  }
+</style>
+
 <!-- Modal articles -->
 <div class="modal fade" id="Modal_article" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -31,7 +37,7 @@
 
 <div class="container items">
     <br>
-    <h1>{{__('offre_vente.titre')}}</h1>
+    <div class="text-center "><h1 class="title">{{__('offre_vente.titre')}}</h1></div>
     <br>
     <div class="row">
 
