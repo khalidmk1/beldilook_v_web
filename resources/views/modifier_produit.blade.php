@@ -592,9 +592,8 @@
     
   </div>
 </div>
-<div style="background-color:#EFEFEF;" class="pb-5 mt-5">
-<div class="container container_modifier_produit input_style" style="width:50%; margin:0 auto;">
-  <div style="text-align: center; " class="pt-5">
+
+  <div style="text-align: center; " class="pt-4">
   <div class="btn_tailles" id="btn_XS" onclick="select_taille('XS')"><div style="font-size: 15px;position: relative;top:3px">XS</div></div>
 <div class="btn_tailles selected_taille" id="btn_S" onclick="select_taille('S')"><div style="font-size: 15px;position: relative;top:3px">S</div></div>
 <div class="btn_tailles" id="btn_M"  onclick="select_taille('M')"><div style="font-size: 15px;position: relative;top:3px">M</div></div>
@@ -620,6 +619,8 @@
 </div>
 <br>
 <br>
+<div style="background-color:#EFEFEF;" class="pb-5 pt-5 mt-2">
+<div class="container container_modifier_produit input_style" style="width:50%; margin:0 auto;">
 <div style="text-align: center">
 <img class="image_obligatoire" src="{{ asset('storage/couleurselectionbl.png') }}" height="40px" width="40px" alt="" style="margin-left: 30px;cursor: pointer;" onclick="open_color()">
 </div>
