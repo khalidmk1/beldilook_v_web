@@ -20,7 +20,7 @@
   </style>
 
 
-<div class="container mt-3">
+<div class="container mt-5 mb-5">
 
 
 <h5>{{__('register.email_envoi').' '.$email}}</h5>

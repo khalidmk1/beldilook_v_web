@@ -69,7 +69,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mt-5">
   {{ csrf_field() }}
 <input name="article_id" type="hidden"  value="{{$idarticle}}">
 @if ($article['smessage']=='non trouvé')
