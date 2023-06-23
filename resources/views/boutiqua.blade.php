@@ -59,19 +59,26 @@ width: 300px;
   100% { transform: rotate(360deg); }
 }
 .border_social{
-  border: solid var(--color-primary) 1px;
-    border-radius: 10px;
+  border: solid transparent 1px;
+    border-radius: 30px;
     max-width: 697px;
     margin: auto;
     margin-top: 5px;
     color: var(--color-primary) !important;
+    background-color:#fff;
 }
 
+.top_boutiqua_user .col
+{
+  position:relative;
+  top:10px;
+}
 @media screen and (max-width:1200px) {
 
   .top_boutiqua_user .col
   {
     justify-content:center !important;
+    top:0px;
   }
   .top_boutiqua_user_container
   {
@@ -83,6 +90,57 @@ width: 300px;
   }
   
 }
+
+
+.reseaux_sociaux_container h5
+{
+  font-size:30px;
+  font-weight:600;
+  letter-spacing:.5px;
+}
+
+.link_border
+{
+    color: var(--color-primary);
+    border: solid 1px #dadada;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.7rem;
+    min-width:120px;
+}
+
+.reseaux_sociaux_container .news_txt a,
+.reseaux_sociaux_container .local_txt a
+{
+  font-family: var(--secondary-font);
+  color: #aa8226 !important;
+  font-size:16px;
+  letter-spacing:.2px;
+  text-decoration:none;
+}
+
+.reseaux_sociaux_container .news_txt a:hover 
+{
+  color: var(--colir-primary) !important;
+}
+
+@media screen and (max-width:560px) {
+  .social_links_row
+  {
+    flex-direction: column !important;
+  }
+
+  .social_links_row a
+  {
+    margin-top:15px;
+  }
+
+  .social_break 
+  {
+    display:none;
+  }
+}
+
 </style>
 
 
@@ -588,7 +646,7 @@ width: 300px;
       <div class="col-12">
         <div class="row">
           <div class="col-12">
-            <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
+            <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif " >{{__('boutiqua.reseau_sociaux')}}</h5>
           </div>
           <div class="col text-center p-2">
             @if($boutique_info['lien_facebook']!='')
@@ -665,120 +723,90 @@ width: 300px;
       </div>
     </div>
   </div> --}}
+  
 
 
-
-  <div class="container p-3" id="resau_social" >
+ <div class="reseaux_sociaux_container" style ="background-color: #EFEFEF; padding-bottom:40px;padding-top:10px;" >
+ <div class="container p-3 mt-3" id="resau_social" >
     <div class="col-12 p-2">
-      <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif" >{{__('boutiqua.reseau_sociaux')}}</h5>
+      <h5  style="color:#263066;" class="@if (App::getlocale() == 'ar') text-right @endif text-center" >{{__('boutiqua.reseau_sociaux')}}</h5>
     </div>
-    <div class="row p-3  border_social" >
-     
-      <div class="col-sm text-center p-2 ">
-        @if($boutique_info['lien_facebook']!='')
-        <a style="display: inline;text-decoration:none ; color: black" class="a_blue" href="{{$boutique_info['lien_facebook']}}" target="_blank">    
-          <div class="row" >
-            <div class="col  d-flex justify-content-end">
-              Facebook
-            </div> 
-            <div class="col d-flex justify-content-start p-0">
-              <img src="{{ asset('storage/facebbok.png') }}" alt="" height="30px" width="30px"></div>
-            </div>
-        </a>
-        @endif
-      </div>
-      <div class="col-sm  text-center p-2  ">
-        @if($boutique_info['lien_tiktok']!='')
-        <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_tiktok']}}" target="_blank">    
-          <div class="row" >
-            <div class="col  d-flex justify-content-end">
-              Tiktok
-            </div> 
-           <div class="col d-flex justify-content-start p-0">
-            <img src="{{ asset('storage/tiktok.png') }}" alt="" height="30px" width="30px">
-           </div>
-          </div>
-        </a>
-        @endif
+    <div class="row p-3 flex-column  border_social" style="">
+          <div class="row social_links_row flex-row justify-content-around" style="width:80%; margin:0 auto;">
+          @if($boutique_info['lien_facebook']!='')
+          <a style="background-color:#fff;display: inline;" class="link_border btn a_blue" href="{{$boutique_info['lien_facebook']}}" role="button" target="_blank">
+            <img  style="margin-bottom: 5px; padding-left:2px;
+            width: 18px;" src="{{asset('storage/facebook-app-symbol.png')}}" />
+            Facebook
+          </a>
+          @endif
 
-      </div>
-    
-      <div class="col-sm  text-center p-2 "> 
-        @if($boutique_info['lien_snapshat']!='')
-        <a style="display: inline;text-decoration:none ; color: black"  href="{{$boutique_info['lien_snapshat']}}" target="_blank">    
-          <div class="row" >
-            <div class="col d-flex justify-content-end">
-              Snapshat
-            </div> 
-            <div class="col  d-flex justify-content-start p-0">
-              <img src="{{ asset('storage/snapcaht.png') }}" alt="" height="30px" width="30px">
-            </div>
+          @if($boutique_info['lien_tiktok']!='')
+          <a style="background-color:#fff;display: inline;" class="link_border btn a_blue" href="{{$boutique_info['lien_tiktok']}}" role="button" target="_blank">
+            <img  style="margin-bottom: 5px; margin-right:2px;  
+            width: 18px;" src="{{asset('storage/tik-tok.png')}}" />
+            Tik-Tok
+          </a>
+          @endif
+          
+          @if($boutique_info['lien_snapshat']!='')
+
+          <a style="background-color:#fff;display: inline;" class="link_border btn justify-content-end" href="{{$boutique_info['lien_snapshat']}}" role="button" target="_blank">
+            <img  style="margin-bottom: 5px; margin-right:2px;
+            width: 18px;" src="{{asset('storage/snapchat.png')}}" />
+            Snapchat
+          </a>
+         @endif
+
           </div>
-        </a>
-        @endif</div>
-        <div class="w-100"></div>
+          <div class="social_break" style="margin-top:15px;"></div>
+          <div class="row flex-row justify-content-around social_links_row" style="width:80%; margin:0 auto;">
+          @if($boutique_info['lien_youtube']!='')
+          <a style="background-color:#fff;display: inline;" class="link_border btn a_blue" href="{{$boutique_info['lien_youtube']}}" role="button" target="_blank">
+            <img  style="margin-bottom: 5px; margin-top:2px; margin-right:2px;
+            width: 18px;" src="{{asset('storage/youtube-symbol.png')}}" />
+            Youtube
+          </a>
+         @endif
 
 
-      <div class="col-sm  text-center p-2 "> 
-        @if($boutique_info['lien_youtube']!='')
-        <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_youtube']}}" target="_blank">    
-          <div class="row">
-            <div class="col d-flex justify-content-end">
-              Youtube 
-            </div>
-            <div class="col  d-flex justify-content-start p-0">
-              <img src="{{ asset('storage/youtube.png') }}" alt="" height="30px" width="30px">
-            </div>        
-          </div>
-        </a>
-        @endif
-      </div>
+         @if($boutique_info['lien_linkdin']!='')
+          <a style="background-color:#fff;display: inline;" class="link_border btn a_blue" href="{{$boutique_info['lien_linkdin']}}" role="button" target="_blank">
+            <img  style="margin-bottom: 7px;
+            width: 16px;" src="{{asset('storage/linkedin-symbol.png')}}" />
+            Linkedin
+          </a>
+         @endif
 
-   
-      <div class="col-sm  text-center p-2 " >
-        @if($boutique_info['lien_linkdin']!='')
-        <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_linkdin']}}" target="_blank">   
-           <div class="row" >
-            <div class="col  d-flex justify-content-end">
-              Linkdin 
-            </div>
-            <div class="col d-flex justify-content-start p-0">
-              <img src="{{ asset('storage/Linkdin.png') }}" alt="" height="30px" width="30px">
-            </div>
+         @if($boutique_info['lien_instagram']!='')
+
+          <a style="background-color:#fff;display: inline;" class="link_border btn a_blue" href="{{$boutique_info['lien_instagram']}}" role="button" target="_blank">
+            <img  style="margin-bottom: 5px; margin-right:2px;
+            width: 18px;" src="{{asset('storage/instagram.png')}}" />
+            Instagram
+          </a>
+         @endif
           </div>
-        </a>
-        @endif
-      </div>
-      <div class="col-sm  text-center p-2 ">
-        @if($boutique_info['lien_instagram']!='')
-        <a style="display: inline;text-decoration:none ; color: black" class="a_blue"  href="{{$boutique_info['lien_instagram']}}" target="_blank">   
-           <div class="row">
-            <div class="col  d-flex justify-content-end ">
-              Instagram
-            </div>
-            <div class="col d-flex justify-content-start p-0">
-              <img src="{{ asset('storage/insta.png') }}" alt="" height="30px" width="30px">
-              </div> 
-          </div>
-        </a>
-        @endif
-      </div>
-      <div class="w-100"></div>
-      <div class="col-sm text-center p-3">
-        <a   href="{{route('actualites',$id_boutique)}}" class="a_yellow" >    
+
+          <row class="d-flex flex-row mt-3 justify-content-around" style="">
+          <div class="news_txt text-center d-inline">
+        <a   href="{{route('actualites',$id_boutique)}}" class="" >    
           <div style="">{{__('boutiqua.news')}} </div>
         </a>
       </div>
       
-      <div class="col-sm text-center p-3">
+      <div class="local_txt text-center d-inline">
         <a onclick="show_locals()" style="color:black" class="a_blue"  href="#" >   
            <div >{{__('boutiqua.notre_local')}} </div>
         </a>
       </div>
+          </row>
+        
   
-    </d>
+    </div>
   </div>
 
+ </div>
 
 
 
