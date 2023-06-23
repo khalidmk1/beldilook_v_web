@@ -92,7 +92,7 @@ class Controller extends BaseController
             'sort' => '',
             'par_lib_articles' => $search,
             'page' => $page,
-            'type_operation' => '',
+            'type_operation' => 'V',
 
 
         ]);
@@ -842,7 +842,7 @@ if ($response->successful()){
             'sort' => '',
             'par_lib_articles' => '',
             'page' => $page,
-            'type_operation' => ''
+            'type_operation' => 'V'
         ]);
          if($response->successful()) {
             $reponse2 = $response->json();
@@ -1342,7 +1342,7 @@ if(count($reponse2)>0){
             'sort' => '',
             'par_lib_articles' => '',
             'page' => 1,
-            'type_operation' => ''
+            'type_operation' => 'V'
         ]);
          if($response->successful()) {
             $reponse2 = $response->json();
@@ -2362,7 +2362,7 @@ public function delete_blog(Request $request)
             'sort' => '',
             'par_lib_articles' => $search,
             'page' => $page,
-            'type_operation' => '',
+            'type_operation' => 'V',
             'par_etat_tenue' => $etats,
             'prix_min' => $prix_min,
             'prix_max' => $prix_max,
@@ -3280,7 +3280,7 @@ if($pagination==30){
             'sort' => '',
             'par_lib_articles' => '',
             'page' => $page,
-            'type_operation' => '',   
+            'type_operation' => 'V',   
             'par_etat_tenue' => $etats,
             'prix_min' => $prix_min,
             'prix_max' => $prix_max,
@@ -3304,7 +3304,7 @@ if($pagination==30){
             'sort' => '',
             'par_lib_articles' => '',
             'page' => $page,
-            'type_operation' => '',   
+            'type_operation' => 'V',   
             'par_etat_tenue' => $etats,
             'prix_min' => $prix_min,
             'prix_max' => $prix_max,
