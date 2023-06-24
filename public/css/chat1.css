@@ -218,7 +218,7 @@ html, body {
 .msg .user {
     font-size: 14px;
     margin: 0 0 2px 0;
-    color: #eef8ff;
+    color: var(--color-primary);
     font-weight: 700;
     margin-top: -2px;
     margin-bottom: 5px;
@@ -239,9 +239,13 @@ html, body {
 .msg p {
     font-size: 14px;
     margin: 0 0 2px 0;
-    color: #eef8ff;
     transition: all .2s ease;
     letter-spacing: .2px;
+    color:#fff;
+}
+
+.msg .user +p{
+    color: var(--color-secondary);
 }
 .msg img {
     position: relative;
