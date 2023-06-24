@@ -17,7 +17,24 @@
 .pack_image + div h5 + div
 {
   line-height:28px;
+
 }
+
+@media screen and (max-width:930px)
+{
+    .formules_container .row
+    {
+        flex-direction:column !important;
+
+        margin: 0 auto !important;
+    }
+
+    .formules_container
+    {
+        width:75% !important;
+    }
+}
+
 </style>
 
 @if(App::getlocale()=="ar")
@@ -45,15 +62,15 @@ $replace = '<br>';
 
 $bronze = str_replace($order, $replace, $str);
 @endphp
-<div class="container" style="width:50%; margin:0 auto" >
+<div class="container formules_container" style="width:50%; margin:0 auto;" >
 
 
 
-    <div style="padding-bottom: 30px;" class="d-flex flex-row mt-5">
-    <div class="pack_image">
+    <div style="padding-bottom: 30px;" class="row d-flex flex-row mt-5">
+    <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12 pack_image">
         <img src="{{asset('storage/AdobeStock_324653936.jpeg')}}" alt="" height="" width="" style="padding-bottom:20px">
     </div>
-<div class="ml-5" >
+<div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12 col" >
     <h5>Pack gold</h5>
     <div>
     @php
@@ -65,11 +82,11 @@ $bronze = str_replace($order, $replace, $str);
 
 
 
-    <div style="padding-bottom: 30px" class="d-flex flex-row">
-    <div class="pack_image">
-        <img src="{{asset('storage/AdobeStock_324653743.jpeg')}}" alt="" height="" width="" style="">
+    <div style="padding-bottom: 30px" class="row d-flex flex-row">
+    <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12  pack_image">
+        <img src="{{asset('storage/AdobeStock_324653743.jpeg')}}" alt="" height="" width="" style="padding-bottom:20px">
     </div>
-<div class="ml-5">
+<div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12">
     <h5>Pack silver</h5>
     <div>
     @php
@@ -80,11 +97,11 @@ $bronze = str_replace($order, $replace, $str);
 </div>
 
 
-<div style="padding-bottom: 30px" class="d-flex flex-row">
-    <div class="pack_image">
+<div style="padding-bottom: 30px" class="row d-flex flex-row">
+    <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12  pack_image">
         <img src="{{asset('storage/AdobeStock_324653730.jpeg')}}" alt="" height="" width="" style="padding-bottom:20px">
     </div>
-<div class="ml-5" >
+<div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12" >
     <h5>Pack bronze</h5>
     <div>
     @php
