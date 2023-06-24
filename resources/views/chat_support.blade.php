@@ -98,8 +98,8 @@
 
 
 <div onclick="go_to_top()" style="z-index: 2000000;cursor: pointer;" class="col"  id="snackbar">{{__('chat_support.new_message')}}</div>
-    <h3 style="padding: 20px;@if(App::getlocale()=="ar") text-align:right; @endif">{{__('chat_support.support')}}</h3>
-    <div style="padding-left: 10px; " class="container1">
+    <h3 class="text-center mt-5" style="font-size:60px;">{{__('chat_support.support')}}</h3>
+    <div style="padding-left: 10px; " class="container1 container">
         <ol id="div_chat" class="chat" >
     
             @php
@@ -113,7 +113,10 @@
     <div class="msg msg_2">
       <p>{{$message['messag']}}</p>
       @if($message['image2']!='')
-      <img style="object-fit: contain" height="300px"  src="{{$message['image2']}}" draggable="false"/>
+      @if($message['messag']!='')
+      <div style="margin-top:15px;"></div>
+      @endif
+      <img style="object-fit: contain" max-height="300px"  src="{{$message['image2']}}" draggable="false"/>
       @endif
       
     </div>
@@ -129,7 +132,10 @@
                 <div class="user">Beldilook<span class="range admin">support</span></div>
                 <p>{{$message['messag']}}</p>
               @if($message['image2']!='')
-              <img style="object-fit: contain" height="300px"  src="{{$message['image2']}}" draggable="false"/>
+              @if($message['messag']!='')
+              <div style="margin-top:15px;"></div>
+              @endif
+              <img style="object-fit: contain" max-height="300px"  src="{{$message['image2']}}" draggable="false"/>
               @endif
               
             </div>
@@ -151,11 +157,14 @@
             </ol>
             <br>
             <div class="typezone">
-            <form id="msg_normal" action="{{route('send_message')}}" method="post" enctype="multipart/form-data">  {{ csrf_field() }}<textarea id="msg" name="msg" type="text" placeholder="Say something" class="textarea2"></textarea><input type="submit" class="send" value="" onclick="send_message()" style="background-image: url('{{asset('storage/send-message.png')}}')" />
+            <form id="msg_normal" action="{{route('send_message')}}" method="post" enctype="multipart/form-data">  {{ csrf_field() }}<textarea id="msg" name="msg" type="text" placeholder="Say something" class="textarea2"></textarea>
+            <input type="submit" class="send" value="" onclick="send_message()" style="background-image: url('{{asset('storage/send-message.png')}}')" />
             
             </form>
-            <div onclick="select_image()" class="emojis" style=" background-image: url('{{asset('storage/attach-file.png')}}') ;"></div></div>
-    </div>
+            <div onclick="select_image()" class="emojis" style=" background-image: url('{{asset('storage/attach-file.png')}}') ;"></div>
+           
+            </div>
+     </div>
 
 <script>
   var nb_ligne=0;
@@ -194,8 +203,12 @@ nb_ligne=data.length;
     if(data[count]['expediteur']!=0)
   {
     html+='<li class="self"><div class="msg msg_2"><p>'+data[count]['messag']+'</p>';
+    
+    if (data[count]['image2'] != '' && data[count]['messag'] != '') {
+      html += '<div style="margin-top:15px;"></div>';
+    }
                 if(data[count]['image2']!=''){
-                  html+='<img style="object-fit: contain" height="300px"  src="'+data[count]['image2']+'" draggable="false"/>';
+                  html+='<img style="object-fit: contain" max-height="300px"  src="'+data[count]['image2']+'" draggable="false"/>';
                 }
                 
                 html+='</div></li>';
@@ -206,10 +219,13 @@ nb_ligne=data.length;
       html+=' <img src="'+ass+'" style="background-color: #212951" alt=""  class="logo"></div><div class="col1"><li class="other"><div class="msg msg_1"><div class="user">Beldilook<span class="range admin">support</span></div>';
     
         html+='<p>'+data[count]['messag']+'</p>';
-        
+
+        if (data[count]['image2'] != '' && data[count]['messag'] != '') {
+      html += '<div style="margin-top:15px;"></div>';
+    }
                 
         if(data[count]['image2']!=''){
-          html+='<img style="object-fit: contain" height="300px"  src="'+data[count]['image2']+'" draggable="false"/> ';
+          html+='<img style="object-fit: contain" max-height="300px"  src="'+data[count]['image2']+'" draggable="false"/> ';
          }
          html+='</div></li></div></div>';
 
