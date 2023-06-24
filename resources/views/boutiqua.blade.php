@@ -141,6 +141,11 @@ width: 300px;
   }
 }
 
+
+.social_links_row a:hover
+  {
+    color:var(--primary-color) !important;
+  }
 </style>
 
 
