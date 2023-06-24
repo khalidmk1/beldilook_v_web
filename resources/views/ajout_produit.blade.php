@@ -262,6 +262,13 @@ left:-30px;
 
 }
 
+
+.scrollmenu div
+{
+  background:#fff;
+  margin:2px;
+  border-radius:30px;
+}
   </style>
 
 {{ csrf_field() }}
@@ -700,6 +707,7 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 <div class="btn_tailles" id="btn_3XL" onclick="select_taille('3XL')"><div style="font-size: 15px;position: relative;top:3px">3XL</div></div>
   </div>
 <br>
+</div>
 
 <br>
 <div style="text-align: center">
@@ -716,6 +724,8 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 </div>
 <br>
 <br>
+<div style="background-color:#EFEFEF;" class="pt-4">
+<div class="container ajout_produit_contain input_style" style="width:50%;">
 <div style="text-align: center">
 <img class="image_obligatoire" src="{{ asset('storage/couleurselectionbl.png') }}" height="40px" width="40px" alt="" style="margin-left: 30px;cursor: pointer;" onclick="open_color()">
 </div>
@@ -789,6 +799,7 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 <br>
 <br>
 <div id="json_content"></div>
+</div>
 </div>
 <script>
   
