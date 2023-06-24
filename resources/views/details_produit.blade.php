@@ -456,14 +456,14 @@
 
 
 <br>
-<h5 style="padding-left:122px;padding-bottom:10px">{{__('nav.produit_suggerer')}}</h5>
+<h5 style="font-size:30px;" class="text-center pt-5 pb-5">{{__('nav.produit_suggerer')}}</h5>
 <div class="container">
-<div class="row" >
+<div class="row mb-3" >
 @foreach ($articles2 as $article2)
     
 
 
-<div style="justify-content: center" class=" col-xl-3 col-lg-3 col-md-4 col-sm-2  d-flex ">
+<div style="justify-content: center" class=" col-xl-3 col-lg-3 col-md-4 col-sm-2  d-flex articles_boutique_une">
   
      
   
