@@ -481,6 +481,10 @@ html, body {
     .chat .notification time {
         right: 10px;
     }
+    .emojis {
+       
+        right: 28.5%;
+    }
 }
 
 
