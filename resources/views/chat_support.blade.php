@@ -31,6 +31,13 @@
   100% { transform: rotate(360deg); }
 }
 
+@media screen and (min-width:1200px) {
+  .container1
+{
+  width:55% !important;
+  margin:0 auto;
+}
+}
 </style>
 <!-- Modal  envoi image -->
 
@@ -99,7 +106,7 @@
 
 <div onclick="go_to_top()" style="z-index: 2000000;cursor: pointer;" class="col"  id="snackbar">{{__('chat_support.new_message')}}</div>
     <h3 class="text-center mt-5" style="font-size:60px;">{{__('chat_support.support')}}</h3>
-    <div style="padding-left: 10px; " class="container1 container">
+    <div style="padding-left: 10px; " class="container1 container" style="">
         <ol id="div_chat" class="chat" >
     
             @php
