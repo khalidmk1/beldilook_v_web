@@ -112,9 +112,9 @@
 
 
 @if(App::getlocale()=="ar")
-<h1  style="margin-right: 105px;margin-bottom:20px;color:#263066;text-align:end">{{__('nav.mes_achats')}}</h1>
+<h1  style="color:#263066;" class="text-center mt-5">{{__('nav.mes_achats')}}</h1>
 @else
-<h1  style="margin-left: 105px;margin-bottom:20px;color:#263066;text-align:start">{{__('nav.mes_achats')}}</h1>
+<h1  style="color:#263066;" class="text-center mt-5">{{__('nav.mes_achats')}}</h1>
 @endif
 
 
@@ -132,13 +132,13 @@
 
 
 
-<div class="container">
+<div class="container"  style="margin-top:80px;" >
     
-    <div class="row  flex-row-reverse" >
+    <div class="row flex-row-reverse" >
         <div class="col-0 "></div>
         <div class="col-8">
             <b class="float-right"> {{__('mes_achats.commande')}} </b>
-            <b class="float-right" style="padding-right: 7px"> {{$achat['NumCommande']}}</b>
+            <span class="float-right" style="padding-right: 7px"> {{$achat['NumCommande']}}</span>
            
         </div>
        
@@ -212,12 +212,12 @@
 
 
 @else
-<div class="container">
+<div class="container" style="margin-top:80px;">
     
     <div class="row  " >
         <div class="col-0 "></div>
         <div class="col-8">
-            <b> {{__('mes_achats.commande')}}  {{$achat['NumCommande']}}</b>
+            <b> {{__('mes_achats.commande')}} </b> {{$achat['NumCommande']}}
            
         </div>
        
