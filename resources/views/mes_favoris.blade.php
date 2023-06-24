@@ -38,9 +38,11 @@
     .tabcontent {
       display: none;
       padding: 6px 12px;
-      border: 1px solid #ccc;
       border-top: none;
+      margin-bottom:30px;
     }
+
+
     </style>
 
 
@@ -111,13 +113,13 @@
 
 
 
-<div class="container">
+<div class="container mt-3">
 
   <h2 style="padding: 20px;@if(App::getlocale()=="ar") text-align:end; @endif">{{__('nav.myfavoris')}} </h2>
 
 </div>
 
-<div class="tab" >
+<div class="tab mb-4" >
     <button class="tablinks" onclick="openCity(event, 'Articles')">{{__('nav.articles')}}</button>
     <button class="tablinks " onclick="openCity(event, 'Boutiques')">{{__('nav.boutiques')}}</button>
     
@@ -193,7 +195,7 @@
   
   <div id="Boutiques" class="tabcontent">
     <div class="container items">
-        <div class="row">
+        <div class="row" >
             @forelse ($boutiques as $boutique)
 
 
@@ -254,9 +256,10 @@
            @empty
     <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('home.aucun_boutique')}}</p>
            @endforelse
-
         </div>
+        
     </div>
+    
   </div>
   
   
