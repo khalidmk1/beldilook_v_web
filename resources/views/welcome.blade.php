@@ -18,6 +18,7 @@
             padding: 5px;
             border-radius: 20px;
             width: 130px;
+            margin-top:15px;
         }
         .btn_blogs:hover{
             background-color: rgb(219, 214, 214);
@@ -30,6 +31,12 @@
             line-clamp: 2; 
     -webkit-box-orient: vertical;
     font-size: 12px;
+    max-width:350px;
+    padding-right:5px;
+    padding-left:5px;
+    padding-top:10px;
+    margin:0 auto;
+            
  }
  .titre2 {
     overflow: hidden;
@@ -43,7 +50,7 @@
         .blogs{
         background:#ffff;
          margin: 30px 15px 15px 15px;
-         padding: 16px 15px 25px 15px;
+         padding: 25px 20px 30px 20px;
       text-align: center;
            border-radius: 30px;
         }
@@ -54,12 +61,15 @@
         .image_blog{
             
             width: 100%;
-            height: 220px;
+            height: 240px;
             border-radius: 19px;
            
         }
         .image_blog + h5 {
-           margin-top:23px !important; 
+           margin-top:23px !important;
+           max-width:350px; 
+           text-align:center; 
+           margin: 0 auto;
         }
 
 
@@ -173,6 +183,14 @@
 
             100% {
                 transform: rotate(360deg);
+            }
+        }
+
+
+        @media screen and (min-width:992px) {
+            .blogs
+            {
+                max-width:36%;
             }
         }
     </style>
@@ -340,16 +358,16 @@
 
 <div class="row div_blogs justify-content-center " >
     
-    <div class="col-lg-4 col-md-4 col-sm-6 blogs">
+    <div class="col-lg-5 col-md-6 col-sm-6 blogs" style="">
 <img  class="image_blog" src="https://www.blog.beldilook.ma/wp-content/uploads/2023/05/caftan-toute-occas-1-1024x576.webp" alt="">
 <h5 style="margin-top: 10px" class="titre2">Comment porter son caftan en toute occasion : De la tenue décontractée à l’événement formel</h5>
 <p class="text2">Le caftan est une tenue traditionnelle marocaine qui peut être portée lors de différentes occasions, qu’elles soient décontractées ou formelles. Voici quelques conseils pour porter un caftan en toute occasion :</p>
 <button onclick="window.location='https://www.blog.beldilook.ma/comment-porter-son-caftan-en-toute-occasion-de-la-tenue-decontractee-a-levenement-formel/'" class="btn_blogs">{{__('nav.lire_suite')}}</button>
     </div>
-    <div class="col-lg-1 col-md-1 col-sm-12">
+    <div class="col-lg-1 col-md-12 col-sm-12">
        
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 blogs">
+    <div class="col-lg-5 col-md-6 col-sm-6 blogs">
         <img class="image_blog" src="https://www.blog.beldilook.ma/wp-content/uploads/2021/07/repass-new-1024x576.jpg" alt="">
         <h5 style="margin-top: 10px" class="titre2">Comment bien repasser ses tenues traditionnelles Marocaines ?</h5>
         <p class="text2">Le caftan est une tenue traditionnelle marocaine qui peut être portée lors de différentes occasions, qu’elles soient décontractées ou formelles. Peu importe l’occasion, n’importe quelle tenue Marocaine est mise en valeur que si elle est bien repassée et entretenue.</p>
