@@ -230,6 +230,16 @@ left:-30px;
 {
   position:relative;
 }
+
+
+.txt_ajouter_couleurs
+{
+  text-align:center !important;
+  margin-bottom:180px !important;
+  display:block;
+  padding-top:80px;
+
+}
   </style>
 
 {{ csrf_field() }}
@@ -747,6 +757,8 @@ $prix_without =number_format($couleur_XS['rPrix_sans_commission'], 2, '.', '');
 $index=$index+1;
 @endphp
 @endforeach
+@else
+<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
     @endif
 
 
@@ -772,6 +784,8 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $index=$index+1;
     @endphp
     @endforeach
+    @else
+    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
         @endif
 </div>
         
@@ -794,6 +808,8 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $index=$index+1;
     @endphp
     @endforeach
+    @else
+    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
         @endif
 </div>
 
@@ -814,6 +830,8 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $index=$index+1;
     @endphp
     @endforeach
+    @else
+    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
         @endif
 </div>
 
@@ -836,6 +854,8 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $index=$index+1;
     @endphp
     @endforeach
+    @else
+    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
         @endif
 </div>
 
@@ -856,6 +876,8 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $index=$index+1;
     @endphp
     @endforeach
+    @else
+    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
         @endif
 </div>
   
@@ -876,6 +898,8 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $index=$index+1;
     @endphp
     @endforeach
+    @else
+    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
         @endif
 </div>
 

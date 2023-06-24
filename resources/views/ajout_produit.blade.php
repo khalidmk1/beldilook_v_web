@@ -223,6 +223,45 @@
 }
 
 
+.left-arrow,
+.right-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.right-arrow,
+.left-arrow
+{
+  position:absolute;
+  top:150px !important;
+  cursor:pointer;
+}
+.left-arrow{
+
+left:-30px;
+}
+.right-arrow
+{
+  right:-30px;
+}
+
+.scrollable-tabs-container
+{
+  position:relative;
+}
+
+.txt_ajouter_couleurs
+{
+  text-align:center !important;
+  margin-bottom:180px !important;
+  display:block;
+  padding-top:80px;
+
+}
+
   </style>
 
 {{ csrf_field() }}
@@ -684,36 +723,52 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 <div style="text-align:center"><span style="color:red;" id="span_colors"></span></div>
 <br>
 
+<div class="scrollable-tabs-container container">
+<div class="left-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </div>
+
+            <div class="right-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </div>
+</div>
+
   <div class="scrollmenu" id="div_taille_XS">
-    
+  <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
  
   </div>
 
   <div class="scrollmenu" id="div_taille_S">
-
+  <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
 </div>
 
 
 <div class="scrollmenu" id="div_taille_M">
-
+<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
 </div>
 
 <div class="scrollmenu" id="div_taille_L">
-
+<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
 </div>
 
 
 
 <div class="scrollmenu" id="div_taille_XL">
-
+<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
 </div>
 
 <div class="scrollmenu" id="div_taille_XXL">
-
+<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
 </div>
   
 <div class="scrollmenu" id="div_taille_3XL">
-
+<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
 </div>
 
 <input type="file" name="" id="select_im" style="display: none" accept="image/*" onchange="readURL(this);">
@@ -737,6 +792,8 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 </div>
 <script>
   
+
+
 var taille_selected="S";
 var image_delete="{{asset('storage/close.png') }}";
 var taux="{{$taux['taux']}}";
@@ -745,6 +802,14 @@ var acceptation_terme="{{$terme['message']}}";
 var $modal = $('#modal_crop');
 var image = document.getElementById('sample_image');
 var cropper;
+
+
+tablinks = document.getElementsByClassName("scrollmenu");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.display = 'none';
+    }
+    var d=document.getElementById("div_taille_S");
+    d.style.display = 'block';
 function validation(){
   
   
@@ -1388,6 +1453,27 @@ $('#select_im').val('');
 			};
 		});
 	});
+
+
+  $(document).ready(function() {
+ 
+ const scrollSpeed=150;
+ const scrollWrapper = document.querySelector('.scrollmenu-content-wrapper');
+ const scrollContent = document.querySelector('.scrollmenu-content');
+ const scrollLeft = document.getElementsByClassName("left-arrow");
+ const scrollRight = document.querySelector('.right-arrow');
+
+ $('.left-arrow').click(function() {
+   $('.scrollmenu').animate({scrollLeft: "-=" + scrollSpeed + "px"}, 'fast');
+ });
+
+ $('.right-arrow').click(function() {
+   $('.scrollmenu').animate({scrollLeft: "+=" + scrollSpeed + "px"}, 'fast');
+ });
+});
+
+
+
 </script>
 
 @endsection
