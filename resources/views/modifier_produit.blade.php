@@ -747,7 +747,7 @@ foreach ($details_produit['tabTaille_produit'] as $taille) {
 $prix_without =number_format($couleur_XS['rPrix_sans_commission'], 2, '.', '');
     @endphp
 <div class="">
-  {{__("ajout_produit.couleur")}} : <div class="colors colors_XS" style="background-color: {{$couleur_XS['sHtml_couleur']}}" donn="{{$couleur_XS['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+  {{__("ajout_produit.couleur")}} : <div class="colors colors_XS" style="background-color: {{$couleur_XS['sHtml_couleur']}}" donn="{{$couleur_XS['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br> 
   {{__("ajout_produit.quantite")}} : <input id="qte_{{$index}}" class="qte_XS" type="number"  value="{{$couleur_XS['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
   {{__("ajout_produit.prix")}} : <input id="prix_{{$index}}" class="prix_XS" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')" > DH
     <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">{{__("ajout_produit.comission")}} : {{$couleur_XS['rComission']}} DH</p>
@@ -774,7 +774,7 @@ $index=$index+1;
 $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endphp
     <div >
-      {{__("ajout_produit.couleur")}} : <div class="colors colors_S" style="background-color: {{$couleur_S['sHtml_couleur']}}" donn="{{$couleur_S['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+      {{__("ajout_produit.couleur")}} : <div class="colors colors_S" style="background-color: {{$couleur_S['sHtml_couleur']}}" donn="{{$couleur_S['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br> 
       {{__("ajout_produit.quantite")}} : <input id="qte_{{$index}}" class="qte_S" type="number"  value="{{$couleur_S['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
       {{__("ajout_produit.prix")}} : <input id="prix_{{$index}}" class="prix_S" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">{{__("ajout_produit.comission")}} : {{$couleur_S['rComission']}} DH</p>
@@ -798,7 +798,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_M['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-      {{__("ajout_produit.couleur")}} : <div class="colors colors_M" style="background-color: {{$couleur_M['sHtml_couleur']}}" donn="{{$couleur_M['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+      {{__("ajout_produit.couleur")}} : <div class="colors colors_M" style="background-color: {{$couleur_M['sHtml_couleur']}}" donn="{{$couleur_M['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br> 
       {{__("ajout_produit.quantite")}} : <input id="qte_{{$index}}" class="qte_M" type="number"  value="{{$couleur_M['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
       {{__("ajout_produit.prix")}} : <input id="prix_{{$index}}" class="prix_M" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">{{__("ajout_produit.comission")}} : {{$couleur_M['rComission']}} DH</p>
@@ -820,7 +820,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_L['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-      {{__("ajout_produit.couleur")}} : <div class="colors colors_L" style="background-color: {{$couleur_L['sHtml_couleur']}}" donn="{{$couleur_L['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+      {{__("ajout_produit.couleur")}} : <div class="colors colors_L" style="background-color: {{$couleur_L['sHtml_couleur']}}" donn="{{$couleur_L['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br> 
       {{__("ajout_produit.quantite")}} : <input id="qte_{{$index}}" class="qte_L" type="number"  value="{{$couleur_L['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
       {{__("ajout_produit.prix")}} : <input id="prix_{{$index}}" class="prix_L" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">{{__("ajout_produit.comission")}} : {{$couleur_L['rComission']}} DH</p>
@@ -844,7 +844,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_XL['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-      {{__("ajout_produit.couleur")}} : <div class="colors colors_XL" style="background-color: {{$couleur_XL['sHtml_couleur']}}" donn="{{$couleur_XL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+      {{__("ajout_produit.couleur")}} : <div class="colors colors_XL" style="background-color: {{$couleur_XL['sHtml_couleur']}}" donn="{{$couleur_XL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br> 
       {{__("ajout_produit.quantite")}} : <input id="qte_{{$index}}" class="qte_XL" type="number"  value="{{$couleur_XL['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
       {{__("ajout_produit.prix")}} : <input id="prix_{{$index}}" class="prix_XL" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">{{__("ajout_produit.comission")}} : {{$couleur_XL['rComission']}} DH</p>
@@ -866,7 +866,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_XXL['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-      {{__("ajout_produit.couleur")}} : <div class="colors colors_XXL" style="background-color: {{$couleur_XXL['sHtml_couleur']}}" donn="{{$couleur_XXL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+      {{__("ajout_produit.couleur")}} : <div class="colors colors_XXL" style="background-color: {{$couleur_XXL['sHtml_couleur']}}" donn="{{$couleur_XXL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br> 
       {{__("ajout_produit.quantite")}} : <input id="qte_{{$index}}" class="qte_XXL" type="number"  value="{{$couleur_XXL['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
       {{__("ajout_produit.prix")}} : <input id="prix_{{$index}}" class="prix_XXL" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">{{__("ajout_produit.comission")}} : {{$couleur_XXL['rComission']}} DH</p>
@@ -888,7 +888,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     $prix_without =number_format($couleur_XXXL['rPrix_sans_commission'], 2, '.', '');
         @endphp
     <div >
-      {{__("ajout_produit.couleur")}} : <div class="colors colors_3XL" style="background-color: {{$couleur_XXXL['sHtml_couleur']}}" donn="{{$couleur_XXXL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
+      {{__("ajout_produit.couleur")}} : <div class="colors colors_3XL" style="background-color: {{$couleur_XXXL['sHtml_couleur']}}" donn="{{$couleur_XXXL['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br> 
       {{__("ajout_produit.quantite")}} : <input id="qte_{{$index}}" class="qte_3XL" type="number"  value="{{$couleur_XXXL['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
       {{__("ajout_produit.prix")}} : <input id="prix_{{$index}}" class="prix_3XL" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')"> DH
         <br><p style="padding-top:10px;margin-bottom:0px;" id="tc{{$index}}">{{__("ajout_produit.comission")}} : {{$couleur_XXL['rComission']}} DH</p>
@@ -1437,9 +1437,14 @@ function select_color(v)
     } 
 
 
- var content_div=$('#div_taille_'+taille_selected).html();
+    if(tabcolors.length!=0)
+{
+  var content_div=$('#div_taille_'+taille_selected).html();
+}else{
+  content_div='';
+}
  content_div+=' <div >';
-  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br>';
+  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br>';
   content_div+='{{__("ajout_produit.quantite")}} : <input id="qte_'+index_colors+'" class="qte_'+taille_selected+'" type="number"  value="0" onchange="format_qte(this,'+index_colors+')"> <br>';
   content_div+='{{__("ajout_produit.prix")}} : <input id="prix_'+index_colors+'" class="prix_'+taille_selected+'" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="0.00" onchange="format_prix(this,'+index_colors+')"> DH';
   content_div+='<br><p style="padding-top:10px;margin-bottom:0px;" id="tc'+index_colors+'">Comission : 0 DH</p>';
@@ -1464,9 +1469,14 @@ function select_color2(v)
    }
     } 
   
- var content_div=$('#div_taille_'+taille_selected).html();
+    if(tabcolors.length!=0)
+{
+  var content_div=$('#div_taille_'+taille_selected).html();
+}else{
+  content_div='';
+}
  content_div+=' <div >';
-  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br>';
+  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br>';
   content_div+='{{__("ajout_produit.quantite")}} : <input id="qte_'+index_colors+'" class="qte_'+taille_selected+'" type="number"  value="0" onchange="format_qte(this,'+index_colors+')"> <br>';
   content_div+='{{__("ajout_produit.prix")}} : <input id="prix_'+index_colors+'" class="prix_'+taille_selected+'" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="0.00" onchange="format_prix(this,'+index_colors+')"> DH';
   content_div+='<br><p style="padding-top:10px;margin-bottom:0px;" id="tc'+index_colors+'">{{__("ajout_produit.comission")}} : 0 DH</p>';
@@ -1604,7 +1614,17 @@ content_div+='<div style="display: inline-block">';
    $('.scrollmenu').animate({scrollLeft: "+=" + scrollSpeed + "px"}, 'fast');
  });
 });
+function verifie_color()
+{
+  tabcolors = document.getElementsByClassName("colors_"+taille_selected);
+ 
 
+ if(tabcolors.length==0) 
+ {
+  content_div_2='<span class="txt_ajouter_couleurs" style=""> aucune couleur n\'a été sélectionnée </span>';
+  $('#div_taille_'+taille_selected).html(content_div_2);
+ }
+}
 
 </script>
 

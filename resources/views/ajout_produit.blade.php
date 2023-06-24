@@ -1304,10 +1304,15 @@ function select_color(v)
    }
     } 
 
-
- var content_div=$('#div_taille_'+taille_selected).html();
+if(tabcolors.length!=0)
+{
+  var content_div=$('#div_taille_'+taille_selected).html();
+}else{
+  content_div='';
+}
+ 
  content_div+=' <div >';
-  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br>';
+  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br>';
   content_div+='{{__("ajout_produit.quantite")}} : <input id="qte_'+index_colors+'" class="qte_'+taille_selected+'" type="number"  value="0" onchange="format_qte(this,'+index_colors+')"> <br>';
   content_div+='{{__("ajout_produit.prix")}} : <input id="prix_'+index_colors+'" class="prix_'+taille_selected+'" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="0.00" onchange="format_prix(this,'+index_colors+')"> DH';
   content_div+='<br><p style="padding-top:10px;margin-bottom:0px;" id="tc'+index_colors+'">{{__("ajout_produit.comission")}} : 0 DH</p>';
@@ -1331,10 +1336,15 @@ function select_color2(v)
     return
    }
     } 
-  
- var content_div=$('#div_taille_'+taille_selected).html();
+    if(tabcolors.length!=0)
+{
+  var content_div=$('#div_taille_'+taille_selected).html();
+}else{
+  content_div='';
+}
+ 
  content_div+=' <div >';
-  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br>';
+  content_div+=' {{__("ajout_produit.couleur")}} : <div class="colors colors_'+taille_selected+'" style="background-color: '+v+'" donn="'+v+'"><img src="'+image_delete+'" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);verifie_color();"></div> <br> <br>';
   content_div+='{{__("ajout_produit.quantite")}} : <input id="qte_'+index_colors+'" class="qte_'+taille_selected+'" type="number"  value="0" onchange="format_qte(this,'+index_colors+')"> <br>';
   content_div+='{{__("ajout_produit.prix")}} : <input id="prix_'+index_colors+'" class="prix_'+taille_selected+'" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="0.00" onchange="format_prix(this,'+index_colors+')"> DH';
   content_div+='<br><p style="padding-top:10px;margin-bottom:0px;" id="tc'+index_colors+'">{{__("ajout_produit.comission")}} : 0 DH</p>';
@@ -1472,7 +1482,17 @@ $('#select_im').val('');
  });
 });
 
+function verifie_color()
+{
+  tabcolors = document.getElementsByClassName("colors_"+taille_selected);
+ 
 
+ if(tabcolors.length==0) 
+ {
+  content_div_2='<span class="txt_ajouter_couleurs" style=""> aucune couleur n\'a été sélectionnée </span>';
+  $('#div_taille_'+taille_selected).html(content_div_2);
+ }
+}
 
 </script>
 
