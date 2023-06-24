@@ -485,6 +485,11 @@ html, body {
        
         right: 28.5%;
     }
+    .textarea2, 
+    .textarea2:hover {
+        padding-right:11%;
+    }
+    
 }
 
 
