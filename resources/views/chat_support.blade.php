@@ -34,9 +34,13 @@
 @media screen and (min-width:1200px) {
   .container1
 {
-  width:55% !important;
+  width:50% !important;
   margin:0 auto;
 }
+}
+
+.chat{
+  margin-bottom:50px;
 }
 </style>
 <!-- Modal  envoi image -->
@@ -164,7 +168,7 @@
             </ol>
             <br>
             <div class="typezone">
-            <form id="msg_normal" action="{{route('send_message')}}" method="post" enctype="multipart/form-data">  {{ csrf_field() }}<textarea id="msg" name="msg" type="text" placeholder="Say something" class="textarea2"></textarea>
+            <form id="msg_normal" action="{{route('send_message')}}" method="post" enctype="multipart/form-data">  {{ csrf_field() }}<textarea id="msg" name="msg" type="text" maxlength="400" placeholder="Say something" class="textarea2"></textarea>
             <input type="submit" class="send" value="" onclick="send_message()" style="background-image: url('{{asset('storage/send-message.png')}}')" />
             
             </form>
@@ -363,6 +367,30 @@ function readURL(input) {
     $('#exampleModal_message_image').modal('show');
   }
 }
+
+
+$("#msg").on('input', function() {
+  var scroll_height = $("#msg").get(0).scrollHeight;
+
+  $("#msg").css('height', scroll_height + 'px');
+});
+
+$(document).ready(function() {
+  // Empty text area resize
+  var textarea = $("#msg");
+
+  if (textarea.val().trim() === '') {
+    textarea.css('min-height', '61px');
+  }
+
+  textarea.on('input', function() {
+    if ($(this).val().trim() === '') {
+      $(this).css('height', '61px');
+    } 
+  });
+});
+
+
 </script>
 
 @endsection
