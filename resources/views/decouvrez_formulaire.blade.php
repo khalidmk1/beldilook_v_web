@@ -35,6 +35,14 @@
     }
 }
 
+@media screen and (max-width:480px)
+{
+    
+    .formules_container
+    {
+        width:100% !important;
+    }
+}
 </style>
 
 @if(App::getlocale()=="ar")
