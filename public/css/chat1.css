@@ -469,8 +469,8 @@ html, body {
         max-width: 250px;
     }
     .msg img {
+        border-radius: 15px;
         width: 200px;
-        height: 200px;
     }
     .chat .notification {
         font-size: 12px;
