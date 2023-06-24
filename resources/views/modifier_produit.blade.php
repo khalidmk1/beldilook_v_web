@@ -198,6 +198,38 @@
   border-radius:30px;
 }
 
+
+.left-arrow,
+.right-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.right-arrow,
+.left-arrow
+{
+  position:absolute;
+  top:150px !important;
+  cursor:pointer;
+}
+.left-arrow{
+
+left:-30px;
+}
+.right-arrow
+{
+  right:-30px;
+}
+
+
+
+.scrollable-tabs-container
+{
+  position:relative;
+}
   </style>
 
 {{ csrf_field() }}
@@ -680,13 +712,31 @@ foreach ($details_produit['tabTaille_produit'] as $taille) {
 
 
 @endphp
+
+<div class="scrollable-tabs-container container">
+<div class="left-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </div>
+
+            <div class="right-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </div>
+</div>
+
   <div class="scrollmenu" id="div_taille_XS">
+ 
     @if($XS==true)
 @foreach($couleurs_XS as $couleur_XS)
 @php
 $prix_without =number_format($couleur_XS['rPrix_sans_commission'], 2, '.', '');
     @endphp
-<div >
+<div class="">
   {{__("ajout_produit.couleur")}} : <div class="colors colors_XS" style="background-color: {{$couleur_XS['sHtml_couleur']}}" donn="{{$couleur_XS['sHtml_couleur']}}"><img class="image_obligatoire" src="{{asset('storage/close.png') }}" height="20px" width="20px" alt="" style="position: absolute;right:-10px;top:-10px;" onclick=" this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);"></div> <br> <br> 
   {{__("ajout_produit.quantite")}} : <input id="qte_{{$index}}" class="qte_XS" type="number"  value="{{$couleur_XS['nQuantite']}}" onchange="format_qte(this,'{{$index}}')"> <br>
   {{__("ajout_produit.prix")}} : <input id="prix_{{$index}}" class="prix_XS" style="margin-top: 10px;margin-left:36px" type="number" id="test2" value="{{$prix_without}}" onchange="format_prix(this,'{{$index}}')" > DH
@@ -698,8 +748,12 @@ $index=$index+1;
 @endphp
 @endforeach
     @endif
- 
+
+
   </div>
+   
+   
+
 
   <div class="scrollmenu" id="div_taille_S">
     @if($S==true)
@@ -720,6 +774,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endforeach
         @endif
 </div>
+        
 
 
 <div class="scrollmenu" id="div_taille_M">
@@ -1506,6 +1561,27 @@ content_div+='<div style="display: inline-block">';
 			};
 		});
 	});
+
+
+
+  $(document).ready(function() {
+ 
+ const scrollSpeed=150;
+ const scrollWrapper = document.querySelector('.scrollmenu-content-wrapper');
+ const scrollContent = document.querySelector('.scrollmenu-content');
+ const scrollLeft = document.getElementsByClassName("left-arrow");
+ const scrollRight = document.querySelector('.right-arrow');
+
+ $('.left-arrow').click(function() {
+   $('.scrollmenu').animate({scrollLeft: "-=" + scrollSpeed + "px"}, 'fast');
+ });
+
+ $('.right-arrow').click(function() {
+   $('.scrollmenu').animate({scrollLeft: "+=" + scrollSpeed + "px"}, 'fast');
+ });
+});
+
+
 </script>
 
 @endsection
