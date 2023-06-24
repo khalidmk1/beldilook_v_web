@@ -143,14 +143,14 @@
 
 
 @if(App::getlocale()=="ar")
-<h1  style="margin-right: 105px;margin-bottom:20px;color:#263066;text-align:center">{{__('nav.mes_commandes')}}</h1>
+<h1  style="color:#263066;text-align:center" class="mt-5 text-center">{{__('nav.mes_commandes')}}</h1>
 @else
-<h1  style="margin-left: 105px;margin-bottom:20px;color:#263066;text-align:center">{{__('nav.mes_commandes')}}</h1>
+<h1  style="color:#263066;text-align:center" class="mt-5 text-center">{{__('nav.mes_commandes')}}</h1>
 @endif
 
 
 
-<div class="container " >
+<div class="container mt-5" >
     
     <div class="row justify-content-center input_style">
         <div class="col-lg-3 col-sm-6">
@@ -194,7 +194,7 @@
 
 <br>
 
-<div id="principal">
+<div id="principal" class="mt-5" style="margin-bottom:60px;">
 
 @if(count($commandes)==0)
 <p class="col-12" style="text-align: center;padding-top: 80px;">{{__('mes_achats.aucune_commande')}}</p>
