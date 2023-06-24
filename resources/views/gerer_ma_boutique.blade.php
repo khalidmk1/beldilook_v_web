@@ -51,6 +51,22 @@ height: 300px;
 width: 300px;
 }
 }
+
+.pack_txt
+{
+  font-size:60px;
+  font-weight:600;
+  letter-spacing:.1px;
+}
+
+@media screen and (max-width:948px) {
+
+   .container_title_socialm, .container_social
+   {
+    width:80% !important;
+   }
+  
+}
 </style>
 
 <!-- Modal locals -->
@@ -88,33 +104,37 @@ width: 300px;
 <input type="file" name="" id="select_im" style="display: none" accept="image/*" onchange="readURL(this);">
 
 @if($pack['pack']=='SILVER')
-<div style="position: relative;"><div  style="width: 100%;height:150px;background-color:#D7D8DA"><strong style="position: absolute;bottom:3px;left:15px;color:white;font-size:40px;">{{__('boutiqua.pack_silver')}}</strong></div>
+<div style="position: relative;" class="text-center"><div  style="width: 100%;height:150px;background-color:#D7D8DA" class=" d-flex justify-content-center align-items-center pack_txt">
+{{__('boutiqua.pack_silver')}}</div>
 </div>
 @endif
 
 
 @if($pack['pack']=='BRONZE')
 
-<div style="position: relative;"><div  style="width: 100%;height:150px;background-color:#B48B6E"><strong style="position: absolute;bottom:3px;left:15px;color:white;font-size:40px;">{{__('boutiqua.pack_bronze')}}</strong></div>
+<div style="" class="text-center"> <div  style="width:100%;height:150px;background-color:#B3961E;" class="pack_txt d-flex justify-content-center align-items-center"> 
+{{__('boutiqua.pack_bronze')}}</div>
 </div>
 @endif
 
 @if($pack['pack']=='GOLD')
-<div style="position: relative;" class="d-flex justify-content-center"><div  style="width: 100%;height:150px;background-color:#B3961E"><strong style="position: absolute;bottom:3px;left:15px;color:white;font-size:40px;">{{__('boutiqua.pack_gold')}}</strong></div>
+<div style="" class=""><div  style="width:100%;height:150px;background-color:#B3961E" class="pack_txt d-flex justify-content-center align-items-center">{{__('boutiqua.pack_gold')}}</div>
 </div>
 
 @endif
 
 
-
+<div class="d-flex justify-content-center mt-5">
 
 @if(App::getlocale()=="ar")
-<h3  style="margin: 40px 0px 20px 20px;color:#263066;text-align:end;display:inline;position: relative;top:10px">{{$boutique['nom']}}</h1>
+<h3  style="color:#263066;  position:relative; top:5px;" class="text-center">{{$boutique['nom']}}</h3>
 @else
-<h3  style="margin: 40px 0px 20px 20px;color:#263066;text-align:start;display:inline;position: relative;top:10px">{{$boutique['nom']}}</h1>
+<h3  style="color:#263066;  position:relative; top:5px; " class="">{{$boutique['nom']}} </h3>
 @endif
 <img src="{{ asset('storage/verifier bl.png') }}" alt="" height="50" width="50">
-<div style="padding-top: 20px;text-align:center">
+
+</div>
+<div style="padding-top: 40px;text-align:center">
     @foreach ($produits as $produit)
     <div style="display: inline">
         <a href="{{route('details_produit',$produit['idarticles'])}}">        <img style="border-radius: 50%;margin-right:15px"  src="{{ $produit['photo1'] }}" alt="" height="150" width="150">
@@ -129,16 +149,16 @@ width: 300px;
 </div>
 <br>
 <br>
-<div style="text-align: center">
+<div style="text-align: center" class="mb-3">
 
 <button class="btn_ajouter" style="margin-bottom:10px;" onclick="window.location='{{route('ajout_produit')}}'">{{__('home.btn_ajouter_produit')}}</button>
 </div>
 <br>
 @if($pack['pack']=='GOLD' || $pack['pack']=='SILVER')
 @if(App::getlocale()=="ar")
-<h3 style="padding: 10px;" class="text-center">{{__('boutiqua.ajouter_images_locale')}} </h3>
+<h3 style="padding: 10px; position:relative; top:15px" class="text-center">{{__('boutiqua.ajouter_images_locale')}} </h3>
 @else
-<h3 style="padding: 10px;" class="text-center">{{__('boutiqua.ajouter_images_locale')}} </h3>
+<h3 style="padding: 10px; position:relative; top:15px" class="text-center">{{__('boutiqua.ajouter_images_locale')}} </h3>
 @endif
 
 <div id="photos_local" style="text-align: center">
@@ -161,7 +181,7 @@ width: 300px;
 <br>
 <br>
 
-<div style="text-align: center">
+<div style="text-align: center;" class="">
 <button class="btn_ajouter" onclick="select_image()">{{__('boutiqua.ajouter')}}</button>
 </div>
 @endif
@@ -173,7 +193,7 @@ width: 300px;
 
 
 
-<div class="container">
+<div class="container container_title_socialm" style="width:50%;margin-top:60px;">
     @if(App::getlocale()=="ar")
 <div class="row flex-row-reverse">
     @else
@@ -330,7 +350,7 @@ width: 300px;
 <br>
 <br>
 
-<div class="container">
+<div class="container container_social"  style="width:50%;"  >
   
 <form action="{{route('modifier_ma_boutique')}}" method="post">
 @csrf
