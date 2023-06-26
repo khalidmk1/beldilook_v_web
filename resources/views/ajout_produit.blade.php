@@ -750,35 +750,35 @@ margin-top: 20px;">{{__('ajout_produit.ajouter_produit')}}</h1>
 </div>
 
   <div class="scrollmenu" id="div_taille_XS">
-  <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+  <span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
  
   </div>
 
   <div class="scrollmenu" id="div_taille_S">
-  <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+  <span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
 </div>
 
 
 <div class="scrollmenu" id="div_taille_M">
-<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+<span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
 </div>
 
 <div class="scrollmenu" id="div_taille_L">
-<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+<span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
 </div>
 
 
 
 <div class="scrollmenu" id="div_taille_XL">
-<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+<span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
 </div>
 
 <div class="scrollmenu" id="div_taille_XXL">
-<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+<span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
 </div>
   
 <div class="scrollmenu" id="div_taille_3XL">
-<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+<span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
 </div>
 
 <input type="file" name="" id="select_im" style="display: none" accept="image/*" onchange="readURL(this);">
@@ -1500,7 +1500,7 @@ function verifie_color()
 
  if(tabcolors.length==0) 
  {
-  content_div_2='<span class="txt_ajouter_couleurs" style=""> aucune couleur n\'a été sélectionnée </span>';
+  content_div_2='<span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>';
   $('#div_taille_'+taille_selected).html(content_div_2);
  }
 }

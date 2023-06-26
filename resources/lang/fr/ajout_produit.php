@@ -34,6 +34,7 @@ return [
     'continuer' => 'Continuer',
     'ajouter_image' => 'Ajouter une image',
     'crop' => 'recadrer',
-    'cancel' => 'Annuler'
+    'cancel' => 'Annuler',
+    'aucune_couleur_selectionne' => "aucune couleur n'a été sélectionnée"
 ]
 ?>

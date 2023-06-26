@@ -758,7 +758,7 @@ $index=$index+1;
 @endphp
 @endforeach
 @else
-<span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+<span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
     @endif
 
 
@@ -785,7 +785,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endphp
     @endforeach
     @else
-    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+    <span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
         @endif
 </div>
         
@@ -809,7 +809,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endphp
     @endforeach
     @else
-    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+    <span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
         @endif
 </div>
 
@@ -831,7 +831,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endphp
     @endforeach
     @else
-    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+    <span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
         @endif
 </div>
 
@@ -855,7 +855,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endphp
     @endforeach
     @else
-    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+    <span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
         @endif
 </div>
 
@@ -877,7 +877,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endphp
     @endforeach
     @else
-    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+    <span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
         @endif
 </div>
   
@@ -899,7 +899,7 @@ $prix_without =number_format($couleur_S['rPrix_sans_commission'], 2, '.', '');
     @endphp
     @endforeach
     @else
-    <span class="txt_ajouter_couleurs" style=""> aucune couleur n'a été sélectionnée </span>
+    <span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>
         @endif
 </div>
 
@@ -1621,7 +1621,7 @@ function verifie_color()
 
  if(tabcolors.length==0) 
  {
-  content_div_2='<span class="txt_ajouter_couleurs" style=""> aucune couleur n\'a été sélectionnée </span>';
+  content_div_2='<span class="txt_ajouter_couleurs" style=""> {{__('ajout_produit.aucune_couleur_selectionne')}} </span>';
   $('#div_taille_'+taille_selected).html(content_div_2);
  }
 }
