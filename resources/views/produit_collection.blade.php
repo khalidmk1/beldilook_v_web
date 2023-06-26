@@ -117,13 +117,15 @@ width:400px;
 
              <div class="row justify-content-center">
                  <div class="title col-12">{{__('filtre.prix_minimum')}}</div>
-                 <input class="progress_input slider  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" />
+                 <div class="p-2 w-100">
+                  <input class="progress_input slider  p-0 " id="myRange_minimum" type="range" value="0" min="0" max="30000" />
                  <p class="col-12 RadialProgress radian pr-2"  style="position: relative; top: 11px;"> <span id="pix_minimum"></span> </p>
+                 </div>
 
              </div>
              <div class="row justify-content-center">
                  <div class="title col-12">{{__('filtre.prix_maximum')}}</div>
-                 <div class="slidecontainer text-center p-0">
+                 <div class="slidecontainer text-center p-2 w-100" >
                    <input type="range" min="0" max="30000" value="0" class="slider col-12 p-0 " id="myRange"> 
                    <p class="col-12 RadialProgress radian m-0 " style=" position: relative;
                    top: 11px;
